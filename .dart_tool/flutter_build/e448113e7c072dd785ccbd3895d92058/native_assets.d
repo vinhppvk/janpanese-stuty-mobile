@@ -1,0 +1,1 @@
+ /Users/tora-tech/Desktop/Flutter\ Projects/janpanese-stuty-mobile/.dart_tool/flutter_build/e448113e7c072dd785ccbd3895d92058/native_assets.yaml: 
