@@ -51,9 +51,9 @@
     },
     {
       "name": "flutter_lints",
-      "rootUri": "file:///Users/tora-tech/.pub-cache/hosted/pub.dev/flutter_lints-2.0.3",
+      "rootUri": "file:///Users/tora-tech/.pub-cache/hosted/pub.dev/flutter_lints-3.0.1",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "flutter_test",
@@ -62,10 +62,28 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///Users/tora-tech/Downloads/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "go_router",
+      "rootUri": "file:///Users/tora-tech/.pub-cache/hosted/pub.dev/go_router-12.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "lints",
-      "rootUri": "file:///Users/tora-tech/.pub-cache/hosted/pub.dev/lints-2.1.1",
+      "rootUri": "file:///Users/tora-tech/.pub-cache/hosted/pub.dev/lints-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "logging",
+      "rootUri": "file:///Users/tora-tech/.pub-cache/hosted/pub.dev/logging-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
     },
     {
       "name": "matcher",
@@ -152,7 +170,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2023-11-21T09:17:35.284674Z",
+  "generated": "2023-11-22T09:20:28.819395Z",
   "generator": "pub",
   "generatorVersion": "3.2.0"
 }
