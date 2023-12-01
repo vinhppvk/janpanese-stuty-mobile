@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../asset/font_asset.dart';
+import 'color.dart';
 
 class TFontSize {
   const TFontSize._();
@@ -45,6 +46,9 @@ class TTextStyle {
     Color color,
     String fontFamily, {
     double? height,
+    TextDecoration? decoration,
+    Color? decorationColor,
+    double? decorationThickness,
   }) {
     return TextStyle(
       fontSize: fontSize,
@@ -52,6 +56,65 @@ class TTextStyle {
       fontFamily: fontFamily,
       height: height,
       color: color,
+      decoration: decoration,
+      decorationColor: decorationColor,
+      decorationThickness: decorationThickness,
+    );
+  }
+
+  static TextStyle getBodyXSmall({
+    FontWeight fontWeight = TFontWeight.regular,
+    Color color = Colors.black,
+    TextDecoration? decoration,
+    Color decorationColor = TColor.primary1000,
+    double decorationThickness = 1.5,
+  }) {
+    return _getTextStyle(
+      TFontSize.s10,
+      fontWeight,
+      color,
+      FontAsset.satoshi,
+      decoration: decoration,
+      decorationColor: decorationColor,
+      decorationThickness: decorationThickness,
+    );
+  }
+
+  static TextStyle getBodySmall({
+    FontWeight fontWeight = TFontWeight.regular,
+    Color color = Colors.black,
+    TextDecoration? decoration,
+    Color decorationColor = TColor.primary1000,
+    double decorationThickness = 1.5,
+  }) {
+    return _getTextStyle(
+      TFontSize.s12,
+      fontWeight,
+      color,
+      FontAsset.satoshi,
+      height: TFontHeight.h160,
+      decoration: decoration,
+      decorationColor: decorationColor,
+      decorationThickness: decorationThickness,
+    );
+  }
+
+  static TextStyle getBodyMedium({
+    FontWeight fontWeight = TFontWeight.regular,
+    Color color = Colors.black,
+    TextDecoration? decoration,
+    Color decorationColor = TColor.primary1000,
+    double decorationThickness = 1.5,
+  }) {
+    return _getTextStyle(
+      TFontSize.s14,
+      fontWeight,
+      color,
+      FontAsset.satoshi,
+      height: TFontHeight.h160,
+      decoration: decoration,
+      decorationColor: decorationColor,
+      decorationThickness: decorationThickness,
     );
   }
 
@@ -59,7 +122,49 @@ class TTextStyle {
     FontWeight fontWeight = TFontWeight.regular,
     Color color = Colors.black,
   }) {
-    return _getTextStyle(TFontSize.s16, fontWeight, color, FontAsset.inter,
-        height: TFontHeight.h145);
+    return _getTextStyle(
+      TFontSize.s16,
+      fontWeight,
+      color,
+      FontAsset.satoshi,
+      height: TFontHeight.h145,
+    );
+  }
+
+  static TextStyle getBodyXLarge({
+    FontWeight fontWeight = TFontWeight.regular,
+    Color color = Colors.black,
+  }) {
+    return _getTextStyle(
+      TFontSize.s18,
+      fontWeight,
+      color,
+      FontAsset.satoshi,
+      height: TFontHeight.h130,
+    );
+  }
+
+  static TextStyle getHeadingH4({
+    Color color = Colors.black,
+  }) {
+    return _getTextStyle(
+      TFontSize.s24,
+      TFontWeight.bold,
+      color,
+      FontAsset.satoshi,
+      height: TFontHeight.h130,
+    );
+  }
+
+  static TextStyle getHeadingH5({
+    Color color = Colors.black,
+  }) {
+    return _getTextStyle(
+      TFontSize.s20,
+      TFontWeight.bold,
+      color,
+      FontAsset.satoshi,
+      height: TFontHeight.h135,
+    );
   }
 }

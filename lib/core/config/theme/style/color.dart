@@ -17,11 +17,14 @@ class TColor {
 
   // Greyscale
   static const Color grey200 = Color(0xFFE5E7EB);
+  static const Color grey300 = Color(0xFFD1D5DB);
+  static const Color grey500 = Color(0xFF6B7280);
+  static const Color grey600 = Color(0xFF4B5563);
 
   // Other
   static const Color background = Color(0xFFF3F6F9);
   static const Color black = Color(0xFF000000);
-  static const Color white = Color(0xFFFFFFFF);
+  static const Color white = Colors.white;
   static const Color mikadoYellow = Color(0xFFFFC007);
   static const Color coral = Color(0xFFF68657);
 }

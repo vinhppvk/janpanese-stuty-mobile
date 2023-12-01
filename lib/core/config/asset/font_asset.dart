@@ -2,5 +2,5 @@ class FontAsset {
   const FontAsset._();
 
   static String inter = 'Inter';
-  static String satoshi = 'Satoshi-Variable';
+  static String satoshi = 'Satoshi';
 }

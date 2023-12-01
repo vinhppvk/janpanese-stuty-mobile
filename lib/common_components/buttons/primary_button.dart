@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../core/config/theme/style/color.dart';
 import '../../core/config/theme/style/font_style.dart';
 
 class PrimaryButton extends StatelessWidget {
@@ -6,10 +7,12 @@ class PrimaryButton extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
+    this.textStyle,
   });
 
   final String text;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +22,13 @@ class PrimaryButton extends StatelessWidget {
         minimumSize: const Size.fromHeight(56),
         elevation: 0,
         shape: const StadiumBorder(),
+        shadowColor: Colors.transparent,
       ),
       child: Text(
         text,
-        style: TTextStyle.getBodyLarge(
+        style: textStyle ?? TTextStyle.getBodyLarge(
           fontWeight: TFontWeight.bold,
-          color: Colors.white,
+          color: TColor.white,
         ),
       ),
     );

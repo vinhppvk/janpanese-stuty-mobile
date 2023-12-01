@@ -18,7 +18,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		TY3VYrzuMOKV6zGfEbiyXTLF1b0=
+		A6ZiiM4UtfdJPjQSvOFOB3lxMTE=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		bSbSSlWViav5Sk1NtVwcpQdzpD0=
+		p/fLvialVuZGoU4DXub04tm7ttU=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,23 +54,23 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		rQZeGBg1/YSNT415fR9ZY3VcHDg=
+		FJTHZK9+9h4fCczAHJeRDbnnGlE=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		p8rIR6IX6cOqkIFyPXOQWFINjT4=
+		UcCzEm9Nmob7E7Z3gzlzRBTXr4c=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		GUhIWku92M7VtOIPkuzhCRekROo=
+		1Ne6xFCQ6s/ex5DKZ/xqdFExkYQ=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
-		OyOjLqECs4nK5lrKsDsLVhsFn9k=
+		IxyOMLB6rExpaVbYWBFxXLWTq3E=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		ZNok8V1bzRn+KfwtFZfsiLQbYbo=
+		wN9AXpESW6hmZvgwJY9jtnnRsQ4=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Inter-Black.ttf</key>
 		<data>
@@ -108,9 +108,105 @@
 		<data>
 		dXgF5hXJdHVmRuVM7/jkCdXEcgc=
 		</data>
-		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Satoshi-Variable.ttf</key>
+		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Satoshi-Black.otf</key>
 		<data>
-		1Jhyp0WELzibydJLc9CjCQ/OULE=
+		2Suq1Nq5ylW8cvGooKbecoKecJ8=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Satoshi-Bold.otf</key>
+		<data>
+		V6nhwkmEcIhl99DDGgN3ORL7l18=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Satoshi-Light.otf</key>
+		<data>
+		OxuXfwDbRCvfMPY2AxEubiUbfdo=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Satoshi-Medium.otf</key>
+		<data>
+		cE+sy1//GfJcC5FNQtE1q3V5SiQ=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Satoshi-Regular.otf</key>
+		<data>
+		fctZmU8r7hpO8fbAeboOmbQJh4s=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/avatar.svg</key>
+		<data>
+		O6Dw0MnLR/bLS4/KD0hSQfmO3cE=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/ban_circle.svg</key>
+		<data>
+		B9xRM8sZQlQ/FPEEvw0E82ILKqU=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/calendar_blank.svg</key>
+		<data>
+		PYlY37GZ4PFcSE+KlHKUEX4qQok=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/camera.svg</key>
+		<data>
+		evnoQJwKJWDgq6unvMTeRmO0XSc=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/caret_down.svg</key>
+		<data>
+		c44ZXQv5bd5pKOvUde088oJCiTw=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/caret_left.svg</key>
+		<data>
+		nzAqquCHKDm/KvLh6+W7pPW+gKI=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/caret_up.svg</key>
+		<data>
+		D8hEIcotOskv5w2e+phPWUE6QsY=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/check_circle.svg</key>
+		<data>
+		8RJzXZWY+/L3Oreih22o3DujFBU=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/email.svg</key>
+		<data>
+		KN+MjmUkVdyh+e/u0WJtSCjWJrE=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/eye_close.svg</key>
+		<data>
+		eD5LQIvtAVvnqBvMAzHjgr95LlM=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/eye_open.svg</key>
+		<data>
+		BGjLrSt3u0L0nx3zE3wj6HF68Ak=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/facebook.svg</key>
+		<data>
+		ljhb1uzuxdSFubJGGvzHMmPUh80=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/gallery.svg</key>
+		<data>
+		o96c9m+WSFqgUaYysxDNeLsK/u0=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/google.svg</key>
+		<data>
+		edDN5ezYdNUgpjn7XDaODTobIQ4=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/info_circle.svg</key>
+		<data>
+		81yp/RDnVMOU6S+4n9SiEZ4h9vs=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/password.svg</key>
+		<data>
+		m6WSZcNEHl5CQ+qWPtRGUgSL+jo=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/x_circle.svg</key>
+		<data>
+		uXnut8RoVJhIw3F1zBBqmwZeWqw=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/zalo.svg</key>
+		<data>
+		xXHe5I92yZQBeGexoKwWQJljAtY=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/celebration_illustration.png</key>
+		<data>
+		goyFOKAzhLmQzl8HsR4jDN285Bg=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/email_illustration.png</key>
+		<data>
+		2RTAcClEitozbH7/+GV7rq+yJ54=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -122,7 +218,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		8aw99/rB10yhWYSorpSZ8nYYqVM=
+		E3Y14Spmzvl10gbWk32IiTtDuoI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -220,9 +316,334 @@
 		<data>
 		Ubat0LvE4LUgCwHeyl0Anx2vnzk=
 		</data>
+		<key>Frameworks/TOCropViewController.framework/Info.plist</key>
+		<data>
+		iq02+lDvB4RFAUmGw9cxltcGaYw=
+		</data>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewController</key>
+		<data>
+		Rf2DTGE4zxQY2wuMre69efegN+Q=
+		</data>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/Base.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			VxY/Lu0kUMa4Dw9FryxLSegDAKU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/Info.plist</key>
+		<data>
+		FQ1x0wH+upDbSNcbpbFuvQtz6UQ=
+		</data>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/ar.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9KdbZrTesV5Q3goWjT47ZNi4Ah8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/ca.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			iS8YNUQF8hURkq4RIeYmTpfmltw=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/cs.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			tEF0ckSDjUIGE3y/Foty8T/omwo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/da-DK.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			xYOBVXX2ZEVsfhA06CU5RMhj9cc=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/de.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			uIWAB6jgWd/rBUaaZTOOTvqjnvg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/en.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			VxY/Lu0kUMa4Dw9FryxLSegDAKU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/es.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			i6heSnr/3BK2BzBGbDoAnsdAkCM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/fa-IR.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Aciw6FK1RrwpKtmXlxt/av73MMw=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/fa.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Aciw6FK1RrwpKtmXlxt/av73MMw=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/fi.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			hLO/2lkTZNPuVT+0tigvvZKnTYU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/fr.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			x58vjyvUriL2N8lGdL4nn2fjT8A=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/hu.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			BZbs7bmjLwJNgzeQzQVDFtr41GI=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/id.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6uxsz9U6fGxSTcjLOc8ILDETdVM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/it.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			IZkFMVHUu5vtuLmRk3EENQeD9EU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/ja.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Iwh4b74rKw69c3ajJ6GBbESqJcY=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/ko.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			oEOISmZu9WGaR2DlX36uBwO4jA8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/ms.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			pKSMomS5I4qsvpOzphOCNEZdlls=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/nl.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WEQ/kTs4B6rCq6KCEOb2bdDNiSE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/pl.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/4nhHU0B8LbVl0spRGHdH+ft28Y=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/pt-BR.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			PMFcvwmTAoQiqBPiOXTFlzBIkkA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/pt.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			PMFcvwmTAoQiqBPiOXTFlzBIkkA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/ro.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			HwzpFshAR5HPP/7fNO6jOtUmoFU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/ru.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			hTF421mU8gwBrcc/+ttC5RHyqYM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/sk.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Rk+VpaOVCyarxcVWE8LCO4WGBLs=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/tr.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			eTq0dNVVoOSEkqRyo6IQvBAYz1k=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/vi.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			OSx0CuhFv7QU/x1KHNFaAmdz2n8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/zh-Hans.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jV7lFbAOlsqp061XodkTOQjI3f8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/zh-Hant.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			kjhSWwxYpPFlPxiOkf6nDVYwp9U=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/_CodeSignature/CodeResources</key>
+		<data>
+		JiGjU39r0QcRiLd19VuqMwU2TzE=
+		</data>
+		<key>Frameworks/image_cropper.framework/Info.plist</key>
+		<data>
+		JILCq/xNDIgY7/QZ5m8uKVSOcWs=
+		</data>
+		<key>Frameworks/image_cropper.framework/_CodeSignature/CodeResources</key>
+		<data>
+		Qbg+mjyv2YmLb/gmv6O/XP1AL5U=
+		</data>
+		<key>Frameworks/image_cropper.framework/image_cropper</key>
+		<data>
+		VTsssk1hDXXD0EzuRbbgYfUVUZc=
+		</data>
+		<key>Frameworks/image_picker_ios.framework/Info.plist</key>
+		<data>
+		pi9NI80mNTkjY1YJ2A8OwZxXTy0=
+		</data>
+		<key>Frameworks/image_picker_ios.framework/_CodeSignature/CodeResources</key>
+		<data>
+		9+/2QoQPUBfnR6iFpwhICwa+A74=
+		</data>
+		<key>Frameworks/image_picker_ios.framework/image_picker_ios</key>
+		<data>
+		fZ9PGkrEC0oqeKf8pq7WYVOKveU=
+		</data>
+		<key>Frameworks/smart_auth.framework/Info.plist</key>
+		<data>
+		BurY6cdg8dkLuLpVCMf7HMhXDyc=
+		</data>
+		<key>Frameworks/smart_auth.framework/_CodeSignature/CodeResources</key>
+		<data>
+		WuTyNDw9b2sFHDdOxr+TuQ5tRRw=
+		</data>
+		<key>Frameworks/smart_auth.framework/smart_auth</key>
+		<data>
+		sXHaq0299IsDtwMGm8erg0xw6/w=
+		</data>
+		<key>Frameworks/url_launcher_ios.framework/Info.plist</key>
+		<data>
+		gbmNVON6C/H+nfcVzu44XazrCSk=
+		</data>
+		<key>Frameworks/url_launcher_ios.framework/_CodeSignature/CodeResources</key>
+		<data>
+		L4h9dgPWH7DHwt7gCXJ1Wu9cvW8=
+		</data>
+		<key>Frameworks/url_launcher_ios.framework/url_launcher_ios</key>
+		<data>
+		Cl/vfH2nbbmfwMwuNQBSnNCMkWQ=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		pNRjNEfAPi/c6SzjePhJ9Op8Bxk=
+		XHea3mVu2khQvS8E/eewVmac+4w=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -256,7 +677,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			h+3/Y2T79Uvfb1vBk3Qxma4OLVuj/3j7kUgIDq+RB80=
+			538oMKBU4EzV/jnJJ0iciQQFSaTXSUrUx7OS24zfcJk=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
@@ -305,7 +726,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LtNl/zc8RlRm6kmr0eGdec4UHp+7bNFz0U9/+OSXaig=
+			TSQCl9lMj/PBwwUcAmLknxXPE4Ad8Ccm+qaeNVxEoHg=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -319,35 +740,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xlRHlKXDABRR3mzexp+Kb64FSZ3vRrHBr406qsCtjUY=
+			5lCJC4jiHXyerFBAOK8+Ox9wIi87SUHRcuCWvzqChG8=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2cI+CHN5qdPOMF9N/DIiXSjx5ywZr4zGxEBbrfysW64=
+			oarD1dt50BiV+etV/d5RfSkdqxSJop+AtDAcgsG73g8=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			j7QGz50iKq5zUjIP6x72v0uy3pvX0NEgSYamRpd8lAQ=
+			48wac23tAVSMf0rzBtIpqPMedMpuNZVUPIL9h1HbI0I=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			47/KjKMR+3U//ugdJZGZKiDjnV9ZLmRmYBwQ/TxIlNI=
+			CCf5c6UoI8IX3uc8bqWyaLoPXiSphzUP56wQrNxyL74=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			W+MAx36fskBL9cMDziRk8SkPsPmguSDz18FXTVDzK+Q=
+			6/vW/caRqOWN7YVOdcALiTz8xCluBwtgPY2KS4Oih4c=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Inter-Black.ttf</key>
@@ -413,11 +834,179 @@
 			lAbyrbuCHTRlH2YmWyS/Z+0XMaxBM9qOtWJwlWAJQ08=
 			</data>
 		</dict>
-		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Satoshi-Variable.ttf</key>
+		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Satoshi-Black.otf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Aq0TGSaqRtKCtq9zrSvK7LDsbvO4MKLwjcq+9E8RQP8=
+			Sb24uUNri5GS9vFLfOS5bRo4IuE8UEwAwLKEI1fSZcw=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Satoshi-Bold.otf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UOT5t8GGTFB2HXKdYAG/rHCMgEV/pvxBVZqKsb0lc/8=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Satoshi-Light.otf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+bUyoUMYG8dq35/VlocIxQLIB6z3t7HwoNRquik90ro=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Satoshi-Medium.otf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kzMIZtEJ9rLimHSJWOxvpAEMrO9YZ4PygaCyaMq3/G4=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Satoshi-Regular.otf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cRxiQ83FQx+cyWbk3hi/uUA2W62BrP/R55SNvj8lQ4Y=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/avatar.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8HmrZSJrLA6H/VzmfsrMl++hiaxx5iLfk9g4x3UbCmo=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/ban_circle.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Xg4vPl1A+q09OdB7u/d3tBT9GN7aJt0GMNYzbX9lTNM=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/calendar_blank.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sjp7zqCNupC/Q1/bCmCu9Z8SM8IvZ/Zgm47i41Eflmo=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/camera.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9T6h17z5vwg7vl9BTpC3Hj4e3FK2YR/KX0oCx0F16cU=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/caret_down.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			55KAkf4jW2cWrjuwyg7s1t6KOFi7WvE22TZINhu/gFo=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/caret_left.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6cM4a+x102f7rcI7GB7Ib4IE/ibcjVH8xyA2z5lzGXA=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/caret_up.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zZbHKZPImdurBzqRQu8TO1mIfK04FLH2sMphKmk9dCI=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/check_circle.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dpI1RfZ/SALrbbaat5f1fFOkJQhGajGRPyO9AydVMk4=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/email.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			U13uD2C5pC6wE2F9Thvxhq4VrFPhUxZ1oJNP8SHSg6I=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/eye_close.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cbYMDUQKk+sc3293rYDbu0BQGQ55PmPZIloQmvPeG90=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/eye_open.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			t2IQ1OEtpPUtyK4qwbhmR/Ivwlx01EXJcZ2rYScbWUA=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/facebook.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			agvqui9OHhtHhzZ5kQQQXBGYLf9/Jz781iJNsv5haNE=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/gallery.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sDd3equcvzmFtNQv0LZHjXIKmyZe+8vPzql91CxNAMM=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/google.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1SMCLLirX9cTUvqmCdSXCD97cluD2NmgJYA31Jv8poE=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/info_circle.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BN7xG28PyCvAvDrvQHZ111PksUP2ubwxJ0PsxqiVEnU=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/password.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4pmhh83vrqYh4BYqc0PiVpAv1z8nCsDVfXxVR1P2xAc=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/x_circle.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5NVdO4521AQaJ+giSdCp8ZOitabsDfUrshEswHmEbsw=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/zalo.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			M4HhQUXXOyQflfxY/iTh5PVd+OdsDpX6bZ/mbNLA3hw=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/celebration_illustration.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			17wX1lp7ItkgrmKosLrHSwFItEoFWHzXnUbnASbtlZQ=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/email_illustration.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			csk7nOT8eSi8141PdXFSK+e+d0wRZrqdIWtmMWVpJnk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -438,7 +1027,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VehkzgmhOX4wWGfie+JpTLVXKyxr8D1kEKZhBciNtfM=
+			XMR5bwRpJcoheNSUsB0v8k8xDynMx8/YTBdRc52Dx4o=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -607,6 +1196,379 @@
 			<key>hash2</key>
 			<data>
 			ZepykIMSjfzhwAcmupMrkaqvXkhza1ZE3TdHjl8odaw=
+			</data>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qwLSRH40OhOrAs5p2noKatUFU9h57trMRNa8zpyX590=
+			</data>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewController</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0DNwsoKueYGUn2MKXdLsbhPFAZDnSXrgxPQkUWOFxeQ=
+			</data>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/Base.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GW2Z+4M0keHcxPYX+oHfEHYqUBK1EC8Rm3mJLWrTWME=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wLOPoNaF2sbPRgB88y5lbNAQ+oPW8VcR4Uk3ORxOpDk=
+			</data>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/ar.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RjhF1v7VkZ5pHNWwq4q2Ces11/nj9HFsjtbVNvmrIVE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/ca.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SDoOwkND5MnxphW/CGFKrwJN9Cyn0uikyvrfJYlurUo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/cs.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZeoLY9ER0bWz1xLQnZ786tOnjblZhepo9J9WQ8INJjs=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/da-DK.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			eK+vebIPwDgHx6XlXWcOdabEnyBuBZNVBDX8XDBoTkY=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/de.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bI2DapbUPGYYvb180twTo+1N3KRD0haOQEiCCeOTmAs=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/en.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GW2Z+4M0keHcxPYX+oHfEHYqUBK1EC8Rm3mJLWrTWME=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/es.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WTSK+uSmaRM7UQRocaUzOvqF5V5/8YpyzYR36D0pym8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/fa-IR.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qlXElNSV96/Bhfm2VhhHvKhy9Vyhm5ui5ssqoLi7e58=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/fa.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qlXElNSV96/Bhfm2VhhHvKhy9Vyhm5ui5ssqoLi7e58=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/fi.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			gwzYEHyto774wrEk5AeozvQ+/LSqh+7VlzmPfWEYXPM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/fr.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4jSflqNQBX+HCtxmQTmc6ww4+516Z5X5NpS5e0acF/w=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/hu.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PINY8TGJjSuucf341WM1VYeDmxeW7mWhVLYxKgJqPQ0=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/id.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/a7u1wffkoejir+Ph8ty7S3zSZ3Pah72F9x/O6DcDLs=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/it.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hRsxJneovqXThfZCIF5dgEwF8lhQ1UlvwElPsLgG7sI=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/ja.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZVvNCp0WDyjoB3PsKvxDnYX/3oZwWAkKXWhkN8fOjK0=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/ko.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			YPl6zLnXtKno3TNY/BIj0W6I9mlqZ7YhSOa/6v4QHVg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/ms.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wXzwrWRoQrN8I5PmLGsxXixSBxpedaYCiQXqY82uiQw=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/nl.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			J4uHCZGNypnCfNidppe9kHpgpIR5u3MVlDWME/Nd7hQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/pl.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			YK8mEk8idwYRPjhO0j/IFOuhI7M6DIUsema/3e+kIUk=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/pt-BR.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			JW83bBbOBexTFlLGZF7Kz/L4+2EFpKBmGkF8cNpOYyA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/pt.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			JW83bBbOBexTFlLGZF7Kz/L4+2EFpKBmGkF8cNpOYyA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/ro.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			D6fze7ikM8ZdRRPRcskPZRXuukhDAZPbO4LYylAdnq8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/ru.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kX2PTs0/gkxFuhKsZSdDQ8cQSdgmC7IO2RPEuR8qVLs=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/sk.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1AVsDsZiHh+1A5AJYDS0Y7ejydIFr2Fk6fdW7JK7w5M=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/tr.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ggavymadm0jrhdMFlgzBHlF6okjAULifx4rcj0zT+qo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/vi.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HBDho/CHxq167q0X+NDTRzncPFjtA30P0JRm9urBXAA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/zh-Hans.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sOWecZADc259Yep3XGbJcTbgmn2JXvVPkh7S6uaXt1Q=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/TOCropViewControllerBundle.bundle/zh-Hant.lproj/TOCropViewControllerLocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			teEdEmvUad++KmbAGbmJ+lduOVy3BXAjeY1wkmP0LoE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/TOCropViewController.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nqcg565EWr+3GsgCHwWKeUHf2zV09aC9y/MdAolCwKw=
+			</data>
+		</dict>
+		<key>Frameworks/image_cropper.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4DTicdVL/OjOoINr9BqcSW0HUAsXiN8ESNuL9ZpvXjE=
+			</data>
+		</dict>
+		<key>Frameworks/image_cropper.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			85TAdGoYx3g2Q+DZyt3Z1FCMmh8l9iTfF3dOLae9APs=
+			</data>
+		</dict>
+		<key>Frameworks/image_cropper.framework/image_cropper</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			iOlfQaNMCWX/j1fBva3pn7lfs6/NDeUHV2XCOlR1hwE=
+			</data>
+		</dict>
+		<key>Frameworks/image_picker_ios.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+6VcdVYToq5OpaCq2KNDpUyN2BtwWx+8F6efK6oJ6pQ=
+			</data>
+		</dict>
+		<key>Frameworks/image_picker_ios.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nvpCs5J1FtLETdzcLEHVv3rKILWPWHN17xcbizStrC4=
+			</data>
+		</dict>
+		<key>Frameworks/image_picker_ios.framework/image_picker_ios</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sN+4DhagowS+T19w1fCWgJIdfASWEIf+WFo3FENVJD0=
+			</data>
+		</dict>
+		<key>Frameworks/smart_auth.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dRyA7h+cGjNMcsak36cf+GDm4uWBqwU5TUhw+jFgATE=
+			</data>
+		</dict>
+		<key>Frameworks/smart_auth.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			DFeJm9VYokRg0iSdBnRdZHVha4vqQ690KbgLmm6W3xk=
+			</data>
+		</dict>
+		<key>Frameworks/smart_auth.framework/smart_auth</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			MJwRd6VpfTrtofyiZhrZFaOBjhvhEbM8+jKOUWYoC1w=
+			</data>
+		</dict>
+		<key>Frameworks/url_launcher_ios.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			jr9fyJ7dVsEvxBrctvnUfqrLWEXswL+I1RtRVQy1Y+I=
+			</data>
+		</dict>
+		<key>Frameworks/url_launcher_ios.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lJG0XNWH9EEEYcqiN1fiVjlR2vRIsF1uPafK+d0gwKw=
+			</data>
+		</dict>
+		<key>Frameworks/url_launcher_ios.framework/url_launcher_ios</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			C0SVYoM8NMd7CeYlKMz7Ff12VbznCCygOuaWN9eJJTs=
 			</data>
 		</dict>
 	</dict>

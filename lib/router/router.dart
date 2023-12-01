@@ -3,14 +3,13 @@ import 'package:go_router/go_router.dart';
 
 import '../features/example/presentation/page/example_page.dart';
 import '../features/register/presentation/pages/register_options_page.dart';
-import '../features/register/presentation/pages/register_page.dart';
+import '../features/register/presentation/pages/register_steps/register_page.dart';
 import '../navigation_page/nav_page.dart';
 import 'router_info.dart';
 
 class AppRouter {
   static GoRouter router = GoRouter(
     initialLocation: RouterInfo.navigationPage.path,
-    debugLogDiagnostics: true,
     routes: <GoRoute>[
       GoRoute(
         path: RouterInfo.navigationPage.path,
