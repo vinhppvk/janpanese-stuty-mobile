@@ -57,12 +57,15 @@ class PasswordTextField extends StatelessWidget {
               child: SvgPicture.asset(IconAsset.password),
             ),
             suffixIcon: showObscureButton
-                ? IconButton(
-                    onPressed: () {
-                      onObscureButtonPressed?.call(!obscureText);
-                    },
-                    icon: SvgPicture.asset(
-                        obscureText ? IconAsset.eyeOpen : IconAsset.eyeClose),
+                ? Padding(
+                    padding: const EdgeInsets.only(right: 4.0),
+                    child: IconButton(
+                      onPressed: () {
+                        onObscureButtonPressed?.call(!obscureText);
+                      },
+                      icon: SvgPicture.asset(
+                          obscureText ? IconAsset.eyeOpen : IconAsset.eyeClose),
+                    ),
                   )
                 : null,
           ),

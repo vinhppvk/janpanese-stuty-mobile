@@ -1,7 +1,9 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
-import '../../core/config/theme/custom_themes/dropdown_button2.dart';
+import '../../core/config/asset/icon_asset.dart';
+import '../../core/config/theme/style/color.dart';
 import '../../core/config/theme/style/font_style.dart';
 
 class DropDownTextField<T> extends StatelessWidget {
@@ -13,16 +15,22 @@ class DropDownTextField<T> extends StatelessWidget {
     this.selectedValue,
     this.onChanged,
     this.menuItemText,
+    this.menuItemBuilder,
     this.hint,
   });
 
   final String? title;
+  final String? hint;
   final TextEditingController? controller;
   final List<T> items;
   final T? selectedValue;
   final Function(T? value)? onChanged;
+
+  /// Map item to DropdownMenuItem display text
   final String Function(T item)? menuItemText;
-  final String? hint;
+
+  /// Custom DropdownMenuItem child, will ignore menuItemText
+  final Widget Function(BuildContext, T item)? menuItemBuilder;
 
   @override
   Widget build(BuildContext context) {
@@ -43,40 +51,87 @@ class DropDownTextField<T> extends StatelessWidget {
   }
 
   Widget _buildTextField(BuildContext context) {
-    Widget? hint;
-
-    if (this.hint != null) {
-      hint = Text(
-        this.hint!,
-        style: TTextStyle.getBodyMedium(
-          fontWeight: TFontWeight.light,
-        ),
-      );
-    }
-
     return DropdownButtonHideUnderline(
       child: DropdownButtonFormField2<T>(
         isExpanded: true,
-        hint: hint,
-        items: items.map(_buildMenuItem).toList(),
+        hint: hint != null
+            ? Text(
+                this.hint!,
+                style: TTextStyle.getBodyMedium(
+                  fontWeight: TFontWeight.light,
+                ),
+              )
+            : null,
+        items: List<DropdownMenuItem<T>>.generate(
+          items.length,
+          (int index) => _buildMenuItem(context, index),
+        ),
+        selectedItemBuilder: (BuildContext context) =>
+            items.map(_buildSelectedItem).toList(),
         value: selectedValue,
         onChanged: onChanged,
-        decoration: TDropDownButton2.inputDecoration,
-        buttonStyleData: TDropDownButton2.buttonStyleData,
-        menuItemStyleData: TDropDownButton2.menuItemStyleData,
-        iconStyleData: TDropDownButton2.iconStyleData,
-        dropdownStyleData: TDropDownButton2.dropDownStyleData,
+        decoration: const InputDecoration(
+          contentPadding: EdgeInsets.zero,
+        ),
+        buttonStyleData: ButtonStyleData(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          height: 56.0,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+        ),
+        menuItemStyleData: const MenuItemStyleData(
+          padding: EdgeInsets.zero,
+        ),
+        dropdownStyleData: DropdownStyleData(
+          padding: EdgeInsets.zero,
+          maxHeight: 240.0,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+        ),
+        iconStyleData: IconStyleData(
+          icon: SvgPicture.asset(IconAsset.caretDown),
+          openMenuIcon: SvgPicture.asset(IconAsset.caretUp),
+        ),
       ),
     );
   }
 
-  DropdownMenuItem<T> _buildMenuItem(T item) {
+  DropdownMenuItem<T> _buildMenuItem(BuildContext context, int index) {
+    final T item = items[index];
+    final bool isLast = index == items.length - 1;
+
     return DropdownMenuItem<T>(
       value: item,
-      child: Text(
-        menuItemText?.call(item) ?? item.toString(),
-        style: TTextStyle.getBodyMedium(),
+      child: Container(
+        width: double.infinity,
+        height: 48.0,
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        alignment: Alignment.centerLeft,
+        decoration: BoxDecoration(
+          border: isLast
+              ? null
+              : const Border(
+                  bottom: BorderSide(
+                    width: 1.5,
+                    color: TColor.grey200,
+                  ),
+                ),
+        ),
+        child: menuItemBuilder?.call(context, item) ??
+            Text(
+              menuItemText?.call(item) ?? item.toString(),
+              style: TTextStyle.getBodyMedium(),
+            ),
       ),
+    );
+  }
+
+  Widget _buildSelectedItem(T item) {
+    return Text(
+      menuItemText?.call(item) ?? item.toString(),
+      style: TTextStyle.getBodyMedium(),
     );
   }
 }
