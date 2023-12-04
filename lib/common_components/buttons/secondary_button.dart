@@ -8,34 +8,39 @@ class SecondaryButton extends StatelessWidget {
     required this.text,
     required this.onPressed,
     this.textStyle,
+    this.size,
   });
 
   final String text;
   final VoidCallback? onPressed;
   final TextStyle? textStyle;
+  final Size? size;
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        minimumSize: const Size.fromHeight(56),
-        elevation: 0,
-        shape: const StadiumBorder(),
-        shadowColor: Colors.transparent,
-        backgroundColor: Colors.white,
-        side: const BorderSide(
-          color: TColor.secondary1000,
-          width: 1.5,
+    return SizedBox.fromSize(
+      size: size,
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          minimumSize: const Size.fromHeight(56),
+          elevation: 0,
+          shape: const StadiumBorder(),
+          shadowColor: Colors.transparent,
+          backgroundColor: Colors.white,
+          side: const BorderSide(
+            color: TColor.secondary1000,
+            width: 1.5,
+          ),
         ),
-      ),
-      child: Text(
-        text,
-        style: textStyle ??
-            TTextStyle.getBodyLarge(
-              fontWeight: TFontWeight.bold,
-              color: TColor.secondary1000,
-            ),
+        child: Text(
+          text,
+          style: textStyle ??
+              TTextStyle.getBodyLarge(
+                fontWeight: TFontWeight.bold,
+                color: TColor.secondary1000,
+              ),
+        ),
       ),
     );
   }
