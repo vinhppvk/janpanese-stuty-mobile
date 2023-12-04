@@ -43,6 +43,10 @@ class _NavigationPageState extends State<NavigationPage> {
         text: RouterInfo.examplePage.name,
         onPressed: () => context.pushNamed(RouterInfo.examplePage.name),
       ),
+      PrimaryButton(
+        text: RouterInfo.loginPage.name,
+        onPressed: () => context.pushNamed(RouterInfo.loginPage.name),
+      ),
     ];
   }
 }

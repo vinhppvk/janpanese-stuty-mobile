@@ -144,6 +144,18 @@ class TTextStyle {
     );
   }
 
+  static TextStyle getHeadingH3({
+    Color color = Colors.black,
+  }) {
+    return _getTextStyle(
+      TFontSize.s28,
+      TFontWeight.bold,
+      color,
+      FontAsset.satoshi,
+      height: TFontHeight.h140,
+    );
+  }
+
   static TextStyle getHeadingH4({
     Color color = Colors.black,
   }) {

@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		UcCzEm9Nmob7E7Z3gzlzRBTXr4c=
+		inlLoIqt7/IniIIWfbPo+ZokDq4=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		1Ne6xFCQ6s/ex5DKZ/xqdFExkYQ=
+		QY8AvOBE/uZ9xa9VsGL3k+zRmN4=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -80,6 +80,10 @@
 		<data>
 		fctZmU8r7hpO8fbAeboOmbQJh4s=
 		</data>
+		<key>flutter_assets/assets/icons/america_flag.svg</key>
+		<data>
+		TpsJ3NmZBi4I9S/uxHHfLgelU4U=
+		</data>
 		<key>flutter_assets/assets/icons/avatar.svg</key>
 		<data>
 		O6Dw0MnLR/bLS4/KD0hSQfmO3cE=
@@ -128,6 +132,10 @@
 		<data>
 		ljhb1uzuxdSFubJGGvzHMmPUh80=
 		</data>
+		<key>flutter_assets/assets/icons/facebook_big.svg</key>
+		<data>
+		pXSfylFD0I9lIJorxf2w6mfu8pk=
+		</data>
 		<key>flutter_assets/assets/icons/gallery.svg</key>
 		<data>
 		o96c9m+WSFqgUaYysxDNeLsK/u0=
@@ -135,6 +143,14 @@
 		<key>flutter_assets/assets/icons/google.svg</key>
 		<data>
 		edDN5ezYdNUgpjn7XDaODTobIQ4=
+		</data>
+		<key>flutter_assets/assets/icons/google_big.svg</key>
+		<data>
+		ktUgK65J5tnRnq/wATUfyJu1XKg=
+		</data>
+		<key>flutter_assets/assets/icons/indonesia_flag.svg</key>
+		<data>
+		BS1DY0ERx4eQI5wL4/eo3/9mBvE=
 		</data>
 		<key>flutter_assets/assets/icons/info_circle.svg</key>
 		<data>
@@ -144,6 +160,10 @@
 		<data>
 		m6WSZcNEHl5CQ+qWPtRGUgSL+jo=
 		</data>
+		<key>flutter_assets/assets/icons/vietnam_flag.svg</key>
+		<data>
+		/RfKC6dVXC9790Vmgno/yAsa7j4=
+		</data>
 		<key>flutter_assets/assets/icons/x_circle.svg</key>
 		<data>
 		uXnut8RoVJhIw3F1zBBqmwZeWqw=
@@ -151,6 +171,10 @@
 		<key>flutter_assets/assets/icons/zalo.svg</key>
 		<data>
 		xXHe5I92yZQBeGexoKwWQJljAtY=
+		</data>
+		<key>flutter_assets/assets/icons/zalo_big.svg</key>
+		<data>
+		JsEW9IIfH2fPVOlQArJGhhxZLu4=
 		</data>
 		<key>flutter_assets/assets/images/celebration_illustration.png</key>
 		<data>
@@ -170,7 +194,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		+ys4N4stadZMfwtvrI6GZbsRn2w=
+		DkIdCn46htQ8ajXnDGp1jT4qk3Y=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -191,14 +215,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oarD1dt50BiV+etV/d5RfSkdqxSJop+AtDAcgsG73g8=
+			FDiqrMuu+jbrhHv0zZDKmfiEeNsAWZiCncJoq2uN1cU=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			48wac23tAVSMf0rzBtIpqPMedMpuNZVUPIL9h1HbI0I=
+			/rzavqF9VZjVJtVr7vIUzv8Ep3ntlsl68YpR0ydZnbw=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -313,6 +337,13 @@
 			cRxiQ83FQx+cyWbk3hi/uUA2W62BrP/R55SNvj8lQ4Y=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/icons/america_flag.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VA/0tJOjBSvwJbk0rV3iF8JI5XClrfeSG3VMJ7zZmF8=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/icons/avatar.svg</key>
 		<dict>
 			<key>hash2</key>
@@ -397,6 +428,13 @@
 			agvqui9OHhtHhzZ5kQQQXBGYLf9/Jz781iJNsv5haNE=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/icons/facebook_big.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QcYIPxxAk1e0GF4Won3LYfMjOzmUrhiH+TwrdanXxFY=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/icons/gallery.svg</key>
 		<dict>
 			<key>hash2</key>
@@ -409,6 +447,20 @@
 			<key>hash2</key>
 			<data>
 			1SMCLLirX9cTUvqmCdSXCD97cluD2NmgJYA31Jv8poE=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/icons/google_big.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Vz0yPN62tpB7hPz0vjOcFDhe4QxxrkLlxIz4tXVA5KA=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/icons/indonesia_flag.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UZafufP2lmbwpcKL6OO3mORyS2StsEAoATOjLpZlTCs=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/icons/info_circle.svg</key>
@@ -425,6 +477,13 @@
 			4pmhh83vrqYh4BYqc0PiVpAv1z8nCsDVfXxVR1P2xAc=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/icons/vietnam_flag.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ElcqZXiDmFe7UiIzmVOW3iwTb7cNM+GnwfER3XQEeSI=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/icons/x_circle.svg</key>
 		<dict>
 			<key>hash2</key>
@@ -437,6 +496,13 @@
 			<key>hash2</key>
 			<data>
 			M4HhQUXXOyQflfxY/iTh5PVd+OdsDpX6bZ/mbNLA3hw=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/icons/zalo_big.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ts2plNPJdXp9sJiDPEprSuYn9V3SpFgVOxl1g+5WrRw=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/images/celebration_illustration.png</key>
@@ -471,7 +537,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kOL6oMOVAmNIlHcyjjpr55/GoAPQsCL5a58O+R4CnlI=
+			6SXdU8+lUGOSaohFZDN9xBtNqS08Sgzqi6Y4NHalYvo=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

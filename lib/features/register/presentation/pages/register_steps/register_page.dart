@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../common_components/app_bar/custom_app_bar.dart';
-import '../../components/register_step_indicator.dart';
 import 'register_step_1.dart';
 import 'register_step_2.dart';
 import 'register_step_3.dart';

@@ -26,5 +26,6 @@ class TTheme {
     dividerColor: TColor.grey200,
     dropdownMenuTheme: TDropDownMenu.lightTheme,
     checkboxTheme: TCheckbox.lightTheme,
+    shadowColor: TColor.grey300,
   );
 }

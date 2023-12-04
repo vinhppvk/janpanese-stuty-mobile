@@ -3,6 +3,8 @@ class ValidationMessages {
 
   static String cm001() => 'The input value went wrong. Please try again.';
 
+  static String cm002() => 'Login Failed';
+
   static String m001(String fieldName) => 'The $fieldName field is required';
 
   static String m002() => 'The email must be a valid email address.';

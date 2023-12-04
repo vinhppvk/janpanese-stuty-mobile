@@ -5,6 +5,7 @@ class TColor {
 
   // Primary
   static const Color primary1000 = Color(0xFF017BFE);
+  static const Color primary500 = Color(0x80017BFE);
 
   // Secondary
   static const Color secondary1000 = Color(0xFF154281);
@@ -18,6 +19,7 @@ class TColor {
   // Greyscale
   static const Color grey200 = Color(0xFFE5E7EB);
   static const Color grey300 = Color(0xFFD1D5DB);
+  static const Color grey400 = Color(0xFF9CA3AF);
   static const Color grey500 = Color(0xFF6B7280);
   static const Color grey600 = Color(0xFF4B5563);
 

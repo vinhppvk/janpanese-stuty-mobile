@@ -20,4 +20,10 @@ class IconAsset {
   static const String infoCircle = '$_dir/info_circle.svg';
   static const String banCircle = '$_dir/ban_circle.svg';
   static const String checkCircle = '$_dir/check_circle.svg';
+  static const String facebookBig = '$_dir/facebook_big.svg';
+  static const String googleBig = '$_dir/google_big.svg';
+  static const String zaloBig = '$_dir/zalo_big.svg';
+  static const String americaFlag = '$_dir/america_flag.svg';
+  static const String vietnamFlag = '$_dir/vietnam_flag.svg';
+  static const String indonesiaFlag = '$_dir/indonesia_flag.svg';
 }

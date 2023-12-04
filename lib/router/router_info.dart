@@ -2,16 +2,18 @@ enum RouterInfo {
   navigationPage,
   examplePage,
   registerOptionsPage,
-  registerPage;
+  registerPage,
+  loginPage;
 }
 
 extension RouterInfoX on RouterInfo {
   String get path {
     return switch (this) {
       RouterInfo.navigationPage => '/',
-      RouterInfo.examplePage => '/examplePage',
-      RouterInfo.registerOptionsPage => '/registerOptionsPage',
-      RouterInfo.registerPage => '/registerPage',
+      RouterInfo.examplePage => 'examplePage',
+      RouterInfo.registerOptionsPage => 'registerOptionsPage',
+      RouterInfo.registerPage => 'registerPage',
+      RouterInfo.loginPage => 'login',
     };
   }
 
@@ -21,6 +23,7 @@ extension RouterInfoX on RouterInfo {
       RouterInfo.examplePage => 'Example Page',
       RouterInfo.registerOptionsPage => 'Register Options Page',
       RouterInfo.registerPage => 'Register Page',
+      RouterInfo.loginPage => 'Login Page',
     };
   }
 }

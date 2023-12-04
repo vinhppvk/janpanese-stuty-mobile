@@ -19,11 +19,15 @@ class SearchDropDownTextField<T> extends StatelessWidget {
     this.hint,
     this.searchHint,
     this.menuItemBuilder,
+    this.height = 56.0,
+    this.width,
   });
 
   final String? title;
   final String? hint;
   final String? searchHint;
+  final double? height;
+  final double? width;
   final TextEditingController? controller;
   final List<T> items;
   final T? selectedValue;
@@ -67,18 +71,26 @@ class SearchDropDownTextField<T> extends StatelessWidget {
                 ),
               )
             : null,
-        items: List<DropdownMenuItem<T>>.generate(
-            items.length, (int index) => _buildMenuItem(context, index)),
-        selectedItemBuilder: (BuildContext context) =>
-            items.map(_buildSelectedItem).toList(),
+        items: List<DropdownMenuItem<T>>.generate(items.length,
+            (int index) => _buildDropdownMenuItem(context, index)),
+        selectedItemBuilder: (BuildContext context) => items
+            .map(
+              (T item) =>
+                  menuItemBuilder?.call(context, item) ?? _buildMenuItem(item),
+            )
+            .toList(),
         value: selectedValue,
         onChanged: onChanged,
-        decoration: const InputDecoration(
-          contentPadding: EdgeInsets.zero,
-        ),
+        decoration: InputDecoration(
+            contentPadding: EdgeInsets.zero,
+            constraints: BoxConstraints(
+              maxHeight: height ?? 56.0,
+              maxWidth: width ?? double.infinity,
+            )),
         buttonStyleData: ButtonStyleData(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          height: 56.0,
+          height: height,
+          width: width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12.0),
           ),
@@ -113,7 +125,7 @@ class SearchDropDownTextField<T> extends StatelessWidget {
     );
   }
 
-  DropdownMenuItem<T> _buildMenuItem(BuildContext context, int index) {
+  DropdownMenuItem<T> _buildDropdownMenuItem(BuildContext context, int index) {
     final T item = items[index];
     final bool isLast = index == items.length - 1;
 
@@ -134,18 +146,16 @@ class SearchDropDownTextField<T> extends StatelessWidget {
                   ),
                 ),
         ),
-        child: menuItemBuilder?.call(context, item) ??
-            Text(
-              menuItemText?.call(item) ?? item.toString(),
-              style: TTextStyle.getBodyMedium(),
-            ),
+        child: menuItemBuilder?.call(context, item) ?? _buildMenuItem(item),
       ),
     );
   }
 
-  Widget _buildSelectedItem(T item) {
+  Widget _buildMenuItem(T item) {
     return Text(
       menuItemText?.call(item) ?? item.toString(),
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
       style: TTextStyle.getBodyMedium(),
     );
   }

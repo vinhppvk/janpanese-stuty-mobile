@@ -192,7 +192,7 @@ class SupportValidators {
   }) =>
       (String? valueCandidate) =>
           (valueCandidate?.isNotEmpty ?? false) && !isEmail(valueCandidate!)
-              ? errorText ?? ValidationMessages.undefined()
+              ? errorText ?? ValidationMessages.m002()
               : null;
 
   static FormFieldValidator<String> phone({

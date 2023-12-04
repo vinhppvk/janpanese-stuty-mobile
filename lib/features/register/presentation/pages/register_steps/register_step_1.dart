@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../common_components/buttons/primary_button.dart';
 import '../../../../../common_components/checkbox/checkbox_form_field.dart';
@@ -23,6 +24,7 @@ import '../../../../../core/utils/helper/open_webview.dart';
 import '../../../../../core/utils/helper/snack_bar.dart';
 import '../../../../../core/utils/validator/support_validator.dart';
 import '../../../../../core/utils/validator/validation_messages.dart';
+import '../../../../../router/router_info.dart';
 import '../../../domain/entities/register_step_1/country_code.dart';
 import '../../../domain/entities/register_step_1/nationality.dart';
 import '../../../utils/constant/register_key.dart';
@@ -137,7 +139,8 @@ class _RegisterStep1State extends State<RegisterStep1> {
               color: TColor.primary1000,
               decoration: TextDecoration.underline,
             ),
-            recognizer: TapGestureRecognizer()..onTap = () {},
+            recognizer: TapGestureRecognizer()
+              ..onTap = () => context.goNamed(RouterInfo.loginPage.name),
           ),
         ],
       ),
