@@ -8,7 +8,7 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../core/config/asset/icon_asset.dart';
 import '../../core/config/theme/style/color.dart';
-import '../../core/utils/class/option_action.dart';
+import '../../core/utils/model/option_action.dart';
 import '../../core/utils/validator/support_validator.dart';
 import '../dialog/option_dialog.dart';
 

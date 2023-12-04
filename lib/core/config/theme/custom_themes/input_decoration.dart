@@ -33,7 +33,10 @@ class TInputDecoration {
         vertical: 12.0,
         horizontal: 16.0,
       ),
-      hintStyle: TTextStyle.getBodyMedium(fontWeight: TFontWeight.light),
+      hintStyle: TTextStyle.getBodyMedium(
+        fontWeight: TFontWeight.light,
+        color: TColor.grey600,
+      ),
       labelStyle: TTextStyle.getBodyMedium(),
       helperStyle: TTextStyle.getBodySmall(fontWeight: TFontWeight.medium),
       errorStyle: TTextStyle.getBodySmall(

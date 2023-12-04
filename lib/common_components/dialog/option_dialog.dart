@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/config/theme/style/color.dart';
 import '../../core/config/theme/style/font_style.dart';
-import '../../core/utils/class/option_action.dart';
+import '../../core/utils/model/option_action.dart';
 
 class OptionDialog extends StatelessWidget {
   const OptionDialog({
