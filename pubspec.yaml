@@ -38,6 +38,15 @@ dependencies:
 
   # Routing
   go_router: ^12.1.1
+  flutter_svg: ^2.0.9
+  image_picker: ^1.0.4
+  image_cropper: ^5.0.1
+  dropdown_button2: ^2.3.9
+  intl: ^0.18.1
+  url_launcher: ^6.2.1
+  pinput: ^3.0.1
+  get_it: ^7.6.4
+  freezed: ^2.4.5
 
 dev_dependencies:
   flutter_test:
@@ -98,10 +107,19 @@ flutter:
           weight: 800
         - asset: assets/fonts/Inter-Black.ttf
           weight: 900
-    
-    - family: Satoshi-Variable
+
+    - family: Satoshi
       fonts:
-        - asset: assets/fonts/Satoshi-Variable.ttf
+        - asset: assets/fonts/Satoshi-Light.otf
+          weight: 300
+        - asset: assets/fonts/Satoshi-Regular.otf
+          weight: 400
+        - asset: assets/fonts/Satoshi-Medium.otf
+          weight: 500
+        - asset: assets/fonts/Satoshi-Bold.otf
+          weight: 700
+        - asset: assets/fonts/Satoshi-Black.otf
+          weight: 900
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

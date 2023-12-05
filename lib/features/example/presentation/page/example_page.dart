@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../../common_components/app_bar/custom_app_bar.dart';
 
 class ExamplePage extends StatefulWidget {
   const ExamplePage({super.key});
@@ -11,8 +14,11 @@ class _ExamplePageState extends State<ExamplePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Example Page'),
+      appBar: CustomAppBar(
+        text: 'Example Page',
+        onBackPressed: () {
+          context.pop();
+        },
       ),
       body: const Placeholder(),
     );
