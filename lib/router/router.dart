@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../features/example/presentation/page/example_page.dart';
-import '../features/login/presentation/pages/login_page.dart';
-import '../features/register/presentation/pages/register_options_page.dart';
-import '../features/register/presentation/pages/register_steps/register_page.dart';
-import '../navigation_page/nav_page.dart';
+import '../presentation/example/page/example_page.dart';
+import '../presentation/login/page/login_page.dart';
+import '../presentation/register/page/register_options_page.dart';
+import '../presentation/register/page/register_steps/register_page.dart';
+
+import 'nav_page.dart';
 import 'router_info.dart';
 
 class AppRouter {
