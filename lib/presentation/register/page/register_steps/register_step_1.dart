@@ -12,8 +12,6 @@ import '../../../../../app/utils/enum/gender.dart';
 import '../../../../../app/utils/enum/snackbar_mode.dart';
 import '../../../../../app/utils/validator/support_validator.dart';
 import '../../../../../app/utils/validator/validation_messages.dart';
-import '../../../../../domain/model/dto/register_step_1/country_code.dart';
-import '../../../../../domain/model/dto/register_step_1/nationality.dart';
 import '../../../../../presentation/register/utils/register_key.dart';
 import '../../../../../router/router_info.dart';
 import '../../../../app/theme/style/font_style.dart';
@@ -28,6 +26,8 @@ import '../../../../app/widget/text_field/drop_down_text_field.dart';
 import '../../../../app/widget/text_field/normal_text_field.dart';
 import '../../../../app/widget/text_field/password_text_field.dart';
 import '../../../../app/widget/text_field/search_drop_down_text_field.dart';
+import '../../../../data/model/dto/register_step_1/country_code.dart';
+import '../../../../data/model/dto/register_step_1/nationality.dart';
 import '../../utils/register_step.dart';
 import '../../widget/register_step_indicator.dart';
 
