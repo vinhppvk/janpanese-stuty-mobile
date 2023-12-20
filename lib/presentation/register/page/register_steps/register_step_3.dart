@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../../app/asset/image_asset.dart';
 
-import '../../../../app/theme/style/color.dart';
 import '../../../../app/theme/style/font_style.dart';
+import '../../../../app/utils/extension/build_context.dart';
 import '../../../../app/widget/buttons/primary_button.dart';
 import '../../utils/register_step.dart';
 import '../../widget/register_step_indicator.dart';
@@ -36,7 +36,7 @@ class _RegisterStep3State extends State<RegisterStep3> {
                 Text(
                   'SIGN UP COMPLETED',
                   style: TTextStyle.getHeadingH4(
-                    color: TColor.secondary1000,
+                    color: context.colorScheme.secondary,
                   ),
                 ),
                 const SizedBox(height: 8.0),
@@ -46,7 +46,7 @@ class _RegisterStep3State extends State<RegisterStep3> {
                 ),
                 const SizedBox(height: 32.0),
                 PrimaryButton(
-                  text: 'Sign In',
+                  text: const Text('Sign In'),
                   onPressed: widget.onContinue,
                 ),
                 const SizedBox(height: 32.0),

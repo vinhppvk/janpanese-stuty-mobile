@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 
-import '../../theme/style/color.dart';
 import '../../theme/style/font_style.dart';
+import '../../utils/extension/build_context.dart';
 
 class OtpTextField extends StatelessWidget {
   const OtpTextField({
@@ -33,7 +33,7 @@ class OtpTextField extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0),
         border: Border.all(
-          color: TColor.grey200,
+          color: context.colorScheme.outline,
           width: 1.5,
         ),
       ),
@@ -57,26 +57,26 @@ class OtpTextField extends StatelessWidget {
             errorText.toString(),
             style: TTextStyle.getBodyLarge(
               fontWeight: TFontWeight.medium,
-              color: TColor.error1000,
+              color: context.colorScheme.error,
             ),
           ),
         );
       },
       onTap: onTap,
       onTapOutside: (PointerDownEvent event) {
-        FocusScope.of(context).unfocus();
+        context.focusScope.unfocus();
       },
       defaultPinTheme: defaultPinTheme,
       focusedPinTheme: defaultPinTheme.copyBorderWith(
         border: Border.all(
-          color: TColor.primary1000,
+          color: context.colorScheme.primary,
           width: 1.5,
         ),
       ),
       submittedPinTheme: defaultPinTheme,
       errorPinTheme: defaultPinTheme.copyBorderWith(
         border: Border.all(
-          color: TColor.error1000,
+          color: context.colorScheme.error,
           width: 1.5,
         ),
       ),

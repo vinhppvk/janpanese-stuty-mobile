@@ -5,8 +5,8 @@ import 'package:go_router/go_router.dart';
 import '../../../../../app/asset/image_asset.dart';
 
 import '../../../../../app/utils/validator/validation_messages.dart';
-import '../../../../app/theme/style/color.dart';
 import '../../../../app/theme/style/font_style.dart';
+import '../../../../app/utils/extension/build_context.dart';
 import '../../../../app/widget/buttons/primary_button.dart';
 import '../../../../app/widget/dialog/custom_alert_dialog.dart';
 import '../../../../app/widget/text_field/otp_text_field.dart';
@@ -54,16 +54,16 @@ class _RegisterStep2State extends State<RegisterStep2> {
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Column(
               children: <Widget>[
-                buildHeader(),
+                _header(),
                 const SizedBox(height: 32.0),
-                buildOtpField(),
+                _otpField(),
                 const SizedBox(height: 24.0),
                 PrimaryButton(
-                  text: 'Verify',
+                  text: const Text('Verify'),
                   onPressed: onContinuePressed,
                 ),
                 const SizedBox(height: 16.0),
-                buildFooter(),
+                _footer(),
               ],
             ),
           ),
@@ -72,7 +72,7 @@ class _RegisterStep2State extends State<RegisterStep2> {
     );
   }
 
-  Widget buildHeader() {
+  Widget _header() {
     return Column(
       children: <Widget>[
         Text(
@@ -101,7 +101,7 @@ class _RegisterStep2State extends State<RegisterStep2> {
     );
   }
 
-  Widget buildOtpField() {
+  Widget _otpField() {
     return OtpTextField(
       controller: _pinController,
       focusNode: _pinNode,
@@ -110,7 +110,7 @@ class _RegisterStep2State extends State<RegisterStep2> {
     );
   }
 
-  Widget buildFooter() {
+  Widget _footer() {
     return Column(
       children: <Widget>[
         Text.rich(
@@ -122,7 +122,7 @@ class _RegisterStep2State extends State<RegisterStep2> {
                 text: 'Resend',
                 style: TTextStyle.getBodyMedium(
                   fontWeight: TFontWeight.bold,
-                  color: TColor.primary1000,
+                  color: context.colorScheme.primary,
                   decoration: TextDecoration.underline,
                 ),
                 recognizer: TapGestureRecognizer()
@@ -148,9 +148,9 @@ class _RegisterStep2State extends State<RegisterStep2> {
   }
 
   void resendOtpCode(BuildContext context) {
-    final Widget dialog = CustomAlertDialog(
-      title: 'Resend OTP Success!',
-      message: 'We have just send you a 5 digit code via email',
+    final Widget dialog = CustomAlertDialog.singleBtn(
+      title: const Text('Resend OTP Success!'),
+      message: const Text('We have just send you a 5 digit code via email'),
       image: Image.asset(ImageAsset.emailIllustration),
       onPrimaryAction: () {
         context.pop();

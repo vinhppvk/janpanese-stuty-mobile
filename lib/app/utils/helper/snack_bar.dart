@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../app/utils/enum/snackbar_mode.dart';
-import '../../theme/style/color.dart';
 import '../../theme/style/font_style.dart';
+import '../extension/build_context.dart';
 
 void showCustomSnackBar(
   BuildContext context, {
@@ -13,7 +13,7 @@ void showCustomSnackBar(
 }) {
   final Widget leadingIcon = icon ?? SvgPicture.asset(mode.iconAsset);
   
-  ScaffoldMessenger.of(context).showSnackBar(
+  context.scaffoldMessenger.showSnackBar(
     SnackBar(
       content: Row(
         children: <Widget>[
@@ -29,7 +29,7 @@ void showCustomSnackBar(
           ),
         ],
       ),
-      backgroundColor: TColor.white,
+      backgroundColor: context.colorScheme.surface,
       behavior: SnackBarBehavior.floating,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),

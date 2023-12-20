@@ -8,6 +8,7 @@ import '../../../app/theme/style/color.dart';
 import '../../../app/theme/style/font_style.dart';
 import '../../../app/utils/enum/snackbar_mode.dart';
 import '../../../app/utils/enum/supported_region.dart';
+import '../../../app/utils/extension/build_context.dart';
 import '../../../app/utils/helper/snack_bar.dart';
 import '../../../app/utils/validator/support_validator.dart';
 import '../../../app/utils/validator/validation_messages.dart';
@@ -50,13 +51,25 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             children: <Widget>[
               const SizedBox(height: 32.0),
-              _buildHeader(),
+              _header(),
               const SizedBox(height: 16.0),
-              _buildInputField(),
+              _textFields(),
               const SizedBox(height: 32.0),
-              _buildActionField(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: PrimaryButton(
+                  text: const Text('Sign In'),
+                  onPressed: () => onSignInPressed(context),
+                ),
+              ),
+              const SizedBox(height: 24.0),
+              const LabelDivider(text: 'Or continue with'),
+              const SizedBox(height: 24.0),
+              _thirdParyButtons(),
               const SizedBox(height: 40.0),
-              _buildFooter(),
+              _languageDropDown(),
+              const SizedBox(height: 24.0),
+              _footer(),
               const SizedBox(height: 24.0),
             ],
           ),
@@ -65,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _buildHeader() {
+  Widget _header() {
     return Column(
       children: <Widget>[
         Container(
@@ -80,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
             'APP LOGO',
             style: TTextStyle.getBodyLarge(
               fontWeight: TFontWeight.bold,
-              color: TColor.white,
+              color: context.colorScheme.onPrimary,
             ),
           ),
         ),
@@ -93,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _buildInputField() {
+  Widget _textFields() {
     return Form(
       key: _formKey,
       child: Column(
@@ -137,7 +150,7 @@ class _LoginPageState extends State<LoginPage> {
               text: 'Forgot password',
               style: TTextStyle.getBodyMedium(
                 fontWeight: TFontWeight.bold,
-                color: TColor.primary1000,
+                color: context.colorScheme.primary,
                 decoration: TextDecoration.underline,
               ),
               recognizer: TapGestureRecognizer()..onTap = () {},
@@ -148,19 +161,9 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _buildActionField() {
+  Widget _thirdParyButtons() {
     return Column(
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: PrimaryButton(
-            text: 'Sign In',
-            onPressed: () => onSignInPressed(context),
-          ),
-        ),
-        const SizedBox(height: 24.0),
-        const LabelDivider(text: 'Or continue with'),
-        const SizedBox(height: 24.0),
         Wrap(
           spacing: 24.0,
           children: <Widget>[
@@ -178,42 +181,22 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ],
         ),
-        const SizedBox(height: 40.0),
-        DropDownTextField<SupportedRegion>(
-          width: 160.0,
-          height: 48.0,
-          items: SupportedRegion.values,
-          selectedValue: _selectedRegion,
-          menuItemBuilder: _buildSupportedLanguageMenuItem,
-          onChanged: (SupportedRegion? value) {
-            setState(() {
-              _selectedRegion = value;
-            });
-          },
-        ),
       ],
     );
   }
 
-  Widget _buildFooter() {
-    return Text.rich(
-      TextSpan(
-        text: 'Don’t have an account? ',
-        style: TTextStyle.getBodyMedium(),
-        children: <TextSpan>[
-          TextSpan(
-            text: 'Sign up',
-            style: TTextStyle.getBodyMedium(
-              fontWeight: TFontWeight.bold,
-              color: TColor.primary1000,
-              decoration: TextDecoration.underline,
-            ),
-            recognizer: TapGestureRecognizer()
-              ..onTap =
-                  () => context.pushNamed(RouterInfo.registerOptionsPage.name),
-          ),
-        ],
-      ),
+  Widget _languageDropDown() {
+    return DropDownTextField<SupportedRegion>(
+      width: 160.0,
+      height: 48.0,
+      items: SupportedRegion.values,
+      selectedValue: _selectedRegion,
+      menuItemBuilder: _buildSupportedLanguageMenuItem,
+      onChanged: (SupportedRegion? value) {
+        setState(() {
+          _selectedRegion = value;
+        });
+      },
     );
   }
 
@@ -223,13 +206,13 @@ class _LoginPageState extends State<LoginPage> {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: <Widget>[
         Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             shape: BoxShape.circle,
             boxShadow: <BoxShadow>[
               BoxShadow(
-                color: TColor.grey300,
+                color: context.colorScheme.shadow,
                 blurRadius: 4,
-                offset: Offset(0, 1),
+                offset: const Offset(0, 1),
               ),
             ],
           ),
@@ -247,6 +230,28 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _footer() {
+    return Text.rich(
+      TextSpan(
+        text: 'Don’t have an account? ',
+        style: TTextStyle.getBodyMedium(),
+        children: <TextSpan>[
+          TextSpan(
+            text: 'Sign up',
+            style: TTextStyle.getBodyMedium(
+              fontWeight: TFontWeight.bold,
+              color: context.colorScheme.primary,
+              decoration: TextDecoration.underline,
+            ),
+            recognizer: TapGestureRecognizer()
+              ..onTap =
+                  () => context.pushNamed(RouterInfo.registerOptionsPage.name),
+          ),
+        ],
+      ),
     );
   }
 

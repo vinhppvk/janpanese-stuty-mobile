@@ -20,23 +20,23 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        text: 'Sign Up',
+        title: const Text('Sign Up'),
         onBackPressed: () => context.pop(),
       ),
-      body: buildBody(),
+      body: _getStep(),
     );
   }
 
-  Widget buildBody() {
+  Widget _getStep() {
     return switch (_currentStep) {
-      0 => RegisterStep1(onContinue: updateCounter),
-      1 => RegisterStep2(onContinue: updateCounter),
-      2 => RegisterStep3(onContinue: updateCounter),
+      0 => RegisterStep1(onContinue: _updateCounter),
+      1 => RegisterStep2(onContinue: _updateCounter),
+      2 => RegisterStep3(onContinue: _updateCounter),
       _ => const SizedBox(),
     };
   }
 
-  void updateCounter() {
+  void _updateCounter() {
     setState(() {
       if (_currentStep >= 2) {
         // Go back to login page

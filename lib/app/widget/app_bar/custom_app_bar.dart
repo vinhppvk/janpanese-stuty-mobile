@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../asset/icon_asset.dart';
-import '../../theme/style/color.dart';
 import '../../theme/style/font_style.dart';
+import '../../utils/extension/build_context.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     super.key,
     this.height = kToolbarHeight,
-    required this.text,
+    required this.title,
     this.onBackPressed,
   });
 
   final double height;
-  final String text;
+  final Widget title;
   final VoidCallback? onBackPressed;
 
   @override
@@ -25,11 +25,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return SafeArea(
       child: Container(
         height: height,
-        decoration: const BoxDecoration(
-          color: TColor.white,
+        decoration: BoxDecoration(
+          color: context.colorScheme.background,
           border: Border(
             bottom: BorderSide(
-              color: TColor.grey200,
+              color: context.colorScheme.outline,
               width: 1.5,
             ),
           ),
@@ -39,12 +39,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           children: <Widget>[
             _buildBackButton(),
             Expanded(
-              child: Text(
-                text,
+              child: DefaultTextStyle.merge(
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: TTextStyle.getBodyLarge(fontWeight: TFontWeight.bold),
+                child: title,
               ),
             ),
             const SizedBox(width: kMinInteractiveDimension),

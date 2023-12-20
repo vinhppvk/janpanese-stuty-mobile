@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../app/theme/style/color.dart';
 import '../../../app/theme/style/font_style.dart';
+import '../../../app/utils/extension/build_context.dart';
 import '../utils/register_step.dart';
 
 class RegisterStepIndicator extends StatelessWidget {
@@ -27,7 +28,9 @@ class RegisterStepIndicator extends StatelessWidget {
             height: 24,
             padding: const EdgeInsets.only(bottom: 2.0),
             decoration: BoxDecoration(
-              color: i <= currentIndex ? TColor.success1000 : TColor.grey300,
+              color: i <= currentIndex
+                  ? TColor.success1000
+                  : context.colorScheme.onInverseSurface,
               shape: BoxShape.circle,
             ),
             alignment: Alignment.center,
@@ -35,7 +38,7 @@ class RegisterStepIndicator extends StatelessWidget {
               '${i + 1}',
               style: TTextStyle.getBodyMedium(
                 fontWeight: TFontWeight.bold,
-                color: TColor.white,
+                color: context.colorScheme.onPrimary,
               ),
             ),
           ),
@@ -55,8 +58,9 @@ class RegisterStepIndicator extends StatelessWidget {
             child: Divider(
               thickness: 1.5,
               height: 1.5,
-              color:
-                  i <= (currentIndex - 1) ? TColor.success1000 : TColor.grey300,
+              color: i <= (currentIndex - 1)
+                  ? TColor.success1000
+                  : context.colorScheme.onInverseSurface,
               indent: 4.0,
               endIndent: 4.0,
             ),
@@ -69,7 +73,7 @@ class RegisterStepIndicator extends StatelessWidget {
       margin: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 24.0),
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: TColor.background,
+        color: context.colorScheme.inverseSurface,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(

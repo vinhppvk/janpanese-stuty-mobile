@@ -15,7 +15,7 @@ class _ExamplePageState extends State<ExamplePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        text: 'Example Page',
+        title: const Text('Example Page'),
         onBackPressed: () {
           context.pop();
         },

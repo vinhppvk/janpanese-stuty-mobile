@@ -8,6 +8,7 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../asset/icon_asset.dart';
 import '../../theme/style/color.dart';
+import '../../utils/extension/build_context.dart';
 import '../../utils/validator/support_validator.dart';
 import '../dialog/option_dialog.dart';
 
@@ -25,7 +26,7 @@ class AvatarPicker extends StatelessWidget {
   final String? imageUrl;
   final Function(File? imageFile) onImageChanged;
   final FormFieldValidator<File>? validator;
-  final Function(String errorText)? onValidationError; 
+  final Function(String errorText)? onValidationError;
 
   FormFieldValidator<File> get defaultValidator =>
       SupportValidators.file(5, FileCapacityUnit.mb, fieldName: 'image');
@@ -51,8 +52,10 @@ class AvatarPicker extends StatelessWidget {
       final Widget clearButton = Container(
         padding: const EdgeInsets.all(2.0),
         margin: const EdgeInsets.only(top: 11.0, right: 12.0),
-        decoration:
-            const BoxDecoration(color: TColor.white, shape: BoxShape.circle),
+        decoration: BoxDecoration(
+          color: context.colorScheme.onPrimary,
+          shape: BoxShape.circle,
+        ),
         child: SizedBox.square(
           dimension: 24.0,
           child: IconButton(
@@ -78,7 +81,7 @@ class AvatarPicker extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
-                color: TColor.grey200,
+                color: context.colorScheme.outline,
                 width: 3.0,
               ),
             ),
@@ -152,7 +155,7 @@ class AvatarPicker extends StatelessWidget {
           AndroidUiSettings(
               toolbarTitle: 'Cropper',
               toolbarColor: TColor.primary1000,
-              toolbarWidgetColor: Colors.white,
+              toolbarWidgetColor: TColor.white,
               initAspectRatio: CropAspectRatioPreset.original,
               lockAspectRatio: false),
           IOSUiSettings(

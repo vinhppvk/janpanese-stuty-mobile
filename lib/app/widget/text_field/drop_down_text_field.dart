@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../asset/icon_asset.dart';
-import '../../theme/style/color.dart';
 import '../../theme/style/font_style.dart';
+import '../../utils/extension/build_context.dart';
 
 class DropDownTextField<T> extends StatelessWidget {
   const DropDownTextField({
@@ -125,10 +125,10 @@ class DropDownTextField<T> extends StatelessWidget {
         decoration: BoxDecoration(
           border: isLast
               ? null
-              : const Border(
+              : Border(
                   bottom: BorderSide(
                     width: 1.5,
-                    color: TColor.grey200,
+                    color: context.colorScheme.outline,
                   ),
                 ),
         ),

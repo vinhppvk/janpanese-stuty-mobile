@@ -16,8 +16,8 @@ import '../../../../../domain/model/dto/register_step_1/country_code.dart';
 import '../../../../../domain/model/dto/register_step_1/nationality.dart';
 import '../../../../../presentation/register/utils/register_key.dart';
 import '../../../../../router/router_info.dart';
-import '../../../../app/theme/style/color.dart';
 import '../../../../app/theme/style/font_style.dart';
+import '../../../../app/utils/extension/build_context.dart';
 import '../../../../app/utils/extension/date_time.dart';
 import '../../../../app/utils/helper/open_webview.dart';
 import '../../../../app/utils/helper/snack_bar.dart';
@@ -88,19 +88,19 @@ class _RegisterStep1State extends State<RegisterStep1> {
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Column(
               children: <Widget>[
-                buildAvatarPicker(),
+                _avatarPicker(),
                 const SizedBox(height: 24.0),
-                buildInputFields(),
+                _inputFields(),
                 const SizedBox(height: 32.0),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: PrimaryButton(
-                    text: 'Continue',
-                    onPressed: onContinuePressed,
+                    text: const Text('Continue'),
+                    onPressed: _onContinuePressed,
                   ),
                 ),
                 const SizedBox(height: 16.0),
-                buildFooter(),
+                _footer(),
                 const SizedBox(height: 48.0),
               ],
             ),
@@ -110,7 +110,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
     );
   }
 
-  Widget buildAvatarPicker() {
+  Widget _avatarPicker() {
     return AvatarPicker(
       imageFile: _pickedFile,
       onImageChanged: (File? imageFile) {
@@ -128,7 +128,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
     );
   }
 
-  Widget buildFooter() {
+  Widget _footer() {
     return Text.rich(
       style: TTextStyle.getBodyMedium(),
       TextSpan(
@@ -138,7 +138,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
             text: 'Sign in',
             style: TTextStyle.getBodyMedium(
               fontWeight: TFontWeight.bold,
-              color: TColor.primary1000,
+              color: context.colorScheme.primary,
               decoration: TextDecoration.underline,
             ),
             recognizer: TapGestureRecognizer()
@@ -149,22 +149,22 @@ class _RegisterStep1State extends State<RegisterStep1> {
     );
   }
 
-  Widget buildInputFields() {
+  Widget _inputFields() {
     return Form(
       key: _formKey,
       child: Wrap(
         runSpacing: 24.0,
         children: <Widget>[
-          buildPersonalInfoFields(),
-          buildCountryFields(),
-          buildPasswordFields(),
-          buildCheckBoxFormField(),
+          _personalInfoFields(),
+          _countryFields(),
+          _passwordFields(),
+          _checkBoxFormField(),
         ],
       ),
     );
   }
 
-  Widget buildPersonalInfoFields() {
+  Widget _personalInfoFields() {
     return Wrap(
       runSpacing: 24.0,
       children: <Widget>[
@@ -195,12 +195,12 @@ class _RegisterStep1State extends State<RegisterStep1> {
             ],
           ),
         ),
-        buildGenderAndBirthdayField(),
+        _genderAndBirthdayField(),
       ],
     );
   }
 
-  Widget buildCountryFields() {
+  Widget _countryFields() {
     return Wrap(
       runSpacing: 24.0,
       children: <Widget>[
@@ -235,7 +235,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
           ),
           keyboardType: TextInputType.phone,
           onTapOutside: (_) {
-            FocusScope.of(context).unfocus();
+            context.focusScope.unfocus();
           },
           validator: SupportValidators.compose(
             <FormFieldValidator<String>>[
@@ -267,7 +267,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
     );
   }
 
-  Widget buildPasswordFields() {
+  Widget _passwordFields() {
     return Wrap(
       runSpacing: 24.0,
       children: <Widget>[
@@ -309,7 +309,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
     );
   }
 
-  Widget buildGenderAndBirthdayField() {
+  Widget _genderAndBirthdayField() {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -336,14 +336,14 @@ class _RegisterStep1State extends State<RegisterStep1> {
             icon: SvgPicture.asset(IconAsset.calendarBlank),
             // Disable user text input
             readOnly: true,
-            onTap: selectBirthDayDate,
+            onTap: _selectBirthDayDate,
           ),
         ),
       ],
     );
   }
 
-  Widget buildCheckBoxFormField() {
+  Widget _checkBoxFormField() {
     return CheckboxFormField(
       title: ExcludeSemantics(
         child: Text.rich(
@@ -355,7 +355,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
                 text: 'Term of Use',
                 style: TTextStyle.getBodyMedium(
                   fontWeight: TFontWeight.bold,
-                  color: TColor.secondary1000,
+                  color: context.colorScheme.secondary,
                 ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () async {
@@ -369,7 +369,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
                 text: 'Privacy Policy',
                 style: TTextStyle.getBodyMedium(
                   fontWeight: TFontWeight.bold,
-                  color: TColor.secondary1000,
+                  color: context.colorScheme.secondary,
                 ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () async {
@@ -390,7 +390,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
     );
   }
 
-  void onContinuePressed() {
+  void _onContinuePressed() {
     if (_formKey.currentState?.validate() ?? false) {
       widget.onContinue();
     } else {
@@ -402,7 +402,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
     }
   }
 
-  Future<void> selectBirthDayDate() async {
+  Future<void> _selectBirthDayDate() async {
     final DateTime? pickedDate = await showDatePicker(
       context: context,
       initialDate: DateTime(2000),

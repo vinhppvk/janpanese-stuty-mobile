@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../asset/icon_asset.dart';
-import '../../theme/style/color.dart';
 import '../../theme/style/font_style.dart';
-
+import '../../utils/extension/build_context.dart';
 
 class SearchDropDownTextField<T> extends StatelessWidget {
   const SearchDropDownTextField({
@@ -40,6 +39,7 @@ class SearchDropDownTextField<T> extends StatelessWidget {
   /// Custom DropdownMenuItem child, will ignore menuItemText
   final Widget Function(BuildContext, T item)? menuItemBuilder;
 
+  /// Callback to search for matching menu item
   final bool Function(DropdownMenuItem<T>, String)? searchMatchFn;
 
   @override
@@ -140,10 +140,10 @@ class SearchDropDownTextField<T> extends StatelessWidget {
         decoration: BoxDecoration(
           border: isLast
               ? null
-              : const Border(
+              : Border(
                   bottom: BorderSide(
                     width: 1.5,
-                    color: TColor.grey200,
+                    color: context.colorScheme.outline,
                   ),
                 ),
         ),
@@ -162,24 +162,22 @@ class SearchDropDownTextField<T> extends StatelessWidget {
   }
 
   Widget _buildSearchTextField(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
-
     final OutlineInputBorder defaultBorder = OutlineInputBorder(
       borderRadius: BorderRadius.circular(8.0),
       borderSide: BorderSide(
         width: 1.5,
-        color: theme.dividerColor,
+        color: context.theme.dividerColor,
       ),
     );
 
     final OutlineInputBorder focusBorder = defaultBorder.copyWith(
         borderSide: defaultBorder.borderSide.copyWith(
-      color: theme.colorScheme.primary,
+      color: context.colorScheme.primary,
     ));
 
     final OutlineInputBorder errorBorder = defaultBorder.copyWith(
         borderSide: defaultBorder.borderSide.copyWith(
-      color: theme.colorScheme.error,
+      color: context.colorScheme.error,
     ));
 
     return Container(

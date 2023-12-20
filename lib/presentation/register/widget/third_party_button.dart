@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../app/theme/style/color.dart';
 import '../../../app/theme/style/font_style.dart';
+import '../../../app/utils/extension/build_context.dart';
 
 class ThirdPartyButton extends StatelessWidget {
   const ThirdPartyButton({
@@ -28,11 +28,10 @@ class ThirdPartyButton extends StatelessWidget {
             Radius.circular(12.0),
           ),
         ),
-        side: const BorderSide(
-          color: TColor.grey200,
+        side: BorderSide(
+          color: context.colorScheme.outline,
           width: 1.5,
         ),
-        backgroundColor: TColor.white,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

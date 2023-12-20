@@ -7,6 +7,7 @@ import '../../../../app/asset/icon_asset.dart';
 import '../../../../router/router_info.dart';
 import '../../../app/theme/style/color.dart';
 import '../../../app/theme/style/font_style.dart';
+import '../../../app/utils/extension/build_context.dart';
 import '../../../app/widget/app_bar/custom_app_bar.dart';
 import '../../../app/widget/buttons/primary_button.dart';
 import '../widget/label_divider.dart';
@@ -24,7 +25,7 @@ class _RegisterOptionsPageState extends State<RegisterOptionsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        text: 'Sign Up',
+        title: const Text('Sign Up'),
         onBackPressed: () => context.pop(),
       ),
       body: SafeArea(
@@ -33,11 +34,11 @@ class _RegisterOptionsPageState extends State<RegisterOptionsPage> {
           child: Column(
             children: <Widget>[
               const SizedBox(height: 24.0),
-              buildHeader(),
+              _header(),
               const SizedBox(height: 64.0),
-              buildOptionButtons(),
+              _optionButtons(),
               const Spacer(),
-              buildFooter(),
+              _footer(),
             ],
           ),
         ),
@@ -45,7 +46,7 @@ class _RegisterOptionsPageState extends State<RegisterOptionsPage> {
     );
   }
 
-  Widget buildHeader() {
+  Widget _header() {
     return Column(
       children: <Widget>[
         Text(
@@ -66,14 +67,14 @@ class _RegisterOptionsPageState extends State<RegisterOptionsPage> {
     );
   }
 
-  Widget buildOptionButtons() {
+  Widget _optionButtons() {
     return Wrap(
       runSpacing: 16.0,
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),
           child: PrimaryButton(
-            text: 'Continue',
+            text: const Text('Continue'),
             onPressed: () {
               context.pushNamed(RouterInfo.registerPage.name);
             },
@@ -99,7 +100,7 @@ class _RegisterOptionsPageState extends State<RegisterOptionsPage> {
     );
   }
 
-  Widget buildFooter() {
+  Widget _footer() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Text.rich(
@@ -111,7 +112,7 @@ class _RegisterOptionsPageState extends State<RegisterOptionsPage> {
               text: 'Sign in',
               style: TTextStyle.getBodyMedium(
                 fontWeight: TFontWeight.bold,
-                color: TColor.primary1000,
+                color: context.colorScheme.primary,
                 decoration: TextDecoration.underline,
               ),
               recognizer: TapGestureRecognizer()..onTap = () => context.pop(),

@@ -1,42 +1,52 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/style/color.dart';
 import '../../theme/style/font_style.dart';
-
+import '../../utils/extension/build_context.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     super.key,
     required this.text,
     required this.onPressed,
-    this.textStyle,
     this.size,
+    this.backgroundColor,
   });
 
-  final String text;
+  factory PrimaryButton.outline({
+    required Widget text,
+    required VoidCallback? onPressed,
+    Size? size,
+    Color? backgroundColor,
+  }) =>
+      PrimaryButton(
+        text: text,
+        onPressed: onPressed,
+        size: size,
+        backgroundColor: backgroundColor,
+      );
+
+  final Widget text;
   final VoidCallback? onPressed;
-  final TextStyle? textStyle;
   final Size? size;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox.fromSize(
       size: size,
-      child: ElevatedButton(
+      child: FilledButton(
         onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
+        style: FilledButton.styleFrom(
           minimumSize: const Size.fromHeight(56),
           elevation: 0,
           shape: const StadiumBorder(),
-          shadowColor: Colors.transparent,
         ),
-        child: Text(
-          text,
-          style: textStyle ??
-              TTextStyle.getBodyLarge(
-                fontWeight: TFontWeight.bold,
-                color: TColor.white,
-              ),
+        child: DefaultTextStyle.merge(
+          style: TTextStyle.getBodyLarge(
+            fontWeight: TFontWeight.bold,
+            color: context.colorScheme.onPrimary
+          ),
+          child: text,
         ),
       ),
     );

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../theme/style/color.dart';
 import '../../theme/style/font_style.dart';
+import '../../utils/extension/build_context.dart';
 
 class OptionDialog extends StatelessWidget {
   const OptionDialog({
@@ -19,7 +19,7 @@ class OptionDialog extends StatelessWidget {
         borderRadius: BorderRadius.circular(16.0),
       ),
       insetPadding: const EdgeInsets.all(16.0),
-      surfaceTintColor: TColor.white,
+      surfaceTintColor: context.colorScheme.onPrimary,
       child: Container(
         padding: const EdgeInsets.all(24.0),
         child: Column(
@@ -49,7 +49,7 @@ class OptionDialog extends StatelessWidget {
                 'Cancel',
                 style: TTextStyle.getBodyLarge(
                   fontWeight: TFontWeight.bold,
-                  color: TColor.primary1000,
+                  color: context.colorScheme.primary,
                 ),
               ),
             )
@@ -93,11 +93,11 @@ class _OptionButton extends StatelessWidget {
             Radius.circular(12.0),
           ),
         ),
-        side: const BorderSide(
-          color: TColor.grey200,
+        side: BorderSide(
+          color: context.colorScheme.outline,
           width: 1.5,
         ),
-        backgroundColor: TColor.white,
+        backgroundColor: context.colorScheme.background,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

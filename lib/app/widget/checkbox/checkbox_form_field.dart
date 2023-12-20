@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/style/font_style.dart';
+import '../../utils/extension/build_context.dart';
 
 class CheckboxFormField extends FormField<bool> {
   CheckboxFormField({
@@ -25,7 +26,7 @@ class CheckboxFormField extends FormField<bool> {
                           state.errorText ?? '',
                           style: TTextStyle.getBodySmall(
                             fontWeight: TFontWeight.medium,
-                            color: Theme.of(context).colorScheme.error,
+                            color: context.colorScheme.error,
                           ),
                         ),
                       ),
