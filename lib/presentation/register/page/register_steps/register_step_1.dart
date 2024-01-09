@@ -391,15 +391,17 @@ class _RegisterStep1State extends State<RegisterStep1> {
   }
 
   void _onContinuePressed() {
-    if (_formKey.currentState?.validate() ?? false) {
-      widget.onContinue();
-    } else {
-      showCustomSnackBar(
-        context,
-        message: ValidationMessages.cm001(),
-        mode: SnackBarMode.error,
-      );
-    }
+    // TODO: Remove this
+    widget.onContinue();
+    // if (_formKey.currentState?.validate() ?? false) {
+    //   widget.onContinue();
+    // } else {
+    //   showCustomSnackBar(
+    //     context,
+    //     message: ValidationMessages.cm001(),
+    //     mode: SnackBarMode.error,
+    //   );
+    // }
   }
 
   Future<void> _selectBirthDayDate() async {

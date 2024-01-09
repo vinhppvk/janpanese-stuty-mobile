@@ -34,8 +34,8 @@ class _NavigationPageState extends State<NavigationPage> {
   List<Widget> _buttonList(BuildContext context) {
     return <Widget>[
       PrimaryButton(
-        text: Text(RouterInfo.registerOptionsPage.name),
-        onPressed: () => context.pushNamed(RouterInfo.registerOptionsPage.name),
+        text: Text(RouterInfo.loginPage.name),
+        onPressed: () => context.pushNamed(RouterInfo.loginPage.name),
       ),
       PrimaryButton(
         text: Text(RouterInfo.registerPage.name),
@@ -44,10 +44,6 @@ class _NavigationPageState extends State<NavigationPage> {
       PrimaryButton(
         text: Text(RouterInfo.examplePage.name),
         onPressed: () => context.pushNamed(RouterInfo.examplePage.name),
-      ),
-      PrimaryButton(
-        text: Text(RouterInfo.loginPage.name),
-        onPressed: () => context.pushNamed(RouterInfo.loginPage.name),
       ),
     ];
   }

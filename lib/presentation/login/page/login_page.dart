@@ -248,7 +248,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             recognizer: TapGestureRecognizer()
               ..onTap =
-                  () => context.pushNamed(RouterInfo.registerOptionsPage.name),
+                  () => context.pushNamed(RouterInfo.registerPage.name),
           ),
         ],
       ),

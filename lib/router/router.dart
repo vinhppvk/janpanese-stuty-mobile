@@ -35,20 +35,11 @@ class AppRouter {
             },
             routes: <GoRoute>[
               GoRoute(
-                path: RouterInfo.registerOptionsPage.path,
-                name: RouterInfo.registerOptionsPage.name,
+                path: RouterInfo.registerPage.path,
+                name: RouterInfo.registerPage.name,
                 builder: (BuildContext context, GoRouterState state) {
-                  return const RegisterOptionsPage();
+                  return const RegisterPage();
                 },
-                routes: <GoRoute>[
-                  GoRoute(
-                    path: RouterInfo.registerPage.path,
-                    name: RouterInfo.registerPage.name,
-                    builder: (BuildContext context, GoRouterState state) {
-                      return const RegisterPage();
-                    },
-                  ),
-                ],
               ),
             ],
           ),

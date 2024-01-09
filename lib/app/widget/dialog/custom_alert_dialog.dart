@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../theme/style/color.dart';
 import '../../theme/style/font_style.dart';
 import '../../utils/extension/build_context.dart';
 import '../buttons/primary_button.dart';
@@ -79,15 +80,19 @@ class CustomAlertDialog extends StatelessWidget {
               ),
             Flexible(
               child: DefaultTextStyle.merge(
+                style: TTextStyle.getHeadingH5(),
                 child: title,
               ),
             ),
             const SizedBox(height: 8.0),
             Flexible(
               child: DefaultTextStyle.merge(
-                child: message,
                 textAlign: TextAlign.center,
-                style: TTextStyle.getBodyMedium(fontWeight: TFontWeight.medium),
+                style: TTextStyle.getBodyMedium(
+                  fontWeight: TFontWeight.medium,
+                  color: TColor.grey500,
+                ),
+                child: message,
               ),
             ),
             const SizedBox(height: 24.0),
@@ -124,13 +129,13 @@ class CustomAlertDialog extends StatelessWidget {
     if (onSecondaryAction == null) {
       return SizedBox(
         width: 148.0,
-        height: 32.0,
+        height: 40.0,
         child: primaryButton,
       );
     }
 
     return SizedBox(
-      height: 32.0,
+      height: 40.0,
       child: Row(
         children: <Widget>[
           Flexible(child: secondaryButton),
