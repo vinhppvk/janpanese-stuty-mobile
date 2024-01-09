@@ -31,7 +31,7 @@ class _RegisterStep3State extends State<RegisterStep3> {
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Column(
               children: <Widget>[
-                Image.asset(ImageAsset.celebrationIllustration),
+                Image.asset(ImageAsset.successIllustration),
                 const SizedBox(height: 40.0),
                 Text(
                   'SIGN UP COMPLETED',

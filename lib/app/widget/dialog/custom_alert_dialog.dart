@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../asset/image_asset.dart';
 import '../../theme/style/color.dart';
 import '../../theme/style/font_style.dart';
 import '../../utils/extension/build_context.dart';
@@ -46,6 +47,24 @@ class CustomAlertDialog extends StatelessWidget {
         title: title,
         message: message,
         image: image,
+        primaryActionText: primaryActionText,
+        secondaryActionText: secondaryActionText,
+        onPrimaryAction: onPrimaryAction,
+        onSecondaryAction: onSecondaryAction,
+      );
+
+  factory CustomAlertDialog.error({
+    required Widget title,
+    required Widget message,
+    String primaryActionText = 'OK',
+    String secondaryActionText = 'Cancel',
+    VoidCallback? onPrimaryAction,
+    VoidCallback? onSecondaryAction,
+  }) =>
+      CustomAlertDialog(
+        title: title,
+        message: message,
+        image: Image.asset(ImageAsset.errorIllustration),
         primaryActionText: primaryActionText,
         secondaryActionText: secondaryActionText,
         onPrimaryAction: onPrimaryAction,

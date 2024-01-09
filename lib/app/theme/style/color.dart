@@ -31,4 +31,5 @@ class TColor {
   static const Color white = Colors.white;
   static const Color mikadoYellow = Color(0xFFFFC007);
   static const Color coral = Color(0xFFF68657);
+  static const Color barrier = Color(0x80111827);
 }
