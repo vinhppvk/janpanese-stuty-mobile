@@ -53,24 +53,6 @@ class CustomAlertDialog extends StatelessWidget {
         onSecondaryAction: onSecondaryAction,
       );
 
-  factory CustomAlertDialog.error({
-    required Widget title,
-    required Widget message,
-    String primaryActionText = 'OK',
-    String secondaryActionText = 'Cancel',
-    VoidCallback? onPrimaryAction,
-    VoidCallback? onSecondaryAction,
-  }) =>
-      CustomAlertDialog(
-        title: title,
-        message: message,
-        image: Image.asset(ImageAsset.errorIllustration),
-        primaryActionText: primaryActionText,
-        secondaryActionText: secondaryActionText,
-        onPrimaryAction: onPrimaryAction,
-        onSecondaryAction: onSecondaryAction,
-      );
-
   final Widget title;
   final Widget message;
   final Widget? image;

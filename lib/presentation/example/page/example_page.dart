@@ -1,12 +1,24 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fpdart/src/either.dart';
 import 'package:go_router/go_router.dart';
+import 'package:logger/logger.dart';
 
+import '../../../app/di/injector.dart';
 import '../../../app/utils/enum/snackbar_mode.dart';
+import '../../../app/utils/helper/error_handler.dart';
 import '../../../app/utils/helper/snack_bar.dart';
 import '../../../app/widget/app_bar/custom_app_bar.dart';
 import '../../../app/widget/buttons/primary_button.dart';
 import '../../../app/widget/dialog/custom_alert_dialog.dart';
 import '../../../app/widget/loader/overlay_loader.dart';
+import '../../../core/error/failure.dart';
+import '../../../core/usecase.dart';
+import '../../../data/model/dto/example/example_user_dto.dart';
+import '../../../data/remote/service/example/example_service.dart';
+import '../../../domain/example/example_usecase.dart';
+import '../bloc/example_bloc.dart';
 
 class ExamplePage extends StatefulWidget {
   const ExamplePage({super.key});
@@ -20,6 +32,29 @@ class _ExamplePageState extends State<ExamplePage> {
 
   @override
   Widget build(BuildContext context) {
+    return BlocListener<ExampleBloc, ExampleState>(
+      listener: (BuildContext context, ExampleState state) {
+        _overlayLoader.hide();
+        switch (state) {
+          case ExampleInitial():
+            break;
+          case ExampleLoading():
+            _overlayLoader.show(context);
+          case ExampleLoaded():
+            showCustomSnackBar(
+              context,
+              mode: SnackBarMode.success,
+              message: 'Call Example Api Success!',
+            );
+          case ExampleError(failure: final Failure failure):
+            ErrorHandler.handleNetworkError(context, failure);
+        }
+      },
+      child: _buildBody(),
+    );
+  }
+
+  Widget _buildBody() {
     return Scaffold(
       appBar: CustomAppBar(
         title: const Text('Example Page'),
@@ -45,6 +80,10 @@ class _ExamplePageState extends State<ExamplePage> {
                 text: const Text('Show Error Snack-bar'),
                 onPressed: _showErrorSnackBar,
               ),
+              PrimaryButton(
+                text: const Text('Call Json Placeholder Api'),
+                onPressed: () => _callExampleApi(),
+              ),
             ],
           ),
         ),
@@ -52,7 +91,7 @@ class _ExamplePageState extends State<ExamplePage> {
     );
   }
 
-  void _showOverlayLoader() async {
+  Future<void> _showOverlayLoader() async {
     _overlayLoader.show(context);
 
     await Future<void>.delayed(const Duration(seconds: 5));
@@ -61,24 +100,14 @@ class _ExamplePageState extends State<ExamplePage> {
   }
 
   void _showErrorDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return CustomAlertDialog.error(
-          title: const Text('An Error Occurred!'),
-          message: const Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet mollis libero.'),
-          onPrimaryAction: () {},
-        );
-      },
-    );
+    ErrorHandler.showErrorDialog(context, onPrimaryAction: () {});
   }
 
   void _showErrorSnackBar() {
-    showCustomSnackBar(
-      context,
-      mode: SnackBarMode.error,
-      message: 'An error occurred!',
-    );
+    ErrorHandler.showErrorSnackBar(context, message: 'An error occurred!');
+  }
+
+  Future<void> _callExampleApi() async {
+    context.read<ExampleBloc>().add(const ExampleEvent.started());
   }
 }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../app/di/injector.dart';
+import '../presentation/example/bloc/example_bloc.dart';
 import '../presentation/example/page/example_page.dart';
 import '../presentation/login/page/login_page.dart';
 import '../presentation/register/page/register_options_page.dart';
@@ -24,7 +27,10 @@ class AppRouter {
             path: RouterInfo.examplePage.path,
             name: RouterInfo.examplePage.name,
             builder: (BuildContext context, GoRouterState state) {
-              return const ExamplePage();
+              return BlocProvider<ExampleBloc>(
+                create: (_) => injector<ExampleBloc>(),
+                child: const ExamplePage(),
+              );
             },
           ),
           GoRoute(
