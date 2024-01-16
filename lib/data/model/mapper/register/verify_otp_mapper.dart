@@ -8,15 +8,10 @@ import '../../entity/register/resend_otp_params.dart';
 import '../../entity/register/resend_otp_result.dart';
 import '../../entity/register/verify_otp_params.dart';
 import '../../entity/register/verify_otp_result.dart';
-import 'register_step_2_mapper.auto_mappr.dart';
 
-@AutoMappr([
-  MapType<ResendOtpParams, ResendOtpParamsDto>(),
-  MapType<ResendOtpResultDto, ResendOtpResult>(
-    fields: <Field>[
-      Field('email', whenNull: ''),
-    ],
-  ),
+import 'verify_otp_mapper.auto_mappr.dart';
+
+@AutoMappr(<MapType<Object, Object>>[
   MapType<VerifyOtpParams, VerifyOtpParamsDto>(),
   MapType<VerifyOtpResultDto, VerifyOtpResult>(
     fields: <Field>[
@@ -25,4 +20,4 @@ import 'register_step_2_mapper.auto_mappr.dart';
     ],
   ),
 ])
-class RegisterStep2Mappr extends $RegisterStep2Mappr {}
+class VerifyOtpMappr extends $VerifyOtpMappr {}

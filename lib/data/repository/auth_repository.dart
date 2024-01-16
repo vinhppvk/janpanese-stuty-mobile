@@ -10,8 +10,9 @@ import '../model/entity/register/resend_otp_params.dart';
 import '../model/entity/register/resend_otp_result.dart';
 import '../model/entity/register/verify_otp_params.dart';
 import '../model/entity/register/verify_otp_result.dart';
-import '../model/mapper/register/register_step_1_mapper.dart';
-import '../model/mapper/register/register_step_2_mapper.dart';
+import '../model/mapper/register/register_user_mapper.dart';
+import '../model/mapper/register/resend_otp_mapper.dart';
+import '../model/mapper/register/verify_otp_mapper.dart';
 import '../remote/auth/auth_service.dart';
 
 class AuthRepository {
@@ -20,7 +21,7 @@ class AuthRepository {
   final AuthService _registerService;
 
   Future<List<NoResponse>> registerUser(RegisterUserParams params) async {
-    final RegisterUserParamsDto paramsDto = RegisterStep1Mappr()
+    final RegisterUserParamsDto paramsDto = RegisterUserMappr()
         .convert<RegisterUserParams, RegisterUserParamsDto>(null);
     final BaseResponse<List<NoResponse>> response =
         await _registerService.registerUser(paramsDto);
@@ -28,7 +29,7 @@ class AuthRepository {
   }
 
   Future<ResendOtpResult> resendOtpCode(ResendOtpParams params) async {
-    final RegisterStep2Mappr mapper = RegisterStep2Mappr();
+    final ResendOtpMappr mapper = ResendOtpMappr();
     final ResendOtpParamsDto paramsDto =
         mapper.convert<ResendOtpParams, ResendOtpParamsDto>(params);
     final BaseResponse<ResendOtpResultDto> response =
@@ -37,7 +38,7 @@ class AuthRepository {
   }
 
   Future<VerifyOtpResult> verifyOtpCode(VerifyOtpParams params) async {
-    final RegisterStep2Mappr mapper = RegisterStep2Mappr();
+    final VerifyOtpMappr mapper = VerifyOtpMappr();
     final VerifyOtpParamsDto paramsDto =
         mapper.convert<VerifyOtpParams, VerifyOtpParamsDto>(params);
     final BaseResponse<VerifyOtpResultDto> response =
