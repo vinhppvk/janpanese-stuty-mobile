@@ -11,8 +11,12 @@ extension DateTimeFormatting on DateTime {
 
 extension StringToDateTime on String {
   DateTime? parseToDate({String pattern = DateFormats.standard}) {
+    if (isEmpty) {
+      return null;
+    }
+
     try {
-      return DateFormat(pattern).parse(pattern);
+      return DateFormat(pattern).parse(this);
     } catch (e) {
       // Handle or throw the error
       debugPrint('Error parsing date: $e');

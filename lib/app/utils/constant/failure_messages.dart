@@ -3,20 +3,26 @@ class FailureMessages {
   static const String noConnection = 'No connection';
 
   static const String httpBadRequest =
-      'Invalid request. Please check and try again.';
+      'Error 400: Invalid request. Please check and try again.';
 
-  static const String httpUnauthorized = 'Unauthorized access. Please log in.';
+  static const String httpUnauthorized = 'Error 401: Unauthorized access. Please log in.';
 
   static const String httpForbidden =
-      'Access denied. Contact support if this is unexpected.';
+      'Error 403: Access denied. Contact support if this is unexpected.';
 
-  static const String httpNotFound = 'Resource not found. Check the URL.';
+  static const String httpNotFound = 'Error 404: Resource not found. Check the URL.';
 
   static const String httpUnprocessableEntity =
-      'Invalid input. Please review and retry.';
+      'Error 422: Invalid input. Please review and retry.';
 
   static const String httpInternalServerError =
-      'Server error. Please try again later.';
+      'Error 500: Server error. Please try again later.';
+
+  static const String httpMethodNotAllowedError =
+      'Error 405: Method Not Allowed. Check API documentation for valid methods.';
+
+  static const String httpConflictError =
+      'Error 409: Conflict. Resource state mismatch. Please retry with updated state.';
 
   // In app Exception
   static const String undefined = 'Oops, something went wrong!';

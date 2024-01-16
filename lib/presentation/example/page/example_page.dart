@@ -1,23 +1,14 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fpdart/src/either.dart';
 import 'package:go_router/go_router.dart';
-import 'package:logger/logger.dart';
 
-import '../../../app/di/injector.dart';
 import '../../../app/utils/enum/snackbar_mode.dart';
-import '../../../app/utils/helper/error_handler.dart';
 import '../../../app/utils/helper/snack_bar.dart';
 import '../../../app/widget/app_bar/custom_app_bar.dart';
 import '../../../app/widget/buttons/primary_button.dart';
-import '../../../app/widget/dialog/custom_alert_dialog.dart';
 import '../../../app/widget/loader/overlay_loader.dart';
 import '../../../core/error/failure.dart';
-import '../../../core/usecase.dart';
-import '../../../data/model/dto/example/example_user_dto.dart';
-import '../../../data/remote/service/example/example_service.dart';
-import '../../../domain/example/example_usecase.dart';
+import '../../../core/error_handler/error_handler.dart';
 import '../bloc/example_bloc.dart';
 
 class ExamplePage extends StatefulWidget {
@@ -36,17 +27,17 @@ class _ExamplePageState extends State<ExamplePage> {
       listener: (BuildContext context, ExampleState state) {
         _overlayLoader.hide();
         switch (state) {
-          case ExampleInitial():
+          case ExampleStateInitial():
             break;
-          case ExampleLoading():
+          case ExampleStateLoading():
             _overlayLoader.show(context);
-          case ExampleLoaded():
+          case ExampleStateLoaded():
             showCustomSnackBar(
               context,
               mode: SnackBarMode.success,
               message: 'Call Example Api Success!',
             );
-          case ExampleError(failure: final Failure failure):
+          case ExampleStateError(failure: final Failure failure):
             ErrorHandler.handleNetworkError(context, failure);
         }
       },

@@ -8,7 +8,7 @@ class TInputDecoration {
 
   static InputDecorationTheme get lightTheme {
     final InputBorder defaultBorder = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(12.0),
+      borderRadius: BorderRadius.circular(16.0),
       borderSide: const BorderSide(
         color: TColor.grey200,
         width: 1.5,
@@ -29,10 +29,7 @@ class TInputDecoration {
 
     return InputDecorationTheme(
       errorMaxLines: 3,
-      contentPadding: const EdgeInsets.symmetric(
-        vertical: 12.0,
-        horizontal: 16.0,
-      ),
+      contentPadding: const EdgeInsets.all(16.0),
       hintStyle: TTextStyle.getBodyMedium(
         fontWeight: TFontWeight.light,
         color: TColor.grey600,

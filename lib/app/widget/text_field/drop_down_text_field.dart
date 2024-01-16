@@ -9,7 +9,6 @@ import '../../utils/extension/build_context.dart';
 class DropDownTextField<T> extends StatelessWidget {
   const DropDownTextField({
     super.key,
-    this.title,
     this.controller,
     required this.items,
     this.selectedValue,
@@ -21,7 +20,6 @@ class DropDownTextField<T> extends StatelessWidget {
     this.width,
   });
 
-  final String? title;
   final String? hint;
   final double? height;
   final double? width;
@@ -38,23 +36,6 @@ class DropDownTextField<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        if (title != null)
-          Text(
-            title!,
-            style: TTextStyle.getBodyMedium(fontWeight: TFontWeight.medium),
-          ),
-        const SizedBox(
-          height: 8.0,
-        ),
-        _buildTextField(context),
-      ],
-    );
-  }
-
-  Widget _buildTextField(BuildContext context) {
     return DropdownButtonHideUnderline(
       child: DropdownButtonFormField2<T>(
         isExpanded: true,
@@ -100,7 +81,7 @@ class DropDownTextField<T> extends StatelessWidget {
           padding: EdgeInsets.zero,
           maxHeight: 240.0,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12.0),
+            borderRadius: BorderRadius.circular(16.0),
           ),
         ),
         iconStyleData: IconStyleData(

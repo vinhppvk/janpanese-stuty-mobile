@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'failure.freezed.dart';
 
 @freezed
-class Failure with _$Failure {
+sealed class Failure with _$Failure {
   // Undefined Exception
   const factory Failure.undefined({required String message}) = UndefinedFailure;
 
@@ -29,6 +29,12 @@ class Failure with _$Failure {
 
   const factory Failure.httpInternalServerError({required String message}) =
       HttpInternalServerErrorFailure;
+
+  const factory Failure.httpMethodNotAllowedError({required String message}) =
+      HttpMethodNotAllowedErrorFailure;
+
+  const factory Failure.httpConflictError({required String message}) =
+      HttpConflictErrorFailure;
 
   // Parse Response Error Exception
   const factory Failure.badKeyOfValue({required String message}) =

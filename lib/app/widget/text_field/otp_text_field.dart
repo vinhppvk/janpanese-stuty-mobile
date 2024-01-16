@@ -40,12 +40,12 @@ class OtpTextField extends StatelessWidget {
     );
 
     return Pinput(
-      length: 5,
+      length: 6,
       controller: controller,
       focusNode: focusNode,
       hapticFeedbackType: HapticFeedbackType.lightImpact,
       validator: validator,
-      separatorBuilder: (int index) => const SizedBox(width: 16.0),
+      separatorBuilder: (int index) => const SizedBox(width: 12.0),
       pinputAutovalidateMode: pinputAutovalidateMode,
       forceErrorState: forceErrorState,
       errorText: errorText,

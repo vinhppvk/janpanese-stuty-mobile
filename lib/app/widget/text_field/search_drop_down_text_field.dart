@@ -9,7 +9,6 @@ import '../../utils/extension/build_context.dart';
 class SearchDropDownTextField<T> extends StatelessWidget {
   const SearchDropDownTextField({
     super.key,
-    this.title,
     this.controller,
     required this.items,
     this.selectedValue,
@@ -23,7 +22,6 @@ class SearchDropDownTextField<T> extends StatelessWidget {
     this.width,
   });
 
-  final String? title;
   final String? hint;
   final String? searchHint;
   final double? height;
@@ -44,23 +42,6 @@ class SearchDropDownTextField<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        if (title != null)
-          Text(
-            title!,
-            style: TTextStyle.getBodyMedium(fontWeight: TFontWeight.medium),
-          ),
-        const SizedBox(
-          height: 8.0,
-        ),
-        _buildTextField(context),
-      ],
-    );
-  }
-
-  Widget _buildTextField(BuildContext context) {
     return DropdownButtonHideUnderline(
       child: DropdownButtonFormField2<T>(
         isExpanded: true,
@@ -103,7 +84,7 @@ class SearchDropDownTextField<T> extends StatelessWidget {
           padding: EdgeInsets.zero,
           maxHeight: 304,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12.0),
+            borderRadius: BorderRadius.circular(16.0),
           ),
         ),
         iconStyleData: IconStyleData(

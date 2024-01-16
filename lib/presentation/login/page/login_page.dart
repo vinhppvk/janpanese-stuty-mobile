@@ -16,6 +16,7 @@ import '../../../app/widget/buttons/primary_button.dart';
 import '../../../app/widget/text_field/drop_down_text_field.dart';
 import '../../../app/widget/text_field/normal_text_field.dart';
 import '../../../app/widget/text_field/password_text_field.dart';
+import '../../../app/widget/text_field/text_field_container.dart';
 import '../../../router/router_info.dart';
 import '../../register/widget/label_divider.dart';
 import '../widget/third_pary_login_icon_button.dart';
@@ -112,36 +113,40 @@ class _LoginPageState extends State<LoginPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
-          NormalTextField(
-            title: 'Email',
-            hintText: 'Enter email',
-            icon: SvgPicture.asset(IconAsset.email),
-            keyboardType: TextInputType.emailAddress,
-            controller: _emailController,
-            validator: SupportValidators.compose(
-              <FormFieldValidator<String>>[
-                SupportValidators.required(fieldName: 'email'),
-                SupportValidators.inRangeLength(3, 70, fieldName: 'email'),
-                SupportValidators.email(),
-              ],
+          TextFieldContainer(
+            title: const Text('Email'),
+            child: NormalTextField(
+              hintText: 'Enter email',
+              icon: SvgPicture.asset(IconAsset.email),
+              keyboardType: TextInputType.emailAddress,
+              controller: _emailController,
+              validator: SupportValidators.compose(
+                <FormFieldValidator<String>>[
+                  SupportValidators.required(fieldName: 'email'),
+                  SupportValidators.inRangeLength(3, 70, fieldName: 'email'),
+                  SupportValidators.email(),
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 24.0),
-          PasswordTextField(
-            title: 'Password',
-            hintText: 'Enter password',
-            obscureText: _obscureText,
-            controller: _passwordController,
-            onObscureButtonPressed: (bool obscureText) {
-              setState(() {
-                _obscureText = obscureText;
-              });
-            },
-            validator: SupportValidators.compose(
-              <FormFieldValidator>[
-                SupportValidators.required(fieldName: 'password'),
-                SupportValidators.inRangeLength(8, 16, fieldName: 'password'),
-              ],
+          TextFieldContainer(
+            title: const Text('Password'),
+            child: PasswordTextField(
+              hintText: 'Enter password',
+              obscureText: _obscureText,
+              controller: _passwordController,
+              onObscureButtonPressed: (bool obscureText) {
+                setState(() {
+                  _obscureText = obscureText;
+                });
+              },
+              validator: SupportValidators.compose(
+                <FormFieldValidator>[
+                  SupportValidators.required(fieldName: 'password'),
+                  SupportValidators.inRangeLength(8, 16, fieldName: 'password'),
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 8.0),
@@ -247,8 +252,7 @@ class _LoginPageState extends State<LoginPage> {
               decoration: TextDecoration.underline,
             ),
             recognizer: TapGestureRecognizer()
-              ..onTap =
-                  () => context.pushNamed(RouterInfo.registerPage.name),
+              ..onTap = () => context.pushNamed(RouterInfo.registerPage.name),
           ),
         ],
       ),

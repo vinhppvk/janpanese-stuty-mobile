@@ -4,7 +4,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../core/error/failure.dart';
 import '../../../core/usecase.dart';
-import '../../../data/model/dto/example/example_user_dto.dart';
+import '../../../data/model/dto/base/empty_model.dart';
+import '../../../data/model/entity/example/example_user.dart';
 import '../../../domain/example/example_usecase.dart';
 
 part 'example_event.dart';
@@ -16,22 +17,24 @@ part 'example_bloc.freezed.dart';
 class ExampleBloc extends Bloc<ExampleEvent, ExampleState> {
   ExampleBloc(this._exampleUseCase) : super(const ExampleState.initial()) {
     on<ExampleEvent>((ExampleEvent event, Emitter<ExampleState> emit) async {
-      await _getExampleUser(event, emit);
+      switch (event) {
+        case ExampleEventStarted():
+          await _getExampleUser(emit);
+      }
     });
   }
 
   final ExampleUseCase _exampleUseCase;
 
-  Future<void> _getExampleUser(
-      ExampleEvent event, Emitter<ExampleState> emit) async {
+  Future<void> _getExampleUser(Emitter<ExampleState> emit) async {
     emit(const ExampleState.loading());
 
-    final Either<Failure, List<ExampleUserDto>> dataState =
+    final Either<Failure, List<ExampleUser>> dataState =
         await _exampleUseCase(param: NoParam());
 
     dataState.fold(
       (Failure l) => emit(ExampleState.error(l)),
-      (List<ExampleUserDto> r) => emit(ExampleState.loaded(r)),
+      (List<ExampleUser> r) => emit(ExampleState.loaded(r)),
     );
   }
 }

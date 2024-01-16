@@ -34,17 +34,17 @@ mixin _$ExampleEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ExampleStarted value) started,
+    required TResult Function(ExampleEventStarted value) started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ExampleStarted value)? started,
+    TResult? Function(ExampleEventStarted value)? started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ExampleStarted value)? started,
+    TResult Function(ExampleEventStarted value)? started,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,25 +69,25 @@ class _$ExampleEventCopyWithImpl<$Res, $Val extends ExampleEvent>
 }
 
 /// @nodoc
-abstract class _$$ExampleStartedImplCopyWith<$Res> {
-  factory _$$ExampleStartedImplCopyWith(_$ExampleStartedImpl value,
-          $Res Function(_$ExampleStartedImpl) then) =
-      __$$ExampleStartedImplCopyWithImpl<$Res>;
+abstract class _$$ExampleEventStartedImplCopyWith<$Res> {
+  factory _$$ExampleEventStartedImplCopyWith(_$ExampleEventStartedImpl value,
+          $Res Function(_$ExampleEventStartedImpl) then) =
+      __$$ExampleEventStartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ExampleStartedImplCopyWithImpl<$Res>
-    extends _$ExampleEventCopyWithImpl<$Res, _$ExampleStartedImpl>
-    implements _$$ExampleStartedImplCopyWith<$Res> {
-  __$$ExampleStartedImplCopyWithImpl(
-      _$ExampleStartedImpl _value, $Res Function(_$ExampleStartedImpl) _then)
+class __$$ExampleEventStartedImplCopyWithImpl<$Res>
+    extends _$ExampleEventCopyWithImpl<$Res, _$ExampleEventStartedImpl>
+    implements _$$ExampleEventStartedImplCopyWith<$Res> {
+  __$$ExampleEventStartedImplCopyWithImpl(_$ExampleEventStartedImpl _value,
+      $Res Function(_$ExampleEventStartedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ExampleStartedImpl implements ExampleStarted {
-  const _$ExampleStartedImpl();
+class _$ExampleEventStartedImpl implements ExampleEventStarted {
+  const _$ExampleEventStartedImpl();
 
   @override
   String toString() {
@@ -97,7 +97,8 @@ class _$ExampleStartedImpl implements ExampleStarted {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ExampleStartedImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ExampleEventStartedImpl);
   }
 
   @override
@@ -134,7 +135,7 @@ class _$ExampleStartedImpl implements ExampleStarted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ExampleStarted value) started,
+    required TResult Function(ExampleEventStarted value) started,
   }) {
     return started(this);
   }
@@ -142,7 +143,7 @@ class _$ExampleStartedImpl implements ExampleStarted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ExampleStarted value)? started,
+    TResult? Function(ExampleEventStarted value)? started,
   }) {
     return started?.call(this);
   }
@@ -150,7 +151,7 @@ class _$ExampleStartedImpl implements ExampleStarted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ExampleStarted value)? started,
+    TResult Function(ExampleEventStarted value)? started,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -160,8 +161,8 @@ class _$ExampleStartedImpl implements ExampleStarted {
   }
 }
 
-abstract class ExampleStarted implements ExampleEvent {
-  const factory ExampleStarted() = _$ExampleStartedImpl;
+abstract class ExampleEventStarted implements ExampleEvent {
+  const factory ExampleEventStarted() = _$ExampleEventStartedImpl;
 }
 
 /// @nodoc
@@ -170,7 +171,7 @@ mixin _$ExampleState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ExampleUserDto> response) loaded,
+    required TResult Function(List<ExampleUser> response) loaded,
     required TResult Function(Failure failure) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -178,7 +179,7 @@ mixin _$ExampleState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ExampleUserDto> response)? loaded,
+    TResult? Function(List<ExampleUser> response)? loaded,
     TResult? Function(Failure failure)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -186,33 +187,33 @@ mixin _$ExampleState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ExampleUserDto> response)? loaded,
+    TResult Function(List<ExampleUser> response)? loaded,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ExampleInitial value) initial,
-    required TResult Function(ExampleLoading value) loading,
-    required TResult Function(ExampleLoaded value) loaded,
-    required TResult Function(ExampleError value) error,
+    required TResult Function(ExampleStateInitial value) initial,
+    required TResult Function(ExampleStateLoading value) loading,
+    required TResult Function(ExampleStateLoaded value) loaded,
+    required TResult Function(ExampleStateError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ExampleInitial value)? initial,
-    TResult? Function(ExampleLoading value)? loading,
-    TResult? Function(ExampleLoaded value)? loaded,
-    TResult? Function(ExampleError value)? error,
+    TResult? Function(ExampleStateInitial value)? initial,
+    TResult? Function(ExampleStateLoading value)? loading,
+    TResult? Function(ExampleStateLoaded value)? loaded,
+    TResult? Function(ExampleStateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ExampleInitial value)? initial,
-    TResult Function(ExampleLoading value)? loading,
-    TResult Function(ExampleLoaded value)? loaded,
-    TResult Function(ExampleError value)? error,
+    TResult Function(ExampleStateInitial value)? initial,
+    TResult Function(ExampleStateLoading value)? loading,
+    TResult Function(ExampleStateLoaded value)? loaded,
+    TResult Function(ExampleStateError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -237,25 +238,25 @@ class _$ExampleStateCopyWithImpl<$Res, $Val extends ExampleState>
 }
 
 /// @nodoc
-abstract class _$$ExampleInitialImplCopyWith<$Res> {
-  factory _$$ExampleInitialImplCopyWith(_$ExampleInitialImpl value,
-          $Res Function(_$ExampleInitialImpl) then) =
-      __$$ExampleInitialImplCopyWithImpl<$Res>;
+abstract class _$$ExampleStateInitialImplCopyWith<$Res> {
+  factory _$$ExampleStateInitialImplCopyWith(_$ExampleStateInitialImpl value,
+          $Res Function(_$ExampleStateInitialImpl) then) =
+      __$$ExampleStateInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ExampleInitialImplCopyWithImpl<$Res>
-    extends _$ExampleStateCopyWithImpl<$Res, _$ExampleInitialImpl>
-    implements _$$ExampleInitialImplCopyWith<$Res> {
-  __$$ExampleInitialImplCopyWithImpl(
-      _$ExampleInitialImpl _value, $Res Function(_$ExampleInitialImpl) _then)
+class __$$ExampleStateInitialImplCopyWithImpl<$Res>
+    extends _$ExampleStateCopyWithImpl<$Res, _$ExampleStateInitialImpl>
+    implements _$$ExampleStateInitialImplCopyWith<$Res> {
+  __$$ExampleStateInitialImplCopyWithImpl(_$ExampleStateInitialImpl _value,
+      $Res Function(_$ExampleStateInitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ExampleInitialImpl implements ExampleInitial {
-  const _$ExampleInitialImpl();
+class _$ExampleStateInitialImpl implements ExampleStateInitial {
+  const _$ExampleStateInitialImpl();
 
   @override
   String toString() {
@@ -265,7 +266,8 @@ class _$ExampleInitialImpl implements ExampleInitial {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ExampleInitialImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ExampleStateInitialImpl);
   }
 
   @override
@@ -276,7 +278,7 @@ class _$ExampleInitialImpl implements ExampleInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ExampleUserDto> response) loaded,
+    required TResult Function(List<ExampleUser> response) loaded,
     required TResult Function(Failure failure) error,
   }) {
     return initial();
@@ -287,7 +289,7 @@ class _$ExampleInitialImpl implements ExampleInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ExampleUserDto> response)? loaded,
+    TResult? Function(List<ExampleUser> response)? loaded,
     TResult? Function(Failure failure)? error,
   }) {
     return initial?.call();
@@ -298,7 +300,7 @@ class _$ExampleInitialImpl implements ExampleInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ExampleUserDto> response)? loaded,
+    TResult Function(List<ExampleUser> response)? loaded,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
@@ -311,10 +313,10 @@ class _$ExampleInitialImpl implements ExampleInitial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ExampleInitial value) initial,
-    required TResult Function(ExampleLoading value) loading,
-    required TResult Function(ExampleLoaded value) loaded,
-    required TResult Function(ExampleError value) error,
+    required TResult Function(ExampleStateInitial value) initial,
+    required TResult Function(ExampleStateLoading value) loading,
+    required TResult Function(ExampleStateLoaded value) loaded,
+    required TResult Function(ExampleStateError value) error,
   }) {
     return initial(this);
   }
@@ -322,10 +324,10 @@ class _$ExampleInitialImpl implements ExampleInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ExampleInitial value)? initial,
-    TResult? Function(ExampleLoading value)? loading,
-    TResult? Function(ExampleLoaded value)? loaded,
-    TResult? Function(ExampleError value)? error,
+    TResult? Function(ExampleStateInitial value)? initial,
+    TResult? Function(ExampleStateLoading value)? loading,
+    TResult? Function(ExampleStateLoaded value)? loaded,
+    TResult? Function(ExampleStateError value)? error,
   }) {
     return initial?.call(this);
   }
@@ -333,10 +335,10 @@ class _$ExampleInitialImpl implements ExampleInitial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ExampleInitial value)? initial,
-    TResult Function(ExampleLoading value)? loading,
-    TResult Function(ExampleLoaded value)? loaded,
-    TResult Function(ExampleError value)? error,
+    TResult Function(ExampleStateInitial value)? initial,
+    TResult Function(ExampleStateLoading value)? loading,
+    TResult Function(ExampleStateLoaded value)? loaded,
+    TResult Function(ExampleStateError value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -346,30 +348,30 @@ class _$ExampleInitialImpl implements ExampleInitial {
   }
 }
 
-abstract class ExampleInitial implements ExampleState {
-  const factory ExampleInitial() = _$ExampleInitialImpl;
+abstract class ExampleStateInitial implements ExampleState {
+  const factory ExampleStateInitial() = _$ExampleStateInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$ExampleLoadingImplCopyWith<$Res> {
-  factory _$$ExampleLoadingImplCopyWith(_$ExampleLoadingImpl value,
-          $Res Function(_$ExampleLoadingImpl) then) =
-      __$$ExampleLoadingImplCopyWithImpl<$Res>;
+abstract class _$$ExampleStateLoadingImplCopyWith<$Res> {
+  factory _$$ExampleStateLoadingImplCopyWith(_$ExampleStateLoadingImpl value,
+          $Res Function(_$ExampleStateLoadingImpl) then) =
+      __$$ExampleStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ExampleLoadingImplCopyWithImpl<$Res>
-    extends _$ExampleStateCopyWithImpl<$Res, _$ExampleLoadingImpl>
-    implements _$$ExampleLoadingImplCopyWith<$Res> {
-  __$$ExampleLoadingImplCopyWithImpl(
-      _$ExampleLoadingImpl _value, $Res Function(_$ExampleLoadingImpl) _then)
+class __$$ExampleStateLoadingImplCopyWithImpl<$Res>
+    extends _$ExampleStateCopyWithImpl<$Res, _$ExampleStateLoadingImpl>
+    implements _$$ExampleStateLoadingImplCopyWith<$Res> {
+  __$$ExampleStateLoadingImplCopyWithImpl(_$ExampleStateLoadingImpl _value,
+      $Res Function(_$ExampleStateLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ExampleLoadingImpl implements ExampleLoading {
-  const _$ExampleLoadingImpl();
+class _$ExampleStateLoadingImpl implements ExampleStateLoading {
+  const _$ExampleStateLoadingImpl();
 
   @override
   String toString() {
@@ -379,7 +381,8 @@ class _$ExampleLoadingImpl implements ExampleLoading {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ExampleLoadingImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ExampleStateLoadingImpl);
   }
 
   @override
@@ -390,7 +393,7 @@ class _$ExampleLoadingImpl implements ExampleLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ExampleUserDto> response) loaded,
+    required TResult Function(List<ExampleUser> response) loaded,
     required TResult Function(Failure failure) error,
   }) {
     return loading();
@@ -401,7 +404,7 @@ class _$ExampleLoadingImpl implements ExampleLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ExampleUserDto> response)? loaded,
+    TResult? Function(List<ExampleUser> response)? loaded,
     TResult? Function(Failure failure)? error,
   }) {
     return loading?.call();
@@ -412,7 +415,7 @@ class _$ExampleLoadingImpl implements ExampleLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ExampleUserDto> response)? loaded,
+    TResult Function(List<ExampleUser> response)? loaded,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
@@ -425,10 +428,10 @@ class _$ExampleLoadingImpl implements ExampleLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ExampleInitial value) initial,
-    required TResult Function(ExampleLoading value) loading,
-    required TResult Function(ExampleLoaded value) loaded,
-    required TResult Function(ExampleError value) error,
+    required TResult Function(ExampleStateInitial value) initial,
+    required TResult Function(ExampleStateLoading value) loading,
+    required TResult Function(ExampleStateLoaded value) loaded,
+    required TResult Function(ExampleStateError value) error,
   }) {
     return loading(this);
   }
@@ -436,10 +439,10 @@ class _$ExampleLoadingImpl implements ExampleLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ExampleInitial value)? initial,
-    TResult? Function(ExampleLoading value)? loading,
-    TResult? Function(ExampleLoaded value)? loaded,
-    TResult? Function(ExampleError value)? error,
+    TResult? Function(ExampleStateInitial value)? initial,
+    TResult? Function(ExampleStateLoading value)? loading,
+    TResult? Function(ExampleStateLoaded value)? loaded,
+    TResult? Function(ExampleStateError value)? error,
   }) {
     return loading?.call(this);
   }
@@ -447,10 +450,10 @@ class _$ExampleLoadingImpl implements ExampleLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ExampleInitial value)? initial,
-    TResult Function(ExampleLoading value)? loading,
-    TResult Function(ExampleLoaded value)? loaded,
-    TResult Function(ExampleError value)? error,
+    TResult Function(ExampleStateInitial value)? initial,
+    TResult Function(ExampleStateLoading value)? loading,
+    TResult Function(ExampleStateLoaded value)? loaded,
+    TResult Function(ExampleStateError value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -460,25 +463,25 @@ class _$ExampleLoadingImpl implements ExampleLoading {
   }
 }
 
-abstract class ExampleLoading implements ExampleState {
-  const factory ExampleLoading() = _$ExampleLoadingImpl;
+abstract class ExampleStateLoading implements ExampleState {
+  const factory ExampleStateLoading() = _$ExampleStateLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$ExampleLoadedImplCopyWith<$Res> {
-  factory _$$ExampleLoadedImplCopyWith(
-          _$ExampleLoadedImpl value, $Res Function(_$ExampleLoadedImpl) then) =
-      __$$ExampleLoadedImplCopyWithImpl<$Res>;
+abstract class _$$ExampleStateLoadedImplCopyWith<$Res> {
+  factory _$$ExampleStateLoadedImplCopyWith(_$ExampleStateLoadedImpl value,
+          $Res Function(_$ExampleStateLoadedImpl) then) =
+      __$$ExampleStateLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<ExampleUserDto> response});
+  $Res call({List<ExampleUser> response});
 }
 
 /// @nodoc
-class __$$ExampleLoadedImplCopyWithImpl<$Res>
-    extends _$ExampleStateCopyWithImpl<$Res, _$ExampleLoadedImpl>
-    implements _$$ExampleLoadedImplCopyWith<$Res> {
-  __$$ExampleLoadedImplCopyWithImpl(
-      _$ExampleLoadedImpl _value, $Res Function(_$ExampleLoadedImpl) _then)
+class __$$ExampleStateLoadedImplCopyWithImpl<$Res>
+    extends _$ExampleStateCopyWithImpl<$Res, _$ExampleStateLoadedImpl>
+    implements _$$ExampleStateLoadedImplCopyWith<$Res> {
+  __$$ExampleStateLoadedImplCopyWithImpl(_$ExampleStateLoadedImpl _value,
+      $Res Function(_$ExampleStateLoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -486,24 +489,24 @@ class __$$ExampleLoadedImplCopyWithImpl<$Res>
   $Res call({
     Object? response = null,
   }) {
-    return _then(_$ExampleLoadedImpl(
+    return _then(_$ExampleStateLoadedImpl(
       null == response
           ? _value._response
           : response // ignore: cast_nullable_to_non_nullable
-              as List<ExampleUserDto>,
+              as List<ExampleUser>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ExampleLoadedImpl implements ExampleLoaded {
-  const _$ExampleLoadedImpl(final List<ExampleUserDto> response)
+class _$ExampleStateLoadedImpl implements ExampleStateLoaded {
+  const _$ExampleStateLoadedImpl(final List<ExampleUser> response)
       : _response = response;
 
-  final List<ExampleUserDto> _response;
+  final List<ExampleUser> _response;
   @override
-  List<ExampleUserDto> get response {
+  List<ExampleUser> get response {
     if (_response is EqualUnmodifiableListView) return _response;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_response);
@@ -518,7 +521,7 @@ class _$ExampleLoadedImpl implements ExampleLoaded {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ExampleLoadedImpl &&
+            other is _$ExampleStateLoadedImpl &&
             const DeepCollectionEquality().equals(other._response, _response));
   }
 
@@ -529,15 +532,16 @@ class _$ExampleLoadedImpl implements ExampleLoaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ExampleLoadedImplCopyWith<_$ExampleLoadedImpl> get copyWith =>
-      __$$ExampleLoadedImplCopyWithImpl<_$ExampleLoadedImpl>(this, _$identity);
+  _$$ExampleStateLoadedImplCopyWith<_$ExampleStateLoadedImpl> get copyWith =>
+      __$$ExampleStateLoadedImplCopyWithImpl<_$ExampleStateLoadedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ExampleUserDto> response) loaded,
+    required TResult Function(List<ExampleUser> response) loaded,
     required TResult Function(Failure failure) error,
   }) {
     return loaded(response);
@@ -548,7 +552,7 @@ class _$ExampleLoadedImpl implements ExampleLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ExampleUserDto> response)? loaded,
+    TResult? Function(List<ExampleUser> response)? loaded,
     TResult? Function(Failure failure)? error,
   }) {
     return loaded?.call(response);
@@ -559,7 +563,7 @@ class _$ExampleLoadedImpl implements ExampleLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ExampleUserDto> response)? loaded,
+    TResult Function(List<ExampleUser> response)? loaded,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
@@ -572,10 +576,10 @@ class _$ExampleLoadedImpl implements ExampleLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ExampleInitial value) initial,
-    required TResult Function(ExampleLoading value) loading,
-    required TResult Function(ExampleLoaded value) loaded,
-    required TResult Function(ExampleError value) error,
+    required TResult Function(ExampleStateInitial value) initial,
+    required TResult Function(ExampleStateLoading value) loading,
+    required TResult Function(ExampleStateLoaded value) loaded,
+    required TResult Function(ExampleStateError value) error,
   }) {
     return loaded(this);
   }
@@ -583,10 +587,10 @@ class _$ExampleLoadedImpl implements ExampleLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ExampleInitial value)? initial,
-    TResult? Function(ExampleLoading value)? loading,
-    TResult? Function(ExampleLoaded value)? loaded,
-    TResult? Function(ExampleError value)? error,
+    TResult? Function(ExampleStateInitial value)? initial,
+    TResult? Function(ExampleStateLoading value)? loading,
+    TResult? Function(ExampleStateLoaded value)? loaded,
+    TResult? Function(ExampleStateError value)? error,
   }) {
     return loaded?.call(this);
   }
@@ -594,10 +598,10 @@ class _$ExampleLoadedImpl implements ExampleLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ExampleInitial value)? initial,
-    TResult Function(ExampleLoading value)? loading,
-    TResult Function(ExampleLoaded value)? loaded,
-    TResult Function(ExampleError value)? error,
+    TResult Function(ExampleStateInitial value)? initial,
+    TResult Function(ExampleStateLoading value)? loading,
+    TResult Function(ExampleStateLoaded value)? loaded,
+    TResult Function(ExampleStateError value)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -607,21 +611,21 @@ class _$ExampleLoadedImpl implements ExampleLoaded {
   }
 }
 
-abstract class ExampleLoaded implements ExampleState {
-  const factory ExampleLoaded(final List<ExampleUserDto> response) =
-      _$ExampleLoadedImpl;
+abstract class ExampleStateLoaded implements ExampleState {
+  const factory ExampleStateLoaded(final List<ExampleUser> response) =
+      _$ExampleStateLoadedImpl;
 
-  List<ExampleUserDto> get response;
+  List<ExampleUser> get response;
   @JsonKey(ignore: true)
-  _$$ExampleLoadedImplCopyWith<_$ExampleLoadedImpl> get copyWith =>
+  _$$ExampleStateLoadedImplCopyWith<_$ExampleStateLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ExampleErrorImplCopyWith<$Res> {
-  factory _$$ExampleErrorImplCopyWith(
-          _$ExampleErrorImpl value, $Res Function(_$ExampleErrorImpl) then) =
-      __$$ExampleErrorImplCopyWithImpl<$Res>;
+abstract class _$$ExampleStateErrorImplCopyWith<$Res> {
+  factory _$$ExampleStateErrorImplCopyWith(_$ExampleStateErrorImpl value,
+          $Res Function(_$ExampleStateErrorImpl) then) =
+      __$$ExampleStateErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Failure failure});
 
@@ -629,11 +633,11 @@ abstract class _$$ExampleErrorImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ExampleErrorImplCopyWithImpl<$Res>
-    extends _$ExampleStateCopyWithImpl<$Res, _$ExampleErrorImpl>
-    implements _$$ExampleErrorImplCopyWith<$Res> {
-  __$$ExampleErrorImplCopyWithImpl(
-      _$ExampleErrorImpl _value, $Res Function(_$ExampleErrorImpl) _then)
+class __$$ExampleStateErrorImplCopyWithImpl<$Res>
+    extends _$ExampleStateCopyWithImpl<$Res, _$ExampleStateErrorImpl>
+    implements _$$ExampleStateErrorImplCopyWith<$Res> {
+  __$$ExampleStateErrorImplCopyWithImpl(_$ExampleStateErrorImpl _value,
+      $Res Function(_$ExampleStateErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -641,7 +645,7 @@ class __$$ExampleErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? failure = null,
   }) {
-    return _then(_$ExampleErrorImpl(
+    return _then(_$ExampleStateErrorImpl(
       null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -660,8 +664,8 @@ class __$$ExampleErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ExampleErrorImpl implements ExampleError {
-  const _$ExampleErrorImpl(this.failure);
+class _$ExampleStateErrorImpl implements ExampleStateError {
+  const _$ExampleStateErrorImpl(this.failure);
 
   @override
   final Failure failure;
@@ -675,7 +679,7 @@ class _$ExampleErrorImpl implements ExampleError {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ExampleErrorImpl &&
+            other is _$ExampleStateErrorImpl &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
@@ -685,15 +689,16 @@ class _$ExampleErrorImpl implements ExampleError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ExampleErrorImplCopyWith<_$ExampleErrorImpl> get copyWith =>
-      __$$ExampleErrorImplCopyWithImpl<_$ExampleErrorImpl>(this, _$identity);
+  _$$ExampleStateErrorImplCopyWith<_$ExampleStateErrorImpl> get copyWith =>
+      __$$ExampleStateErrorImplCopyWithImpl<_$ExampleStateErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ExampleUserDto> response) loaded,
+    required TResult Function(List<ExampleUser> response) loaded,
     required TResult Function(Failure failure) error,
   }) {
     return error(failure);
@@ -704,7 +709,7 @@ class _$ExampleErrorImpl implements ExampleError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ExampleUserDto> response)? loaded,
+    TResult? Function(List<ExampleUser> response)? loaded,
     TResult? Function(Failure failure)? error,
   }) {
     return error?.call(failure);
@@ -715,7 +720,7 @@ class _$ExampleErrorImpl implements ExampleError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ExampleUserDto> response)? loaded,
+    TResult Function(List<ExampleUser> response)? loaded,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
@@ -728,10 +733,10 @@ class _$ExampleErrorImpl implements ExampleError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ExampleInitial value) initial,
-    required TResult Function(ExampleLoading value) loading,
-    required TResult Function(ExampleLoaded value) loaded,
-    required TResult Function(ExampleError value) error,
+    required TResult Function(ExampleStateInitial value) initial,
+    required TResult Function(ExampleStateLoading value) loading,
+    required TResult Function(ExampleStateLoaded value) loaded,
+    required TResult Function(ExampleStateError value) error,
   }) {
     return error(this);
   }
@@ -739,10 +744,10 @@ class _$ExampleErrorImpl implements ExampleError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ExampleInitial value)? initial,
-    TResult? Function(ExampleLoading value)? loading,
-    TResult? Function(ExampleLoaded value)? loaded,
-    TResult? Function(ExampleError value)? error,
+    TResult? Function(ExampleStateInitial value)? initial,
+    TResult? Function(ExampleStateLoading value)? loading,
+    TResult? Function(ExampleStateLoaded value)? loaded,
+    TResult? Function(ExampleStateError value)? error,
   }) {
     return error?.call(this);
   }
@@ -750,10 +755,10 @@ class _$ExampleErrorImpl implements ExampleError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ExampleInitial value)? initial,
-    TResult Function(ExampleLoading value)? loading,
-    TResult Function(ExampleLoaded value)? loaded,
-    TResult Function(ExampleError value)? error,
+    TResult Function(ExampleStateInitial value)? initial,
+    TResult Function(ExampleStateLoading value)? loading,
+    TResult Function(ExampleStateLoaded value)? loaded,
+    TResult Function(ExampleStateError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -763,11 +768,12 @@ class _$ExampleErrorImpl implements ExampleError {
   }
 }
 
-abstract class ExampleError implements ExampleState {
-  const factory ExampleError(final Failure failure) = _$ExampleErrorImpl;
+abstract class ExampleStateError implements ExampleState {
+  const factory ExampleStateError(final Failure failure) =
+      _$ExampleStateErrorImpl;
 
   Failure get failure;
   @JsonKey(ignore: true)
-  _$$ExampleErrorImplCopyWith<_$ExampleErrorImpl> get copyWith =>
+  _$$ExampleStateErrorImplCopyWith<_$ExampleStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

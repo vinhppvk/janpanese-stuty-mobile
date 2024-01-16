@@ -27,6 +27,8 @@ mixin _$Failure {
     required TResult Function(String message) httpNotFound,
     required TResult Function(String message) httpUnprocessableEntity,
     required TResult Function(String message) httpInternalServerError,
+    required TResult Function(String message) httpMethodNotAllowedError,
+    required TResult Function(String message) httpConflictError,
     required TResult Function(String message) badKeyOfValue,
   }) =>
       throw _privateConstructorUsedError;
@@ -40,6 +42,8 @@ mixin _$Failure {
     TResult? Function(String message)? httpNotFound,
     TResult? Function(String message)? httpUnprocessableEntity,
     TResult? Function(String message)? httpInternalServerError,
+    TResult? Function(String message)? httpMethodNotAllowedError,
+    TResult? Function(String message)? httpConflictError,
     TResult? Function(String message)? badKeyOfValue,
   }) =>
       throw _privateConstructorUsedError;
@@ -53,6 +57,8 @@ mixin _$Failure {
     TResult Function(String message)? httpNotFound,
     TResult Function(String message)? httpUnprocessableEntity,
     TResult Function(String message)? httpInternalServerError,
+    TResult Function(String message)? httpMethodNotAllowedError,
+    TResult Function(String message)? httpConflictError,
     TResult Function(String message)? badKeyOfValue,
     required TResult orElse(),
   }) =>
@@ -69,6 +75,9 @@ mixin _$Failure {
         httpUnprocessableEntity,
     required TResult Function(HttpInternalServerErrorFailure value)
         httpInternalServerError,
+    required TResult Function(HttpMethodNotAllowedErrorFailure value)
+        httpMethodNotAllowedError,
+    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
     required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
   }) =>
       throw _privateConstructorUsedError;
@@ -84,6 +93,9 @@ mixin _$Failure {
         httpUnprocessableEntity,
     TResult? Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
   }) =>
       throw _privateConstructorUsedError;
@@ -99,6 +111,9 @@ mixin _$Failure {
         httpUnprocessableEntity,
     TResult Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
     required TResult orElse(),
   }) =>
@@ -215,6 +230,8 @@ class _$UndefinedFailureImpl implements UndefinedFailure {
     required TResult Function(String message) httpNotFound,
     required TResult Function(String message) httpUnprocessableEntity,
     required TResult Function(String message) httpInternalServerError,
+    required TResult Function(String message) httpMethodNotAllowedError,
+    required TResult Function(String message) httpConflictError,
     required TResult Function(String message) badKeyOfValue,
   }) {
     return undefined(message);
@@ -231,6 +248,8 @@ class _$UndefinedFailureImpl implements UndefinedFailure {
     TResult? Function(String message)? httpNotFound,
     TResult? Function(String message)? httpUnprocessableEntity,
     TResult? Function(String message)? httpInternalServerError,
+    TResult? Function(String message)? httpMethodNotAllowedError,
+    TResult? Function(String message)? httpConflictError,
     TResult? Function(String message)? badKeyOfValue,
   }) {
     return undefined?.call(message);
@@ -247,6 +266,8 @@ class _$UndefinedFailureImpl implements UndefinedFailure {
     TResult Function(String message)? httpNotFound,
     TResult Function(String message)? httpUnprocessableEntity,
     TResult Function(String message)? httpInternalServerError,
+    TResult Function(String message)? httpMethodNotAllowedError,
+    TResult Function(String message)? httpConflictError,
     TResult Function(String message)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -269,6 +290,9 @@ class _$UndefinedFailureImpl implements UndefinedFailure {
         httpUnprocessableEntity,
     required TResult Function(HttpInternalServerErrorFailure value)
         httpInternalServerError,
+    required TResult Function(HttpMethodNotAllowedErrorFailure value)
+        httpMethodNotAllowedError,
+    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
     required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
   }) {
     return undefined(this);
@@ -287,6 +311,9 @@ class _$UndefinedFailureImpl implements UndefinedFailure {
         httpUnprocessableEntity,
     TResult? Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
   }) {
     return undefined?.call(this);
@@ -305,6 +332,9 @@ class _$UndefinedFailureImpl implements UndefinedFailure {
         httpUnprocessableEntity,
     TResult Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -402,6 +432,8 @@ class _$NoConnectionFailureImpl implements NoConnectionFailure {
     required TResult Function(String message) httpNotFound,
     required TResult Function(String message) httpUnprocessableEntity,
     required TResult Function(String message) httpInternalServerError,
+    required TResult Function(String message) httpMethodNotAllowedError,
+    required TResult Function(String message) httpConflictError,
     required TResult Function(String message) badKeyOfValue,
   }) {
     return noConnection(message);
@@ -418,6 +450,8 @@ class _$NoConnectionFailureImpl implements NoConnectionFailure {
     TResult? Function(String message)? httpNotFound,
     TResult? Function(String message)? httpUnprocessableEntity,
     TResult? Function(String message)? httpInternalServerError,
+    TResult? Function(String message)? httpMethodNotAllowedError,
+    TResult? Function(String message)? httpConflictError,
     TResult? Function(String message)? badKeyOfValue,
   }) {
     return noConnection?.call(message);
@@ -434,6 +468,8 @@ class _$NoConnectionFailureImpl implements NoConnectionFailure {
     TResult Function(String message)? httpNotFound,
     TResult Function(String message)? httpUnprocessableEntity,
     TResult Function(String message)? httpInternalServerError,
+    TResult Function(String message)? httpMethodNotAllowedError,
+    TResult Function(String message)? httpConflictError,
     TResult Function(String message)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -456,6 +492,9 @@ class _$NoConnectionFailureImpl implements NoConnectionFailure {
         httpUnprocessableEntity,
     required TResult Function(HttpInternalServerErrorFailure value)
         httpInternalServerError,
+    required TResult Function(HttpMethodNotAllowedErrorFailure value)
+        httpMethodNotAllowedError,
+    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
     required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
   }) {
     return noConnection(this);
@@ -474,6 +513,9 @@ class _$NoConnectionFailureImpl implements NoConnectionFailure {
         httpUnprocessableEntity,
     TResult? Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
   }) {
     return noConnection?.call(this);
@@ -492,6 +534,9 @@ class _$NoConnectionFailureImpl implements NoConnectionFailure {
         httpUnprocessableEntity,
     TResult Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -590,6 +635,8 @@ class _$HttpBadRequestFailureImpl implements HttpBadRequestFailure {
     required TResult Function(String message) httpNotFound,
     required TResult Function(String message) httpUnprocessableEntity,
     required TResult Function(String message) httpInternalServerError,
+    required TResult Function(String message) httpMethodNotAllowedError,
+    required TResult Function(String message) httpConflictError,
     required TResult Function(String message) badKeyOfValue,
   }) {
     return httpBadRequest(message);
@@ -606,6 +653,8 @@ class _$HttpBadRequestFailureImpl implements HttpBadRequestFailure {
     TResult? Function(String message)? httpNotFound,
     TResult? Function(String message)? httpUnprocessableEntity,
     TResult? Function(String message)? httpInternalServerError,
+    TResult? Function(String message)? httpMethodNotAllowedError,
+    TResult? Function(String message)? httpConflictError,
     TResult? Function(String message)? badKeyOfValue,
   }) {
     return httpBadRequest?.call(message);
@@ -622,6 +671,8 @@ class _$HttpBadRequestFailureImpl implements HttpBadRequestFailure {
     TResult Function(String message)? httpNotFound,
     TResult Function(String message)? httpUnprocessableEntity,
     TResult Function(String message)? httpInternalServerError,
+    TResult Function(String message)? httpMethodNotAllowedError,
+    TResult Function(String message)? httpConflictError,
     TResult Function(String message)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -644,6 +695,9 @@ class _$HttpBadRequestFailureImpl implements HttpBadRequestFailure {
         httpUnprocessableEntity,
     required TResult Function(HttpInternalServerErrorFailure value)
         httpInternalServerError,
+    required TResult Function(HttpMethodNotAllowedErrorFailure value)
+        httpMethodNotAllowedError,
+    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
     required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
   }) {
     return httpBadRequest(this);
@@ -662,6 +716,9 @@ class _$HttpBadRequestFailureImpl implements HttpBadRequestFailure {
         httpUnprocessableEntity,
     TResult? Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
   }) {
     return httpBadRequest?.call(this);
@@ -680,6 +737,9 @@ class _$HttpBadRequestFailureImpl implements HttpBadRequestFailure {
         httpUnprocessableEntity,
     TResult Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -779,6 +839,8 @@ class _$HttpUnauthorizedFailureImpl implements HttpUnauthorizedFailure {
     required TResult Function(String message) httpNotFound,
     required TResult Function(String message) httpUnprocessableEntity,
     required TResult Function(String message) httpInternalServerError,
+    required TResult Function(String message) httpMethodNotAllowedError,
+    required TResult Function(String message) httpConflictError,
     required TResult Function(String message) badKeyOfValue,
   }) {
     return httpUnauthorized(message);
@@ -795,6 +857,8 @@ class _$HttpUnauthorizedFailureImpl implements HttpUnauthorizedFailure {
     TResult? Function(String message)? httpNotFound,
     TResult? Function(String message)? httpUnprocessableEntity,
     TResult? Function(String message)? httpInternalServerError,
+    TResult? Function(String message)? httpMethodNotAllowedError,
+    TResult? Function(String message)? httpConflictError,
     TResult? Function(String message)? badKeyOfValue,
   }) {
     return httpUnauthorized?.call(message);
@@ -811,6 +875,8 @@ class _$HttpUnauthorizedFailureImpl implements HttpUnauthorizedFailure {
     TResult Function(String message)? httpNotFound,
     TResult Function(String message)? httpUnprocessableEntity,
     TResult Function(String message)? httpInternalServerError,
+    TResult Function(String message)? httpMethodNotAllowedError,
+    TResult Function(String message)? httpConflictError,
     TResult Function(String message)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -833,6 +899,9 @@ class _$HttpUnauthorizedFailureImpl implements HttpUnauthorizedFailure {
         httpUnprocessableEntity,
     required TResult Function(HttpInternalServerErrorFailure value)
         httpInternalServerError,
+    required TResult Function(HttpMethodNotAllowedErrorFailure value)
+        httpMethodNotAllowedError,
+    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
     required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
   }) {
     return httpUnauthorized(this);
@@ -851,6 +920,9 @@ class _$HttpUnauthorizedFailureImpl implements HttpUnauthorizedFailure {
         httpUnprocessableEntity,
     TResult? Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
   }) {
     return httpUnauthorized?.call(this);
@@ -869,6 +941,9 @@ class _$HttpUnauthorizedFailureImpl implements HttpUnauthorizedFailure {
         httpUnprocessableEntity,
     TResult Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -967,6 +1042,8 @@ class _$HttpForbiddenFailureImpl implements HttpForbiddenFailure {
     required TResult Function(String message) httpNotFound,
     required TResult Function(String message) httpUnprocessableEntity,
     required TResult Function(String message) httpInternalServerError,
+    required TResult Function(String message) httpMethodNotAllowedError,
+    required TResult Function(String message) httpConflictError,
     required TResult Function(String message) badKeyOfValue,
   }) {
     return httpForbidden(message);
@@ -983,6 +1060,8 @@ class _$HttpForbiddenFailureImpl implements HttpForbiddenFailure {
     TResult? Function(String message)? httpNotFound,
     TResult? Function(String message)? httpUnprocessableEntity,
     TResult? Function(String message)? httpInternalServerError,
+    TResult? Function(String message)? httpMethodNotAllowedError,
+    TResult? Function(String message)? httpConflictError,
     TResult? Function(String message)? badKeyOfValue,
   }) {
     return httpForbidden?.call(message);
@@ -999,6 +1078,8 @@ class _$HttpForbiddenFailureImpl implements HttpForbiddenFailure {
     TResult Function(String message)? httpNotFound,
     TResult Function(String message)? httpUnprocessableEntity,
     TResult Function(String message)? httpInternalServerError,
+    TResult Function(String message)? httpMethodNotAllowedError,
+    TResult Function(String message)? httpConflictError,
     TResult Function(String message)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -1021,6 +1102,9 @@ class _$HttpForbiddenFailureImpl implements HttpForbiddenFailure {
         httpUnprocessableEntity,
     required TResult Function(HttpInternalServerErrorFailure value)
         httpInternalServerError,
+    required TResult Function(HttpMethodNotAllowedErrorFailure value)
+        httpMethodNotAllowedError,
+    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
     required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
   }) {
     return httpForbidden(this);
@@ -1039,6 +1123,9 @@ class _$HttpForbiddenFailureImpl implements HttpForbiddenFailure {
         httpUnprocessableEntity,
     TResult? Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
   }) {
     return httpForbidden?.call(this);
@@ -1057,6 +1144,9 @@ class _$HttpForbiddenFailureImpl implements HttpForbiddenFailure {
         httpUnprocessableEntity,
     TResult Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -1154,6 +1244,8 @@ class _$HttpNotFoundFailureImpl implements HttpNotFoundFailure {
     required TResult Function(String message) httpNotFound,
     required TResult Function(String message) httpUnprocessableEntity,
     required TResult Function(String message) httpInternalServerError,
+    required TResult Function(String message) httpMethodNotAllowedError,
+    required TResult Function(String message) httpConflictError,
     required TResult Function(String message) badKeyOfValue,
   }) {
     return httpNotFound(message);
@@ -1170,6 +1262,8 @@ class _$HttpNotFoundFailureImpl implements HttpNotFoundFailure {
     TResult? Function(String message)? httpNotFound,
     TResult? Function(String message)? httpUnprocessableEntity,
     TResult? Function(String message)? httpInternalServerError,
+    TResult? Function(String message)? httpMethodNotAllowedError,
+    TResult? Function(String message)? httpConflictError,
     TResult? Function(String message)? badKeyOfValue,
   }) {
     return httpNotFound?.call(message);
@@ -1186,6 +1280,8 @@ class _$HttpNotFoundFailureImpl implements HttpNotFoundFailure {
     TResult Function(String message)? httpNotFound,
     TResult Function(String message)? httpUnprocessableEntity,
     TResult Function(String message)? httpInternalServerError,
+    TResult Function(String message)? httpMethodNotAllowedError,
+    TResult Function(String message)? httpConflictError,
     TResult Function(String message)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -1208,6 +1304,9 @@ class _$HttpNotFoundFailureImpl implements HttpNotFoundFailure {
         httpUnprocessableEntity,
     required TResult Function(HttpInternalServerErrorFailure value)
         httpInternalServerError,
+    required TResult Function(HttpMethodNotAllowedErrorFailure value)
+        httpMethodNotAllowedError,
+    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
     required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
   }) {
     return httpNotFound(this);
@@ -1226,6 +1325,9 @@ class _$HttpNotFoundFailureImpl implements HttpNotFoundFailure {
         httpUnprocessableEntity,
     TResult? Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
   }) {
     return httpNotFound?.call(this);
@@ -1244,6 +1346,9 @@ class _$HttpNotFoundFailureImpl implements HttpNotFoundFailure {
         httpUnprocessableEntity,
     TResult Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -1345,6 +1450,8 @@ class _$HttpUnprocessableEntityFailureImpl
     required TResult Function(String message) httpNotFound,
     required TResult Function(String message) httpUnprocessableEntity,
     required TResult Function(String message) httpInternalServerError,
+    required TResult Function(String message) httpMethodNotAllowedError,
+    required TResult Function(String message) httpConflictError,
     required TResult Function(String message) badKeyOfValue,
   }) {
     return httpUnprocessableEntity(message);
@@ -1361,6 +1468,8 @@ class _$HttpUnprocessableEntityFailureImpl
     TResult? Function(String message)? httpNotFound,
     TResult? Function(String message)? httpUnprocessableEntity,
     TResult? Function(String message)? httpInternalServerError,
+    TResult? Function(String message)? httpMethodNotAllowedError,
+    TResult? Function(String message)? httpConflictError,
     TResult? Function(String message)? badKeyOfValue,
   }) {
     return httpUnprocessableEntity?.call(message);
@@ -1377,6 +1486,8 @@ class _$HttpUnprocessableEntityFailureImpl
     TResult Function(String message)? httpNotFound,
     TResult Function(String message)? httpUnprocessableEntity,
     TResult Function(String message)? httpInternalServerError,
+    TResult Function(String message)? httpMethodNotAllowedError,
+    TResult Function(String message)? httpConflictError,
     TResult Function(String message)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -1399,6 +1510,9 @@ class _$HttpUnprocessableEntityFailureImpl
         httpUnprocessableEntity,
     required TResult Function(HttpInternalServerErrorFailure value)
         httpInternalServerError,
+    required TResult Function(HttpMethodNotAllowedErrorFailure value)
+        httpMethodNotAllowedError,
+    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
     required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
   }) {
     return httpUnprocessableEntity(this);
@@ -1417,6 +1531,9 @@ class _$HttpUnprocessableEntityFailureImpl
         httpUnprocessableEntity,
     TResult? Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
   }) {
     return httpUnprocessableEntity?.call(this);
@@ -1435,6 +1552,9 @@ class _$HttpUnprocessableEntityFailureImpl
         httpUnprocessableEntity,
     TResult Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -1537,6 +1657,8 @@ class _$HttpInternalServerErrorFailureImpl
     required TResult Function(String message) httpNotFound,
     required TResult Function(String message) httpUnprocessableEntity,
     required TResult Function(String message) httpInternalServerError,
+    required TResult Function(String message) httpMethodNotAllowedError,
+    required TResult Function(String message) httpConflictError,
     required TResult Function(String message) badKeyOfValue,
   }) {
     return httpInternalServerError(message);
@@ -1553,6 +1675,8 @@ class _$HttpInternalServerErrorFailureImpl
     TResult? Function(String message)? httpNotFound,
     TResult? Function(String message)? httpUnprocessableEntity,
     TResult? Function(String message)? httpInternalServerError,
+    TResult? Function(String message)? httpMethodNotAllowedError,
+    TResult? Function(String message)? httpConflictError,
     TResult? Function(String message)? badKeyOfValue,
   }) {
     return httpInternalServerError?.call(message);
@@ -1569,6 +1693,8 @@ class _$HttpInternalServerErrorFailureImpl
     TResult Function(String message)? httpNotFound,
     TResult Function(String message)? httpUnprocessableEntity,
     TResult Function(String message)? httpInternalServerError,
+    TResult Function(String message)? httpMethodNotAllowedError,
+    TResult Function(String message)? httpConflictError,
     TResult Function(String message)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -1591,6 +1717,9 @@ class _$HttpInternalServerErrorFailureImpl
         httpUnprocessableEntity,
     required TResult Function(HttpInternalServerErrorFailure value)
         httpInternalServerError,
+    required TResult Function(HttpMethodNotAllowedErrorFailure value)
+        httpMethodNotAllowedError,
+    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
     required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
   }) {
     return httpInternalServerError(this);
@@ -1609,6 +1738,9 @@ class _$HttpInternalServerErrorFailureImpl
         httpUnprocessableEntity,
     TResult? Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
   }) {
     return httpInternalServerError?.call(this);
@@ -1627,6 +1759,9 @@ class _$HttpInternalServerErrorFailureImpl
         httpUnprocessableEntity,
     TResult Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -1647,6 +1782,417 @@ abstract class HttpInternalServerErrorFailure implements Failure {
   @JsonKey(ignore: true)
   _$$HttpInternalServerErrorFailureImplCopyWith<
           _$HttpInternalServerErrorFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$HttpMethodNotAllowedErrorFailureImplCopyWith<$Res>
+    implements $FailureCopyWith<$Res> {
+  factory _$$HttpMethodNotAllowedErrorFailureImplCopyWith(
+          _$HttpMethodNotAllowedErrorFailureImpl value,
+          $Res Function(_$HttpMethodNotAllowedErrorFailureImpl) then) =
+      __$$HttpMethodNotAllowedErrorFailureImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$HttpMethodNotAllowedErrorFailureImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$HttpMethodNotAllowedErrorFailureImpl>
+    implements _$$HttpMethodNotAllowedErrorFailureImplCopyWith<$Res> {
+  __$$HttpMethodNotAllowedErrorFailureImplCopyWithImpl(
+      _$HttpMethodNotAllowedErrorFailureImpl _value,
+      $Res Function(_$HttpMethodNotAllowedErrorFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$HttpMethodNotAllowedErrorFailureImpl(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$HttpMethodNotAllowedErrorFailureImpl
+    implements HttpMethodNotAllowedErrorFailure {
+  const _$HttpMethodNotAllowedErrorFailureImpl({required this.message});
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'Failure.httpMethodNotAllowedError(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$HttpMethodNotAllowedErrorFailureImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$HttpMethodNotAllowedErrorFailureImplCopyWith<
+          _$HttpMethodNotAllowedErrorFailureImpl>
+      get copyWith => __$$HttpMethodNotAllowedErrorFailureImplCopyWithImpl<
+          _$HttpMethodNotAllowedErrorFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String message) undefined,
+    required TResult Function(String message) noConnection,
+    required TResult Function(String message) httpBadRequest,
+    required TResult Function(String message) httpUnauthorized,
+    required TResult Function(String message) httpForbidden,
+    required TResult Function(String message) httpNotFound,
+    required TResult Function(String message) httpUnprocessableEntity,
+    required TResult Function(String message) httpInternalServerError,
+    required TResult Function(String message) httpMethodNotAllowedError,
+    required TResult Function(String message) httpConflictError,
+    required TResult Function(String message) badKeyOfValue,
+  }) {
+    return httpMethodNotAllowedError(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String message)? undefined,
+    TResult? Function(String message)? noConnection,
+    TResult? Function(String message)? httpBadRequest,
+    TResult? Function(String message)? httpUnauthorized,
+    TResult? Function(String message)? httpForbidden,
+    TResult? Function(String message)? httpNotFound,
+    TResult? Function(String message)? httpUnprocessableEntity,
+    TResult? Function(String message)? httpInternalServerError,
+    TResult? Function(String message)? httpMethodNotAllowedError,
+    TResult? Function(String message)? httpConflictError,
+    TResult? Function(String message)? badKeyOfValue,
+  }) {
+    return httpMethodNotAllowedError?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? undefined,
+    TResult Function(String message)? noConnection,
+    TResult Function(String message)? httpBadRequest,
+    TResult Function(String message)? httpUnauthorized,
+    TResult Function(String message)? httpForbidden,
+    TResult Function(String message)? httpNotFound,
+    TResult Function(String message)? httpUnprocessableEntity,
+    TResult Function(String message)? httpInternalServerError,
+    TResult Function(String message)? httpMethodNotAllowedError,
+    TResult Function(String message)? httpConflictError,
+    TResult Function(String message)? badKeyOfValue,
+    required TResult orElse(),
+  }) {
+    if (httpMethodNotAllowedError != null) {
+      return httpMethodNotAllowedError(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UndefinedFailure value) undefined,
+    required TResult Function(NoConnectionFailure value) noConnection,
+    required TResult Function(HttpBadRequestFailure value) httpBadRequest,
+    required TResult Function(HttpUnauthorizedFailure value) httpUnauthorized,
+    required TResult Function(HttpForbiddenFailure value) httpForbidden,
+    required TResult Function(HttpNotFoundFailure value) httpNotFound,
+    required TResult Function(HttpUnprocessableEntityFailure value)
+        httpUnprocessableEntity,
+    required TResult Function(HttpInternalServerErrorFailure value)
+        httpInternalServerError,
+    required TResult Function(HttpMethodNotAllowedErrorFailure value)
+        httpMethodNotAllowedError,
+    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
+    required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
+  }) {
+    return httpMethodNotAllowedError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UndefinedFailure value)? undefined,
+    TResult? Function(NoConnectionFailure value)? noConnection,
+    TResult? Function(HttpBadRequestFailure value)? httpBadRequest,
+    TResult? Function(HttpUnauthorizedFailure value)? httpUnauthorized,
+    TResult? Function(HttpForbiddenFailure value)? httpForbidden,
+    TResult? Function(HttpNotFoundFailure value)? httpNotFound,
+    TResult? Function(HttpUnprocessableEntityFailure value)?
+        httpUnprocessableEntity,
+    TResult? Function(HttpInternalServerErrorFailure value)?
+        httpInternalServerError,
+    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
+    TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
+  }) {
+    return httpMethodNotAllowedError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UndefinedFailure value)? undefined,
+    TResult Function(NoConnectionFailure value)? noConnection,
+    TResult Function(HttpBadRequestFailure value)? httpBadRequest,
+    TResult Function(HttpUnauthorizedFailure value)? httpUnauthorized,
+    TResult Function(HttpForbiddenFailure value)? httpForbidden,
+    TResult Function(HttpNotFoundFailure value)? httpNotFound,
+    TResult Function(HttpUnprocessableEntityFailure value)?
+        httpUnprocessableEntity,
+    TResult Function(HttpInternalServerErrorFailure value)?
+        httpInternalServerError,
+    TResult Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
+    TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    required TResult orElse(),
+  }) {
+    if (httpMethodNotAllowedError != null) {
+      return httpMethodNotAllowedError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HttpMethodNotAllowedErrorFailure implements Failure {
+  const factory HttpMethodNotAllowedErrorFailure(
+      {required final String message}) = _$HttpMethodNotAllowedErrorFailureImpl;
+
+  @override
+  String get message;
+  @override
+  @JsonKey(ignore: true)
+  _$$HttpMethodNotAllowedErrorFailureImplCopyWith<
+          _$HttpMethodNotAllowedErrorFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$HttpConflictErrorFailureImplCopyWith<$Res>
+    implements $FailureCopyWith<$Res> {
+  factory _$$HttpConflictErrorFailureImplCopyWith(
+          _$HttpConflictErrorFailureImpl value,
+          $Res Function(_$HttpConflictErrorFailureImpl) then) =
+      __$$HttpConflictErrorFailureImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$HttpConflictErrorFailureImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$HttpConflictErrorFailureImpl>
+    implements _$$HttpConflictErrorFailureImplCopyWith<$Res> {
+  __$$HttpConflictErrorFailureImplCopyWithImpl(
+      _$HttpConflictErrorFailureImpl _value,
+      $Res Function(_$HttpConflictErrorFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$HttpConflictErrorFailureImpl(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$HttpConflictErrorFailureImpl implements HttpConflictErrorFailure {
+  const _$HttpConflictErrorFailureImpl({required this.message});
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'Failure.httpConflictError(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$HttpConflictErrorFailureImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$HttpConflictErrorFailureImplCopyWith<_$HttpConflictErrorFailureImpl>
+      get copyWith => __$$HttpConflictErrorFailureImplCopyWithImpl<
+          _$HttpConflictErrorFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String message) undefined,
+    required TResult Function(String message) noConnection,
+    required TResult Function(String message) httpBadRequest,
+    required TResult Function(String message) httpUnauthorized,
+    required TResult Function(String message) httpForbidden,
+    required TResult Function(String message) httpNotFound,
+    required TResult Function(String message) httpUnprocessableEntity,
+    required TResult Function(String message) httpInternalServerError,
+    required TResult Function(String message) httpMethodNotAllowedError,
+    required TResult Function(String message) httpConflictError,
+    required TResult Function(String message) badKeyOfValue,
+  }) {
+    return httpConflictError(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String message)? undefined,
+    TResult? Function(String message)? noConnection,
+    TResult? Function(String message)? httpBadRequest,
+    TResult? Function(String message)? httpUnauthorized,
+    TResult? Function(String message)? httpForbidden,
+    TResult? Function(String message)? httpNotFound,
+    TResult? Function(String message)? httpUnprocessableEntity,
+    TResult? Function(String message)? httpInternalServerError,
+    TResult? Function(String message)? httpMethodNotAllowedError,
+    TResult? Function(String message)? httpConflictError,
+    TResult? Function(String message)? badKeyOfValue,
+  }) {
+    return httpConflictError?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? undefined,
+    TResult Function(String message)? noConnection,
+    TResult Function(String message)? httpBadRequest,
+    TResult Function(String message)? httpUnauthorized,
+    TResult Function(String message)? httpForbidden,
+    TResult Function(String message)? httpNotFound,
+    TResult Function(String message)? httpUnprocessableEntity,
+    TResult Function(String message)? httpInternalServerError,
+    TResult Function(String message)? httpMethodNotAllowedError,
+    TResult Function(String message)? httpConflictError,
+    TResult Function(String message)? badKeyOfValue,
+    required TResult orElse(),
+  }) {
+    if (httpConflictError != null) {
+      return httpConflictError(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UndefinedFailure value) undefined,
+    required TResult Function(NoConnectionFailure value) noConnection,
+    required TResult Function(HttpBadRequestFailure value) httpBadRequest,
+    required TResult Function(HttpUnauthorizedFailure value) httpUnauthorized,
+    required TResult Function(HttpForbiddenFailure value) httpForbidden,
+    required TResult Function(HttpNotFoundFailure value) httpNotFound,
+    required TResult Function(HttpUnprocessableEntityFailure value)
+        httpUnprocessableEntity,
+    required TResult Function(HttpInternalServerErrorFailure value)
+        httpInternalServerError,
+    required TResult Function(HttpMethodNotAllowedErrorFailure value)
+        httpMethodNotAllowedError,
+    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
+    required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
+  }) {
+    return httpConflictError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UndefinedFailure value)? undefined,
+    TResult? Function(NoConnectionFailure value)? noConnection,
+    TResult? Function(HttpBadRequestFailure value)? httpBadRequest,
+    TResult? Function(HttpUnauthorizedFailure value)? httpUnauthorized,
+    TResult? Function(HttpForbiddenFailure value)? httpForbidden,
+    TResult? Function(HttpNotFoundFailure value)? httpNotFound,
+    TResult? Function(HttpUnprocessableEntityFailure value)?
+        httpUnprocessableEntity,
+    TResult? Function(HttpInternalServerErrorFailure value)?
+        httpInternalServerError,
+    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
+    TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
+  }) {
+    return httpConflictError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UndefinedFailure value)? undefined,
+    TResult Function(NoConnectionFailure value)? noConnection,
+    TResult Function(HttpBadRequestFailure value)? httpBadRequest,
+    TResult Function(HttpUnauthorizedFailure value)? httpUnauthorized,
+    TResult Function(HttpForbiddenFailure value)? httpForbidden,
+    TResult Function(HttpNotFoundFailure value)? httpNotFound,
+    TResult Function(HttpUnprocessableEntityFailure value)?
+        httpUnprocessableEntity,
+    TResult Function(HttpInternalServerErrorFailure value)?
+        httpInternalServerError,
+    TResult Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
+    TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    required TResult orElse(),
+  }) {
+    if (httpConflictError != null) {
+      return httpConflictError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HttpConflictErrorFailure implements Failure {
+  const factory HttpConflictErrorFailure({required final String message}) =
+      _$HttpConflictErrorFailureImpl;
+
+  @override
+  String get message;
+  @override
+  @JsonKey(ignore: true)
+  _$$HttpConflictErrorFailureImplCopyWith<_$HttpConflictErrorFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1726,6 +2272,8 @@ class _$BadKeyOfValueFailureImpl implements BadKeyOfValueFailure {
     required TResult Function(String message) httpNotFound,
     required TResult Function(String message) httpUnprocessableEntity,
     required TResult Function(String message) httpInternalServerError,
+    required TResult Function(String message) httpMethodNotAllowedError,
+    required TResult Function(String message) httpConflictError,
     required TResult Function(String message) badKeyOfValue,
   }) {
     return badKeyOfValue(message);
@@ -1742,6 +2290,8 @@ class _$BadKeyOfValueFailureImpl implements BadKeyOfValueFailure {
     TResult? Function(String message)? httpNotFound,
     TResult? Function(String message)? httpUnprocessableEntity,
     TResult? Function(String message)? httpInternalServerError,
+    TResult? Function(String message)? httpMethodNotAllowedError,
+    TResult? Function(String message)? httpConflictError,
     TResult? Function(String message)? badKeyOfValue,
   }) {
     return badKeyOfValue?.call(message);
@@ -1758,6 +2308,8 @@ class _$BadKeyOfValueFailureImpl implements BadKeyOfValueFailure {
     TResult Function(String message)? httpNotFound,
     TResult Function(String message)? httpUnprocessableEntity,
     TResult Function(String message)? httpInternalServerError,
+    TResult Function(String message)? httpMethodNotAllowedError,
+    TResult Function(String message)? httpConflictError,
     TResult Function(String message)? badKeyOfValue,
     required TResult orElse(),
   }) {
@@ -1780,6 +2332,9 @@ class _$BadKeyOfValueFailureImpl implements BadKeyOfValueFailure {
         httpUnprocessableEntity,
     required TResult Function(HttpInternalServerErrorFailure value)
         httpInternalServerError,
+    required TResult Function(HttpMethodNotAllowedErrorFailure value)
+        httpMethodNotAllowedError,
+    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
     required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
   }) {
     return badKeyOfValue(this);
@@ -1798,6 +2353,9 @@ class _$BadKeyOfValueFailureImpl implements BadKeyOfValueFailure {
         httpUnprocessableEntity,
     TResult? Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
   }) {
     return badKeyOfValue?.call(this);
@@ -1816,6 +2374,9 @@ class _$BadKeyOfValueFailureImpl implements BadKeyOfValueFailure {
         httpUnprocessableEntity,
     TResult Function(HttpInternalServerErrorFailure value)?
         httpInternalServerError,
+    TResult Function(HttpMethodNotAllowedErrorFailure value)?
+        httpMethodNotAllowedError,
+    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
     TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
     required TResult orElse(),
   }) {

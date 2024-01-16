@@ -27,20 +27,20 @@ class ExampleUserDto {
   @JsonKey(name: 'email')
   final String email;
   @JsonKey(name: 'address')
-  final Address address;
+  final AddressDto address;
   @JsonKey(name: 'phone')
   final String phone;
   @JsonKey(name: 'website')
   final String website;
   @JsonKey(name: 'company')
-  final Company company;
+  final CompanyDto company;
 
   Map<String, dynamic> toJson() => _$ExampleUserDtoToJson(this);
 }
 
 @JsonSerializable()
-class Address {
-  Address({
+class AddressDto {
+  AddressDto({
     required this.street,
     required this.suite,
     required this.city,
@@ -48,8 +48,9 @@ class Address {
     required this.geo,
   });
 
-  factory Address.fromJson(Map<String, dynamic> json) =>
-      _$AddressFromJson(json);
+  factory AddressDto.fromJson(Map<String, dynamic> json) =>
+      _$AddressDtoFromJson(json);
+
   @JsonKey(name: 'street')
   final String street;
   @JsonKey(name: 'suite')
@@ -59,37 +60,39 @@ class Address {
   @JsonKey(name: 'zipcode')
   final String zipcode;
   @JsonKey(name: 'geo')
-  final Geo geo;
+  final GeoDto geo;
 
-  Map<String, dynamic> toJson() => _$AddressToJson(this);
+  Map<String, dynamic> toJson() => _$AddressDtoToJson(this);
 }
 
 @JsonSerializable()
-class Geo {
-  Geo({
+class GeoDto {
+  GeoDto({
     required this.lat,
     required this.lng,
   });
 
-  factory Geo.fromJson(Map<String, dynamic> json) => _$GeoFromJson(json);
+  factory GeoDto.fromJson(Map<String, dynamic> json) => _$GeoDtoFromJson(json);
+
   @JsonKey(name: 'lat')
   final String lat;
   @JsonKey(name: 'lng')
   final String lng;
 
-  Map<String, dynamic> toJson() => _$GeoToJson(this);
+  Map<String, dynamic> toJson() => _$GeoDtoToJson(this);
 }
 
 @JsonSerializable()
-class Company {
-  Company({
+class CompanyDto {
+  CompanyDto({
     required this.name,
     required this.catchPhrase,
     required this.bs,
   });
 
-  factory Company.fromJson(Map<String, dynamic> json) =>
-      _$CompanyFromJson(json);
+  factory CompanyDto.fromJson(Map<String, dynamic> json) =>
+      _$CompanyDtoFromJson(json);
+
   @JsonKey(name: 'name')
   final String name;
   @JsonKey(name: 'catchPhrase')
@@ -97,5 +100,5 @@ class Company {
   @JsonKey(name: 'bs')
   final String bs;
 
-  Map<String, dynamic> toJson() => _$CompanyToJson(this);
+  Map<String, dynamic> toJson() => _$CompanyDtoToJson(this);
 }

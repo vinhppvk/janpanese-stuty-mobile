@@ -82,6 +82,7 @@ class CustomAlertDialog extends StatelessWidget {
             Flexible(
               child: DefaultTextStyle.merge(
                 style: TTextStyle.getHeadingH5(),
+                textAlign: TextAlign.center,
                 child: title,
               ),
             ),

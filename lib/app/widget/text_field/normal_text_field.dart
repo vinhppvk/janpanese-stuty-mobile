@@ -5,7 +5,6 @@ import '../../theme/style/font_style.dart';
 class NormalTextField extends StatelessWidget {
   const NormalTextField({
     super.key,
-    this.title,
     this.controller,
     this.labelText,
     this.hintText,
@@ -18,7 +17,6 @@ class NormalTextField extends StatelessWidget {
     this.onTapOutside,
   });
 
-  final String? title;
   final TextEditingController? controller;
   final String? labelText;
   final String? hintText;
@@ -32,42 +30,31 @@ class NormalTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        if (title != null)
-          Padding(
-            padding: const EdgeInsets.only(bottom: 8.0),
-            child: Text(
-              title!,
-              style: TTextStyle.getBodyMedium(fontWeight: TFontWeight.medium),
-            ),
-          ),
-        TextFormField(
-          controller: controller,
-          readOnly: readOnly,
-          onChanged: onChanged,
-          onTap: onTap,
-          onTapOutside: onTapOutside,
-          validator: validator,
-          keyboardType: keyboardType,
-          style: TTextStyle.getBodyMedium(),
-          decoration: InputDecoration(
-            labelText: labelText,
-            hintText: hintText,
-            prefixIconConstraints: const BoxConstraints(
-              minHeight: 56.0,
-              maxWidth: 72.0,
-            ),
-            prefixIcon: icon != null
-                ? Padding(
-                    padding: const EdgeInsets.only(left: 16.0, right: 8.0, top: 16.0, bottom: 16.0),
-                    child: IntrinsicWidth(child: icon),
-                  )
-                : null,
-          ),
+    return TextFormField(
+      controller: controller,
+      readOnly: readOnly,
+      onChanged: onChanged,
+      onTap: onTap,
+      onTapOutside: onTapOutside,
+      validator: validator,
+      keyboardType: keyboardType,
+      style: TTextStyle.getBodyMedium(),
+      decoration: InputDecoration(
+        labelText: labelText,
+        hintText: hintText,
+        // contentPadding: EdgeInsets.all(16.0),
+        prefixIconConstraints: const BoxConstraints(
+          maxWidth: 72.0,
+          maxHeight: 56.0,
         ),
-      ],
+        prefixIcon: icon != null
+            ? Padding(
+                padding: const EdgeInsets.only(
+                    left: 16.0, right: 8.0, top: 16.0, bottom: 16.0),
+                child: IntrinsicWidth(child: icon),
+              )
+            : null,
+      ),
     );
   }
 }
