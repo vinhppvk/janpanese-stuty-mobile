@@ -3,10 +3,11 @@ import 'package:fpdart/src/either.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../core/error/failure.dart';
-import '../../../../data/model/entity/register/resend_otp_params.dart';
-import '../../../../data/model/entity/register/resend_otp_result.dart';
-import '../../../../data/model/entity/register/verify_otp_params.dart';
-import '../../../../data/model/entity/register/verify_otp_result.dart';
+import '../../../../data/model/entity/request/register/resend_otp_params.dart';
+import '../../../../data/model/entity/request/register/verify_otp_params.dart';
+import '../../../../data/model/entity/response/register/resend_otp_result.dart';
+import '../../../../data/model/entity/response/register/verify_otp_result.dart';
+import '../../../../data/model/entity/validation/register/verify_otp_validation.dart';
 import '../../../../domain/register/resend_otp_usecase.dart';
 import '../../../../domain/register/verify_otp_usecase.dart';
 
@@ -17,8 +18,10 @@ part 'register_step_2_state.dart';
 part 'register_step_2_bloc.freezed.dart';
 
 class RegisterStep2Bloc extends Bloc<RegisterStep2Event, RegisterStep2State> {
-  RegisterStep2Bloc(this._resendOtpUseCase, this._verifyOtpUseCase)
-      : super(const RegisterStep2State.initial()) {
+  RegisterStep2Bloc(
+    this._resendOtpUseCase,
+    this._verifyOtpUseCase,
+  ) : super(const RegisterStep2State.initial()) {
     on<RegisterStep2Event>(_onRegisterStep2Event);
   }
 
@@ -42,11 +45,11 @@ class RegisterStep2Bloc extends Bloc<RegisterStep2Event, RegisterStep2State> {
       {required String email}) async {
     emit(const RegisterStep2State.loading());
 
-    final Either<Failure, ResendOtpResult> dataState =
-        await _resendOtpUseCase(param: ResendOtpParams(email: email));
+    final Either<Failure<void>, ResendOtpResult> dataState =
+        await _resendOtpUseCase(params: ResendOtpParams(email: email));
 
     dataState.fold(
-      (Failure l) => emit(RegisterStep2State.error(l)),
+      (Failure<void> l) => emit(RegisterStep2State.error(l)),
       (ResendOtpResult r) => emit(RegisterStep2State.resendOtpResult(r)),
     );
   }
@@ -55,17 +58,13 @@ class RegisterStep2Bloc extends Bloc<RegisterStep2Event, RegisterStep2State> {
       {required String email, required String otpCode}) async {
     emit(const RegisterStep2State.loading());
 
-    final Either<Failure, VerifyOtpResult> dataState = await _verifyOtpUseCase(
-        param: VerifyOtpParams(email: email, otpCode: otpCode));
+    final Either<Failure<VerifyOtpValidation>, VerifyOtpResult> dataState =
+        await _verifyOtpUseCase(
+            params: VerifyOtpParams(email: email, otpCode: otpCode));
 
     dataState.fold(
-      (Failure l) {
-        if (l is HttpBadRequestFailure) {
-          emit(RegisterStep2State.validationError(l));
-        } else {
-          emit(RegisterStep2State.error(l));
-        }
-      },
+      (Failure<VerifyOtpValidation> l) =>
+          emit(RegisterStep2State.verifyOtpError(l)),
       (VerifyOtpResult r) => emit(RegisterStep2State.verifyOtpResult(r)),
     );
   }

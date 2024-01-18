@@ -9,8 +9,8 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart' as _i1;
 
-import '../../dto/example/example_user_dto.dart' as _i2;
-import '../../entity/example/example_user.dart' as _i3;
+import '../../dto/response/example/example_user_dto.dart' as _i2;
+import '../../entity/response/example/example_user.dart' as _i3;
 
 /// {@template package:japanese_study/data/model/mapper/example/example_mapper.dart}
 /// Available mappings:

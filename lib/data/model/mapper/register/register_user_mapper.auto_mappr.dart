@@ -9,13 +9,17 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart' as _i1;
 
-import '../../dto/register/register_user_params_dto.dart' as _i3;
-import '../../entity/register/register_user_params.dart' as _i2;
-import 'register_user_mapper.dart' as _i4;
+import '../../dto/request/register/register_user_params_dto.dart' as _i3;
+import '../../dto/validation/register/register_user_validation_dto.dart' as _i4;
+import '../../entity/request/register/register_user_params.dart' as _i2;
+import '../../entity/validation/register/register_user_validation.dart' as _i5;
+import '../utils/common_type_converter.dart' as _i7;
+import 'register_user_mapper.dart' as _i6;
 
 /// {@template package:japanese_study/data/model/mapper/register/register_user_mapper.dart}
 /// Available mappings:
 /// - `RegisterUserParams` → `RegisterUserParamsDto`.
+/// - `RegisterUserValidationDto` → `RegisterUserValidation`.
 /// {@endtemplate}
 class $RegisterUserMappr implements _i1.AutoMapprInterface {
   const $RegisterUserMappr();
@@ -34,6 +38,12 @@ class $RegisterUserMappr implements _i1.AutoMapprInterface {
             sourceTypeOf == _typeOf<_i2.RegisterUserParams?>()) &&
         (targetTypeOf == _typeOf<_i3.RegisterUserParamsDto>() ||
             targetTypeOf == _typeOf<_i3.RegisterUserParamsDto?>())) {
+      return true;
+    }
+    if ((sourceTypeOf == _typeOf<_i4.RegisterUserValidationDto>() ||
+            sourceTypeOf == _typeOf<_i4.RegisterUserValidationDto?>()) &&
+        (targetTypeOf == _typeOf<_i5.RegisterUserValidation>() ||
+            targetTypeOf == _typeOf<_i5.RegisterUserValidation?>())) {
       return true;
     }
     if (recursive) {
@@ -203,6 +213,16 @@ class $RegisterUserMappr implements _i1.AutoMapprInterface {
       return (_map__i2$RegisterUserParams_To__i3$RegisterUserParamsDto(
           (model as _i2.RegisterUserParams?)) as TARGET);
     }
+    if ((sourceTypeOf == _typeOf<_i4.RegisterUserValidationDto>() ||
+            sourceTypeOf == _typeOf<_i4.RegisterUserValidationDto?>()) &&
+        (targetTypeOf == _typeOf<_i5.RegisterUserValidation>() ||
+            targetTypeOf == _typeOf<_i5.RegisterUserValidation?>())) {
+      if (canReturnNull && model == null) {
+        return null;
+      }
+      return (_map__i4$RegisterUserValidationDto_To__i5$RegisterUserValidation(
+          (model as _i4.RegisterUserValidationDto?)) as TARGET);
+    }
     throw Exception('No ${model.runtimeType} -> $targetTypeOf mapping.');
   }
 
@@ -219,12 +239,43 @@ class $RegisterUserMappr implements _i1.AutoMapprInterface {
       email: model.email,
       nickName: model.nickName,
       sex: model.sex,
-      birthday: _i4.RegisterUserMappr.mapBirthdayToServerDate(model),
+      birthday:
+          (_i6.RegisterUserMappr.mapToServerDate(model.birthday) as String?),
       phoneNumber: model.phoneNumber,
       nationality: model.nationality,
       password: model.password,
       imagePhoto: model.imagePhoto,
       confirmPassword: model.confirmPassword,
+    );
+  }
+
+  _i5.RegisterUserValidation
+      _map__i4$RegisterUserValidationDto_To__i5$RegisterUserValidation(
+          _i4.RegisterUserValidationDto? input) {
+    final model = input;
+    if (model == null) {
+      throw Exception(
+          r'Mapping RegisterUserValidationDto → RegisterUserValidation failed because RegisterUserValidationDto was null, and no default value was provided. '
+          r'Consider setting the whenSourceIsNull parameter on the MapType<RegisterUserValidationDto, RegisterUserValidation> to handle null values during mapping.');
+    }
+    return _i5.RegisterUserValidation(
+      email: (_i7.CommonTypeConverter.firstErrorMsg(model.email) as String?),
+      nickName:
+          (_i7.CommonTypeConverter.firstErrorMsg(model.nickName) as String?),
+      sex: (_i7.CommonTypeConverter.firstErrorMsg(model.sex) as String?),
+      birthday:
+          (_i7.CommonTypeConverter.firstErrorMsg(model.birthday) as String?),
+      phoneNumber:
+          (_i7.CommonTypeConverter.firstErrorMsg(model.phoneNumber) as String?),
+      nationality:
+          (_i7.CommonTypeConverter.firstErrorMsg(model.nationality) as String?),
+      password:
+          (_i7.CommonTypeConverter.firstErrorMsg(model.password) as String?),
+      imagePhoto:
+          (_i7.CommonTypeConverter.firstErrorMsg(model.imagePhoto) as String?),
+      confirmPassword:
+          (_i7.CommonTypeConverter.firstErrorMsg(model.confirmPassword)
+              as String?),
     );
   }
 }

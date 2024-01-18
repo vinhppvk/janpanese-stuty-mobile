@@ -1,48 +1,82 @@
+import 'package:dio/dio.dart';
+import 'package:fpdart/fpdart.dart';
+import 'package:json_annotation/json_annotation.dart';
+
+import '../../core/error/exception.dart';
+import '../../core/error/failure.dart';
+import '../../core/error_handler/error_helper.dart';
 import '../model/dto/base/base_response.dart';
-import '../model/dto/base/empty_model.dart';
-import '../model/dto/register/register_user_params_dto.dart';
-import '../model/dto/register/resend_otp_params_dto.dart';
-import '../model/dto/register/resend_otp_result_dto.dart';
-import '../model/dto/register/verify_otp_params_dto.dart';
-import '../model/dto/register/verify_otp_result_dto.dart';
-import '../model/entity/register/register_user_params.dart';
-import '../model/entity/register/resend_otp_params.dart';
-import '../model/entity/register/resend_otp_result.dart';
-import '../model/entity/register/verify_otp_params.dart';
-import '../model/entity/register/verify_otp_result.dart';
-import '../model/mapper/register/register_user_mapper.dart';
+import '../model/dto/request/register/register_user_params_dto.dart';
+import '../model/dto/request/register/verify_otp_params_dto.dart';
+import '../model/dto/response/register/resend_otp_result_dto.dart';
+import '../model/dto/response/register/verify_otp_result_dto.dart';
+import '../model/dto/validation/register/register_user_validation_dto.dart';
+import '../model/dto/validation/register/verify_otp_validation_dto.dart';
+import '../model/entity/request/register/resend_otp_params.dart';
+import '../model/entity/response/register/resend_otp_result.dart';
 import '../model/mapper/register/resend_otp_mapper.dart';
-import '../model/mapper/register/verify_otp_mapper.dart';
-import '../remote/auth/auth_service.dart';
+import '../remote/auth/auth_remote_data_source.dart';
 
-class AuthRepository {
-  const AuthRepository(this._registerService);
+class AuthRepository with ErrorMapper {
+  const AuthRepository(this._authRemoteDataSource);
 
-  final AuthService _registerService;
+  final AuthRemoteDataSource _authRemoteDataSource;
 
-  Future<List<NoResponse>> registerUser(RegisterUserParams params) async {
-    final RegisterUserParamsDto paramsDto = RegisterUserMappr()
-        .convert<RegisterUserParams, RegisterUserParamsDto>(null);
-    final BaseResponse<List<NoResponse>> response =
-        await _registerService.registerUser(paramsDto);
-    return response.data;
+  Future<Either<Failure<RegisterUserValidationDto>, void>> registerUser(
+      RegisterUserParamsDto params) async {
+    try {
+      await _authRemoteDataSource.registerUser(params);
+      return Either<Failure<RegisterUserValidationDto>, void>.right(null);
+    } on DioException catch (e) {
+      return Either<Failure<RegisterUserValidationDto>, void>.left(
+          mapDioExceptionToFailure(e,
+              fromJson: RegisterUserValidationDto.fromJson));
+    } on InAppException catch (e) {
+      return Either<Failure<RegisterUserValidationDto>, void>.left(
+          mapInAppExceptionFailure(e));
+    } on BadKeyException catch (e) {
+      return Either<Failure<RegisterUserValidationDto>, void>.left(
+          mapExceptionToFailure(e));
+    }
   }
 
-  Future<ResendOtpResult> resendOtpCode(ResendOtpParams params) async {
-    final ResendOtpMappr mapper = ResendOtpMappr();
-    final ResendOtpParamsDto paramsDto =
-        mapper.convert<ResendOtpParams, ResendOtpParamsDto>(params);
-    final BaseResponse<ResendOtpResultDto> response =
-        await _registerService.resendOtpCode(paramsDto);
-    return mapper.convert<ResendOtpResultDto, ResendOtpResult>(response.data);
+  Future<Either<Failure<void>, ResendOtpResult>> resendOtpCode(
+      ResendOtpParams params) async {
+    try {
+      final ResendOtpMappr mapper = ResendOtpMappr();
+      final BaseResponse<ResendOtpResultDto> response =
+          await _authRemoteDataSource.resendOtpCode(mapper.convert(params));
+      return Either<Failure<void>, ResendOtpResult>.right(
+          mapper.convert(response.data));
+    } on DioException catch (e) {
+      return Either<Failure<void>, ResendOtpResult>.left(
+          mapDioExceptionToFailure(e));
+    } on InAppException catch (e) {
+      return Either<Failure<void>, ResendOtpResult>.left(
+          mapInAppExceptionFailure(e));
+    } on BadKeyException catch (e) {
+      return Either<Failure<void>, ResendOtpResult>.left(
+          mapExceptionToFailure(e));
+    }
   }
 
-  Future<VerifyOtpResult> verifyOtpCode(VerifyOtpParams params) async {
-    final VerifyOtpMappr mapper = VerifyOtpMappr();
-    final VerifyOtpParamsDto paramsDto =
-        mapper.convert<VerifyOtpParams, VerifyOtpParamsDto>(params);
-    final BaseResponse<VerifyOtpResultDto> response =
-        await _registerService.verifyOtpCode(paramsDto);
-    return mapper.convert<VerifyOtpResultDto, VerifyOtpResult>(response.data);
+  Future<Either<Failure<VerifyOtpValidationDto>, VerifyOtpResultDto>>
+      verifyOtpCode(VerifyOtpParamsDto params) async {
+    try {
+      final BaseResponse<VerifyOtpResultDto> response =
+          await _authRemoteDataSource.verifyOtpCode(params);
+      return Either<Failure<VerifyOtpValidationDto>, VerifyOtpResultDto>.right(
+          response.data);
+    } on DioException catch (e) {
+      return Either<Failure<VerifyOtpValidationDto>, VerifyOtpResultDto>.left(
+          mapDioExceptionToFailure(e,
+              fromJson: VerifyOtpValidationDto.fromJson));
+    } on InAppException catch (e) {
+      return Either<Failure<VerifyOtpValidationDto>, VerifyOtpResultDto>.left(
+          mapInAppExceptionFailure(e));
+    } on BadKeyException catch (e) {
+      return Either<Failure<VerifyOtpValidationDto>, VerifyOtpResultDto>.left(
+          mapExceptionToFailure(e));
+    }
   }
 }

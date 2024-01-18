@@ -30,10 +30,10 @@ import '../../../../app/widget/text_field/password_text_field.dart';
 import '../../../../app/widget/text_field/search_drop_down_text_field.dart';
 import '../../../../app/widget/text_field/text_field_container.dart';
 import '../../../../core/error/failure.dart';
-import '../../../../core/error_handler/error_handler.dart';
-import '../../../data/model/entity/register/register_user_params.dart';
+import '../../../core/error_handler/error_handler.dart';
+import '../../../data/model/entity/request/register/register_user_params.dart';
+import '../../../data/model/entity/validation/register/register_user_validation.dart';
 import '../bloc/step_1/register_step_1_bloc.dart';
-import '../utils/country_code.dart';
 import '../utils/nationality.dart';
 import '../utils/register_step.dart';
 import '../widget/register_step_indicator.dart';
@@ -55,16 +55,15 @@ class _RegisterStep1State extends State<RegisterStep1> {
   late Map<String, TextEditingController> _controllers;
   final OverlayLoader _overlayLoader = OverlayLoader();
 
-  List<CountryCode> _countryCodes = <CountryCode>[];
   List<Nationality> _nationalities = <Nationality>[];
   final List<Gender> _genders = Gender.values;
 
   File? _pickedFile;
   Gender? _selectedGender;
   bool _obscureText = true;
-  CountryCode? _selectedCountryCode;
   Nationality? _selectedNationality;
   DateTime? _birthday;
+  RegisterUserValidation? _validationModel;
 
   @override
   void initState() {
@@ -72,9 +71,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
     _controllers = <String, TextEditingController>{
       for (final String key in RegisterKey.keys) key: TextEditingController()
     };
-    _countryCodes = CountryCode.mockData;
     _nationalities = Nationality.mockData;
-    _selectedCountryCode = _countryCodes.last;
     _selectedNationality = _nationalities.last;
   }
 
@@ -91,6 +88,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
     return BlocConsumer<RegisterStep1Bloc, RegisterStep1State>(
       listener: (BuildContext context, RegisterStep1State state) {
         _overlayLoader.hide();
+        _validationModel = null;
         switch (state) {
           case RegisterStep1StateInitial():
             break;
@@ -99,8 +97,16 @@ class _RegisterStep1State extends State<RegisterStep1> {
           case RegisterStep1StateRegisterResult():
             widget
                 .onContinue((_controllers[RegisterKey.email]?.text).toString());
-          case RegisterStep1StateError(failure: final Failure failure):
-            ErrorHandler.handleNetworkError(context, failure);
+          case RegisterStep1StateRegisterUserError(
+              failure: final Failure<RegisterUserValidation> failure
+            ):
+            switch (failure) {
+              case HttpBadRequestFailure<RegisterUserValidation>(
+                  data: final RegisterUserValidation? validationModel
+                ):
+                _validationModel = validationModel;
+            }
+            ErrorHandler.handleNetworkFailure(context, failure);
           case RegisterStep1StateLoaded():
           case RegisterStep1StateUploadImageResult():
             break;
@@ -208,6 +214,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
             icon: SvgPicture.asset(IconAsset.email),
             controller: _controllers[RegisterKey.email],
             keyboardType: TextInputType.emailAddress,
+            errorText: _validationModel?.email,
             validator: SupportValidators.compose(
               <FormFieldValidator<String>>[
                 SupportValidators.required(fieldName: RegisterKey.email),
@@ -223,7 +230,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
           child: NormalTextField(
             hintText: 'Required*',
             controller: _controllers[RegisterKey.nickName],
-            // icon: SvgPicture.asset(IconAsset.email),
+            errorText: _validationModel?.nickName,
             validator: SupportValidators.compose(
               <FormFieldValidator>[
                 SupportValidators.required(fieldName: RegisterKey.nickName),
@@ -243,37 +250,11 @@ class _RegisterStep1State extends State<RegisterStep1> {
       runSpacing: 24.0,
       children: <Widget>[
         TextFieldContainer(
-          title: const Text('Country Code'),
-          child: SearchDropDownTextField<CountryCode>(
-            controller: _controllers[RegisterKey.countryCode],
-            items: _countryCodes,
-            selectedValue: _selectedCountryCode,
-            menuItemText: (CountryCode value) => value.displayText,
-            onChanged: (CountryCode? value) {
-              setState(() {
-                _selectedCountryCode = value;
-              });
-            },
-            searchMatchFn:
-                (DropdownMenuItem<CountryCode> item, String searchValue) {
-              final String displayText = (item.value?.displayText).toString();
-              return displayText
-                  .toLowerCase()
-                  .contains(searchValue.toLowerCase());
-            },
-          ),
-        ),
-        TextFieldContainer(
           title: const Text('Phone number'),
           child: NormalTextField(
             hintText: 'Required*',
             controller: _controllers[RegisterKey.phoneNumber],
-            icon: Center(
-              child: Text(
-                '(${_selectedCountryCode?.code})',
-                style: TTextStyle.getBodyMedium(),
-              ),
-            ),
+            errorText: _validationModel?.phoneNumber,
             keyboardType: TextInputType.phone,
             onTapOutside: (_) {
               context.focusScope.unfocus();
@@ -294,6 +275,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
             controller: _controllers[RegisterKey.nationality],
             items: _nationalities,
             selectedValue: _selectedNationality,
+            errorText: _validationModel?.nationality,
             onChanged: (Nationality? value) {
               setState(() {
                 _selectedNationality = value;
@@ -321,6 +303,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
             hintText: 'Required*',
             obscureText: _obscureText,
             controller: _controllers[RegisterKey.password],
+            errorText: _validationModel?.password,
             onObscureButtonPressed: (bool obscureText) {
               setState(() {
                 _obscureText = obscureText;
@@ -342,6 +325,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
             obscureText: _obscureText,
             showObscureButton: false,
             controller: _controllers[RegisterKey.confirmPassword],
+            errorText: _validationModel?.confirmPassword,
             validator: SupportValidators.compose(
               <FormFieldValidator<String>>[
                 SupportValidators.required(
@@ -370,6 +354,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
               selectedValue: _selectedGender,
               items: _genders,
               menuItemText: (Gender value) => value.text,
+              errorText: _validationModel?.sex,
               onChanged: (Gender? gender) {
                 setState(() {
                   _selectedGender = gender;
@@ -389,6 +374,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
               // Disable user text input
               readOnly: true,
               onTap: _selectBirthDayDate,
+              errorText: _validationModel?.birthday,
             ),
           ),
         ),

@@ -1,11 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../core/dio/interceptor/error_interceptor.dart';
 import '../../core/dio/interceptor/logger_interceptor.dart';
-import '../../data/remote/auth/auth_service.dart';
-import '../../data/remote/example/example_service.dart';
+import '../../data/remote/auth/auth_remote_data_source.dart';
+import '../../data/remote/example/example_remote_data_source.dart';
 import '../../data/repository/auth_repository.dart';
 import '../../data/repository/example_repository.dart';
+import '../../data/validation/auth_validation.dart';
+import '../../data/validation/auth_validation.dart';
 import '../../domain/example/example_usecase.dart';
 import '../../domain/register/register_user_usecase.dart';
 import '../../domain/register/resend_otp_usecase.dart';
@@ -29,6 +32,7 @@ Future<void> setupInjector() async {
     ),
   )..interceptors.addAll(
       <Interceptor>[
+        ErrorInterceptor(),
         LoggerInterceptor(),
       ],
     );
@@ -36,18 +40,23 @@ Future<void> setupInjector() async {
   injector.registerLazySingleton<Dio>(() => apiClient);
   // Data - Local Data Sources
   // Data - Remote Data Sources
-  injector.registerLazySingleton<ExampleService>(
-    () => ExampleService(injector()),
+  injector.registerLazySingleton<ExampleRemoteDataSource>(
+    () => ExampleRemoteDataSource(injector()),
   );
-  injector.registerLazySingleton<AuthService>(
-    () => AuthService(injector()),
+  injector.registerLazySingleton<AuthRemoteDataSource>(
+    () => AuthRemoteDataSource(injector()),
   );
+  // Data - Service
   // Data - Repository
   injector.registerLazySingleton<ExampleRepository>(
     () => ExampleRepository(injector()),
   );
   injector.registerLazySingleton<AuthRepository>(
     () => AuthRepository(injector()),
+  );
+  // Data - Validation
+  injector.registerLazySingleton<AuthValidation>(
+    () => AuthValidation(injector()),
   );
   // Domain - Use Cases
   injector.registerLazySingleton<ExampleUseCase>(
@@ -70,6 +79,6 @@ Future<void> setupInjector() async {
     () => RegisterStep1Bloc(injector()),
   );
   injector.registerFactory<RegisterStep2Bloc>(
-      () => RegisterStep2Bloc(injector(), injector()),
+    () => RegisterStep2Bloc(injector(), injector()),
   );
 }

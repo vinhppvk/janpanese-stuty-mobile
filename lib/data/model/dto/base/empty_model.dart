@@ -2,7 +2,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'empty_model.g.dart';
 
-class NoParam {}
 
 @JsonSerializable()
 class NoResponse {

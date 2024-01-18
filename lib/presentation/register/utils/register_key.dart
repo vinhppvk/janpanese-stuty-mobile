@@ -3,7 +3,6 @@ class RegisterKey {
   static const String nickName = 'nick name';
   static const String gender = 'gender';
   static const String birthday = 'birthday';
-  static const String countryCode = 'country code';
   static const String phoneNumber = 'phone number';
   static const String nationality = 'nationality';
   static const String password = 'password';
@@ -14,7 +13,6 @@ class RegisterKey {
     nickName,
     gender,
     birthday,
-    countryCode,
     phoneNumber,
     nationality,
     password,

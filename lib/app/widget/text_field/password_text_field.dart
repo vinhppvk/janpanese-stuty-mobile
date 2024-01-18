@@ -15,6 +15,7 @@ class PasswordTextField extends StatelessWidget {
     this.showObscureButton = true,
     required this.obscureText,
     this.onObscureButtonPressed,
+    this.errorText,
   });
 
   final bool showObscureButton;
@@ -25,6 +26,7 @@ class PasswordTextField extends StatelessWidget {
   final String? hintText;
   final ValueChanged<String>? onChanged;
   final String? Function(String?)? validator;
+  final String? errorText;
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +39,7 @@ class PasswordTextField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: labelText,
         hintText: hintText,
+        errorText: errorText,
         prefixIconConstraints:
             const BoxConstraints(maxWidth: 48.0, minHeight: 56.0),
         prefixIcon: Padding(

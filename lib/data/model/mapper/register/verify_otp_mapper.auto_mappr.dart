@@ -9,15 +9,19 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart' as _i1;
 
-import '../../dto/register/verify_otp_params_dto.dart' as _i3;
-import '../../dto/register/verify_otp_result_dto.dart' as _i4;
-import '../../entity/register/verify_otp_params.dart' as _i2;
-import '../../entity/register/verify_otp_result.dart' as _i5;
+import '../../dto/request/register/verify_otp_params_dto.dart' as _i3;
+import '../../dto/response/register/verify_otp_result_dto.dart' as _i4;
+import '../../dto/validation/register/verify_otp_validation_dto.dart' as _i6;
+import '../../entity/request/register/verify_otp_params.dart' as _i2;
+import '../../entity/response/register/verify_otp_result.dart' as _i5;
+import '../../entity/validation/register/verify_otp_validation.dart' as _i7;
+import '../utils/common_type_converter.dart' as _i8;
 
 /// {@template package:japanese_study/data/model/mapper/register/verify_otp_mapper.dart}
 /// Available mappings:
 /// - `VerifyOtpParams` → `VerifyOtpParamsDto`.
 /// - `VerifyOtpResultDto` → `VerifyOtpResult`.
+/// - `VerifyOtpValidationDto` → `VerifyOtpValidation`.
 /// {@endtemplate}
 class $VerifyOtpMappr implements _i1.AutoMapprInterface {
   const $VerifyOtpMappr();
@@ -42,6 +46,12 @@ class $VerifyOtpMappr implements _i1.AutoMapprInterface {
             sourceTypeOf == _typeOf<_i4.VerifyOtpResultDto?>()) &&
         (targetTypeOf == _typeOf<_i5.VerifyOtpResult>() ||
             targetTypeOf == _typeOf<_i5.VerifyOtpResult?>())) {
+      return true;
+    }
+    if ((sourceTypeOf == _typeOf<_i6.VerifyOtpValidationDto>() ||
+            sourceTypeOf == _typeOf<_i6.VerifyOtpValidationDto?>()) &&
+        (targetTypeOf == _typeOf<_i7.VerifyOtpValidation>() ||
+            targetTypeOf == _typeOf<_i7.VerifyOtpValidation?>())) {
       return true;
     }
     if (recursive) {
@@ -221,6 +231,16 @@ class $VerifyOtpMappr implements _i1.AutoMapprInterface {
       return (_map__i4$VerifyOtpResultDto_To__i5$VerifyOtpResult(
           (model as _i4.VerifyOtpResultDto?)) as TARGET);
     }
+    if ((sourceTypeOf == _typeOf<_i6.VerifyOtpValidationDto>() ||
+            sourceTypeOf == _typeOf<_i6.VerifyOtpValidationDto?>()) &&
+        (targetTypeOf == _typeOf<_i7.VerifyOtpValidation>() ||
+            targetTypeOf == _typeOf<_i7.VerifyOtpValidation?>())) {
+      if (canReturnNull && model == null) {
+        return null;
+      }
+      return (_map__i6$VerifyOtpValidationDto_To__i7$VerifyOtpValidation(
+          (model as _i6.VerifyOtpValidationDto?)) as TARGET);
+    }
     throw Exception('No ${model.runtimeType} -> $targetTypeOf mapping.');
   }
 
@@ -250,5 +270,19 @@ class $VerifyOtpMappr implements _i1.AutoMapprInterface {
       authCode: model.authCode ?? -1,
       email: model.email ?? r'',
     );
+  }
+
+  _i7.VerifyOtpValidation
+      _map__i6$VerifyOtpValidationDto_To__i7$VerifyOtpValidation(
+          _i6.VerifyOtpValidationDto? input) {
+    final model = input;
+    if (model == null) {
+      throw Exception(
+          r'Mapping VerifyOtpValidationDto → VerifyOtpValidation failed because VerifyOtpValidationDto was null, and no default value was provided. '
+          r'Consider setting the whenSourceIsNull parameter on the MapType<VerifyOtpValidationDto, VerifyOtpValidation> to handle null values during mapping.');
+    }
+    return _i7.VerifyOtpValidation(
+        authCode:
+            (_i8.CommonTypeConverter.firstErrorMsg(model.authCode) as String?));
   }
 }

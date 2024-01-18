@@ -408,8 +408,9 @@ mixin _$RegisterStep2State {
     required TResult Function() loading,
     required TResult Function(ResendOtpResult result) resendOtpResult,
     required TResult Function(VerifyOtpResult result) verifyOtpResult,
-    required TResult Function(Failure failure) validationError,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<VerifyOtpValidation> failure)
+        verifyOtpError,
+    required TResult Function(Failure<void> failure) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -418,8 +419,8 @@ mixin _$RegisterStep2State {
     TResult? Function()? loading,
     TResult? Function(ResendOtpResult result)? resendOtpResult,
     TResult? Function(VerifyOtpResult result)? verifyOtpResult,
-    TResult? Function(Failure failure)? validationError,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<VerifyOtpValidation> failure)? verifyOtpError,
+    TResult? Function(Failure<void> failure)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -428,8 +429,8 @@ mixin _$RegisterStep2State {
     TResult Function()? loading,
     TResult Function(ResendOtpResult result)? resendOtpResult,
     TResult Function(VerifyOtpResult result)? verifyOtpResult,
-    TResult Function(Failure failure)? validationError,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<VerifyOtpValidation> failure)? verifyOtpError,
+    TResult Function(Failure<void> failure)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -441,8 +442,8 @@ mixin _$RegisterStep2State {
         resendOtpResult,
     required TResult Function(RegisterStep2StateVerifyOtpResult value)
         verifyOtpResult,
-    required TResult Function(RegisterStep2StateValidationError value)
-        validationError,
+    required TResult Function(RegisterStep2StateVerifyOtpError value)
+        verifyOtpError,
     required TResult Function(RegisterStep2StateError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -452,7 +453,7 @@ mixin _$RegisterStep2State {
     TResult? Function(RegisterStep2StateLoading value)? loading,
     TResult? Function(RegisterStep2StateResendOtpResult value)? resendOtpResult,
     TResult? Function(RegisterStep2StateVerifyOtpResult value)? verifyOtpResult,
-    TResult? Function(RegisterStep2StateValidationError value)? validationError,
+    TResult? Function(RegisterStep2StateVerifyOtpError value)? verifyOtpError,
     TResult? Function(RegisterStep2StateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -462,7 +463,7 @@ mixin _$RegisterStep2State {
     TResult Function(RegisterStep2StateLoading value)? loading,
     TResult Function(RegisterStep2StateResendOtpResult value)? resendOtpResult,
     TResult Function(RegisterStep2StateVerifyOtpResult value)? verifyOtpResult,
-    TResult Function(RegisterStep2StateValidationError value)? validationError,
+    TResult Function(RegisterStep2StateVerifyOtpError value)? verifyOtpError,
     TResult Function(RegisterStep2StateError value)? error,
     required TResult orElse(),
   }) =>
@@ -533,8 +534,9 @@ class _$RegisterStep2StateInitialImpl implements RegisterStep2StateInitial {
     required TResult Function() loading,
     required TResult Function(ResendOtpResult result) resendOtpResult,
     required TResult Function(VerifyOtpResult result) verifyOtpResult,
-    required TResult Function(Failure failure) validationError,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<VerifyOtpValidation> failure)
+        verifyOtpError,
+    required TResult Function(Failure<void> failure) error,
   }) {
     return initial();
   }
@@ -546,8 +548,8 @@ class _$RegisterStep2StateInitialImpl implements RegisterStep2StateInitial {
     TResult? Function()? loading,
     TResult? Function(ResendOtpResult result)? resendOtpResult,
     TResult? Function(VerifyOtpResult result)? verifyOtpResult,
-    TResult? Function(Failure failure)? validationError,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<VerifyOtpValidation> failure)? verifyOtpError,
+    TResult? Function(Failure<void> failure)? error,
   }) {
     return initial?.call();
   }
@@ -559,8 +561,8 @@ class _$RegisterStep2StateInitialImpl implements RegisterStep2StateInitial {
     TResult Function()? loading,
     TResult Function(ResendOtpResult result)? resendOtpResult,
     TResult Function(VerifyOtpResult result)? verifyOtpResult,
-    TResult Function(Failure failure)? validationError,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<VerifyOtpValidation> failure)? verifyOtpError,
+    TResult Function(Failure<void> failure)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -578,8 +580,8 @@ class _$RegisterStep2StateInitialImpl implements RegisterStep2StateInitial {
         resendOtpResult,
     required TResult Function(RegisterStep2StateVerifyOtpResult value)
         verifyOtpResult,
-    required TResult Function(RegisterStep2StateValidationError value)
-        validationError,
+    required TResult Function(RegisterStep2StateVerifyOtpError value)
+        verifyOtpError,
     required TResult Function(RegisterStep2StateError value) error,
   }) {
     return initial(this);
@@ -592,7 +594,7 @@ class _$RegisterStep2StateInitialImpl implements RegisterStep2StateInitial {
     TResult? Function(RegisterStep2StateLoading value)? loading,
     TResult? Function(RegisterStep2StateResendOtpResult value)? resendOtpResult,
     TResult? Function(RegisterStep2StateVerifyOtpResult value)? verifyOtpResult,
-    TResult? Function(RegisterStep2StateValidationError value)? validationError,
+    TResult? Function(RegisterStep2StateVerifyOtpError value)? verifyOtpError,
     TResult? Function(RegisterStep2StateError value)? error,
   }) {
     return initial?.call(this);
@@ -605,7 +607,7 @@ class _$RegisterStep2StateInitialImpl implements RegisterStep2StateInitial {
     TResult Function(RegisterStep2StateLoading value)? loading,
     TResult Function(RegisterStep2StateResendOtpResult value)? resendOtpResult,
     TResult Function(RegisterStep2StateVerifyOtpResult value)? verifyOtpResult,
-    TResult Function(RegisterStep2StateValidationError value)? validationError,
+    TResult Function(RegisterStep2StateVerifyOtpError value)? verifyOtpError,
     TResult Function(RegisterStep2StateError value)? error,
     required TResult orElse(),
   }) {
@@ -666,8 +668,9 @@ class _$RegisterStep2StateLoadingImpl implements RegisterStep2StateLoading {
     required TResult Function() loading,
     required TResult Function(ResendOtpResult result) resendOtpResult,
     required TResult Function(VerifyOtpResult result) verifyOtpResult,
-    required TResult Function(Failure failure) validationError,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<VerifyOtpValidation> failure)
+        verifyOtpError,
+    required TResult Function(Failure<void> failure) error,
   }) {
     return loading();
   }
@@ -679,8 +682,8 @@ class _$RegisterStep2StateLoadingImpl implements RegisterStep2StateLoading {
     TResult? Function()? loading,
     TResult? Function(ResendOtpResult result)? resendOtpResult,
     TResult? Function(VerifyOtpResult result)? verifyOtpResult,
-    TResult? Function(Failure failure)? validationError,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<VerifyOtpValidation> failure)? verifyOtpError,
+    TResult? Function(Failure<void> failure)? error,
   }) {
     return loading?.call();
   }
@@ -692,8 +695,8 @@ class _$RegisterStep2StateLoadingImpl implements RegisterStep2StateLoading {
     TResult Function()? loading,
     TResult Function(ResendOtpResult result)? resendOtpResult,
     TResult Function(VerifyOtpResult result)? verifyOtpResult,
-    TResult Function(Failure failure)? validationError,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<VerifyOtpValidation> failure)? verifyOtpError,
+    TResult Function(Failure<void> failure)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -711,8 +714,8 @@ class _$RegisterStep2StateLoadingImpl implements RegisterStep2StateLoading {
         resendOtpResult,
     required TResult Function(RegisterStep2StateVerifyOtpResult value)
         verifyOtpResult,
-    required TResult Function(RegisterStep2StateValidationError value)
-        validationError,
+    required TResult Function(RegisterStep2StateVerifyOtpError value)
+        verifyOtpError,
     required TResult Function(RegisterStep2StateError value) error,
   }) {
     return loading(this);
@@ -725,7 +728,7 @@ class _$RegisterStep2StateLoadingImpl implements RegisterStep2StateLoading {
     TResult? Function(RegisterStep2StateLoading value)? loading,
     TResult? Function(RegisterStep2StateResendOtpResult value)? resendOtpResult,
     TResult? Function(RegisterStep2StateVerifyOtpResult value)? verifyOtpResult,
-    TResult? Function(RegisterStep2StateValidationError value)? validationError,
+    TResult? Function(RegisterStep2StateVerifyOtpError value)? verifyOtpError,
     TResult? Function(RegisterStep2StateError value)? error,
   }) {
     return loading?.call(this);
@@ -738,7 +741,7 @@ class _$RegisterStep2StateLoadingImpl implements RegisterStep2StateLoading {
     TResult Function(RegisterStep2StateLoading value)? loading,
     TResult Function(RegisterStep2StateResendOtpResult value)? resendOtpResult,
     TResult Function(RegisterStep2StateVerifyOtpResult value)? verifyOtpResult,
-    TResult Function(RegisterStep2StateValidationError value)? validationError,
+    TResult Function(RegisterStep2StateVerifyOtpError value)? verifyOtpError,
     TResult Function(RegisterStep2StateError value)? error,
     required TResult orElse(),
   }) {
@@ -827,8 +830,9 @@ class _$RegisterStep2StateResendOtpResultImpl
     required TResult Function() loading,
     required TResult Function(ResendOtpResult result) resendOtpResult,
     required TResult Function(VerifyOtpResult result) verifyOtpResult,
-    required TResult Function(Failure failure) validationError,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<VerifyOtpValidation> failure)
+        verifyOtpError,
+    required TResult Function(Failure<void> failure) error,
   }) {
     return resendOtpResult(result);
   }
@@ -840,8 +844,8 @@ class _$RegisterStep2StateResendOtpResultImpl
     TResult? Function()? loading,
     TResult? Function(ResendOtpResult result)? resendOtpResult,
     TResult? Function(VerifyOtpResult result)? verifyOtpResult,
-    TResult? Function(Failure failure)? validationError,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<VerifyOtpValidation> failure)? verifyOtpError,
+    TResult? Function(Failure<void> failure)? error,
   }) {
     return resendOtpResult?.call(result);
   }
@@ -853,8 +857,8 @@ class _$RegisterStep2StateResendOtpResultImpl
     TResult Function()? loading,
     TResult Function(ResendOtpResult result)? resendOtpResult,
     TResult Function(VerifyOtpResult result)? verifyOtpResult,
-    TResult Function(Failure failure)? validationError,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<VerifyOtpValidation> failure)? verifyOtpError,
+    TResult Function(Failure<void> failure)? error,
     required TResult orElse(),
   }) {
     if (resendOtpResult != null) {
@@ -872,8 +876,8 @@ class _$RegisterStep2StateResendOtpResultImpl
         resendOtpResult,
     required TResult Function(RegisterStep2StateVerifyOtpResult value)
         verifyOtpResult,
-    required TResult Function(RegisterStep2StateValidationError value)
-        validationError,
+    required TResult Function(RegisterStep2StateVerifyOtpError value)
+        verifyOtpError,
     required TResult Function(RegisterStep2StateError value) error,
   }) {
     return resendOtpResult(this);
@@ -886,7 +890,7 @@ class _$RegisterStep2StateResendOtpResultImpl
     TResult? Function(RegisterStep2StateLoading value)? loading,
     TResult? Function(RegisterStep2StateResendOtpResult value)? resendOtpResult,
     TResult? Function(RegisterStep2StateVerifyOtpResult value)? verifyOtpResult,
-    TResult? Function(RegisterStep2StateValidationError value)? validationError,
+    TResult? Function(RegisterStep2StateVerifyOtpError value)? verifyOtpError,
     TResult? Function(RegisterStep2StateError value)? error,
   }) {
     return resendOtpResult?.call(this);
@@ -899,7 +903,7 @@ class _$RegisterStep2StateResendOtpResultImpl
     TResult Function(RegisterStep2StateLoading value)? loading,
     TResult Function(RegisterStep2StateResendOtpResult value)? resendOtpResult,
     TResult Function(RegisterStep2StateVerifyOtpResult value)? verifyOtpResult,
-    TResult Function(RegisterStep2StateValidationError value)? validationError,
+    TResult Function(RegisterStep2StateVerifyOtpError value)? verifyOtpError,
     TResult Function(RegisterStep2StateError value)? error,
     required TResult orElse(),
   }) {
@@ -995,8 +999,9 @@ class _$RegisterStep2StateVerifyOtpResultImpl
     required TResult Function() loading,
     required TResult Function(ResendOtpResult result) resendOtpResult,
     required TResult Function(VerifyOtpResult result) verifyOtpResult,
-    required TResult Function(Failure failure) validationError,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<VerifyOtpValidation> failure)
+        verifyOtpError,
+    required TResult Function(Failure<void> failure) error,
   }) {
     return verifyOtpResult(result);
   }
@@ -1008,8 +1013,8 @@ class _$RegisterStep2StateVerifyOtpResultImpl
     TResult? Function()? loading,
     TResult? Function(ResendOtpResult result)? resendOtpResult,
     TResult? Function(VerifyOtpResult result)? verifyOtpResult,
-    TResult? Function(Failure failure)? validationError,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<VerifyOtpValidation> failure)? verifyOtpError,
+    TResult? Function(Failure<void> failure)? error,
   }) {
     return verifyOtpResult?.call(result);
   }
@@ -1021,8 +1026,8 @@ class _$RegisterStep2StateVerifyOtpResultImpl
     TResult Function()? loading,
     TResult Function(ResendOtpResult result)? resendOtpResult,
     TResult Function(VerifyOtpResult result)? verifyOtpResult,
-    TResult Function(Failure failure)? validationError,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<VerifyOtpValidation> failure)? verifyOtpError,
+    TResult Function(Failure<void> failure)? error,
     required TResult orElse(),
   }) {
     if (verifyOtpResult != null) {
@@ -1040,8 +1045,8 @@ class _$RegisterStep2StateVerifyOtpResultImpl
         resendOtpResult,
     required TResult Function(RegisterStep2StateVerifyOtpResult value)
         verifyOtpResult,
-    required TResult Function(RegisterStep2StateValidationError value)
-        validationError,
+    required TResult Function(RegisterStep2StateVerifyOtpError value)
+        verifyOtpError,
     required TResult Function(RegisterStep2StateError value) error,
   }) {
     return verifyOtpResult(this);
@@ -1054,7 +1059,7 @@ class _$RegisterStep2StateVerifyOtpResultImpl
     TResult? Function(RegisterStep2StateLoading value)? loading,
     TResult? Function(RegisterStep2StateResendOtpResult value)? resendOtpResult,
     TResult? Function(RegisterStep2StateVerifyOtpResult value)? verifyOtpResult,
-    TResult? Function(RegisterStep2StateValidationError value)? validationError,
+    TResult? Function(RegisterStep2StateVerifyOtpError value)? verifyOtpError,
     TResult? Function(RegisterStep2StateError value)? error,
   }) {
     return verifyOtpResult?.call(this);
@@ -1067,7 +1072,7 @@ class _$RegisterStep2StateVerifyOtpResultImpl
     TResult Function(RegisterStep2StateLoading value)? loading,
     TResult Function(RegisterStep2StateResendOtpResult value)? resendOtpResult,
     TResult Function(RegisterStep2StateVerifyOtpResult value)? verifyOtpResult,
-    TResult Function(RegisterStep2StateValidationError value)? validationError,
+    TResult Function(RegisterStep2StateVerifyOtpError value)? verifyOtpError,
     TResult Function(RegisterStep2StateError value)? error,
     required TResult orElse(),
   }) {
@@ -1090,25 +1095,25 @@ abstract class RegisterStep2StateVerifyOtpResult implements RegisterStep2State {
 }
 
 /// @nodoc
-abstract class _$$RegisterStep2StateValidationErrorImplCopyWith<$Res> {
-  factory _$$RegisterStep2StateValidationErrorImplCopyWith(
-          _$RegisterStep2StateValidationErrorImpl value,
-          $Res Function(_$RegisterStep2StateValidationErrorImpl) then) =
-      __$$RegisterStep2StateValidationErrorImplCopyWithImpl<$Res>;
+abstract class _$$RegisterStep2StateVerifyOtpErrorImplCopyWith<$Res> {
+  factory _$$RegisterStep2StateVerifyOtpErrorImplCopyWith(
+          _$RegisterStep2StateVerifyOtpErrorImpl value,
+          $Res Function(_$RegisterStep2StateVerifyOtpErrorImpl) then) =
+      __$$RegisterStep2StateVerifyOtpErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Failure failure});
+  $Res call({Failure<VerifyOtpValidation> failure});
 
-  $FailureCopyWith<$Res> get failure;
+  $FailureCopyWith<VerifyOtpValidation, $Res> get failure;
 }
 
 /// @nodoc
-class __$$RegisterStep2StateValidationErrorImplCopyWithImpl<$Res>
+class __$$RegisterStep2StateVerifyOtpErrorImplCopyWithImpl<$Res>
     extends _$RegisterStep2StateCopyWithImpl<$Res,
-        _$RegisterStep2StateValidationErrorImpl>
-    implements _$$RegisterStep2StateValidationErrorImplCopyWith<$Res> {
-  __$$RegisterStep2StateValidationErrorImplCopyWithImpl(
-      _$RegisterStep2StateValidationErrorImpl _value,
-      $Res Function(_$RegisterStep2StateValidationErrorImpl) _then)
+        _$RegisterStep2StateVerifyOtpErrorImpl>
+    implements _$$RegisterStep2StateVerifyOtpErrorImplCopyWith<$Res> {
+  __$$RegisterStep2StateVerifyOtpErrorImplCopyWithImpl(
+      _$RegisterStep2StateVerifyOtpErrorImpl _value,
+      $Res Function(_$RegisterStep2StateVerifyOtpErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1116,18 +1121,18 @@ class __$$RegisterStep2StateValidationErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? failure = null,
   }) {
-    return _then(_$RegisterStep2StateValidationErrorImpl(
+    return _then(_$RegisterStep2StateVerifyOtpErrorImpl(
       null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
-              as Failure,
+              as Failure<VerifyOtpValidation>,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $FailureCopyWith<$Res> get failure {
-    return $FailureCopyWith<$Res>(_value.failure, (value) {
+  $FailureCopyWith<VerifyOtpValidation, $Res> get failure {
+    return $FailureCopyWith<VerifyOtpValidation, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
   }
@@ -1135,23 +1140,23 @@ class __$$RegisterStep2StateValidationErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RegisterStep2StateValidationErrorImpl
-    implements RegisterStep2StateValidationError {
-  const _$RegisterStep2StateValidationErrorImpl(this.failure);
+class _$RegisterStep2StateVerifyOtpErrorImpl
+    implements RegisterStep2StateVerifyOtpError {
+  const _$RegisterStep2StateVerifyOtpErrorImpl(this.failure);
 
   @override
-  final Failure failure;
+  final Failure<VerifyOtpValidation> failure;
 
   @override
   String toString() {
-    return 'RegisterStep2State.validationError(failure: $failure)';
+    return 'RegisterStep2State.verifyOtpError(failure: $failure)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RegisterStep2StateValidationErrorImpl &&
+            other is _$RegisterStep2StateVerifyOtpErrorImpl &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
@@ -1161,10 +1166,10 @@ class _$RegisterStep2StateValidationErrorImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RegisterStep2StateValidationErrorImplCopyWith<
-          _$RegisterStep2StateValidationErrorImpl>
-      get copyWith => __$$RegisterStep2StateValidationErrorImplCopyWithImpl<
-          _$RegisterStep2StateValidationErrorImpl>(this, _$identity);
+  _$$RegisterStep2StateVerifyOtpErrorImplCopyWith<
+          _$RegisterStep2StateVerifyOtpErrorImpl>
+      get copyWith => __$$RegisterStep2StateVerifyOtpErrorImplCopyWithImpl<
+          _$RegisterStep2StateVerifyOtpErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1173,10 +1178,11 @@ class _$RegisterStep2StateValidationErrorImpl
     required TResult Function() loading,
     required TResult Function(ResendOtpResult result) resendOtpResult,
     required TResult Function(VerifyOtpResult result) verifyOtpResult,
-    required TResult Function(Failure failure) validationError,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<VerifyOtpValidation> failure)
+        verifyOtpError,
+    required TResult Function(Failure<void> failure) error,
   }) {
-    return validationError(failure);
+    return verifyOtpError(failure);
   }
 
   @override
@@ -1186,10 +1192,10 @@ class _$RegisterStep2StateValidationErrorImpl
     TResult? Function()? loading,
     TResult? Function(ResendOtpResult result)? resendOtpResult,
     TResult? Function(VerifyOtpResult result)? verifyOtpResult,
-    TResult? Function(Failure failure)? validationError,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<VerifyOtpValidation> failure)? verifyOtpError,
+    TResult? Function(Failure<void> failure)? error,
   }) {
-    return validationError?.call(failure);
+    return verifyOtpError?.call(failure);
   }
 
   @override
@@ -1199,12 +1205,12 @@ class _$RegisterStep2StateValidationErrorImpl
     TResult Function()? loading,
     TResult Function(ResendOtpResult result)? resendOtpResult,
     TResult Function(VerifyOtpResult result)? verifyOtpResult,
-    TResult Function(Failure failure)? validationError,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<VerifyOtpValidation> failure)? verifyOtpError,
+    TResult Function(Failure<void> failure)? error,
     required TResult orElse(),
   }) {
-    if (validationError != null) {
-      return validationError(failure);
+    if (verifyOtpError != null) {
+      return verifyOtpError(failure);
     }
     return orElse();
   }
@@ -1218,11 +1224,11 @@ class _$RegisterStep2StateValidationErrorImpl
         resendOtpResult,
     required TResult Function(RegisterStep2StateVerifyOtpResult value)
         verifyOtpResult,
-    required TResult Function(RegisterStep2StateValidationError value)
-        validationError,
+    required TResult Function(RegisterStep2StateVerifyOtpError value)
+        verifyOtpError,
     required TResult Function(RegisterStep2StateError value) error,
   }) {
-    return validationError(this);
+    return verifyOtpError(this);
   }
 
   @override
@@ -1232,10 +1238,10 @@ class _$RegisterStep2StateValidationErrorImpl
     TResult? Function(RegisterStep2StateLoading value)? loading,
     TResult? Function(RegisterStep2StateResendOtpResult value)? resendOtpResult,
     TResult? Function(RegisterStep2StateVerifyOtpResult value)? verifyOtpResult,
-    TResult? Function(RegisterStep2StateValidationError value)? validationError,
+    TResult? Function(RegisterStep2StateVerifyOtpError value)? verifyOtpError,
     TResult? Function(RegisterStep2StateError value)? error,
   }) {
-    return validationError?.call(this);
+    return verifyOtpError?.call(this);
   }
 
   @override
@@ -1245,25 +1251,26 @@ class _$RegisterStep2StateValidationErrorImpl
     TResult Function(RegisterStep2StateLoading value)? loading,
     TResult Function(RegisterStep2StateResendOtpResult value)? resendOtpResult,
     TResult Function(RegisterStep2StateVerifyOtpResult value)? verifyOtpResult,
-    TResult Function(RegisterStep2StateValidationError value)? validationError,
+    TResult Function(RegisterStep2StateVerifyOtpError value)? verifyOtpError,
     TResult Function(RegisterStep2StateError value)? error,
     required TResult orElse(),
   }) {
-    if (validationError != null) {
-      return validationError(this);
+    if (verifyOtpError != null) {
+      return verifyOtpError(this);
     }
     return orElse();
   }
 }
 
-abstract class RegisterStep2StateValidationError implements RegisterStep2State {
-  const factory RegisterStep2StateValidationError(final Failure failure) =
-      _$RegisterStep2StateValidationErrorImpl;
+abstract class RegisterStep2StateVerifyOtpError implements RegisterStep2State {
+  const factory RegisterStep2StateVerifyOtpError(
+          final Failure<VerifyOtpValidation> failure) =
+      _$RegisterStep2StateVerifyOtpErrorImpl;
 
-  Failure get failure;
+  Failure<VerifyOtpValidation> get failure;
   @JsonKey(ignore: true)
-  _$$RegisterStep2StateValidationErrorImplCopyWith<
-          _$RegisterStep2StateValidationErrorImpl>
+  _$$RegisterStep2StateVerifyOtpErrorImplCopyWith<
+          _$RegisterStep2StateVerifyOtpErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1274,9 +1281,9 @@ abstract class _$$RegisterStep2StateErrorImplCopyWith<$Res> {
           $Res Function(_$RegisterStep2StateErrorImpl) then) =
       __$$RegisterStep2StateErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Failure failure});
+  $Res call({Failure<void> failure});
 
-  $FailureCopyWith<$Res> get failure;
+  $FailureCopyWith<void, $Res> get failure;
 }
 
 /// @nodoc
@@ -1298,14 +1305,14 @@ class __$$RegisterStep2StateErrorImplCopyWithImpl<$Res>
       null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
-              as Failure,
+              as Failure<void>,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $FailureCopyWith<$Res> get failure {
-    return $FailureCopyWith<$Res>(_value.failure, (value) {
+  $FailureCopyWith<void, $Res> get failure {
+    return $FailureCopyWith<void, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
   }
@@ -1317,7 +1324,7 @@ class _$RegisterStep2StateErrorImpl implements RegisterStep2StateError {
   const _$RegisterStep2StateErrorImpl(this.failure);
 
   @override
-  final Failure failure;
+  final Failure<void> failure;
 
   @override
   String toString() {
@@ -1349,8 +1356,9 @@ class _$RegisterStep2StateErrorImpl implements RegisterStep2StateError {
     required TResult Function() loading,
     required TResult Function(ResendOtpResult result) resendOtpResult,
     required TResult Function(VerifyOtpResult result) verifyOtpResult,
-    required TResult Function(Failure failure) validationError,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<VerifyOtpValidation> failure)
+        verifyOtpError,
+    required TResult Function(Failure<void> failure) error,
   }) {
     return error(failure);
   }
@@ -1362,8 +1370,8 @@ class _$RegisterStep2StateErrorImpl implements RegisterStep2StateError {
     TResult? Function()? loading,
     TResult? Function(ResendOtpResult result)? resendOtpResult,
     TResult? Function(VerifyOtpResult result)? verifyOtpResult,
-    TResult? Function(Failure failure)? validationError,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<VerifyOtpValidation> failure)? verifyOtpError,
+    TResult? Function(Failure<void> failure)? error,
   }) {
     return error?.call(failure);
   }
@@ -1375,8 +1383,8 @@ class _$RegisterStep2StateErrorImpl implements RegisterStep2StateError {
     TResult Function()? loading,
     TResult Function(ResendOtpResult result)? resendOtpResult,
     TResult Function(VerifyOtpResult result)? verifyOtpResult,
-    TResult Function(Failure failure)? validationError,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<VerifyOtpValidation> failure)? verifyOtpError,
+    TResult Function(Failure<void> failure)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1394,8 +1402,8 @@ class _$RegisterStep2StateErrorImpl implements RegisterStep2StateError {
         resendOtpResult,
     required TResult Function(RegisterStep2StateVerifyOtpResult value)
         verifyOtpResult,
-    required TResult Function(RegisterStep2StateValidationError value)
-        validationError,
+    required TResult Function(RegisterStep2StateVerifyOtpError value)
+        verifyOtpError,
     required TResult Function(RegisterStep2StateError value) error,
   }) {
     return error(this);
@@ -1408,7 +1416,7 @@ class _$RegisterStep2StateErrorImpl implements RegisterStep2StateError {
     TResult? Function(RegisterStep2StateLoading value)? loading,
     TResult? Function(RegisterStep2StateResendOtpResult value)? resendOtpResult,
     TResult? Function(RegisterStep2StateVerifyOtpResult value)? verifyOtpResult,
-    TResult? Function(RegisterStep2StateValidationError value)? validationError,
+    TResult? Function(RegisterStep2StateVerifyOtpError value)? verifyOtpError,
     TResult? Function(RegisterStep2StateError value)? error,
   }) {
     return error?.call(this);
@@ -1421,7 +1429,7 @@ class _$RegisterStep2StateErrorImpl implements RegisterStep2StateError {
     TResult Function(RegisterStep2StateLoading value)? loading,
     TResult Function(RegisterStep2StateResendOtpResult value)? resendOtpResult,
     TResult Function(RegisterStep2StateVerifyOtpResult value)? verifyOtpResult,
-    TResult Function(RegisterStep2StateValidationError value)? validationError,
+    TResult Function(RegisterStep2StateVerifyOtpError value)? verifyOtpError,
     TResult Function(RegisterStep2StateError value)? error,
     required TResult orElse(),
   }) {
@@ -1433,10 +1441,10 @@ class _$RegisterStep2StateErrorImpl implements RegisterStep2StateError {
 }
 
 abstract class RegisterStep2StateError implements RegisterStep2State {
-  const factory RegisterStep2StateError(final Failure failure) =
+  const factory RegisterStep2StateError(final Failure<void> failure) =
       _$RegisterStep2StateErrorImpl;
 
-  Failure get failure;
+  Failure<void> get failure;
   @JsonKey(ignore: true)
   _$$RegisterStep2StateErrorImplCopyWith<_$RegisterStep2StateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;

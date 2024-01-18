@@ -2,33 +2,24 @@ import 'package:dio/dio.dart';
 import 'package:fpdart/fpdart.dart';
 
 import '../../core/error/failure.dart';
-import '../../core/error_handler/error_to_failure_mapper.dart';
+import '../../core/error_handler/error_helper.dart';
 import '../../core/usecase.dart';
-import '../../data/model/entity/register/resend_otp_params.dart';
-import '../../data/model/entity/register/resend_otp_result.dart';
-import '../../data/model/entity/register/verify_otp_params.dart';
-import '../../data/model/entity/register/verify_otp_params.dart';
-import '../../data/model/entity/register/verify_otp_result.dart';
+import '../../data/model/entity/request/register/resend_otp_params.dart';
+import '../../data/model/entity/request/register/verify_otp_params.dart';
+import '../../data/model/entity/response/register/resend_otp_result.dart';
+import '../../data/model/entity/response/register/verify_otp_result.dart';
+import '../../data/model/entity/validation/register/verify_otp_validation.dart';
 import '../../data/repository/auth_repository.dart';
+import '../../data/validation/auth_validation.dart';
 
 class VerifyOtpUseCase
-    with ErrorToFailureMapper
-    implements UseCase<VerifyOtpResult, VerifyOtpParams> {
-  VerifyOtpUseCase(this._authRepository);
+    implements UseCase<VerifyOtpResult, VerifyOtpParams, VerifyOtpValidation> {
+  VerifyOtpUseCase(this._authValidation);
 
-  final AuthRepository _authRepository;
+  final AuthValidation _authValidation;
 
   @override
-  Future<Either<Failure, VerifyOtpResult>> call(
-      {required VerifyOtpParams param}) async {
-    try {
-      final VerifyOtpResult response =
-          await _authRepository.verifyOtpCode(param);
-      return Either<Failure, VerifyOtpResult>.right(response);
-    } on DioException catch (err) {
-      return mapDioExceptionToFailure(err);
-    } on Exception catch (err) {
-      return mapExceptionToFailure(err);
-    }
+  Future<Either<Failure<VerifyOtpValidation>, VerifyOtpResult>> call({required VerifyOtpParams params}) {
+    return _authValidation.verifyOtp(params);
   }
 }

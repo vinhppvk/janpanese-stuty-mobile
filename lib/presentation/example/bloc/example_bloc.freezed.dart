@@ -172,7 +172,7 @@ mixin _$ExampleState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ExampleUser> response) loaded,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<void> failure) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -180,7 +180,7 @@ mixin _$ExampleState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ExampleUser> response)? loaded,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<void> failure)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -188,7 +188,7 @@ mixin _$ExampleState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ExampleUser> response)? loaded,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<void> failure)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -279,7 +279,7 @@ class _$ExampleStateInitialImpl implements ExampleStateInitial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ExampleUser> response) loaded,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<void> failure) error,
   }) {
     return initial();
   }
@@ -290,7 +290,7 @@ class _$ExampleStateInitialImpl implements ExampleStateInitial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ExampleUser> response)? loaded,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<void> failure)? error,
   }) {
     return initial?.call();
   }
@@ -301,7 +301,7 @@ class _$ExampleStateInitialImpl implements ExampleStateInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ExampleUser> response)? loaded,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<void> failure)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -394,7 +394,7 @@ class _$ExampleStateLoadingImpl implements ExampleStateLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ExampleUser> response) loaded,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<void> failure) error,
   }) {
     return loading();
   }
@@ -405,7 +405,7 @@ class _$ExampleStateLoadingImpl implements ExampleStateLoading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ExampleUser> response)? loaded,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<void> failure)? error,
   }) {
     return loading?.call();
   }
@@ -416,7 +416,7 @@ class _$ExampleStateLoadingImpl implements ExampleStateLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ExampleUser> response)? loaded,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<void> failure)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -542,7 +542,7 @@ class _$ExampleStateLoadedImpl implements ExampleStateLoaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ExampleUser> response) loaded,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<void> failure) error,
   }) {
     return loaded(response);
   }
@@ -553,7 +553,7 @@ class _$ExampleStateLoadedImpl implements ExampleStateLoaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ExampleUser> response)? loaded,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<void> failure)? error,
   }) {
     return loaded?.call(response);
   }
@@ -564,7 +564,7 @@ class _$ExampleStateLoadedImpl implements ExampleStateLoaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ExampleUser> response)? loaded,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<void> failure)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -627,9 +627,9 @@ abstract class _$$ExampleStateErrorImplCopyWith<$Res> {
           $Res Function(_$ExampleStateErrorImpl) then) =
       __$$ExampleStateErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Failure failure});
+  $Res call({Failure<void> failure});
 
-  $FailureCopyWith<$Res> get failure;
+  $FailureCopyWith<void, $Res> get failure;
 }
 
 /// @nodoc
@@ -649,14 +649,14 @@ class __$$ExampleStateErrorImplCopyWithImpl<$Res>
       null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
-              as Failure,
+              as Failure<void>,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $FailureCopyWith<$Res> get failure {
-    return $FailureCopyWith<$Res>(_value.failure, (value) {
+  $FailureCopyWith<void, $Res> get failure {
+    return $FailureCopyWith<void, $Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
   }
@@ -668,7 +668,7 @@ class _$ExampleStateErrorImpl implements ExampleStateError {
   const _$ExampleStateErrorImpl(this.failure);
 
   @override
-  final Failure failure;
+  final Failure<void> failure;
 
   @override
   String toString() {
@@ -699,7 +699,7 @@ class _$ExampleStateErrorImpl implements ExampleStateError {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ExampleUser> response) loaded,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<void> failure) error,
   }) {
     return error(failure);
   }
@@ -710,7 +710,7 @@ class _$ExampleStateErrorImpl implements ExampleStateError {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ExampleUser> response)? loaded,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<void> failure)? error,
   }) {
     return error?.call(failure);
   }
@@ -721,7 +721,7 @@ class _$ExampleStateErrorImpl implements ExampleStateError {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ExampleUser> response)? loaded,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<void> failure)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -769,10 +769,10 @@ class _$ExampleStateErrorImpl implements ExampleStateError {
 }
 
 abstract class ExampleStateError implements ExampleState {
-  const factory ExampleStateError(final Failure failure) =
+  const factory ExampleStateError(final Failure<void> failure) =
       _$ExampleStateErrorImpl;
 
-  Failure get failure;
+  Failure<void> get failure;
   @JsonKey(ignore: true)
   _$$ExampleStateErrorImplCopyWith<_$ExampleStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;

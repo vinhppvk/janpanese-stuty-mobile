@@ -18,6 +18,7 @@ class DropDownTextField<T> extends StatelessWidget {
     this.hint,
     this.height = 56.0,
     this.width,
+    this.errorText,
   });
 
   final String? hint;
@@ -27,6 +28,7 @@ class DropDownTextField<T> extends StatelessWidget {
   final List<T> items;
   final T? selectedValue;
   final Function(T? value)? onChanged;
+  final String? errorText;
 
   /// Map item to DropdownMenuItem display text
   final String Function(T item)? menuItemText;
@@ -60,14 +62,14 @@ class DropDownTextField<T> extends StatelessWidget {
         value: selectedValue,
         onChanged: onChanged,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.zero,
+          contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
+          errorText: errorText,
           constraints: BoxConstraints(
-            maxHeight: height ?? 56.0,
             maxWidth: width ?? double.infinity,
           ),
         ),
         buttonStyleData: ButtonStyleData(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: EdgeInsets.zero,
           height: height,
           width: width,
           decoration: BoxDecoration(

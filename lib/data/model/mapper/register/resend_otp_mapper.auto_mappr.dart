@@ -9,10 +9,10 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart' as _i1;
 
-import '../../dto/register/resend_otp_params_dto.dart' as _i3;
-import '../../dto/register/resend_otp_result_dto.dart' as _i4;
-import '../../entity/register/resend_otp_params.dart' as _i2;
-import '../../entity/register/resend_otp_result.dart' as _i5;
+import '../../dto/request/register/resend_otp_params_dto.dart' as _i3;
+import '../../dto/response/register/resend_otp_result_dto.dart' as _i4;
+import '../../entity/request/register/resend_otp_params.dart' as _i2;
+import '../../entity/response/register/resend_otp_result.dart' as _i5;
 
 /// {@template package:japanese_study/data/model/mapper/register/resend_otp_mapper.dart}
 /// Available mappings:

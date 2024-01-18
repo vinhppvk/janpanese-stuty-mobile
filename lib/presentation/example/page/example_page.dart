@@ -37,8 +37,8 @@ class _ExamplePageState extends State<ExamplePage> {
               mode: SnackBarMode.success,
               message: 'Call Example Api Success!',
             );
-          case ExampleStateError(failure: final Failure failure):
-            ErrorHandler.handleNetworkError(context, failure);
+          case ExampleStateError(failure: final Failure<void> failure):
+            ErrorHandler.handleNetworkFailure(context, failure);
         }
       },
       child: _buildBody(),

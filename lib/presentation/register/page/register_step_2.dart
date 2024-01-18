@@ -14,6 +14,7 @@ import '../../../app/widget/loader/overlay_loader.dart';
 import '../../../app/widget/text_field/otp_text_field.dart';
 import '../../../core/error/failure.dart';
 import '../../../core/error_handler/error_handler.dart';
+import '../../../data/model/entity/validation/register/verify_otp_validation.dart';
 import '../bloc/step_2/register_step_2_bloc.dart';
 import '../utils/register_step.dart';
 import '../widget/register_step_indicator.dart';
@@ -33,12 +34,13 @@ class RegisterStep2 extends StatefulWidget {
 }
 
 class _RegisterStep2State extends State<RegisterStep2> {
-  final String _emailAddress = 'student@gmail.com';
   final TextEditingController _pinController = TextEditingController();
   final FocusNode _pinNode = FocusNode();
   final OverlayLoader _overlayLoader = OverlayLoader();
 
-  bool _isValid = false;
+  VerifyOtpValidation? _validationModel;
+
+  bool get _forceErrorState => _validationModel?.authCode != null;
 
   @override
   void initState() {
@@ -56,8 +58,8 @@ class _RegisterStep2State extends State<RegisterStep2> {
   Widget build(BuildContext context) {
     return BlocConsumer<RegisterStep2Bloc, RegisterStep2State>(
       listener: (BuildContext context, RegisterStep2State state) {
-        _isValid = false;
         _overlayLoader.hide();
+        _validationModel = null;
         switch (state) {
           case RegisterStep2StateInitial():
             break;
@@ -67,11 +69,19 @@ class _RegisterStep2State extends State<RegisterStep2> {
             showResendSuccessDialog(context);
           case RegisterStep2StateVerifyOtpResult():
             widget.onContinue();
-          case RegisterStep2StateValidationError():
-            _isValid = true;
+          case RegisterStep2StateVerifyOtpError(
+              failure: final Failure<VerifyOtpValidation> failure,
+            ):
+            switch (failure) {
+              case HttpBadRequestFailure<VerifyOtpValidation>(
+                  data: final VerifyOtpValidation? data
+                ):
+                _validationModel = data;
+            }
+            ErrorHandler.handleNetworkFailure(context, failure);
             _pinController.clear();
-          case RegisterStep2StateError(failure: final Failure failure):
-            ErrorHandler.handleNetworkError(context, failure);
+          case RegisterStep2StateError(failure: final Failure<void> failure):
+            ErrorHandler.handleNetworkFailure(context, failure);
         }
       },
       builder: (BuildContext context, RegisterStep2State state) {
@@ -124,7 +134,7 @@ class _RegisterStep2State extends State<RegisterStep2> {
             ),
             children: <InlineSpan>[
               TextSpan(
-                text: _emailAddress,
+                text: widget.email,
                 style: TTextStyle.getBodyMedium(
                   fontWeight: TFontWeight.bold,
                 ),
@@ -140,8 +150,8 @@ class _RegisterStep2State extends State<RegisterStep2> {
     return OtpTextField(
       controller: _pinController,
       focusNode: _pinNode,
-      errorText: ValidationMessages.invalidOtp(),
-      forceErrorState: _isValid,
+      errorText: _validationModel?.authCode,
+      forceErrorState: _forceErrorState,
     );
   }
 

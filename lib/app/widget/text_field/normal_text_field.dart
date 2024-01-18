@@ -15,6 +15,7 @@ class NormalTextField extends StatelessWidget {
     this.onTap,
     this.keyboardType,
     this.onTapOutside,
+    this.errorText,
   });
 
   final TextEditingController? controller;
@@ -27,6 +28,7 @@ class NormalTextField extends StatelessWidget {
   final VoidCallback? onTap;
   final TextInputType? keyboardType;
   final void Function(PointerDownEvent)? onTapOutside;
+  final String? errorText;
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +44,7 @@ class NormalTextField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: labelText,
         hintText: hintText,
+        errorText: errorText,
         // contentPadding: EdgeInsets.all(16.0),
         prefixIconConstraints: const BoxConstraints(
           maxWidth: 72.0,

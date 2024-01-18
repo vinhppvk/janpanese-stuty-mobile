@@ -3,6 +3,9 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:logger/logger.dart';
 
+import '../../../data/model/dto/base/base_response.dart';
+import '../../error/exception.dart';
+
 class LoggerInterceptor extends Interceptor {
   Logger logger = Logger(
     // Customize the printer
@@ -15,9 +18,15 @@ class LoggerInterceptor extends Interceptor {
   void onError(DioException err, ErrorInterceptorHandler handler) {
     final RequestOptions options = err.requestOptions;
     final String requestPath = '${options.baseUrl}${options.path}';
+    final InAppException? error = err.error as InAppException?;
+
     logger.e('${options.method} request => $requestPath'); // Error log
-    logger.d('Error: ${err.error}, Message: ${err.message}'); // Debug log
-    logger.d('Error Data => ${formatJson(err.response?.data)}'); // Debug log
+    logger.d('Error: ${err.error}'); // Debug log
+
+    if (error != null) {
+      _logInAppException(error);
+    }
+
     return super.onError(err, handler);
   }
 
@@ -25,8 +34,8 @@ class LoggerInterceptor extends Interceptor {
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     final String requestPath = '${options.baseUrl}${options.path}';
     logger.i('${options.method} request => $requestPath'); // Info log
-    logger.i('headers => ${formatJson(options.headers)}'); // Info log
-    logger.i('body => ${formatJson(options.data)}'); // Info log
+    logger.i('headers => ${_formatJson(options.headers)}'); // Info log
+    logger.i('body => ${_formatJson(options.data)}'); // Info log
     return super.onRequest(options, handler);
   }
 
@@ -34,11 +43,27 @@ class LoggerInterceptor extends Interceptor {
   void onResponse(
       Response<dynamic> response, ResponseInterceptorHandler handler) {
     logger.d(
-        'Status Code: ${response.statusCode}\nData: ${formatJson(response.data)}'); // Debug log
+        'Status Code: ${response.statusCode}\nData: ${_formatJson(response.data)}'); // Debug log
     return super.onResponse(response, handler);
   }
 
-  String formatJson(Object? json) {
-    return JsonEncoder.withIndent(' ' * 3).convert(json);
+  String? _formatJson(Object? json) {
+    try {
+      return JsonEncoder.withIndent(' ' * 3).convert(json);
+    } catch (e) {
+     logger.e(e.toString());
+     return null;
+    }
+  }
+
+  void _logInAppException(InAppException exception) {
+    String? exceptionData;
+    switch (exception) {
+      case HttpBadRequestException(data: final Object? data):
+        exceptionData = _formatJson(data);
+      default:
+        break;
+    }
+    logger.d('Error Msg: ${exception.message}\nError Data: $exceptionData');
   }
 }

@@ -466,7 +466,8 @@ mixin _$RegisterStep1State {
     required TResult Function() loaded,
     required TResult Function() registerResult,
     required TResult Function() uploadImageResult,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<RegisterUserValidation> failure)
+        registerUserError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -476,7 +477,8 @@ mixin _$RegisterStep1State {
     TResult? Function()? loaded,
     TResult? Function()? registerResult,
     TResult? Function()? uploadImageResult,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<RegisterUserValidation> failure)?
+        registerUserError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -486,7 +488,8 @@ mixin _$RegisterStep1State {
     TResult Function()? loaded,
     TResult Function()? registerResult,
     TResult Function()? uploadImageResult,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<RegisterUserValidation> failure)?
+        registerUserError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -499,7 +502,8 @@ mixin _$RegisterStep1State {
         registerResult,
     required TResult Function(RegisterStep1StateUploadImageResult value)
         uploadImageResult,
-    required TResult Function(RegisterStep1StateError value) error,
+    required TResult Function(RegisterStep1StateRegisterUserError value)
+        registerUserError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -510,7 +514,8 @@ mixin _$RegisterStep1State {
     TResult? Function(RegisterStep1StateRegisterResult value)? registerResult,
     TResult? Function(RegisterStep1StateUploadImageResult value)?
         uploadImageResult,
-    TResult? Function(RegisterStep1StateError value)? error,
+    TResult? Function(RegisterStep1StateRegisterUserError value)?
+        registerUserError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -521,7 +526,8 @@ mixin _$RegisterStep1State {
     TResult Function(RegisterStep1StateRegisterResult value)? registerResult,
     TResult Function(RegisterStep1StateUploadImageResult value)?
         uploadImageResult,
-    TResult Function(RegisterStep1StateError value)? error,
+    TResult Function(RegisterStep1StateRegisterUserError value)?
+        registerUserError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -592,7 +598,8 @@ class _$RegisterStep1StateInitialImpl implements RegisterStep1StateInitial {
     required TResult Function() loaded,
     required TResult Function() registerResult,
     required TResult Function() uploadImageResult,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<RegisterUserValidation> failure)
+        registerUserError,
   }) {
     return initial();
   }
@@ -605,7 +612,8 @@ class _$RegisterStep1StateInitialImpl implements RegisterStep1StateInitial {
     TResult? Function()? loaded,
     TResult? Function()? registerResult,
     TResult? Function()? uploadImageResult,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<RegisterUserValidation> failure)?
+        registerUserError,
   }) {
     return initial?.call();
   }
@@ -618,7 +626,8 @@ class _$RegisterStep1StateInitialImpl implements RegisterStep1StateInitial {
     TResult Function()? loaded,
     TResult Function()? registerResult,
     TResult Function()? uploadImageResult,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<RegisterUserValidation> failure)?
+        registerUserError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -637,7 +646,8 @@ class _$RegisterStep1StateInitialImpl implements RegisterStep1StateInitial {
         registerResult,
     required TResult Function(RegisterStep1StateUploadImageResult value)
         uploadImageResult,
-    required TResult Function(RegisterStep1StateError value) error,
+    required TResult Function(RegisterStep1StateRegisterUserError value)
+        registerUserError,
   }) {
     return initial(this);
   }
@@ -651,7 +661,8 @@ class _$RegisterStep1StateInitialImpl implements RegisterStep1StateInitial {
     TResult? Function(RegisterStep1StateRegisterResult value)? registerResult,
     TResult? Function(RegisterStep1StateUploadImageResult value)?
         uploadImageResult,
-    TResult? Function(RegisterStep1StateError value)? error,
+    TResult? Function(RegisterStep1StateRegisterUserError value)?
+        registerUserError,
   }) {
     return initial?.call(this);
   }
@@ -665,7 +676,8 @@ class _$RegisterStep1StateInitialImpl implements RegisterStep1StateInitial {
     TResult Function(RegisterStep1StateRegisterResult value)? registerResult,
     TResult Function(RegisterStep1StateUploadImageResult value)?
         uploadImageResult,
-    TResult Function(RegisterStep1StateError value)? error,
+    TResult Function(RegisterStep1StateRegisterUserError value)?
+        registerUserError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -726,7 +738,8 @@ class _$RegisterStep1StateLoadingImpl implements RegisterStep1StateLoading {
     required TResult Function() loaded,
     required TResult Function() registerResult,
     required TResult Function() uploadImageResult,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<RegisterUserValidation> failure)
+        registerUserError,
   }) {
     return loading();
   }
@@ -739,7 +752,8 @@ class _$RegisterStep1StateLoadingImpl implements RegisterStep1StateLoading {
     TResult? Function()? loaded,
     TResult? Function()? registerResult,
     TResult? Function()? uploadImageResult,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<RegisterUserValidation> failure)?
+        registerUserError,
   }) {
     return loading?.call();
   }
@@ -752,7 +766,8 @@ class _$RegisterStep1StateLoadingImpl implements RegisterStep1StateLoading {
     TResult Function()? loaded,
     TResult Function()? registerResult,
     TResult Function()? uploadImageResult,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<RegisterUserValidation> failure)?
+        registerUserError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -771,7 +786,8 @@ class _$RegisterStep1StateLoadingImpl implements RegisterStep1StateLoading {
         registerResult,
     required TResult Function(RegisterStep1StateUploadImageResult value)
         uploadImageResult,
-    required TResult Function(RegisterStep1StateError value) error,
+    required TResult Function(RegisterStep1StateRegisterUserError value)
+        registerUserError,
   }) {
     return loading(this);
   }
@@ -785,7 +801,8 @@ class _$RegisterStep1StateLoadingImpl implements RegisterStep1StateLoading {
     TResult? Function(RegisterStep1StateRegisterResult value)? registerResult,
     TResult? Function(RegisterStep1StateUploadImageResult value)?
         uploadImageResult,
-    TResult? Function(RegisterStep1StateError value)? error,
+    TResult? Function(RegisterStep1StateRegisterUserError value)?
+        registerUserError,
   }) {
     return loading?.call(this);
   }
@@ -799,7 +816,8 @@ class _$RegisterStep1StateLoadingImpl implements RegisterStep1StateLoading {
     TResult Function(RegisterStep1StateRegisterResult value)? registerResult,
     TResult Function(RegisterStep1StateUploadImageResult value)?
         uploadImageResult,
-    TResult Function(RegisterStep1StateError value)? error,
+    TResult Function(RegisterStep1StateRegisterUserError value)?
+        registerUserError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -860,7 +878,8 @@ class _$RegisterStep1StateLoadedImpl implements RegisterStep1StateLoaded {
     required TResult Function() loaded,
     required TResult Function() registerResult,
     required TResult Function() uploadImageResult,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<RegisterUserValidation> failure)
+        registerUserError,
   }) {
     return loaded();
   }
@@ -873,7 +892,8 @@ class _$RegisterStep1StateLoadedImpl implements RegisterStep1StateLoaded {
     TResult? Function()? loaded,
     TResult? Function()? registerResult,
     TResult? Function()? uploadImageResult,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<RegisterUserValidation> failure)?
+        registerUserError,
   }) {
     return loaded?.call();
   }
@@ -886,7 +906,8 @@ class _$RegisterStep1StateLoadedImpl implements RegisterStep1StateLoaded {
     TResult Function()? loaded,
     TResult Function()? registerResult,
     TResult Function()? uploadImageResult,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<RegisterUserValidation> failure)?
+        registerUserError,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -905,7 +926,8 @@ class _$RegisterStep1StateLoadedImpl implements RegisterStep1StateLoaded {
         registerResult,
     required TResult Function(RegisterStep1StateUploadImageResult value)
         uploadImageResult,
-    required TResult Function(RegisterStep1StateError value) error,
+    required TResult Function(RegisterStep1StateRegisterUserError value)
+        registerUserError,
   }) {
     return loaded(this);
   }
@@ -919,7 +941,8 @@ class _$RegisterStep1StateLoadedImpl implements RegisterStep1StateLoaded {
     TResult? Function(RegisterStep1StateRegisterResult value)? registerResult,
     TResult? Function(RegisterStep1StateUploadImageResult value)?
         uploadImageResult,
-    TResult? Function(RegisterStep1StateError value)? error,
+    TResult? Function(RegisterStep1StateRegisterUserError value)?
+        registerUserError,
   }) {
     return loaded?.call(this);
   }
@@ -933,7 +956,8 @@ class _$RegisterStep1StateLoadedImpl implements RegisterStep1StateLoaded {
     TResult Function(RegisterStep1StateRegisterResult value)? registerResult,
     TResult Function(RegisterStep1StateUploadImageResult value)?
         uploadImageResult,
-    TResult Function(RegisterStep1StateError value)? error,
+    TResult Function(RegisterStep1StateRegisterUserError value)?
+        registerUserError,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -995,7 +1019,8 @@ class _$RegisterStep1StateRegisterResultImpl
     required TResult Function() loaded,
     required TResult Function() registerResult,
     required TResult Function() uploadImageResult,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<RegisterUserValidation> failure)
+        registerUserError,
   }) {
     return registerResult();
   }
@@ -1008,7 +1033,8 @@ class _$RegisterStep1StateRegisterResultImpl
     TResult? Function()? loaded,
     TResult? Function()? registerResult,
     TResult? Function()? uploadImageResult,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<RegisterUserValidation> failure)?
+        registerUserError,
   }) {
     return registerResult?.call();
   }
@@ -1021,7 +1047,8 @@ class _$RegisterStep1StateRegisterResultImpl
     TResult Function()? loaded,
     TResult Function()? registerResult,
     TResult Function()? uploadImageResult,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<RegisterUserValidation> failure)?
+        registerUserError,
     required TResult orElse(),
   }) {
     if (registerResult != null) {
@@ -1040,7 +1067,8 @@ class _$RegisterStep1StateRegisterResultImpl
         registerResult,
     required TResult Function(RegisterStep1StateUploadImageResult value)
         uploadImageResult,
-    required TResult Function(RegisterStep1StateError value) error,
+    required TResult Function(RegisterStep1StateRegisterUserError value)
+        registerUserError,
   }) {
     return registerResult(this);
   }
@@ -1054,7 +1082,8 @@ class _$RegisterStep1StateRegisterResultImpl
     TResult? Function(RegisterStep1StateRegisterResult value)? registerResult,
     TResult? Function(RegisterStep1StateUploadImageResult value)?
         uploadImageResult,
-    TResult? Function(RegisterStep1StateError value)? error,
+    TResult? Function(RegisterStep1StateRegisterUserError value)?
+        registerUserError,
   }) {
     return registerResult?.call(this);
   }
@@ -1068,7 +1097,8 @@ class _$RegisterStep1StateRegisterResultImpl
     TResult Function(RegisterStep1StateRegisterResult value)? registerResult,
     TResult Function(RegisterStep1StateUploadImageResult value)?
         uploadImageResult,
-    TResult Function(RegisterStep1StateError value)? error,
+    TResult Function(RegisterStep1StateRegisterUserError value)?
+        registerUserError,
     required TResult orElse(),
   }) {
     if (registerResult != null) {
@@ -1131,7 +1161,8 @@ class _$RegisterStep1StateUploadImageResultImpl
     required TResult Function() loaded,
     required TResult Function() registerResult,
     required TResult Function() uploadImageResult,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<RegisterUserValidation> failure)
+        registerUserError,
   }) {
     return uploadImageResult();
   }
@@ -1144,7 +1175,8 @@ class _$RegisterStep1StateUploadImageResultImpl
     TResult? Function()? loaded,
     TResult? Function()? registerResult,
     TResult? Function()? uploadImageResult,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<RegisterUserValidation> failure)?
+        registerUserError,
   }) {
     return uploadImageResult?.call();
   }
@@ -1157,7 +1189,8 @@ class _$RegisterStep1StateUploadImageResultImpl
     TResult Function()? loaded,
     TResult Function()? registerResult,
     TResult Function()? uploadImageResult,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<RegisterUserValidation> failure)?
+        registerUserError,
     required TResult orElse(),
   }) {
     if (uploadImageResult != null) {
@@ -1176,7 +1209,8 @@ class _$RegisterStep1StateUploadImageResultImpl
         registerResult,
     required TResult Function(RegisterStep1StateUploadImageResult value)
         uploadImageResult,
-    required TResult Function(RegisterStep1StateError value) error,
+    required TResult Function(RegisterStep1StateRegisterUserError value)
+        registerUserError,
   }) {
     return uploadImageResult(this);
   }
@@ -1190,7 +1224,8 @@ class _$RegisterStep1StateUploadImageResultImpl
     TResult? Function(RegisterStep1StateRegisterResult value)? registerResult,
     TResult? Function(RegisterStep1StateUploadImageResult value)?
         uploadImageResult,
-    TResult? Function(RegisterStep1StateError value)? error,
+    TResult? Function(RegisterStep1StateRegisterUserError value)?
+        registerUserError,
   }) {
     return uploadImageResult?.call(this);
   }
@@ -1204,7 +1239,8 @@ class _$RegisterStep1StateUploadImageResultImpl
     TResult Function(RegisterStep1StateRegisterResult value)? registerResult,
     TResult Function(RegisterStep1StateUploadImageResult value)?
         uploadImageResult,
-    TResult Function(RegisterStep1StateError value)? error,
+    TResult Function(RegisterStep1StateRegisterUserError value)?
+        registerUserError,
     required TResult orElse(),
   }) {
     if (uploadImageResult != null) {
@@ -1221,25 +1257,25 @@ abstract class RegisterStep1StateUploadImageResult
 }
 
 /// @nodoc
-abstract class _$$RegisterStep1StateErrorImplCopyWith<$Res> {
-  factory _$$RegisterStep1StateErrorImplCopyWith(
-          _$RegisterStep1StateErrorImpl value,
-          $Res Function(_$RegisterStep1StateErrorImpl) then) =
-      __$$RegisterStep1StateErrorImplCopyWithImpl<$Res>;
+abstract class _$$RegisterStep1StateRegisterUserErrorImplCopyWith<$Res> {
+  factory _$$RegisterStep1StateRegisterUserErrorImplCopyWith(
+          _$RegisterStep1StateRegisterUserErrorImpl value,
+          $Res Function(_$RegisterStep1StateRegisterUserErrorImpl) then) =
+      __$$RegisterStep1StateRegisterUserErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Failure failure});
+  $Res call({Failure<RegisterUserValidation> failure});
 
-  $FailureCopyWith<$Res> get failure;
+  $FailureCopyWith<RegisterUserValidation, $Res> get failure;
 }
 
 /// @nodoc
-class __$$RegisterStep1StateErrorImplCopyWithImpl<$Res>
+class __$$RegisterStep1StateRegisterUserErrorImplCopyWithImpl<$Res>
     extends _$RegisterStep1StateCopyWithImpl<$Res,
-        _$RegisterStep1StateErrorImpl>
-    implements _$$RegisterStep1StateErrorImplCopyWith<$Res> {
-  __$$RegisterStep1StateErrorImplCopyWithImpl(
-      _$RegisterStep1StateErrorImpl _value,
-      $Res Function(_$RegisterStep1StateErrorImpl) _then)
+        _$RegisterStep1StateRegisterUserErrorImpl>
+    implements _$$RegisterStep1StateRegisterUserErrorImplCopyWith<$Res> {
+  __$$RegisterStep1StateRegisterUserErrorImplCopyWithImpl(
+      _$RegisterStep1StateRegisterUserErrorImpl _value,
+      $Res Function(_$RegisterStep1StateRegisterUserErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1247,18 +1283,19 @@ class __$$RegisterStep1StateErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? failure = null,
   }) {
-    return _then(_$RegisterStep1StateErrorImpl(
+    return _then(_$RegisterStep1StateRegisterUserErrorImpl(
       null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
-              as Failure,
+              as Failure<RegisterUserValidation>,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $FailureCopyWith<$Res> get failure {
-    return $FailureCopyWith<$Res>(_value.failure, (value) {
+  $FailureCopyWith<RegisterUserValidation, $Res> get failure {
+    return $FailureCopyWith<RegisterUserValidation, $Res>(_value.failure,
+        (value) {
       return _then(_value.copyWith(failure: value));
     });
   }
@@ -1266,22 +1303,23 @@ class __$$RegisterStep1StateErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RegisterStep1StateErrorImpl implements RegisterStep1StateError {
-  const _$RegisterStep1StateErrorImpl(this.failure);
+class _$RegisterStep1StateRegisterUserErrorImpl
+    implements RegisterStep1StateRegisterUserError {
+  const _$RegisterStep1StateRegisterUserErrorImpl(this.failure);
 
   @override
-  final Failure failure;
+  final Failure<RegisterUserValidation> failure;
 
   @override
   String toString() {
-    return 'RegisterStep1State.error(failure: $failure)';
+    return 'RegisterStep1State.registerUserError(failure: $failure)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RegisterStep1StateErrorImpl &&
+            other is _$RegisterStep1StateRegisterUserErrorImpl &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
@@ -1291,9 +1329,10 @@ class _$RegisterStep1StateErrorImpl implements RegisterStep1StateError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RegisterStep1StateErrorImplCopyWith<_$RegisterStep1StateErrorImpl>
-      get copyWith => __$$RegisterStep1StateErrorImplCopyWithImpl<
-          _$RegisterStep1StateErrorImpl>(this, _$identity);
+  _$$RegisterStep1StateRegisterUserErrorImplCopyWith<
+          _$RegisterStep1StateRegisterUserErrorImpl>
+      get copyWith => __$$RegisterStep1StateRegisterUserErrorImplCopyWithImpl<
+          _$RegisterStep1StateRegisterUserErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1303,9 +1342,10 @@ class _$RegisterStep1StateErrorImpl implements RegisterStep1StateError {
     required TResult Function() loaded,
     required TResult Function() registerResult,
     required TResult Function() uploadImageResult,
-    required TResult Function(Failure failure) error,
+    required TResult Function(Failure<RegisterUserValidation> failure)
+        registerUserError,
   }) {
-    return error(failure);
+    return registerUserError(failure);
   }
 
   @override
@@ -1316,9 +1356,10 @@ class _$RegisterStep1StateErrorImpl implements RegisterStep1StateError {
     TResult? Function()? loaded,
     TResult? Function()? registerResult,
     TResult? Function()? uploadImageResult,
-    TResult? Function(Failure failure)? error,
+    TResult? Function(Failure<RegisterUserValidation> failure)?
+        registerUserError,
   }) {
-    return error?.call(failure);
+    return registerUserError?.call(failure);
   }
 
   @override
@@ -1329,11 +1370,12 @@ class _$RegisterStep1StateErrorImpl implements RegisterStep1StateError {
     TResult Function()? loaded,
     TResult Function()? registerResult,
     TResult Function()? uploadImageResult,
-    TResult Function(Failure failure)? error,
+    TResult Function(Failure<RegisterUserValidation> failure)?
+        registerUserError,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(failure);
+    if (registerUserError != null) {
+      return registerUserError(failure);
     }
     return orElse();
   }
@@ -1348,9 +1390,10 @@ class _$RegisterStep1StateErrorImpl implements RegisterStep1StateError {
         registerResult,
     required TResult Function(RegisterStep1StateUploadImageResult value)
         uploadImageResult,
-    required TResult Function(RegisterStep1StateError value) error,
+    required TResult Function(RegisterStep1StateRegisterUserError value)
+        registerUserError,
   }) {
-    return error(this);
+    return registerUserError(this);
   }
 
   @override
@@ -1362,9 +1405,10 @@ class _$RegisterStep1StateErrorImpl implements RegisterStep1StateError {
     TResult? Function(RegisterStep1StateRegisterResult value)? registerResult,
     TResult? Function(RegisterStep1StateUploadImageResult value)?
         uploadImageResult,
-    TResult? Function(RegisterStep1StateError value)? error,
+    TResult? Function(RegisterStep1StateRegisterUserError value)?
+        registerUserError,
   }) {
-    return error?.call(this);
+    return registerUserError?.call(this);
   }
 
   @override
@@ -1376,22 +1420,26 @@ class _$RegisterStep1StateErrorImpl implements RegisterStep1StateError {
     TResult Function(RegisterStep1StateRegisterResult value)? registerResult,
     TResult Function(RegisterStep1StateUploadImageResult value)?
         uploadImageResult,
-    TResult Function(RegisterStep1StateError value)? error,
+    TResult Function(RegisterStep1StateRegisterUserError value)?
+        registerUserError,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this);
+    if (registerUserError != null) {
+      return registerUserError(this);
     }
     return orElse();
   }
 }
 
-abstract class RegisterStep1StateError implements RegisterStep1State {
-  const factory RegisterStep1StateError(final Failure failure) =
-      _$RegisterStep1StateErrorImpl;
+abstract class RegisterStep1StateRegisterUserError
+    implements RegisterStep1State {
+  const factory RegisterStep1StateRegisterUserError(
+          final Failure<RegisterUserValidation> failure) =
+      _$RegisterStep1StateRegisterUserErrorImpl;
 
-  Failure get failure;
+  Failure<RegisterUserValidation> get failure;
   @JsonKey(ignore: true)
-  _$$RegisterStep1StateErrorImplCopyWith<_$RegisterStep1StateErrorImpl>
+  _$$RegisterStep1StateRegisterUserErrorImplCopyWith<
+          _$RegisterStep1StateRegisterUserErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

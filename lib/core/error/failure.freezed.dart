@@ -15,125 +15,150 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$Failure {
-  String get message => throw _privateConstructorUsedError;
+mixin _$Failure<ValidationModel> {
+  String? get message => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String message) undefined,
-    required TResult Function(String message) noConnection,
-    required TResult Function(String message) httpBadRequest,
-    required TResult Function(String message) httpUnauthorized,
-    required TResult Function(String message) httpForbidden,
-    required TResult Function(String message) httpNotFound,
-    required TResult Function(String message) httpUnprocessableEntity,
-    required TResult Function(String message) httpInternalServerError,
-    required TResult Function(String message) httpMethodNotAllowedError,
-    required TResult Function(String message) httpConflictError,
-    required TResult Function(String message) badKeyOfValue,
+    required TResult Function(String? message) undefined,
+    required TResult Function(String? message) noConnection,
+    required TResult Function(String? message, ValidationModel? data)
+        httpBadRequest,
+    required TResult Function(String? message) httpUnauthorized,
+    required TResult Function(String? message) httpForbidden,
+    required TResult Function(String? message) httpNotFound,
+    required TResult Function(String? message) httpUnprocessableEntity,
+    required TResult Function(String? message) httpInternalServerError,
+    required TResult Function(String? message) httpMethodNotAllowed,
+    required TResult Function(String? message) httpConflict,
+    required TResult Function(String? message) badKeyOfValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message)? undefined,
-    TResult? Function(String message)? noConnection,
-    TResult? Function(String message)? httpBadRequest,
-    TResult? Function(String message)? httpUnauthorized,
-    TResult? Function(String message)? httpForbidden,
-    TResult? Function(String message)? httpNotFound,
-    TResult? Function(String message)? httpUnprocessableEntity,
-    TResult? Function(String message)? httpInternalServerError,
-    TResult? Function(String message)? httpMethodNotAllowedError,
-    TResult? Function(String message)? httpConflictError,
-    TResult? Function(String message)? badKeyOfValue,
+    TResult? Function(String? message)? undefined,
+    TResult? Function(String? message)? noConnection,
+    TResult? Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult? Function(String? message)? httpUnauthorized,
+    TResult? Function(String? message)? httpForbidden,
+    TResult? Function(String? message)? httpNotFound,
+    TResult? Function(String? message)? httpUnprocessableEntity,
+    TResult? Function(String? message)? httpInternalServerError,
+    TResult? Function(String? message)? httpMethodNotAllowed,
+    TResult? Function(String? message)? httpConflict,
+    TResult? Function(String? message)? badKeyOfValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? undefined,
-    TResult Function(String message)? noConnection,
-    TResult Function(String message)? httpBadRequest,
-    TResult Function(String message)? httpUnauthorized,
-    TResult Function(String message)? httpForbidden,
-    TResult Function(String message)? httpNotFound,
-    TResult Function(String message)? httpUnprocessableEntity,
-    TResult Function(String message)? httpInternalServerError,
-    TResult Function(String message)? httpMethodNotAllowedError,
-    TResult Function(String message)? httpConflictError,
-    TResult Function(String message)? badKeyOfValue,
+    TResult Function(String? message)? undefined,
+    TResult Function(String? message)? noConnection,
+    TResult Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult Function(String? message)? httpUnauthorized,
+    TResult Function(String? message)? httpForbidden,
+    TResult Function(String? message)? httpNotFound,
+    TResult Function(String? message)? httpUnprocessableEntity,
+    TResult Function(String? message)? httpInternalServerError,
+    TResult Function(String? message)? httpMethodNotAllowed,
+    TResult Function(String? message)? httpConflict,
+    TResult Function(String? message)? badKeyOfValue,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UndefinedFailure value) undefined,
-    required TResult Function(NoConnectionFailure value) noConnection,
-    required TResult Function(HttpBadRequestFailure value) httpBadRequest,
-    required TResult Function(HttpUnauthorizedFailure value) httpUnauthorized,
-    required TResult Function(HttpForbiddenFailure value) httpForbidden,
-    required TResult Function(HttpNotFoundFailure value) httpNotFound,
-    required TResult Function(HttpUnprocessableEntityFailure value)
+    required TResult Function(UndefinedFailure<ValidationModel> value)
+        undefined,
+    required TResult Function(NoConnectionFailure<ValidationModel> value)
+        noConnection,
+    required TResult Function(HttpBadRequestFailure<ValidationModel> value)
+        httpBadRequest,
+    required TResult Function(HttpUnauthorizedFailure<ValidationModel> value)
+        httpUnauthorized,
+    required TResult Function(HttpForbiddenFailure<ValidationModel> value)
+        httpForbidden,
+    required TResult Function(HttpNotFoundFailure<ValidationModel> value)
+        httpNotFound,
+    required TResult Function(
+            HttpUnprocessableEntityFailure<ValidationModel> value)
         httpUnprocessableEntity,
-    required TResult Function(HttpInternalServerErrorFailure value)
+    required TResult Function(
+            HttpInternalServerErrorFailure<ValidationModel> value)
         httpInternalServerError,
-    required TResult Function(HttpMethodNotAllowedErrorFailure value)
-        httpMethodNotAllowedError,
-    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
-    required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
+    required TResult Function(
+            HttpMethodNotAllowedFailure<ValidationModel> value)
+        httpMethodNotAllowed,
+    required TResult Function(HttpConflictErrorFailure<ValidationModel> value)
+        httpConflict,
+    required TResult Function(BadKeyOfValueFailure<ValidationModel> value)
+        badKeyOfValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(UndefinedFailure value)? undefined,
-    TResult? Function(NoConnectionFailure value)? noConnection,
-    TResult? Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult? Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult? Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult? Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult? Function(HttpUnprocessableEntityFailure value)?
+    TResult? Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult? Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult? Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult? Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult? Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult? Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult? Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult? Function(HttpInternalServerErrorFailure value)?
+    TResult? Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult? Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult? Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult? Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UndefinedFailure value)? undefined,
-    TResult Function(NoConnectionFailure value)? noConnection,
-    TResult Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult Function(HttpUnprocessableEntityFailure value)?
+    TResult Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult Function(HttpInternalServerErrorFailure value)?
+    TResult Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $FailureCopyWith<Failure> get copyWith => throw _privateConstructorUsedError;
+  $FailureCopyWith<ValidationModel, Failure<ValidationModel>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FailureCopyWith<$Res> {
-  factory $FailureCopyWith(Failure value, $Res Function(Failure) then) =
-      _$FailureCopyWithImpl<$Res, Failure>;
+abstract class $FailureCopyWith<ValidationModel, $Res> {
+  factory $FailureCopyWith(Failure<ValidationModel> value,
+          $Res Function(Failure<ValidationModel>) then) =
+      _$FailureCopyWithImpl<ValidationModel, $Res, Failure<ValidationModel>>;
   @useResult
-  $Res call({String message});
+  $Res call({String? message});
 }
 
 /// @nodoc
-class _$FailureCopyWithImpl<$Res, $Val extends Failure>
-    implements $FailureCopyWith<$Res> {
+class _$FailureCopyWithImpl<ValidationModel, $Res,
+        $Val extends Failure<ValidationModel>>
+    implements $FailureCopyWith<ValidationModel, $Res> {
   _$FailureCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -144,68 +169,72 @@ class _$FailureCopyWithImpl<$Res, $Val extends Failure>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? message = freezed,
   }) {
     return _then(_value.copyWith(
-      message: null == message
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$UndefinedFailureImplCopyWith<$Res>
-    implements $FailureCopyWith<$Res> {
-  factory _$$UndefinedFailureImplCopyWith(_$UndefinedFailureImpl value,
-          $Res Function(_$UndefinedFailureImpl) then) =
-      __$$UndefinedFailureImplCopyWithImpl<$Res>;
+abstract class _$$UndefinedFailureImplCopyWith<ValidationModel, $Res>
+    implements $FailureCopyWith<ValidationModel, $Res> {
+  factory _$$UndefinedFailureImplCopyWith(
+          _$UndefinedFailureImpl<ValidationModel> value,
+          $Res Function(_$UndefinedFailureImpl<ValidationModel>) then) =
+      __$$UndefinedFailureImplCopyWithImpl<ValidationModel, $Res>;
   @override
   @useResult
-  $Res call({String message});
+  $Res call({String? message});
 }
 
 /// @nodoc
-class __$$UndefinedFailureImplCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res, _$UndefinedFailureImpl>
-    implements _$$UndefinedFailureImplCopyWith<$Res> {
-  __$$UndefinedFailureImplCopyWithImpl(_$UndefinedFailureImpl _value,
-      $Res Function(_$UndefinedFailureImpl) _then)
+class __$$UndefinedFailureImplCopyWithImpl<ValidationModel, $Res>
+    extends _$FailureCopyWithImpl<ValidationModel, $Res,
+        _$UndefinedFailureImpl<ValidationModel>>
+    implements _$$UndefinedFailureImplCopyWith<ValidationModel, $Res> {
+  __$$UndefinedFailureImplCopyWithImpl(
+      _$UndefinedFailureImpl<ValidationModel> _value,
+      $Res Function(_$UndefinedFailureImpl<ValidationModel>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? message = freezed,
   }) {
-    return _then(_$UndefinedFailureImpl(
-      message: null == message
+    return _then(_$UndefinedFailureImpl<ValidationModel>(
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$UndefinedFailureImpl implements UndefinedFailure {
-  const _$UndefinedFailureImpl({required this.message});
+class _$UndefinedFailureImpl<ValidationModel>
+    implements UndefinedFailure<ValidationModel> {
+  const _$UndefinedFailureImpl({this.message});
 
   @override
-  final String message;
+  final String? message;
 
   @override
   String toString() {
-    return 'Failure.undefined(message: $message)';
+    return 'Failure<$ValidationModel>.undefined(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UndefinedFailureImpl &&
+            other is _$UndefinedFailureImpl<ValidationModel> &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -215,24 +244,26 @@ class _$UndefinedFailureImpl implements UndefinedFailure {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UndefinedFailureImplCopyWith<_$UndefinedFailureImpl> get copyWith =>
-      __$$UndefinedFailureImplCopyWithImpl<_$UndefinedFailureImpl>(
-          this, _$identity);
+  _$$UndefinedFailureImplCopyWith<ValidationModel,
+          _$UndefinedFailureImpl<ValidationModel>>
+      get copyWith => __$$UndefinedFailureImplCopyWithImpl<ValidationModel,
+          _$UndefinedFailureImpl<ValidationModel>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String message) undefined,
-    required TResult Function(String message) noConnection,
-    required TResult Function(String message) httpBadRequest,
-    required TResult Function(String message) httpUnauthorized,
-    required TResult Function(String message) httpForbidden,
-    required TResult Function(String message) httpNotFound,
-    required TResult Function(String message) httpUnprocessableEntity,
-    required TResult Function(String message) httpInternalServerError,
-    required TResult Function(String message) httpMethodNotAllowedError,
-    required TResult Function(String message) httpConflictError,
-    required TResult Function(String message) badKeyOfValue,
+    required TResult Function(String? message) undefined,
+    required TResult Function(String? message) noConnection,
+    required TResult Function(String? message, ValidationModel? data)
+        httpBadRequest,
+    required TResult Function(String? message) httpUnauthorized,
+    required TResult Function(String? message) httpForbidden,
+    required TResult Function(String? message) httpNotFound,
+    required TResult Function(String? message) httpUnprocessableEntity,
+    required TResult Function(String? message) httpInternalServerError,
+    required TResult Function(String? message) httpMethodNotAllowed,
+    required TResult Function(String? message) httpConflict,
+    required TResult Function(String? message) badKeyOfValue,
   }) {
     return undefined(message);
   }
@@ -240,17 +271,17 @@ class _$UndefinedFailureImpl implements UndefinedFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message)? undefined,
-    TResult? Function(String message)? noConnection,
-    TResult? Function(String message)? httpBadRequest,
-    TResult? Function(String message)? httpUnauthorized,
-    TResult? Function(String message)? httpForbidden,
-    TResult? Function(String message)? httpNotFound,
-    TResult? Function(String message)? httpUnprocessableEntity,
-    TResult? Function(String message)? httpInternalServerError,
-    TResult? Function(String message)? httpMethodNotAllowedError,
-    TResult? Function(String message)? httpConflictError,
-    TResult? Function(String message)? badKeyOfValue,
+    TResult? Function(String? message)? undefined,
+    TResult? Function(String? message)? noConnection,
+    TResult? Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult? Function(String? message)? httpUnauthorized,
+    TResult? Function(String? message)? httpForbidden,
+    TResult? Function(String? message)? httpNotFound,
+    TResult? Function(String? message)? httpUnprocessableEntity,
+    TResult? Function(String? message)? httpInternalServerError,
+    TResult? Function(String? message)? httpMethodNotAllowed,
+    TResult? Function(String? message)? httpConflict,
+    TResult? Function(String? message)? badKeyOfValue,
   }) {
     return undefined?.call(message);
   }
@@ -258,17 +289,17 @@ class _$UndefinedFailureImpl implements UndefinedFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? undefined,
-    TResult Function(String message)? noConnection,
-    TResult Function(String message)? httpBadRequest,
-    TResult Function(String message)? httpUnauthorized,
-    TResult Function(String message)? httpForbidden,
-    TResult Function(String message)? httpNotFound,
-    TResult Function(String message)? httpUnprocessableEntity,
-    TResult Function(String message)? httpInternalServerError,
-    TResult Function(String message)? httpMethodNotAllowedError,
-    TResult Function(String message)? httpConflictError,
-    TResult Function(String message)? badKeyOfValue,
+    TResult Function(String? message)? undefined,
+    TResult Function(String? message)? noConnection,
+    TResult Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult Function(String? message)? httpUnauthorized,
+    TResult Function(String? message)? httpForbidden,
+    TResult Function(String? message)? httpNotFound,
+    TResult Function(String? message)? httpUnprocessableEntity,
+    TResult Function(String? message)? httpInternalServerError,
+    TResult Function(String? message)? httpMethodNotAllowed,
+    TResult Function(String? message)? httpConflict,
+    TResult Function(String? message)? badKeyOfValue,
     required TResult orElse(),
   }) {
     if (undefined != null) {
@@ -280,20 +311,31 @@ class _$UndefinedFailureImpl implements UndefinedFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UndefinedFailure value) undefined,
-    required TResult Function(NoConnectionFailure value) noConnection,
-    required TResult Function(HttpBadRequestFailure value) httpBadRequest,
-    required TResult Function(HttpUnauthorizedFailure value) httpUnauthorized,
-    required TResult Function(HttpForbiddenFailure value) httpForbidden,
-    required TResult Function(HttpNotFoundFailure value) httpNotFound,
-    required TResult Function(HttpUnprocessableEntityFailure value)
+    required TResult Function(UndefinedFailure<ValidationModel> value)
+        undefined,
+    required TResult Function(NoConnectionFailure<ValidationModel> value)
+        noConnection,
+    required TResult Function(HttpBadRequestFailure<ValidationModel> value)
+        httpBadRequest,
+    required TResult Function(HttpUnauthorizedFailure<ValidationModel> value)
+        httpUnauthorized,
+    required TResult Function(HttpForbiddenFailure<ValidationModel> value)
+        httpForbidden,
+    required TResult Function(HttpNotFoundFailure<ValidationModel> value)
+        httpNotFound,
+    required TResult Function(
+            HttpUnprocessableEntityFailure<ValidationModel> value)
         httpUnprocessableEntity,
-    required TResult Function(HttpInternalServerErrorFailure value)
+    required TResult Function(
+            HttpInternalServerErrorFailure<ValidationModel> value)
         httpInternalServerError,
-    required TResult Function(HttpMethodNotAllowedErrorFailure value)
-        httpMethodNotAllowedError,
-    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
-    required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
+    required TResult Function(
+            HttpMethodNotAllowedFailure<ValidationModel> value)
+        httpMethodNotAllowed,
+    required TResult Function(HttpConflictErrorFailure<ValidationModel> value)
+        httpConflict,
+    required TResult Function(BadKeyOfValueFailure<ValidationModel> value)
+        badKeyOfValue,
   }) {
     return undefined(this);
   }
@@ -301,20 +343,25 @@ class _$UndefinedFailureImpl implements UndefinedFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(UndefinedFailure value)? undefined,
-    TResult? Function(NoConnectionFailure value)? noConnection,
-    TResult? Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult? Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult? Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult? Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult? Function(HttpUnprocessableEntityFailure value)?
+    TResult? Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult? Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult? Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult? Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult? Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult? Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult? Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult? Function(HttpInternalServerErrorFailure value)?
+    TResult? Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult? Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult? Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult? Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
   }) {
     return undefined?.call(this);
   }
@@ -322,20 +369,25 @@ class _$UndefinedFailureImpl implements UndefinedFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UndefinedFailure value)? undefined,
-    TResult Function(NoConnectionFailure value)? noConnection,
-    TResult Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult Function(HttpUnprocessableEntityFailure value)?
+    TResult Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult Function(HttpInternalServerErrorFailure value)?
+    TResult Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
     required TResult orElse(),
   }) {
     if (undefined != null) {
@@ -345,69 +397,75 @@ class _$UndefinedFailureImpl implements UndefinedFailure {
   }
 }
 
-abstract class UndefinedFailure implements Failure {
-  const factory UndefinedFailure({required final String message}) =
-      _$UndefinedFailureImpl;
+abstract class UndefinedFailure<ValidationModel>
+    implements Failure<ValidationModel> {
+  const factory UndefinedFailure({final String? message}) =
+      _$UndefinedFailureImpl<ValidationModel>;
 
   @override
-  String get message;
+  String? get message;
   @override
   @JsonKey(ignore: true)
-  _$$UndefinedFailureImplCopyWith<_$UndefinedFailureImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UndefinedFailureImplCopyWith<ValidationModel,
+          _$UndefinedFailureImpl<ValidationModel>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$NoConnectionFailureImplCopyWith<$Res>
-    implements $FailureCopyWith<$Res> {
-  factory _$$NoConnectionFailureImplCopyWith(_$NoConnectionFailureImpl value,
-          $Res Function(_$NoConnectionFailureImpl) then) =
-      __$$NoConnectionFailureImplCopyWithImpl<$Res>;
+abstract class _$$NoConnectionFailureImplCopyWith<ValidationModel, $Res>
+    implements $FailureCopyWith<ValidationModel, $Res> {
+  factory _$$NoConnectionFailureImplCopyWith(
+          _$NoConnectionFailureImpl<ValidationModel> value,
+          $Res Function(_$NoConnectionFailureImpl<ValidationModel>) then) =
+      __$$NoConnectionFailureImplCopyWithImpl<ValidationModel, $Res>;
   @override
   @useResult
-  $Res call({String message});
+  $Res call({String? message});
 }
 
 /// @nodoc
-class __$$NoConnectionFailureImplCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res, _$NoConnectionFailureImpl>
-    implements _$$NoConnectionFailureImplCopyWith<$Res> {
-  __$$NoConnectionFailureImplCopyWithImpl(_$NoConnectionFailureImpl _value,
-      $Res Function(_$NoConnectionFailureImpl) _then)
+class __$$NoConnectionFailureImplCopyWithImpl<ValidationModel, $Res>
+    extends _$FailureCopyWithImpl<ValidationModel, $Res,
+        _$NoConnectionFailureImpl<ValidationModel>>
+    implements _$$NoConnectionFailureImplCopyWith<ValidationModel, $Res> {
+  __$$NoConnectionFailureImplCopyWithImpl(
+      _$NoConnectionFailureImpl<ValidationModel> _value,
+      $Res Function(_$NoConnectionFailureImpl<ValidationModel>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? message = freezed,
   }) {
-    return _then(_$NoConnectionFailureImpl(
-      message: null == message
+    return _then(_$NoConnectionFailureImpl<ValidationModel>(
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$NoConnectionFailureImpl implements NoConnectionFailure {
-  const _$NoConnectionFailureImpl({required this.message});
+class _$NoConnectionFailureImpl<ValidationModel>
+    implements NoConnectionFailure<ValidationModel> {
+  const _$NoConnectionFailureImpl({this.message});
 
   @override
-  final String message;
+  final String? message;
 
   @override
   String toString() {
-    return 'Failure.noConnection(message: $message)';
+    return 'Failure<$ValidationModel>.noConnection(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NoConnectionFailureImpl &&
+            other is _$NoConnectionFailureImpl<ValidationModel> &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -417,24 +475,26 @@ class _$NoConnectionFailureImpl implements NoConnectionFailure {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$NoConnectionFailureImplCopyWith<_$NoConnectionFailureImpl> get copyWith =>
-      __$$NoConnectionFailureImplCopyWithImpl<_$NoConnectionFailureImpl>(
-          this, _$identity);
+  _$$NoConnectionFailureImplCopyWith<ValidationModel,
+          _$NoConnectionFailureImpl<ValidationModel>>
+      get copyWith => __$$NoConnectionFailureImplCopyWithImpl<ValidationModel,
+          _$NoConnectionFailureImpl<ValidationModel>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String message) undefined,
-    required TResult Function(String message) noConnection,
-    required TResult Function(String message) httpBadRequest,
-    required TResult Function(String message) httpUnauthorized,
-    required TResult Function(String message) httpForbidden,
-    required TResult Function(String message) httpNotFound,
-    required TResult Function(String message) httpUnprocessableEntity,
-    required TResult Function(String message) httpInternalServerError,
-    required TResult Function(String message) httpMethodNotAllowedError,
-    required TResult Function(String message) httpConflictError,
-    required TResult Function(String message) badKeyOfValue,
+    required TResult Function(String? message) undefined,
+    required TResult Function(String? message) noConnection,
+    required TResult Function(String? message, ValidationModel? data)
+        httpBadRequest,
+    required TResult Function(String? message) httpUnauthorized,
+    required TResult Function(String? message) httpForbidden,
+    required TResult Function(String? message) httpNotFound,
+    required TResult Function(String? message) httpUnprocessableEntity,
+    required TResult Function(String? message) httpInternalServerError,
+    required TResult Function(String? message) httpMethodNotAllowed,
+    required TResult Function(String? message) httpConflict,
+    required TResult Function(String? message) badKeyOfValue,
   }) {
     return noConnection(message);
   }
@@ -442,17 +502,17 @@ class _$NoConnectionFailureImpl implements NoConnectionFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message)? undefined,
-    TResult? Function(String message)? noConnection,
-    TResult? Function(String message)? httpBadRequest,
-    TResult? Function(String message)? httpUnauthorized,
-    TResult? Function(String message)? httpForbidden,
-    TResult? Function(String message)? httpNotFound,
-    TResult? Function(String message)? httpUnprocessableEntity,
-    TResult? Function(String message)? httpInternalServerError,
-    TResult? Function(String message)? httpMethodNotAllowedError,
-    TResult? Function(String message)? httpConflictError,
-    TResult? Function(String message)? badKeyOfValue,
+    TResult? Function(String? message)? undefined,
+    TResult? Function(String? message)? noConnection,
+    TResult? Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult? Function(String? message)? httpUnauthorized,
+    TResult? Function(String? message)? httpForbidden,
+    TResult? Function(String? message)? httpNotFound,
+    TResult? Function(String? message)? httpUnprocessableEntity,
+    TResult? Function(String? message)? httpInternalServerError,
+    TResult? Function(String? message)? httpMethodNotAllowed,
+    TResult? Function(String? message)? httpConflict,
+    TResult? Function(String? message)? badKeyOfValue,
   }) {
     return noConnection?.call(message);
   }
@@ -460,17 +520,17 @@ class _$NoConnectionFailureImpl implements NoConnectionFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? undefined,
-    TResult Function(String message)? noConnection,
-    TResult Function(String message)? httpBadRequest,
-    TResult Function(String message)? httpUnauthorized,
-    TResult Function(String message)? httpForbidden,
-    TResult Function(String message)? httpNotFound,
-    TResult Function(String message)? httpUnprocessableEntity,
-    TResult Function(String message)? httpInternalServerError,
-    TResult Function(String message)? httpMethodNotAllowedError,
-    TResult Function(String message)? httpConflictError,
-    TResult Function(String message)? badKeyOfValue,
+    TResult Function(String? message)? undefined,
+    TResult Function(String? message)? noConnection,
+    TResult Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult Function(String? message)? httpUnauthorized,
+    TResult Function(String? message)? httpForbidden,
+    TResult Function(String? message)? httpNotFound,
+    TResult Function(String? message)? httpUnprocessableEntity,
+    TResult Function(String? message)? httpInternalServerError,
+    TResult Function(String? message)? httpMethodNotAllowed,
+    TResult Function(String? message)? httpConflict,
+    TResult Function(String? message)? badKeyOfValue,
     required TResult orElse(),
   }) {
     if (noConnection != null) {
@@ -482,20 +542,31 @@ class _$NoConnectionFailureImpl implements NoConnectionFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UndefinedFailure value) undefined,
-    required TResult Function(NoConnectionFailure value) noConnection,
-    required TResult Function(HttpBadRequestFailure value) httpBadRequest,
-    required TResult Function(HttpUnauthorizedFailure value) httpUnauthorized,
-    required TResult Function(HttpForbiddenFailure value) httpForbidden,
-    required TResult Function(HttpNotFoundFailure value) httpNotFound,
-    required TResult Function(HttpUnprocessableEntityFailure value)
+    required TResult Function(UndefinedFailure<ValidationModel> value)
+        undefined,
+    required TResult Function(NoConnectionFailure<ValidationModel> value)
+        noConnection,
+    required TResult Function(HttpBadRequestFailure<ValidationModel> value)
+        httpBadRequest,
+    required TResult Function(HttpUnauthorizedFailure<ValidationModel> value)
+        httpUnauthorized,
+    required TResult Function(HttpForbiddenFailure<ValidationModel> value)
+        httpForbidden,
+    required TResult Function(HttpNotFoundFailure<ValidationModel> value)
+        httpNotFound,
+    required TResult Function(
+            HttpUnprocessableEntityFailure<ValidationModel> value)
         httpUnprocessableEntity,
-    required TResult Function(HttpInternalServerErrorFailure value)
+    required TResult Function(
+            HttpInternalServerErrorFailure<ValidationModel> value)
         httpInternalServerError,
-    required TResult Function(HttpMethodNotAllowedErrorFailure value)
-        httpMethodNotAllowedError,
-    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
-    required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
+    required TResult Function(
+            HttpMethodNotAllowedFailure<ValidationModel> value)
+        httpMethodNotAllowed,
+    required TResult Function(HttpConflictErrorFailure<ValidationModel> value)
+        httpConflict,
+    required TResult Function(BadKeyOfValueFailure<ValidationModel> value)
+        badKeyOfValue,
   }) {
     return noConnection(this);
   }
@@ -503,20 +574,25 @@ class _$NoConnectionFailureImpl implements NoConnectionFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(UndefinedFailure value)? undefined,
-    TResult? Function(NoConnectionFailure value)? noConnection,
-    TResult? Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult? Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult? Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult? Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult? Function(HttpUnprocessableEntityFailure value)?
+    TResult? Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult? Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult? Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult? Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult? Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult? Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult? Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult? Function(HttpInternalServerErrorFailure value)?
+    TResult? Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult? Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult? Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult? Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
   }) {
     return noConnection?.call(this);
   }
@@ -524,20 +600,25 @@ class _$NoConnectionFailureImpl implements NoConnectionFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UndefinedFailure value)? undefined,
-    TResult Function(NoConnectionFailure value)? noConnection,
-    TResult Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult Function(HttpUnprocessableEntityFailure value)?
+    TResult Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult Function(HttpInternalServerErrorFailure value)?
+    TResult Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
     required TResult orElse(),
   }) {
     if (noConnection != null) {
@@ -547,137 +628,153 @@ class _$NoConnectionFailureImpl implements NoConnectionFailure {
   }
 }
 
-abstract class NoConnectionFailure implements Failure {
-  const factory NoConnectionFailure({required final String message}) =
-      _$NoConnectionFailureImpl;
+abstract class NoConnectionFailure<ValidationModel>
+    implements Failure<ValidationModel> {
+  const factory NoConnectionFailure({final String? message}) =
+      _$NoConnectionFailureImpl<ValidationModel>;
 
   @override
-  String get message;
+  String? get message;
   @override
   @JsonKey(ignore: true)
-  _$$NoConnectionFailureImplCopyWith<_$NoConnectionFailureImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$NoConnectionFailureImplCopyWith<ValidationModel,
+          _$NoConnectionFailureImpl<ValidationModel>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HttpBadRequestFailureImplCopyWith<$Res>
-    implements $FailureCopyWith<$Res> {
+abstract class _$$HttpBadRequestFailureImplCopyWith<ValidationModel, $Res>
+    implements $FailureCopyWith<ValidationModel, $Res> {
   factory _$$HttpBadRequestFailureImplCopyWith(
-          _$HttpBadRequestFailureImpl value,
-          $Res Function(_$HttpBadRequestFailureImpl) then) =
-      __$$HttpBadRequestFailureImplCopyWithImpl<$Res>;
+          _$HttpBadRequestFailureImpl<ValidationModel> value,
+          $Res Function(_$HttpBadRequestFailureImpl<ValidationModel>) then) =
+      __$$HttpBadRequestFailureImplCopyWithImpl<ValidationModel, $Res>;
   @override
   @useResult
-  $Res call({String message});
+  $Res call({String? message, ValidationModel? data});
 }
 
 /// @nodoc
-class __$$HttpBadRequestFailureImplCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res, _$HttpBadRequestFailureImpl>
-    implements _$$HttpBadRequestFailureImplCopyWith<$Res> {
-  __$$HttpBadRequestFailureImplCopyWithImpl(_$HttpBadRequestFailureImpl _value,
-      $Res Function(_$HttpBadRequestFailureImpl) _then)
+class __$$HttpBadRequestFailureImplCopyWithImpl<ValidationModel, $Res>
+    extends _$FailureCopyWithImpl<ValidationModel, $Res,
+        _$HttpBadRequestFailureImpl<ValidationModel>>
+    implements _$$HttpBadRequestFailureImplCopyWith<ValidationModel, $Res> {
+  __$$HttpBadRequestFailureImplCopyWithImpl(
+      _$HttpBadRequestFailureImpl<ValidationModel> _value,
+      $Res Function(_$HttpBadRequestFailureImpl<ValidationModel>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? message = freezed,
+    Object? data = freezed,
   }) {
-    return _then(_$HttpBadRequestFailureImpl(
-      message: null == message
+    return _then(_$HttpBadRequestFailureImpl<ValidationModel>(
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ValidationModel?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$HttpBadRequestFailureImpl implements HttpBadRequestFailure {
-  const _$HttpBadRequestFailureImpl({required this.message});
+class _$HttpBadRequestFailureImpl<ValidationModel>
+    implements HttpBadRequestFailure<ValidationModel> {
+  const _$HttpBadRequestFailureImpl({this.message, this.data});
 
   @override
-  final String message;
+  final String? message;
+  @override
+  final ValidationModel? data;
 
   @override
   String toString() {
-    return 'Failure.httpBadRequest(message: $message)';
+    return 'Failure<$ValidationModel>.httpBadRequest(message: $message, data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HttpBadRequestFailureImpl &&
-            (identical(other.message, message) || other.message == message));
+            other is _$HttpBadRequestFailureImpl<ValidationModel> &&
+            (identical(other.message, message) || other.message == message) &&
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(
+      runtimeType, message, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HttpBadRequestFailureImplCopyWith<_$HttpBadRequestFailureImpl>
-      get copyWith => __$$HttpBadRequestFailureImplCopyWithImpl<
-          _$HttpBadRequestFailureImpl>(this, _$identity);
+  _$$HttpBadRequestFailureImplCopyWith<ValidationModel,
+          _$HttpBadRequestFailureImpl<ValidationModel>>
+      get copyWith => __$$HttpBadRequestFailureImplCopyWithImpl<ValidationModel,
+          _$HttpBadRequestFailureImpl<ValidationModel>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String message) undefined,
-    required TResult Function(String message) noConnection,
-    required TResult Function(String message) httpBadRequest,
-    required TResult Function(String message) httpUnauthorized,
-    required TResult Function(String message) httpForbidden,
-    required TResult Function(String message) httpNotFound,
-    required TResult Function(String message) httpUnprocessableEntity,
-    required TResult Function(String message) httpInternalServerError,
-    required TResult Function(String message) httpMethodNotAllowedError,
-    required TResult Function(String message) httpConflictError,
-    required TResult Function(String message) badKeyOfValue,
+    required TResult Function(String? message) undefined,
+    required TResult Function(String? message) noConnection,
+    required TResult Function(String? message, ValidationModel? data)
+        httpBadRequest,
+    required TResult Function(String? message) httpUnauthorized,
+    required TResult Function(String? message) httpForbidden,
+    required TResult Function(String? message) httpNotFound,
+    required TResult Function(String? message) httpUnprocessableEntity,
+    required TResult Function(String? message) httpInternalServerError,
+    required TResult Function(String? message) httpMethodNotAllowed,
+    required TResult Function(String? message) httpConflict,
+    required TResult Function(String? message) badKeyOfValue,
   }) {
-    return httpBadRequest(message);
+    return httpBadRequest(message, data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message)? undefined,
-    TResult? Function(String message)? noConnection,
-    TResult? Function(String message)? httpBadRequest,
-    TResult? Function(String message)? httpUnauthorized,
-    TResult? Function(String message)? httpForbidden,
-    TResult? Function(String message)? httpNotFound,
-    TResult? Function(String message)? httpUnprocessableEntity,
-    TResult? Function(String message)? httpInternalServerError,
-    TResult? Function(String message)? httpMethodNotAllowedError,
-    TResult? Function(String message)? httpConflictError,
-    TResult? Function(String message)? badKeyOfValue,
+    TResult? Function(String? message)? undefined,
+    TResult? Function(String? message)? noConnection,
+    TResult? Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult? Function(String? message)? httpUnauthorized,
+    TResult? Function(String? message)? httpForbidden,
+    TResult? Function(String? message)? httpNotFound,
+    TResult? Function(String? message)? httpUnprocessableEntity,
+    TResult? Function(String? message)? httpInternalServerError,
+    TResult? Function(String? message)? httpMethodNotAllowed,
+    TResult? Function(String? message)? httpConflict,
+    TResult? Function(String? message)? badKeyOfValue,
   }) {
-    return httpBadRequest?.call(message);
+    return httpBadRequest?.call(message, data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? undefined,
-    TResult Function(String message)? noConnection,
-    TResult Function(String message)? httpBadRequest,
-    TResult Function(String message)? httpUnauthorized,
-    TResult Function(String message)? httpForbidden,
-    TResult Function(String message)? httpNotFound,
-    TResult Function(String message)? httpUnprocessableEntity,
-    TResult Function(String message)? httpInternalServerError,
-    TResult Function(String message)? httpMethodNotAllowedError,
-    TResult Function(String message)? httpConflictError,
-    TResult Function(String message)? badKeyOfValue,
+    TResult Function(String? message)? undefined,
+    TResult Function(String? message)? noConnection,
+    TResult Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult Function(String? message)? httpUnauthorized,
+    TResult Function(String? message)? httpForbidden,
+    TResult Function(String? message)? httpNotFound,
+    TResult Function(String? message)? httpUnprocessableEntity,
+    TResult Function(String? message)? httpInternalServerError,
+    TResult Function(String? message)? httpMethodNotAllowed,
+    TResult Function(String? message)? httpConflict,
+    TResult Function(String? message)? badKeyOfValue,
     required TResult orElse(),
   }) {
     if (httpBadRequest != null) {
-      return httpBadRequest(message);
+      return httpBadRequest(message, data);
     }
     return orElse();
   }
@@ -685,20 +782,31 @@ class _$HttpBadRequestFailureImpl implements HttpBadRequestFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UndefinedFailure value) undefined,
-    required TResult Function(NoConnectionFailure value) noConnection,
-    required TResult Function(HttpBadRequestFailure value) httpBadRequest,
-    required TResult Function(HttpUnauthorizedFailure value) httpUnauthorized,
-    required TResult Function(HttpForbiddenFailure value) httpForbidden,
-    required TResult Function(HttpNotFoundFailure value) httpNotFound,
-    required TResult Function(HttpUnprocessableEntityFailure value)
+    required TResult Function(UndefinedFailure<ValidationModel> value)
+        undefined,
+    required TResult Function(NoConnectionFailure<ValidationModel> value)
+        noConnection,
+    required TResult Function(HttpBadRequestFailure<ValidationModel> value)
+        httpBadRequest,
+    required TResult Function(HttpUnauthorizedFailure<ValidationModel> value)
+        httpUnauthorized,
+    required TResult Function(HttpForbiddenFailure<ValidationModel> value)
+        httpForbidden,
+    required TResult Function(HttpNotFoundFailure<ValidationModel> value)
+        httpNotFound,
+    required TResult Function(
+            HttpUnprocessableEntityFailure<ValidationModel> value)
         httpUnprocessableEntity,
-    required TResult Function(HttpInternalServerErrorFailure value)
+    required TResult Function(
+            HttpInternalServerErrorFailure<ValidationModel> value)
         httpInternalServerError,
-    required TResult Function(HttpMethodNotAllowedErrorFailure value)
-        httpMethodNotAllowedError,
-    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
-    required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
+    required TResult Function(
+            HttpMethodNotAllowedFailure<ValidationModel> value)
+        httpMethodNotAllowed,
+    required TResult Function(HttpConflictErrorFailure<ValidationModel> value)
+        httpConflict,
+    required TResult Function(BadKeyOfValueFailure<ValidationModel> value)
+        badKeyOfValue,
   }) {
     return httpBadRequest(this);
   }
@@ -706,20 +814,25 @@ class _$HttpBadRequestFailureImpl implements HttpBadRequestFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(UndefinedFailure value)? undefined,
-    TResult? Function(NoConnectionFailure value)? noConnection,
-    TResult? Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult? Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult? Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult? Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult? Function(HttpUnprocessableEntityFailure value)?
+    TResult? Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult? Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult? Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult? Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult? Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult? Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult? Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult? Function(HttpInternalServerErrorFailure value)?
+    TResult? Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult? Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult? Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult? Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
   }) {
     return httpBadRequest?.call(this);
   }
@@ -727,20 +840,25 @@ class _$HttpBadRequestFailureImpl implements HttpBadRequestFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UndefinedFailure value)? undefined,
-    TResult Function(NoConnectionFailure value)? noConnection,
-    TResult Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult Function(HttpUnprocessableEntityFailure value)?
+    TResult Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult Function(HttpInternalServerErrorFailure value)?
+    TResult Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
     required TResult orElse(),
   }) {
     if (httpBadRequest != null) {
@@ -750,71 +868,77 @@ class _$HttpBadRequestFailureImpl implements HttpBadRequestFailure {
   }
 }
 
-abstract class HttpBadRequestFailure implements Failure {
-  const factory HttpBadRequestFailure({required final String message}) =
-      _$HttpBadRequestFailureImpl;
+abstract class HttpBadRequestFailure<ValidationModel>
+    implements Failure<ValidationModel> {
+  const factory HttpBadRequestFailure(
+          {final String? message, final ValidationModel? data}) =
+      _$HttpBadRequestFailureImpl<ValidationModel>;
 
   @override
-  String get message;
+  String? get message;
+  ValidationModel? get data;
   @override
   @JsonKey(ignore: true)
-  _$$HttpBadRequestFailureImplCopyWith<_$HttpBadRequestFailureImpl>
+  _$$HttpBadRequestFailureImplCopyWith<ValidationModel,
+          _$HttpBadRequestFailureImpl<ValidationModel>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HttpUnauthorizedFailureImplCopyWith<$Res>
-    implements $FailureCopyWith<$Res> {
+abstract class _$$HttpUnauthorizedFailureImplCopyWith<ValidationModel, $Res>
+    implements $FailureCopyWith<ValidationModel, $Res> {
   factory _$$HttpUnauthorizedFailureImplCopyWith(
-          _$HttpUnauthorizedFailureImpl value,
-          $Res Function(_$HttpUnauthorizedFailureImpl) then) =
-      __$$HttpUnauthorizedFailureImplCopyWithImpl<$Res>;
+          _$HttpUnauthorizedFailureImpl<ValidationModel> value,
+          $Res Function(_$HttpUnauthorizedFailureImpl<ValidationModel>) then) =
+      __$$HttpUnauthorizedFailureImplCopyWithImpl<ValidationModel, $Res>;
   @override
   @useResult
-  $Res call({String message});
+  $Res call({String? message});
 }
 
 /// @nodoc
-class __$$HttpUnauthorizedFailureImplCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res, _$HttpUnauthorizedFailureImpl>
-    implements _$$HttpUnauthorizedFailureImplCopyWith<$Res> {
+class __$$HttpUnauthorizedFailureImplCopyWithImpl<ValidationModel, $Res>
+    extends _$FailureCopyWithImpl<ValidationModel, $Res,
+        _$HttpUnauthorizedFailureImpl<ValidationModel>>
+    implements _$$HttpUnauthorizedFailureImplCopyWith<ValidationModel, $Res> {
   __$$HttpUnauthorizedFailureImplCopyWithImpl(
-      _$HttpUnauthorizedFailureImpl _value,
-      $Res Function(_$HttpUnauthorizedFailureImpl) _then)
+      _$HttpUnauthorizedFailureImpl<ValidationModel> _value,
+      $Res Function(_$HttpUnauthorizedFailureImpl<ValidationModel>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? message = freezed,
   }) {
-    return _then(_$HttpUnauthorizedFailureImpl(
-      message: null == message
+    return _then(_$HttpUnauthorizedFailureImpl<ValidationModel>(
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$HttpUnauthorizedFailureImpl implements HttpUnauthorizedFailure {
-  const _$HttpUnauthorizedFailureImpl({required this.message});
+class _$HttpUnauthorizedFailureImpl<ValidationModel>
+    implements HttpUnauthorizedFailure<ValidationModel> {
+  const _$HttpUnauthorizedFailureImpl({this.message});
 
   @override
-  final String message;
+  final String? message;
 
   @override
   String toString() {
-    return 'Failure.httpUnauthorized(message: $message)';
+    return 'Failure<$ValidationModel>.httpUnauthorized(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HttpUnauthorizedFailureImpl &&
+            other is _$HttpUnauthorizedFailureImpl<ValidationModel> &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -824,24 +948,27 @@ class _$HttpUnauthorizedFailureImpl implements HttpUnauthorizedFailure {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HttpUnauthorizedFailureImplCopyWith<_$HttpUnauthorizedFailureImpl>
+  _$$HttpUnauthorizedFailureImplCopyWith<ValidationModel,
+          _$HttpUnauthorizedFailureImpl<ValidationModel>>
       get copyWith => __$$HttpUnauthorizedFailureImplCopyWithImpl<
-          _$HttpUnauthorizedFailureImpl>(this, _$identity);
+          ValidationModel,
+          _$HttpUnauthorizedFailureImpl<ValidationModel>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String message) undefined,
-    required TResult Function(String message) noConnection,
-    required TResult Function(String message) httpBadRequest,
-    required TResult Function(String message) httpUnauthorized,
-    required TResult Function(String message) httpForbidden,
-    required TResult Function(String message) httpNotFound,
-    required TResult Function(String message) httpUnprocessableEntity,
-    required TResult Function(String message) httpInternalServerError,
-    required TResult Function(String message) httpMethodNotAllowedError,
-    required TResult Function(String message) httpConflictError,
-    required TResult Function(String message) badKeyOfValue,
+    required TResult Function(String? message) undefined,
+    required TResult Function(String? message) noConnection,
+    required TResult Function(String? message, ValidationModel? data)
+        httpBadRequest,
+    required TResult Function(String? message) httpUnauthorized,
+    required TResult Function(String? message) httpForbidden,
+    required TResult Function(String? message) httpNotFound,
+    required TResult Function(String? message) httpUnprocessableEntity,
+    required TResult Function(String? message) httpInternalServerError,
+    required TResult Function(String? message) httpMethodNotAllowed,
+    required TResult Function(String? message) httpConflict,
+    required TResult Function(String? message) badKeyOfValue,
   }) {
     return httpUnauthorized(message);
   }
@@ -849,17 +976,17 @@ class _$HttpUnauthorizedFailureImpl implements HttpUnauthorizedFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message)? undefined,
-    TResult? Function(String message)? noConnection,
-    TResult? Function(String message)? httpBadRequest,
-    TResult? Function(String message)? httpUnauthorized,
-    TResult? Function(String message)? httpForbidden,
-    TResult? Function(String message)? httpNotFound,
-    TResult? Function(String message)? httpUnprocessableEntity,
-    TResult? Function(String message)? httpInternalServerError,
-    TResult? Function(String message)? httpMethodNotAllowedError,
-    TResult? Function(String message)? httpConflictError,
-    TResult? Function(String message)? badKeyOfValue,
+    TResult? Function(String? message)? undefined,
+    TResult? Function(String? message)? noConnection,
+    TResult? Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult? Function(String? message)? httpUnauthorized,
+    TResult? Function(String? message)? httpForbidden,
+    TResult? Function(String? message)? httpNotFound,
+    TResult? Function(String? message)? httpUnprocessableEntity,
+    TResult? Function(String? message)? httpInternalServerError,
+    TResult? Function(String? message)? httpMethodNotAllowed,
+    TResult? Function(String? message)? httpConflict,
+    TResult? Function(String? message)? badKeyOfValue,
   }) {
     return httpUnauthorized?.call(message);
   }
@@ -867,17 +994,17 @@ class _$HttpUnauthorizedFailureImpl implements HttpUnauthorizedFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? undefined,
-    TResult Function(String message)? noConnection,
-    TResult Function(String message)? httpBadRequest,
-    TResult Function(String message)? httpUnauthorized,
-    TResult Function(String message)? httpForbidden,
-    TResult Function(String message)? httpNotFound,
-    TResult Function(String message)? httpUnprocessableEntity,
-    TResult Function(String message)? httpInternalServerError,
-    TResult Function(String message)? httpMethodNotAllowedError,
-    TResult Function(String message)? httpConflictError,
-    TResult Function(String message)? badKeyOfValue,
+    TResult Function(String? message)? undefined,
+    TResult Function(String? message)? noConnection,
+    TResult Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult Function(String? message)? httpUnauthorized,
+    TResult Function(String? message)? httpForbidden,
+    TResult Function(String? message)? httpNotFound,
+    TResult Function(String? message)? httpUnprocessableEntity,
+    TResult Function(String? message)? httpInternalServerError,
+    TResult Function(String? message)? httpMethodNotAllowed,
+    TResult Function(String? message)? httpConflict,
+    TResult Function(String? message)? badKeyOfValue,
     required TResult orElse(),
   }) {
     if (httpUnauthorized != null) {
@@ -889,20 +1016,31 @@ class _$HttpUnauthorizedFailureImpl implements HttpUnauthorizedFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UndefinedFailure value) undefined,
-    required TResult Function(NoConnectionFailure value) noConnection,
-    required TResult Function(HttpBadRequestFailure value) httpBadRequest,
-    required TResult Function(HttpUnauthorizedFailure value) httpUnauthorized,
-    required TResult Function(HttpForbiddenFailure value) httpForbidden,
-    required TResult Function(HttpNotFoundFailure value) httpNotFound,
-    required TResult Function(HttpUnprocessableEntityFailure value)
+    required TResult Function(UndefinedFailure<ValidationModel> value)
+        undefined,
+    required TResult Function(NoConnectionFailure<ValidationModel> value)
+        noConnection,
+    required TResult Function(HttpBadRequestFailure<ValidationModel> value)
+        httpBadRequest,
+    required TResult Function(HttpUnauthorizedFailure<ValidationModel> value)
+        httpUnauthorized,
+    required TResult Function(HttpForbiddenFailure<ValidationModel> value)
+        httpForbidden,
+    required TResult Function(HttpNotFoundFailure<ValidationModel> value)
+        httpNotFound,
+    required TResult Function(
+            HttpUnprocessableEntityFailure<ValidationModel> value)
         httpUnprocessableEntity,
-    required TResult Function(HttpInternalServerErrorFailure value)
+    required TResult Function(
+            HttpInternalServerErrorFailure<ValidationModel> value)
         httpInternalServerError,
-    required TResult Function(HttpMethodNotAllowedErrorFailure value)
-        httpMethodNotAllowedError,
-    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
-    required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
+    required TResult Function(
+            HttpMethodNotAllowedFailure<ValidationModel> value)
+        httpMethodNotAllowed,
+    required TResult Function(HttpConflictErrorFailure<ValidationModel> value)
+        httpConflict,
+    required TResult Function(BadKeyOfValueFailure<ValidationModel> value)
+        badKeyOfValue,
   }) {
     return httpUnauthorized(this);
   }
@@ -910,20 +1048,25 @@ class _$HttpUnauthorizedFailureImpl implements HttpUnauthorizedFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(UndefinedFailure value)? undefined,
-    TResult? Function(NoConnectionFailure value)? noConnection,
-    TResult? Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult? Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult? Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult? Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult? Function(HttpUnprocessableEntityFailure value)?
+    TResult? Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult? Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult? Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult? Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult? Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult? Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult? Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult? Function(HttpInternalServerErrorFailure value)?
+    TResult? Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult? Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult? Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult? Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
   }) {
     return httpUnauthorized?.call(this);
   }
@@ -931,20 +1074,25 @@ class _$HttpUnauthorizedFailureImpl implements HttpUnauthorizedFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UndefinedFailure value)? undefined,
-    TResult Function(NoConnectionFailure value)? noConnection,
-    TResult Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult Function(HttpUnprocessableEntityFailure value)?
+    TResult Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult Function(HttpInternalServerErrorFailure value)?
+    TResult Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
     required TResult orElse(),
   }) {
     if (httpUnauthorized != null) {
@@ -954,69 +1102,75 @@ class _$HttpUnauthorizedFailureImpl implements HttpUnauthorizedFailure {
   }
 }
 
-abstract class HttpUnauthorizedFailure implements Failure {
-  const factory HttpUnauthorizedFailure({required final String message}) =
-      _$HttpUnauthorizedFailureImpl;
+abstract class HttpUnauthorizedFailure<ValidationModel>
+    implements Failure<ValidationModel> {
+  const factory HttpUnauthorizedFailure({final String? message}) =
+      _$HttpUnauthorizedFailureImpl<ValidationModel>;
 
   @override
-  String get message;
+  String? get message;
   @override
   @JsonKey(ignore: true)
-  _$$HttpUnauthorizedFailureImplCopyWith<_$HttpUnauthorizedFailureImpl>
+  _$$HttpUnauthorizedFailureImplCopyWith<ValidationModel,
+          _$HttpUnauthorizedFailureImpl<ValidationModel>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HttpForbiddenFailureImplCopyWith<$Res>
-    implements $FailureCopyWith<$Res> {
-  factory _$$HttpForbiddenFailureImplCopyWith(_$HttpForbiddenFailureImpl value,
-          $Res Function(_$HttpForbiddenFailureImpl) then) =
-      __$$HttpForbiddenFailureImplCopyWithImpl<$Res>;
+abstract class _$$HttpForbiddenFailureImplCopyWith<ValidationModel, $Res>
+    implements $FailureCopyWith<ValidationModel, $Res> {
+  factory _$$HttpForbiddenFailureImplCopyWith(
+          _$HttpForbiddenFailureImpl<ValidationModel> value,
+          $Res Function(_$HttpForbiddenFailureImpl<ValidationModel>) then) =
+      __$$HttpForbiddenFailureImplCopyWithImpl<ValidationModel, $Res>;
   @override
   @useResult
-  $Res call({String message});
+  $Res call({String? message});
 }
 
 /// @nodoc
-class __$$HttpForbiddenFailureImplCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res, _$HttpForbiddenFailureImpl>
-    implements _$$HttpForbiddenFailureImplCopyWith<$Res> {
-  __$$HttpForbiddenFailureImplCopyWithImpl(_$HttpForbiddenFailureImpl _value,
-      $Res Function(_$HttpForbiddenFailureImpl) _then)
+class __$$HttpForbiddenFailureImplCopyWithImpl<ValidationModel, $Res>
+    extends _$FailureCopyWithImpl<ValidationModel, $Res,
+        _$HttpForbiddenFailureImpl<ValidationModel>>
+    implements _$$HttpForbiddenFailureImplCopyWith<ValidationModel, $Res> {
+  __$$HttpForbiddenFailureImplCopyWithImpl(
+      _$HttpForbiddenFailureImpl<ValidationModel> _value,
+      $Res Function(_$HttpForbiddenFailureImpl<ValidationModel>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? message = freezed,
   }) {
-    return _then(_$HttpForbiddenFailureImpl(
-      message: null == message
+    return _then(_$HttpForbiddenFailureImpl<ValidationModel>(
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$HttpForbiddenFailureImpl implements HttpForbiddenFailure {
-  const _$HttpForbiddenFailureImpl({required this.message});
+class _$HttpForbiddenFailureImpl<ValidationModel>
+    implements HttpForbiddenFailure<ValidationModel> {
+  const _$HttpForbiddenFailureImpl({this.message});
 
   @override
-  final String message;
+  final String? message;
 
   @override
   String toString() {
-    return 'Failure.httpForbidden(message: $message)';
+    return 'Failure<$ValidationModel>.httpForbidden(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HttpForbiddenFailureImpl &&
+            other is _$HttpForbiddenFailureImpl<ValidationModel> &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -1026,25 +1180,26 @@ class _$HttpForbiddenFailureImpl implements HttpForbiddenFailure {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HttpForbiddenFailureImplCopyWith<_$HttpForbiddenFailureImpl>
-      get copyWith =>
-          __$$HttpForbiddenFailureImplCopyWithImpl<_$HttpForbiddenFailureImpl>(
-              this, _$identity);
+  _$$HttpForbiddenFailureImplCopyWith<ValidationModel,
+          _$HttpForbiddenFailureImpl<ValidationModel>>
+      get copyWith => __$$HttpForbiddenFailureImplCopyWithImpl<ValidationModel,
+          _$HttpForbiddenFailureImpl<ValidationModel>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String message) undefined,
-    required TResult Function(String message) noConnection,
-    required TResult Function(String message) httpBadRequest,
-    required TResult Function(String message) httpUnauthorized,
-    required TResult Function(String message) httpForbidden,
-    required TResult Function(String message) httpNotFound,
-    required TResult Function(String message) httpUnprocessableEntity,
-    required TResult Function(String message) httpInternalServerError,
-    required TResult Function(String message) httpMethodNotAllowedError,
-    required TResult Function(String message) httpConflictError,
-    required TResult Function(String message) badKeyOfValue,
+    required TResult Function(String? message) undefined,
+    required TResult Function(String? message) noConnection,
+    required TResult Function(String? message, ValidationModel? data)
+        httpBadRequest,
+    required TResult Function(String? message) httpUnauthorized,
+    required TResult Function(String? message) httpForbidden,
+    required TResult Function(String? message) httpNotFound,
+    required TResult Function(String? message) httpUnprocessableEntity,
+    required TResult Function(String? message) httpInternalServerError,
+    required TResult Function(String? message) httpMethodNotAllowed,
+    required TResult Function(String? message) httpConflict,
+    required TResult Function(String? message) badKeyOfValue,
   }) {
     return httpForbidden(message);
   }
@@ -1052,17 +1207,17 @@ class _$HttpForbiddenFailureImpl implements HttpForbiddenFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message)? undefined,
-    TResult? Function(String message)? noConnection,
-    TResult? Function(String message)? httpBadRequest,
-    TResult? Function(String message)? httpUnauthorized,
-    TResult? Function(String message)? httpForbidden,
-    TResult? Function(String message)? httpNotFound,
-    TResult? Function(String message)? httpUnprocessableEntity,
-    TResult? Function(String message)? httpInternalServerError,
-    TResult? Function(String message)? httpMethodNotAllowedError,
-    TResult? Function(String message)? httpConflictError,
-    TResult? Function(String message)? badKeyOfValue,
+    TResult? Function(String? message)? undefined,
+    TResult? Function(String? message)? noConnection,
+    TResult? Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult? Function(String? message)? httpUnauthorized,
+    TResult? Function(String? message)? httpForbidden,
+    TResult? Function(String? message)? httpNotFound,
+    TResult? Function(String? message)? httpUnprocessableEntity,
+    TResult? Function(String? message)? httpInternalServerError,
+    TResult? Function(String? message)? httpMethodNotAllowed,
+    TResult? Function(String? message)? httpConflict,
+    TResult? Function(String? message)? badKeyOfValue,
   }) {
     return httpForbidden?.call(message);
   }
@@ -1070,17 +1225,17 @@ class _$HttpForbiddenFailureImpl implements HttpForbiddenFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? undefined,
-    TResult Function(String message)? noConnection,
-    TResult Function(String message)? httpBadRequest,
-    TResult Function(String message)? httpUnauthorized,
-    TResult Function(String message)? httpForbidden,
-    TResult Function(String message)? httpNotFound,
-    TResult Function(String message)? httpUnprocessableEntity,
-    TResult Function(String message)? httpInternalServerError,
-    TResult Function(String message)? httpMethodNotAllowedError,
-    TResult Function(String message)? httpConflictError,
-    TResult Function(String message)? badKeyOfValue,
+    TResult Function(String? message)? undefined,
+    TResult Function(String? message)? noConnection,
+    TResult Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult Function(String? message)? httpUnauthorized,
+    TResult Function(String? message)? httpForbidden,
+    TResult Function(String? message)? httpNotFound,
+    TResult Function(String? message)? httpUnprocessableEntity,
+    TResult Function(String? message)? httpInternalServerError,
+    TResult Function(String? message)? httpMethodNotAllowed,
+    TResult Function(String? message)? httpConflict,
+    TResult Function(String? message)? badKeyOfValue,
     required TResult orElse(),
   }) {
     if (httpForbidden != null) {
@@ -1092,20 +1247,31 @@ class _$HttpForbiddenFailureImpl implements HttpForbiddenFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UndefinedFailure value) undefined,
-    required TResult Function(NoConnectionFailure value) noConnection,
-    required TResult Function(HttpBadRequestFailure value) httpBadRequest,
-    required TResult Function(HttpUnauthorizedFailure value) httpUnauthorized,
-    required TResult Function(HttpForbiddenFailure value) httpForbidden,
-    required TResult Function(HttpNotFoundFailure value) httpNotFound,
-    required TResult Function(HttpUnprocessableEntityFailure value)
+    required TResult Function(UndefinedFailure<ValidationModel> value)
+        undefined,
+    required TResult Function(NoConnectionFailure<ValidationModel> value)
+        noConnection,
+    required TResult Function(HttpBadRequestFailure<ValidationModel> value)
+        httpBadRequest,
+    required TResult Function(HttpUnauthorizedFailure<ValidationModel> value)
+        httpUnauthorized,
+    required TResult Function(HttpForbiddenFailure<ValidationModel> value)
+        httpForbidden,
+    required TResult Function(HttpNotFoundFailure<ValidationModel> value)
+        httpNotFound,
+    required TResult Function(
+            HttpUnprocessableEntityFailure<ValidationModel> value)
         httpUnprocessableEntity,
-    required TResult Function(HttpInternalServerErrorFailure value)
+    required TResult Function(
+            HttpInternalServerErrorFailure<ValidationModel> value)
         httpInternalServerError,
-    required TResult Function(HttpMethodNotAllowedErrorFailure value)
-        httpMethodNotAllowedError,
-    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
-    required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
+    required TResult Function(
+            HttpMethodNotAllowedFailure<ValidationModel> value)
+        httpMethodNotAllowed,
+    required TResult Function(HttpConflictErrorFailure<ValidationModel> value)
+        httpConflict,
+    required TResult Function(BadKeyOfValueFailure<ValidationModel> value)
+        badKeyOfValue,
   }) {
     return httpForbidden(this);
   }
@@ -1113,20 +1279,25 @@ class _$HttpForbiddenFailureImpl implements HttpForbiddenFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(UndefinedFailure value)? undefined,
-    TResult? Function(NoConnectionFailure value)? noConnection,
-    TResult? Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult? Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult? Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult? Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult? Function(HttpUnprocessableEntityFailure value)?
+    TResult? Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult? Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult? Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult? Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult? Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult? Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult? Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult? Function(HttpInternalServerErrorFailure value)?
+    TResult? Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult? Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult? Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult? Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
   }) {
     return httpForbidden?.call(this);
   }
@@ -1134,20 +1305,25 @@ class _$HttpForbiddenFailureImpl implements HttpForbiddenFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UndefinedFailure value)? undefined,
-    TResult Function(NoConnectionFailure value)? noConnection,
-    TResult Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult Function(HttpUnprocessableEntityFailure value)?
+    TResult Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult Function(HttpInternalServerErrorFailure value)?
+    TResult Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
     required TResult orElse(),
   }) {
     if (httpForbidden != null) {
@@ -1157,69 +1333,75 @@ class _$HttpForbiddenFailureImpl implements HttpForbiddenFailure {
   }
 }
 
-abstract class HttpForbiddenFailure implements Failure {
-  const factory HttpForbiddenFailure({required final String message}) =
-      _$HttpForbiddenFailureImpl;
+abstract class HttpForbiddenFailure<ValidationModel>
+    implements Failure<ValidationModel> {
+  const factory HttpForbiddenFailure({final String? message}) =
+      _$HttpForbiddenFailureImpl<ValidationModel>;
 
   @override
-  String get message;
+  String? get message;
   @override
   @JsonKey(ignore: true)
-  _$$HttpForbiddenFailureImplCopyWith<_$HttpForbiddenFailureImpl>
+  _$$HttpForbiddenFailureImplCopyWith<ValidationModel,
+          _$HttpForbiddenFailureImpl<ValidationModel>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HttpNotFoundFailureImplCopyWith<$Res>
-    implements $FailureCopyWith<$Res> {
-  factory _$$HttpNotFoundFailureImplCopyWith(_$HttpNotFoundFailureImpl value,
-          $Res Function(_$HttpNotFoundFailureImpl) then) =
-      __$$HttpNotFoundFailureImplCopyWithImpl<$Res>;
+abstract class _$$HttpNotFoundFailureImplCopyWith<ValidationModel, $Res>
+    implements $FailureCopyWith<ValidationModel, $Res> {
+  factory _$$HttpNotFoundFailureImplCopyWith(
+          _$HttpNotFoundFailureImpl<ValidationModel> value,
+          $Res Function(_$HttpNotFoundFailureImpl<ValidationModel>) then) =
+      __$$HttpNotFoundFailureImplCopyWithImpl<ValidationModel, $Res>;
   @override
   @useResult
-  $Res call({String message});
+  $Res call({String? message});
 }
 
 /// @nodoc
-class __$$HttpNotFoundFailureImplCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res, _$HttpNotFoundFailureImpl>
-    implements _$$HttpNotFoundFailureImplCopyWith<$Res> {
-  __$$HttpNotFoundFailureImplCopyWithImpl(_$HttpNotFoundFailureImpl _value,
-      $Res Function(_$HttpNotFoundFailureImpl) _then)
+class __$$HttpNotFoundFailureImplCopyWithImpl<ValidationModel, $Res>
+    extends _$FailureCopyWithImpl<ValidationModel, $Res,
+        _$HttpNotFoundFailureImpl<ValidationModel>>
+    implements _$$HttpNotFoundFailureImplCopyWith<ValidationModel, $Res> {
+  __$$HttpNotFoundFailureImplCopyWithImpl(
+      _$HttpNotFoundFailureImpl<ValidationModel> _value,
+      $Res Function(_$HttpNotFoundFailureImpl<ValidationModel>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? message = freezed,
   }) {
-    return _then(_$HttpNotFoundFailureImpl(
-      message: null == message
+    return _then(_$HttpNotFoundFailureImpl<ValidationModel>(
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$HttpNotFoundFailureImpl implements HttpNotFoundFailure {
-  const _$HttpNotFoundFailureImpl({required this.message});
+class _$HttpNotFoundFailureImpl<ValidationModel>
+    implements HttpNotFoundFailure<ValidationModel> {
+  const _$HttpNotFoundFailureImpl({this.message});
 
   @override
-  final String message;
+  final String? message;
 
   @override
   String toString() {
-    return 'Failure.httpNotFound(message: $message)';
+    return 'Failure<$ValidationModel>.httpNotFound(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HttpNotFoundFailureImpl &&
+            other is _$HttpNotFoundFailureImpl<ValidationModel> &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -1229,24 +1411,26 @@ class _$HttpNotFoundFailureImpl implements HttpNotFoundFailure {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HttpNotFoundFailureImplCopyWith<_$HttpNotFoundFailureImpl> get copyWith =>
-      __$$HttpNotFoundFailureImplCopyWithImpl<_$HttpNotFoundFailureImpl>(
-          this, _$identity);
+  _$$HttpNotFoundFailureImplCopyWith<ValidationModel,
+          _$HttpNotFoundFailureImpl<ValidationModel>>
+      get copyWith => __$$HttpNotFoundFailureImplCopyWithImpl<ValidationModel,
+          _$HttpNotFoundFailureImpl<ValidationModel>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String message) undefined,
-    required TResult Function(String message) noConnection,
-    required TResult Function(String message) httpBadRequest,
-    required TResult Function(String message) httpUnauthorized,
-    required TResult Function(String message) httpForbidden,
-    required TResult Function(String message) httpNotFound,
-    required TResult Function(String message) httpUnprocessableEntity,
-    required TResult Function(String message) httpInternalServerError,
-    required TResult Function(String message) httpMethodNotAllowedError,
-    required TResult Function(String message) httpConflictError,
-    required TResult Function(String message) badKeyOfValue,
+    required TResult Function(String? message) undefined,
+    required TResult Function(String? message) noConnection,
+    required TResult Function(String? message, ValidationModel? data)
+        httpBadRequest,
+    required TResult Function(String? message) httpUnauthorized,
+    required TResult Function(String? message) httpForbidden,
+    required TResult Function(String? message) httpNotFound,
+    required TResult Function(String? message) httpUnprocessableEntity,
+    required TResult Function(String? message) httpInternalServerError,
+    required TResult Function(String? message) httpMethodNotAllowed,
+    required TResult Function(String? message) httpConflict,
+    required TResult Function(String? message) badKeyOfValue,
   }) {
     return httpNotFound(message);
   }
@@ -1254,17 +1438,17 @@ class _$HttpNotFoundFailureImpl implements HttpNotFoundFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message)? undefined,
-    TResult? Function(String message)? noConnection,
-    TResult? Function(String message)? httpBadRequest,
-    TResult? Function(String message)? httpUnauthorized,
-    TResult? Function(String message)? httpForbidden,
-    TResult? Function(String message)? httpNotFound,
-    TResult? Function(String message)? httpUnprocessableEntity,
-    TResult? Function(String message)? httpInternalServerError,
-    TResult? Function(String message)? httpMethodNotAllowedError,
-    TResult? Function(String message)? httpConflictError,
-    TResult? Function(String message)? badKeyOfValue,
+    TResult? Function(String? message)? undefined,
+    TResult? Function(String? message)? noConnection,
+    TResult? Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult? Function(String? message)? httpUnauthorized,
+    TResult? Function(String? message)? httpForbidden,
+    TResult? Function(String? message)? httpNotFound,
+    TResult? Function(String? message)? httpUnprocessableEntity,
+    TResult? Function(String? message)? httpInternalServerError,
+    TResult? Function(String? message)? httpMethodNotAllowed,
+    TResult? Function(String? message)? httpConflict,
+    TResult? Function(String? message)? badKeyOfValue,
   }) {
     return httpNotFound?.call(message);
   }
@@ -1272,17 +1456,17 @@ class _$HttpNotFoundFailureImpl implements HttpNotFoundFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? undefined,
-    TResult Function(String message)? noConnection,
-    TResult Function(String message)? httpBadRequest,
-    TResult Function(String message)? httpUnauthorized,
-    TResult Function(String message)? httpForbidden,
-    TResult Function(String message)? httpNotFound,
-    TResult Function(String message)? httpUnprocessableEntity,
-    TResult Function(String message)? httpInternalServerError,
-    TResult Function(String message)? httpMethodNotAllowedError,
-    TResult Function(String message)? httpConflictError,
-    TResult Function(String message)? badKeyOfValue,
+    TResult Function(String? message)? undefined,
+    TResult Function(String? message)? noConnection,
+    TResult Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult Function(String? message)? httpUnauthorized,
+    TResult Function(String? message)? httpForbidden,
+    TResult Function(String? message)? httpNotFound,
+    TResult Function(String? message)? httpUnprocessableEntity,
+    TResult Function(String? message)? httpInternalServerError,
+    TResult Function(String? message)? httpMethodNotAllowed,
+    TResult Function(String? message)? httpConflict,
+    TResult Function(String? message)? badKeyOfValue,
     required TResult orElse(),
   }) {
     if (httpNotFound != null) {
@@ -1294,20 +1478,31 @@ class _$HttpNotFoundFailureImpl implements HttpNotFoundFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UndefinedFailure value) undefined,
-    required TResult Function(NoConnectionFailure value) noConnection,
-    required TResult Function(HttpBadRequestFailure value) httpBadRequest,
-    required TResult Function(HttpUnauthorizedFailure value) httpUnauthorized,
-    required TResult Function(HttpForbiddenFailure value) httpForbidden,
-    required TResult Function(HttpNotFoundFailure value) httpNotFound,
-    required TResult Function(HttpUnprocessableEntityFailure value)
+    required TResult Function(UndefinedFailure<ValidationModel> value)
+        undefined,
+    required TResult Function(NoConnectionFailure<ValidationModel> value)
+        noConnection,
+    required TResult Function(HttpBadRequestFailure<ValidationModel> value)
+        httpBadRequest,
+    required TResult Function(HttpUnauthorizedFailure<ValidationModel> value)
+        httpUnauthorized,
+    required TResult Function(HttpForbiddenFailure<ValidationModel> value)
+        httpForbidden,
+    required TResult Function(HttpNotFoundFailure<ValidationModel> value)
+        httpNotFound,
+    required TResult Function(
+            HttpUnprocessableEntityFailure<ValidationModel> value)
         httpUnprocessableEntity,
-    required TResult Function(HttpInternalServerErrorFailure value)
+    required TResult Function(
+            HttpInternalServerErrorFailure<ValidationModel> value)
         httpInternalServerError,
-    required TResult Function(HttpMethodNotAllowedErrorFailure value)
-        httpMethodNotAllowedError,
-    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
-    required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
+    required TResult Function(
+            HttpMethodNotAllowedFailure<ValidationModel> value)
+        httpMethodNotAllowed,
+    required TResult Function(HttpConflictErrorFailure<ValidationModel> value)
+        httpConflict,
+    required TResult Function(BadKeyOfValueFailure<ValidationModel> value)
+        badKeyOfValue,
   }) {
     return httpNotFound(this);
   }
@@ -1315,20 +1510,25 @@ class _$HttpNotFoundFailureImpl implements HttpNotFoundFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(UndefinedFailure value)? undefined,
-    TResult? Function(NoConnectionFailure value)? noConnection,
-    TResult? Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult? Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult? Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult? Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult? Function(HttpUnprocessableEntityFailure value)?
+    TResult? Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult? Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult? Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult? Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult? Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult? Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult? Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult? Function(HttpInternalServerErrorFailure value)?
+    TResult? Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult? Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult? Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult? Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
   }) {
     return httpNotFound?.call(this);
   }
@@ -1336,20 +1536,25 @@ class _$HttpNotFoundFailureImpl implements HttpNotFoundFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UndefinedFailure value)? undefined,
-    TResult Function(NoConnectionFailure value)? noConnection,
-    TResult Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult Function(HttpUnprocessableEntityFailure value)?
+    TResult Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult Function(HttpInternalServerErrorFailure value)?
+    TResult Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
     required TResult orElse(),
   }) {
     if (httpNotFound != null) {
@@ -1359,72 +1564,78 @@ class _$HttpNotFoundFailureImpl implements HttpNotFoundFailure {
   }
 }
 
-abstract class HttpNotFoundFailure implements Failure {
-  const factory HttpNotFoundFailure({required final String message}) =
-      _$HttpNotFoundFailureImpl;
+abstract class HttpNotFoundFailure<ValidationModel>
+    implements Failure<ValidationModel> {
+  const factory HttpNotFoundFailure({final String? message}) =
+      _$HttpNotFoundFailureImpl<ValidationModel>;
 
   @override
-  String get message;
+  String? get message;
   @override
   @JsonKey(ignore: true)
-  _$$HttpNotFoundFailureImplCopyWith<_$HttpNotFoundFailureImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$HttpNotFoundFailureImplCopyWith<ValidationModel,
+          _$HttpNotFoundFailureImpl<ValidationModel>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HttpUnprocessableEntityFailureImplCopyWith<$Res>
-    implements $FailureCopyWith<$Res> {
+abstract class _$$HttpUnprocessableEntityFailureImplCopyWith<ValidationModel,
+    $Res> implements $FailureCopyWith<ValidationModel, $Res> {
   factory _$$HttpUnprocessableEntityFailureImplCopyWith(
-          _$HttpUnprocessableEntityFailureImpl value,
-          $Res Function(_$HttpUnprocessableEntityFailureImpl) then) =
-      __$$HttpUnprocessableEntityFailureImplCopyWithImpl<$Res>;
+          _$HttpUnprocessableEntityFailureImpl<ValidationModel> value,
+          $Res Function(_$HttpUnprocessableEntityFailureImpl<ValidationModel>)
+              then) =
+      __$$HttpUnprocessableEntityFailureImplCopyWithImpl<ValidationModel, $Res>;
   @override
   @useResult
-  $Res call({String message});
+  $Res call({String? message});
 }
 
 /// @nodoc
-class __$$HttpUnprocessableEntityFailureImplCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res, _$HttpUnprocessableEntityFailureImpl>
-    implements _$$HttpUnprocessableEntityFailureImplCopyWith<$Res> {
+class __$$HttpUnprocessableEntityFailureImplCopyWithImpl<ValidationModel, $Res>
+    extends _$FailureCopyWithImpl<ValidationModel, $Res,
+        _$HttpUnprocessableEntityFailureImpl<ValidationModel>>
+    implements
+        _$$HttpUnprocessableEntityFailureImplCopyWith<ValidationModel, $Res> {
   __$$HttpUnprocessableEntityFailureImplCopyWithImpl(
-      _$HttpUnprocessableEntityFailureImpl _value,
-      $Res Function(_$HttpUnprocessableEntityFailureImpl) _then)
+      _$HttpUnprocessableEntityFailureImpl<ValidationModel> _value,
+      $Res Function(_$HttpUnprocessableEntityFailureImpl<ValidationModel>)
+          _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? message = freezed,
   }) {
-    return _then(_$HttpUnprocessableEntityFailureImpl(
-      message: null == message
+    return _then(_$HttpUnprocessableEntityFailureImpl<ValidationModel>(
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$HttpUnprocessableEntityFailureImpl
-    implements HttpUnprocessableEntityFailure {
-  const _$HttpUnprocessableEntityFailureImpl({required this.message});
+class _$HttpUnprocessableEntityFailureImpl<ValidationModel>
+    implements HttpUnprocessableEntityFailure<ValidationModel> {
+  const _$HttpUnprocessableEntityFailureImpl({this.message});
 
   @override
-  final String message;
+  final String? message;
 
   @override
   String toString() {
-    return 'Failure.httpUnprocessableEntity(message: $message)';
+    return 'Failure<$ValidationModel>.httpUnprocessableEntity(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HttpUnprocessableEntityFailureImpl &&
+            other is _$HttpUnprocessableEntityFailureImpl<ValidationModel> &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -1434,25 +1645,28 @@ class _$HttpUnprocessableEntityFailureImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HttpUnprocessableEntityFailureImplCopyWith<
-          _$HttpUnprocessableEntityFailureImpl>
+  _$$HttpUnprocessableEntityFailureImplCopyWith<ValidationModel,
+          _$HttpUnprocessableEntityFailureImpl<ValidationModel>>
       get copyWith => __$$HttpUnprocessableEntityFailureImplCopyWithImpl<
-          _$HttpUnprocessableEntityFailureImpl>(this, _$identity);
+              ValidationModel,
+              _$HttpUnprocessableEntityFailureImpl<ValidationModel>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String message) undefined,
-    required TResult Function(String message) noConnection,
-    required TResult Function(String message) httpBadRequest,
-    required TResult Function(String message) httpUnauthorized,
-    required TResult Function(String message) httpForbidden,
-    required TResult Function(String message) httpNotFound,
-    required TResult Function(String message) httpUnprocessableEntity,
-    required TResult Function(String message) httpInternalServerError,
-    required TResult Function(String message) httpMethodNotAllowedError,
-    required TResult Function(String message) httpConflictError,
-    required TResult Function(String message) badKeyOfValue,
+    required TResult Function(String? message) undefined,
+    required TResult Function(String? message) noConnection,
+    required TResult Function(String? message, ValidationModel? data)
+        httpBadRequest,
+    required TResult Function(String? message) httpUnauthorized,
+    required TResult Function(String? message) httpForbidden,
+    required TResult Function(String? message) httpNotFound,
+    required TResult Function(String? message) httpUnprocessableEntity,
+    required TResult Function(String? message) httpInternalServerError,
+    required TResult Function(String? message) httpMethodNotAllowed,
+    required TResult Function(String? message) httpConflict,
+    required TResult Function(String? message) badKeyOfValue,
   }) {
     return httpUnprocessableEntity(message);
   }
@@ -1460,17 +1674,17 @@ class _$HttpUnprocessableEntityFailureImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message)? undefined,
-    TResult? Function(String message)? noConnection,
-    TResult? Function(String message)? httpBadRequest,
-    TResult? Function(String message)? httpUnauthorized,
-    TResult? Function(String message)? httpForbidden,
-    TResult? Function(String message)? httpNotFound,
-    TResult? Function(String message)? httpUnprocessableEntity,
-    TResult? Function(String message)? httpInternalServerError,
-    TResult? Function(String message)? httpMethodNotAllowedError,
-    TResult? Function(String message)? httpConflictError,
-    TResult? Function(String message)? badKeyOfValue,
+    TResult? Function(String? message)? undefined,
+    TResult? Function(String? message)? noConnection,
+    TResult? Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult? Function(String? message)? httpUnauthorized,
+    TResult? Function(String? message)? httpForbidden,
+    TResult? Function(String? message)? httpNotFound,
+    TResult? Function(String? message)? httpUnprocessableEntity,
+    TResult? Function(String? message)? httpInternalServerError,
+    TResult? Function(String? message)? httpMethodNotAllowed,
+    TResult? Function(String? message)? httpConflict,
+    TResult? Function(String? message)? badKeyOfValue,
   }) {
     return httpUnprocessableEntity?.call(message);
   }
@@ -1478,17 +1692,17 @@ class _$HttpUnprocessableEntityFailureImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? undefined,
-    TResult Function(String message)? noConnection,
-    TResult Function(String message)? httpBadRequest,
-    TResult Function(String message)? httpUnauthorized,
-    TResult Function(String message)? httpForbidden,
-    TResult Function(String message)? httpNotFound,
-    TResult Function(String message)? httpUnprocessableEntity,
-    TResult Function(String message)? httpInternalServerError,
-    TResult Function(String message)? httpMethodNotAllowedError,
-    TResult Function(String message)? httpConflictError,
-    TResult Function(String message)? badKeyOfValue,
+    TResult Function(String? message)? undefined,
+    TResult Function(String? message)? noConnection,
+    TResult Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult Function(String? message)? httpUnauthorized,
+    TResult Function(String? message)? httpForbidden,
+    TResult Function(String? message)? httpNotFound,
+    TResult Function(String? message)? httpUnprocessableEntity,
+    TResult Function(String? message)? httpInternalServerError,
+    TResult Function(String? message)? httpMethodNotAllowed,
+    TResult Function(String? message)? httpConflict,
+    TResult Function(String? message)? badKeyOfValue,
     required TResult orElse(),
   }) {
     if (httpUnprocessableEntity != null) {
@@ -1500,20 +1714,31 @@ class _$HttpUnprocessableEntityFailureImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UndefinedFailure value) undefined,
-    required TResult Function(NoConnectionFailure value) noConnection,
-    required TResult Function(HttpBadRequestFailure value) httpBadRequest,
-    required TResult Function(HttpUnauthorizedFailure value) httpUnauthorized,
-    required TResult Function(HttpForbiddenFailure value) httpForbidden,
-    required TResult Function(HttpNotFoundFailure value) httpNotFound,
-    required TResult Function(HttpUnprocessableEntityFailure value)
+    required TResult Function(UndefinedFailure<ValidationModel> value)
+        undefined,
+    required TResult Function(NoConnectionFailure<ValidationModel> value)
+        noConnection,
+    required TResult Function(HttpBadRequestFailure<ValidationModel> value)
+        httpBadRequest,
+    required TResult Function(HttpUnauthorizedFailure<ValidationModel> value)
+        httpUnauthorized,
+    required TResult Function(HttpForbiddenFailure<ValidationModel> value)
+        httpForbidden,
+    required TResult Function(HttpNotFoundFailure<ValidationModel> value)
+        httpNotFound,
+    required TResult Function(
+            HttpUnprocessableEntityFailure<ValidationModel> value)
         httpUnprocessableEntity,
-    required TResult Function(HttpInternalServerErrorFailure value)
+    required TResult Function(
+            HttpInternalServerErrorFailure<ValidationModel> value)
         httpInternalServerError,
-    required TResult Function(HttpMethodNotAllowedErrorFailure value)
-        httpMethodNotAllowedError,
-    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
-    required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
+    required TResult Function(
+            HttpMethodNotAllowedFailure<ValidationModel> value)
+        httpMethodNotAllowed,
+    required TResult Function(HttpConflictErrorFailure<ValidationModel> value)
+        httpConflict,
+    required TResult Function(BadKeyOfValueFailure<ValidationModel> value)
+        badKeyOfValue,
   }) {
     return httpUnprocessableEntity(this);
   }
@@ -1521,20 +1746,25 @@ class _$HttpUnprocessableEntityFailureImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(UndefinedFailure value)? undefined,
-    TResult? Function(NoConnectionFailure value)? noConnection,
-    TResult? Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult? Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult? Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult? Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult? Function(HttpUnprocessableEntityFailure value)?
+    TResult? Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult? Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult? Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult? Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult? Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult? Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult? Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult? Function(HttpInternalServerErrorFailure value)?
+    TResult? Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult? Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult? Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult? Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
   }) {
     return httpUnprocessableEntity?.call(this);
   }
@@ -1542,20 +1772,25 @@ class _$HttpUnprocessableEntityFailureImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UndefinedFailure value)? undefined,
-    TResult Function(NoConnectionFailure value)? noConnection,
-    TResult Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult Function(HttpUnprocessableEntityFailure value)?
+    TResult Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult Function(HttpInternalServerErrorFailure value)?
+    TResult Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
     required TResult orElse(),
   }) {
     if (httpUnprocessableEntity != null) {
@@ -1565,73 +1800,78 @@ class _$HttpUnprocessableEntityFailureImpl
   }
 }
 
-abstract class HttpUnprocessableEntityFailure implements Failure {
-  const factory HttpUnprocessableEntityFailure(
-      {required final String message}) = _$HttpUnprocessableEntityFailureImpl;
+abstract class HttpUnprocessableEntityFailure<ValidationModel>
+    implements Failure<ValidationModel> {
+  const factory HttpUnprocessableEntityFailure({final String? message}) =
+      _$HttpUnprocessableEntityFailureImpl<ValidationModel>;
 
   @override
-  String get message;
+  String? get message;
   @override
   @JsonKey(ignore: true)
-  _$$HttpUnprocessableEntityFailureImplCopyWith<
-          _$HttpUnprocessableEntityFailureImpl>
+  _$$HttpUnprocessableEntityFailureImplCopyWith<ValidationModel,
+          _$HttpUnprocessableEntityFailureImpl<ValidationModel>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HttpInternalServerErrorFailureImplCopyWith<$Res>
-    implements $FailureCopyWith<$Res> {
+abstract class _$$HttpInternalServerErrorFailureImplCopyWith<ValidationModel,
+    $Res> implements $FailureCopyWith<ValidationModel, $Res> {
   factory _$$HttpInternalServerErrorFailureImplCopyWith(
-          _$HttpInternalServerErrorFailureImpl value,
-          $Res Function(_$HttpInternalServerErrorFailureImpl) then) =
-      __$$HttpInternalServerErrorFailureImplCopyWithImpl<$Res>;
+          _$HttpInternalServerErrorFailureImpl<ValidationModel> value,
+          $Res Function(_$HttpInternalServerErrorFailureImpl<ValidationModel>)
+              then) =
+      __$$HttpInternalServerErrorFailureImplCopyWithImpl<ValidationModel, $Res>;
   @override
   @useResult
-  $Res call({String message});
+  $Res call({String? message});
 }
 
 /// @nodoc
-class __$$HttpInternalServerErrorFailureImplCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res, _$HttpInternalServerErrorFailureImpl>
-    implements _$$HttpInternalServerErrorFailureImplCopyWith<$Res> {
+class __$$HttpInternalServerErrorFailureImplCopyWithImpl<ValidationModel, $Res>
+    extends _$FailureCopyWithImpl<ValidationModel, $Res,
+        _$HttpInternalServerErrorFailureImpl<ValidationModel>>
+    implements
+        _$$HttpInternalServerErrorFailureImplCopyWith<ValidationModel, $Res> {
   __$$HttpInternalServerErrorFailureImplCopyWithImpl(
-      _$HttpInternalServerErrorFailureImpl _value,
-      $Res Function(_$HttpInternalServerErrorFailureImpl) _then)
+      _$HttpInternalServerErrorFailureImpl<ValidationModel> _value,
+      $Res Function(_$HttpInternalServerErrorFailureImpl<ValidationModel>)
+          _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? message = freezed,
   }) {
-    return _then(_$HttpInternalServerErrorFailureImpl(
-      message: null == message
+    return _then(_$HttpInternalServerErrorFailureImpl<ValidationModel>(
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$HttpInternalServerErrorFailureImpl
-    implements HttpInternalServerErrorFailure {
-  const _$HttpInternalServerErrorFailureImpl({required this.message});
+class _$HttpInternalServerErrorFailureImpl<ValidationModel>
+    implements HttpInternalServerErrorFailure<ValidationModel> {
+  const _$HttpInternalServerErrorFailureImpl({this.message});
 
   @override
-  final String message;
+  final String? message;
 
   @override
   String toString() {
-    return 'Failure.httpInternalServerError(message: $message)';
+    return 'Failure<$ValidationModel>.httpInternalServerError(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HttpInternalServerErrorFailureImpl &&
+            other is _$HttpInternalServerErrorFailureImpl<ValidationModel> &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -1641,25 +1881,28 @@ class _$HttpInternalServerErrorFailureImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HttpInternalServerErrorFailureImplCopyWith<
-          _$HttpInternalServerErrorFailureImpl>
+  _$$HttpInternalServerErrorFailureImplCopyWith<ValidationModel,
+          _$HttpInternalServerErrorFailureImpl<ValidationModel>>
       get copyWith => __$$HttpInternalServerErrorFailureImplCopyWithImpl<
-          _$HttpInternalServerErrorFailureImpl>(this, _$identity);
+              ValidationModel,
+              _$HttpInternalServerErrorFailureImpl<ValidationModel>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String message) undefined,
-    required TResult Function(String message) noConnection,
-    required TResult Function(String message) httpBadRequest,
-    required TResult Function(String message) httpUnauthorized,
-    required TResult Function(String message) httpForbidden,
-    required TResult Function(String message) httpNotFound,
-    required TResult Function(String message) httpUnprocessableEntity,
-    required TResult Function(String message) httpInternalServerError,
-    required TResult Function(String message) httpMethodNotAllowedError,
-    required TResult Function(String message) httpConflictError,
-    required TResult Function(String message) badKeyOfValue,
+    required TResult Function(String? message) undefined,
+    required TResult Function(String? message) noConnection,
+    required TResult Function(String? message, ValidationModel? data)
+        httpBadRequest,
+    required TResult Function(String? message) httpUnauthorized,
+    required TResult Function(String? message) httpForbidden,
+    required TResult Function(String? message) httpNotFound,
+    required TResult Function(String? message) httpUnprocessableEntity,
+    required TResult Function(String? message) httpInternalServerError,
+    required TResult Function(String? message) httpMethodNotAllowed,
+    required TResult Function(String? message) httpConflict,
+    required TResult Function(String? message) badKeyOfValue,
   }) {
     return httpInternalServerError(message);
   }
@@ -1667,17 +1910,17 @@ class _$HttpInternalServerErrorFailureImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message)? undefined,
-    TResult? Function(String message)? noConnection,
-    TResult? Function(String message)? httpBadRequest,
-    TResult? Function(String message)? httpUnauthorized,
-    TResult? Function(String message)? httpForbidden,
-    TResult? Function(String message)? httpNotFound,
-    TResult? Function(String message)? httpUnprocessableEntity,
-    TResult? Function(String message)? httpInternalServerError,
-    TResult? Function(String message)? httpMethodNotAllowedError,
-    TResult? Function(String message)? httpConflictError,
-    TResult? Function(String message)? badKeyOfValue,
+    TResult? Function(String? message)? undefined,
+    TResult? Function(String? message)? noConnection,
+    TResult? Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult? Function(String? message)? httpUnauthorized,
+    TResult? Function(String? message)? httpForbidden,
+    TResult? Function(String? message)? httpNotFound,
+    TResult? Function(String? message)? httpUnprocessableEntity,
+    TResult? Function(String? message)? httpInternalServerError,
+    TResult? Function(String? message)? httpMethodNotAllowed,
+    TResult? Function(String? message)? httpConflict,
+    TResult? Function(String? message)? badKeyOfValue,
   }) {
     return httpInternalServerError?.call(message);
   }
@@ -1685,17 +1928,17 @@ class _$HttpInternalServerErrorFailureImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? undefined,
-    TResult Function(String message)? noConnection,
-    TResult Function(String message)? httpBadRequest,
-    TResult Function(String message)? httpUnauthorized,
-    TResult Function(String message)? httpForbidden,
-    TResult Function(String message)? httpNotFound,
-    TResult Function(String message)? httpUnprocessableEntity,
-    TResult Function(String message)? httpInternalServerError,
-    TResult Function(String message)? httpMethodNotAllowedError,
-    TResult Function(String message)? httpConflictError,
-    TResult Function(String message)? badKeyOfValue,
+    TResult Function(String? message)? undefined,
+    TResult Function(String? message)? noConnection,
+    TResult Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult Function(String? message)? httpUnauthorized,
+    TResult Function(String? message)? httpForbidden,
+    TResult Function(String? message)? httpNotFound,
+    TResult Function(String? message)? httpUnprocessableEntity,
+    TResult Function(String? message)? httpInternalServerError,
+    TResult Function(String? message)? httpMethodNotAllowed,
+    TResult Function(String? message)? httpConflict,
+    TResult Function(String? message)? badKeyOfValue,
     required TResult orElse(),
   }) {
     if (httpInternalServerError != null) {
@@ -1707,20 +1950,31 @@ class _$HttpInternalServerErrorFailureImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UndefinedFailure value) undefined,
-    required TResult Function(NoConnectionFailure value) noConnection,
-    required TResult Function(HttpBadRequestFailure value) httpBadRequest,
-    required TResult Function(HttpUnauthorizedFailure value) httpUnauthorized,
-    required TResult Function(HttpForbiddenFailure value) httpForbidden,
-    required TResult Function(HttpNotFoundFailure value) httpNotFound,
-    required TResult Function(HttpUnprocessableEntityFailure value)
+    required TResult Function(UndefinedFailure<ValidationModel> value)
+        undefined,
+    required TResult Function(NoConnectionFailure<ValidationModel> value)
+        noConnection,
+    required TResult Function(HttpBadRequestFailure<ValidationModel> value)
+        httpBadRequest,
+    required TResult Function(HttpUnauthorizedFailure<ValidationModel> value)
+        httpUnauthorized,
+    required TResult Function(HttpForbiddenFailure<ValidationModel> value)
+        httpForbidden,
+    required TResult Function(HttpNotFoundFailure<ValidationModel> value)
+        httpNotFound,
+    required TResult Function(
+            HttpUnprocessableEntityFailure<ValidationModel> value)
         httpUnprocessableEntity,
-    required TResult Function(HttpInternalServerErrorFailure value)
+    required TResult Function(
+            HttpInternalServerErrorFailure<ValidationModel> value)
         httpInternalServerError,
-    required TResult Function(HttpMethodNotAllowedErrorFailure value)
-        httpMethodNotAllowedError,
-    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
-    required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
+    required TResult Function(
+            HttpMethodNotAllowedFailure<ValidationModel> value)
+        httpMethodNotAllowed,
+    required TResult Function(HttpConflictErrorFailure<ValidationModel> value)
+        httpConflict,
+    required TResult Function(BadKeyOfValueFailure<ValidationModel> value)
+        badKeyOfValue,
   }) {
     return httpInternalServerError(this);
   }
@@ -1728,20 +1982,25 @@ class _$HttpInternalServerErrorFailureImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(UndefinedFailure value)? undefined,
-    TResult? Function(NoConnectionFailure value)? noConnection,
-    TResult? Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult? Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult? Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult? Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult? Function(HttpUnprocessableEntityFailure value)?
+    TResult? Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult? Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult? Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult? Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult? Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult? Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult? Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult? Function(HttpInternalServerErrorFailure value)?
+    TResult? Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult? Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult? Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult? Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
   }) {
     return httpInternalServerError?.call(this);
   }
@@ -1749,20 +2008,25 @@ class _$HttpInternalServerErrorFailureImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UndefinedFailure value)? undefined,
-    TResult Function(NoConnectionFailure value)? noConnection,
-    TResult Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult Function(HttpUnprocessableEntityFailure value)?
+    TResult Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult Function(HttpInternalServerErrorFailure value)?
+    TResult Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
     required TResult orElse(),
   }) {
     if (httpInternalServerError != null) {
@@ -1772,73 +2036,77 @@ class _$HttpInternalServerErrorFailureImpl
   }
 }
 
-abstract class HttpInternalServerErrorFailure implements Failure {
-  const factory HttpInternalServerErrorFailure(
-      {required final String message}) = _$HttpInternalServerErrorFailureImpl;
+abstract class HttpInternalServerErrorFailure<ValidationModel>
+    implements Failure<ValidationModel> {
+  const factory HttpInternalServerErrorFailure({final String? message}) =
+      _$HttpInternalServerErrorFailureImpl<ValidationModel>;
 
   @override
-  String get message;
+  String? get message;
   @override
   @JsonKey(ignore: true)
-  _$$HttpInternalServerErrorFailureImplCopyWith<
-          _$HttpInternalServerErrorFailureImpl>
+  _$$HttpInternalServerErrorFailureImplCopyWith<ValidationModel,
+          _$HttpInternalServerErrorFailureImpl<ValidationModel>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HttpMethodNotAllowedErrorFailureImplCopyWith<$Res>
-    implements $FailureCopyWith<$Res> {
-  factory _$$HttpMethodNotAllowedErrorFailureImplCopyWith(
-          _$HttpMethodNotAllowedErrorFailureImpl value,
-          $Res Function(_$HttpMethodNotAllowedErrorFailureImpl) then) =
-      __$$HttpMethodNotAllowedErrorFailureImplCopyWithImpl<$Res>;
+abstract class _$$HttpMethodNotAllowedFailureImplCopyWith<ValidationModel, $Res>
+    implements $FailureCopyWith<ValidationModel, $Res> {
+  factory _$$HttpMethodNotAllowedFailureImplCopyWith(
+          _$HttpMethodNotAllowedFailureImpl<ValidationModel> value,
+          $Res Function(_$HttpMethodNotAllowedFailureImpl<ValidationModel>)
+              then) =
+      __$$HttpMethodNotAllowedFailureImplCopyWithImpl<ValidationModel, $Res>;
   @override
   @useResult
-  $Res call({String message});
+  $Res call({String? message});
 }
 
 /// @nodoc
-class __$$HttpMethodNotAllowedErrorFailureImplCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res, _$HttpMethodNotAllowedErrorFailureImpl>
-    implements _$$HttpMethodNotAllowedErrorFailureImplCopyWith<$Res> {
-  __$$HttpMethodNotAllowedErrorFailureImplCopyWithImpl(
-      _$HttpMethodNotAllowedErrorFailureImpl _value,
-      $Res Function(_$HttpMethodNotAllowedErrorFailureImpl) _then)
+class __$$HttpMethodNotAllowedFailureImplCopyWithImpl<ValidationModel, $Res>
+    extends _$FailureCopyWithImpl<ValidationModel, $Res,
+        _$HttpMethodNotAllowedFailureImpl<ValidationModel>>
+    implements
+        _$$HttpMethodNotAllowedFailureImplCopyWith<ValidationModel, $Res> {
+  __$$HttpMethodNotAllowedFailureImplCopyWithImpl(
+      _$HttpMethodNotAllowedFailureImpl<ValidationModel> _value,
+      $Res Function(_$HttpMethodNotAllowedFailureImpl<ValidationModel>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? message = freezed,
   }) {
-    return _then(_$HttpMethodNotAllowedErrorFailureImpl(
-      message: null == message
+    return _then(_$HttpMethodNotAllowedFailureImpl<ValidationModel>(
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$HttpMethodNotAllowedErrorFailureImpl
-    implements HttpMethodNotAllowedErrorFailure {
-  const _$HttpMethodNotAllowedErrorFailureImpl({required this.message});
+class _$HttpMethodNotAllowedFailureImpl<ValidationModel>
+    implements HttpMethodNotAllowedFailure<ValidationModel> {
+  const _$HttpMethodNotAllowedFailureImpl({this.message});
 
   @override
-  final String message;
+  final String? message;
 
   @override
   String toString() {
-    return 'Failure.httpMethodNotAllowedError(message: $message)';
+    return 'Failure<$ValidationModel>.httpMethodNotAllowed(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HttpMethodNotAllowedErrorFailureImpl &&
+            other is _$HttpMethodNotAllowedFailureImpl<ValidationModel> &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -1848,65 +2116,67 @@ class _$HttpMethodNotAllowedErrorFailureImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HttpMethodNotAllowedErrorFailureImplCopyWith<
-          _$HttpMethodNotAllowedErrorFailureImpl>
-      get copyWith => __$$HttpMethodNotAllowedErrorFailureImplCopyWithImpl<
-          _$HttpMethodNotAllowedErrorFailureImpl>(this, _$identity);
+  _$$HttpMethodNotAllowedFailureImplCopyWith<ValidationModel,
+          _$HttpMethodNotAllowedFailureImpl<ValidationModel>>
+      get copyWith => __$$HttpMethodNotAllowedFailureImplCopyWithImpl<
+          ValidationModel,
+          _$HttpMethodNotAllowedFailureImpl<ValidationModel>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String message) undefined,
-    required TResult Function(String message) noConnection,
-    required TResult Function(String message) httpBadRequest,
-    required TResult Function(String message) httpUnauthorized,
-    required TResult Function(String message) httpForbidden,
-    required TResult Function(String message) httpNotFound,
-    required TResult Function(String message) httpUnprocessableEntity,
-    required TResult Function(String message) httpInternalServerError,
-    required TResult Function(String message) httpMethodNotAllowedError,
-    required TResult Function(String message) httpConflictError,
-    required TResult Function(String message) badKeyOfValue,
+    required TResult Function(String? message) undefined,
+    required TResult Function(String? message) noConnection,
+    required TResult Function(String? message, ValidationModel? data)
+        httpBadRequest,
+    required TResult Function(String? message) httpUnauthorized,
+    required TResult Function(String? message) httpForbidden,
+    required TResult Function(String? message) httpNotFound,
+    required TResult Function(String? message) httpUnprocessableEntity,
+    required TResult Function(String? message) httpInternalServerError,
+    required TResult Function(String? message) httpMethodNotAllowed,
+    required TResult Function(String? message) httpConflict,
+    required TResult Function(String? message) badKeyOfValue,
   }) {
-    return httpMethodNotAllowedError(message);
+    return httpMethodNotAllowed(message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message)? undefined,
-    TResult? Function(String message)? noConnection,
-    TResult? Function(String message)? httpBadRequest,
-    TResult? Function(String message)? httpUnauthorized,
-    TResult? Function(String message)? httpForbidden,
-    TResult? Function(String message)? httpNotFound,
-    TResult? Function(String message)? httpUnprocessableEntity,
-    TResult? Function(String message)? httpInternalServerError,
-    TResult? Function(String message)? httpMethodNotAllowedError,
-    TResult? Function(String message)? httpConflictError,
-    TResult? Function(String message)? badKeyOfValue,
+    TResult? Function(String? message)? undefined,
+    TResult? Function(String? message)? noConnection,
+    TResult? Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult? Function(String? message)? httpUnauthorized,
+    TResult? Function(String? message)? httpForbidden,
+    TResult? Function(String? message)? httpNotFound,
+    TResult? Function(String? message)? httpUnprocessableEntity,
+    TResult? Function(String? message)? httpInternalServerError,
+    TResult? Function(String? message)? httpMethodNotAllowed,
+    TResult? Function(String? message)? httpConflict,
+    TResult? Function(String? message)? badKeyOfValue,
   }) {
-    return httpMethodNotAllowedError?.call(message);
+    return httpMethodNotAllowed?.call(message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? undefined,
-    TResult Function(String message)? noConnection,
-    TResult Function(String message)? httpBadRequest,
-    TResult Function(String message)? httpUnauthorized,
-    TResult Function(String message)? httpForbidden,
-    TResult Function(String message)? httpNotFound,
-    TResult Function(String message)? httpUnprocessableEntity,
-    TResult Function(String message)? httpInternalServerError,
-    TResult Function(String message)? httpMethodNotAllowedError,
-    TResult Function(String message)? httpConflictError,
-    TResult Function(String message)? badKeyOfValue,
+    TResult Function(String? message)? undefined,
+    TResult Function(String? message)? noConnection,
+    TResult Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult Function(String? message)? httpUnauthorized,
+    TResult Function(String? message)? httpForbidden,
+    TResult Function(String? message)? httpNotFound,
+    TResult Function(String? message)? httpUnprocessableEntity,
+    TResult Function(String? message)? httpInternalServerError,
+    TResult Function(String? message)? httpMethodNotAllowed,
+    TResult Function(String? message)? httpConflict,
+    TResult Function(String? message)? badKeyOfValue,
     required TResult orElse(),
   }) {
-    if (httpMethodNotAllowedError != null) {
-      return httpMethodNotAllowedError(message);
+    if (httpMethodNotAllowed != null) {
+      return httpMethodNotAllowed(message);
     }
     return orElse();
   }
@@ -1914,137 +2184,161 @@ class _$HttpMethodNotAllowedErrorFailureImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UndefinedFailure value) undefined,
-    required TResult Function(NoConnectionFailure value) noConnection,
-    required TResult Function(HttpBadRequestFailure value) httpBadRequest,
-    required TResult Function(HttpUnauthorizedFailure value) httpUnauthorized,
-    required TResult Function(HttpForbiddenFailure value) httpForbidden,
-    required TResult Function(HttpNotFoundFailure value) httpNotFound,
-    required TResult Function(HttpUnprocessableEntityFailure value)
+    required TResult Function(UndefinedFailure<ValidationModel> value)
+        undefined,
+    required TResult Function(NoConnectionFailure<ValidationModel> value)
+        noConnection,
+    required TResult Function(HttpBadRequestFailure<ValidationModel> value)
+        httpBadRequest,
+    required TResult Function(HttpUnauthorizedFailure<ValidationModel> value)
+        httpUnauthorized,
+    required TResult Function(HttpForbiddenFailure<ValidationModel> value)
+        httpForbidden,
+    required TResult Function(HttpNotFoundFailure<ValidationModel> value)
+        httpNotFound,
+    required TResult Function(
+            HttpUnprocessableEntityFailure<ValidationModel> value)
         httpUnprocessableEntity,
-    required TResult Function(HttpInternalServerErrorFailure value)
+    required TResult Function(
+            HttpInternalServerErrorFailure<ValidationModel> value)
         httpInternalServerError,
-    required TResult Function(HttpMethodNotAllowedErrorFailure value)
-        httpMethodNotAllowedError,
-    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
-    required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
+    required TResult Function(
+            HttpMethodNotAllowedFailure<ValidationModel> value)
+        httpMethodNotAllowed,
+    required TResult Function(HttpConflictErrorFailure<ValidationModel> value)
+        httpConflict,
+    required TResult Function(BadKeyOfValueFailure<ValidationModel> value)
+        badKeyOfValue,
   }) {
-    return httpMethodNotAllowedError(this);
+    return httpMethodNotAllowed(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(UndefinedFailure value)? undefined,
-    TResult? Function(NoConnectionFailure value)? noConnection,
-    TResult? Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult? Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult? Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult? Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult? Function(HttpUnprocessableEntityFailure value)?
+    TResult? Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult? Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult? Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult? Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult? Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult? Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult? Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult? Function(HttpInternalServerErrorFailure value)?
+    TResult? Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult? Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult? Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult? Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
   }) {
-    return httpMethodNotAllowedError?.call(this);
+    return httpMethodNotAllowed?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UndefinedFailure value)? undefined,
-    TResult Function(NoConnectionFailure value)? noConnection,
-    TResult Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult Function(HttpUnprocessableEntityFailure value)?
+    TResult Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult Function(HttpInternalServerErrorFailure value)?
+    TResult Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
     required TResult orElse(),
   }) {
-    if (httpMethodNotAllowedError != null) {
-      return httpMethodNotAllowedError(this);
+    if (httpMethodNotAllowed != null) {
+      return httpMethodNotAllowed(this);
     }
     return orElse();
   }
 }
 
-abstract class HttpMethodNotAllowedErrorFailure implements Failure {
-  const factory HttpMethodNotAllowedErrorFailure(
-      {required final String message}) = _$HttpMethodNotAllowedErrorFailureImpl;
+abstract class HttpMethodNotAllowedFailure<ValidationModel>
+    implements Failure<ValidationModel> {
+  const factory HttpMethodNotAllowedFailure({final String? message}) =
+      _$HttpMethodNotAllowedFailureImpl<ValidationModel>;
 
   @override
-  String get message;
+  String? get message;
   @override
   @JsonKey(ignore: true)
-  _$$HttpMethodNotAllowedErrorFailureImplCopyWith<
-          _$HttpMethodNotAllowedErrorFailureImpl>
+  _$$HttpMethodNotAllowedFailureImplCopyWith<ValidationModel,
+          _$HttpMethodNotAllowedFailureImpl<ValidationModel>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HttpConflictErrorFailureImplCopyWith<$Res>
-    implements $FailureCopyWith<$Res> {
+abstract class _$$HttpConflictErrorFailureImplCopyWith<ValidationModel, $Res>
+    implements $FailureCopyWith<ValidationModel, $Res> {
   factory _$$HttpConflictErrorFailureImplCopyWith(
-          _$HttpConflictErrorFailureImpl value,
-          $Res Function(_$HttpConflictErrorFailureImpl) then) =
-      __$$HttpConflictErrorFailureImplCopyWithImpl<$Res>;
+          _$HttpConflictErrorFailureImpl<ValidationModel> value,
+          $Res Function(_$HttpConflictErrorFailureImpl<ValidationModel>) then) =
+      __$$HttpConflictErrorFailureImplCopyWithImpl<ValidationModel, $Res>;
   @override
   @useResult
-  $Res call({String message});
+  $Res call({String? message});
 }
 
 /// @nodoc
-class __$$HttpConflictErrorFailureImplCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res, _$HttpConflictErrorFailureImpl>
-    implements _$$HttpConflictErrorFailureImplCopyWith<$Res> {
+class __$$HttpConflictErrorFailureImplCopyWithImpl<ValidationModel, $Res>
+    extends _$FailureCopyWithImpl<ValidationModel, $Res,
+        _$HttpConflictErrorFailureImpl<ValidationModel>>
+    implements _$$HttpConflictErrorFailureImplCopyWith<ValidationModel, $Res> {
   __$$HttpConflictErrorFailureImplCopyWithImpl(
-      _$HttpConflictErrorFailureImpl _value,
-      $Res Function(_$HttpConflictErrorFailureImpl) _then)
+      _$HttpConflictErrorFailureImpl<ValidationModel> _value,
+      $Res Function(_$HttpConflictErrorFailureImpl<ValidationModel>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? message = freezed,
   }) {
-    return _then(_$HttpConflictErrorFailureImpl(
-      message: null == message
+    return _then(_$HttpConflictErrorFailureImpl<ValidationModel>(
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$HttpConflictErrorFailureImpl implements HttpConflictErrorFailure {
-  const _$HttpConflictErrorFailureImpl({required this.message});
+class _$HttpConflictErrorFailureImpl<ValidationModel>
+    implements HttpConflictErrorFailure<ValidationModel> {
+  const _$HttpConflictErrorFailureImpl({this.message});
 
   @override
-  final String message;
+  final String? message;
 
   @override
   String toString() {
-    return 'Failure.httpConflictError(message: $message)';
+    return 'Failure<$ValidationModel>.httpConflict(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HttpConflictErrorFailureImpl &&
+            other is _$HttpConflictErrorFailureImpl<ValidationModel> &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -2054,64 +2348,67 @@ class _$HttpConflictErrorFailureImpl implements HttpConflictErrorFailure {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HttpConflictErrorFailureImplCopyWith<_$HttpConflictErrorFailureImpl>
+  _$$HttpConflictErrorFailureImplCopyWith<ValidationModel,
+          _$HttpConflictErrorFailureImpl<ValidationModel>>
       get copyWith => __$$HttpConflictErrorFailureImplCopyWithImpl<
-          _$HttpConflictErrorFailureImpl>(this, _$identity);
+          ValidationModel,
+          _$HttpConflictErrorFailureImpl<ValidationModel>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String message) undefined,
-    required TResult Function(String message) noConnection,
-    required TResult Function(String message) httpBadRequest,
-    required TResult Function(String message) httpUnauthorized,
-    required TResult Function(String message) httpForbidden,
-    required TResult Function(String message) httpNotFound,
-    required TResult Function(String message) httpUnprocessableEntity,
-    required TResult Function(String message) httpInternalServerError,
-    required TResult Function(String message) httpMethodNotAllowedError,
-    required TResult Function(String message) httpConflictError,
-    required TResult Function(String message) badKeyOfValue,
+    required TResult Function(String? message) undefined,
+    required TResult Function(String? message) noConnection,
+    required TResult Function(String? message, ValidationModel? data)
+        httpBadRequest,
+    required TResult Function(String? message) httpUnauthorized,
+    required TResult Function(String? message) httpForbidden,
+    required TResult Function(String? message) httpNotFound,
+    required TResult Function(String? message) httpUnprocessableEntity,
+    required TResult Function(String? message) httpInternalServerError,
+    required TResult Function(String? message) httpMethodNotAllowed,
+    required TResult Function(String? message) httpConflict,
+    required TResult Function(String? message) badKeyOfValue,
   }) {
-    return httpConflictError(message);
+    return httpConflict(message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message)? undefined,
-    TResult? Function(String message)? noConnection,
-    TResult? Function(String message)? httpBadRequest,
-    TResult? Function(String message)? httpUnauthorized,
-    TResult? Function(String message)? httpForbidden,
-    TResult? Function(String message)? httpNotFound,
-    TResult? Function(String message)? httpUnprocessableEntity,
-    TResult? Function(String message)? httpInternalServerError,
-    TResult? Function(String message)? httpMethodNotAllowedError,
-    TResult? Function(String message)? httpConflictError,
-    TResult? Function(String message)? badKeyOfValue,
+    TResult? Function(String? message)? undefined,
+    TResult? Function(String? message)? noConnection,
+    TResult? Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult? Function(String? message)? httpUnauthorized,
+    TResult? Function(String? message)? httpForbidden,
+    TResult? Function(String? message)? httpNotFound,
+    TResult? Function(String? message)? httpUnprocessableEntity,
+    TResult? Function(String? message)? httpInternalServerError,
+    TResult? Function(String? message)? httpMethodNotAllowed,
+    TResult? Function(String? message)? httpConflict,
+    TResult? Function(String? message)? badKeyOfValue,
   }) {
-    return httpConflictError?.call(message);
+    return httpConflict?.call(message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? undefined,
-    TResult Function(String message)? noConnection,
-    TResult Function(String message)? httpBadRequest,
-    TResult Function(String message)? httpUnauthorized,
-    TResult Function(String message)? httpForbidden,
-    TResult Function(String message)? httpNotFound,
-    TResult Function(String message)? httpUnprocessableEntity,
-    TResult Function(String message)? httpInternalServerError,
-    TResult Function(String message)? httpMethodNotAllowedError,
-    TResult Function(String message)? httpConflictError,
-    TResult Function(String message)? badKeyOfValue,
+    TResult Function(String? message)? undefined,
+    TResult Function(String? message)? noConnection,
+    TResult Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult Function(String? message)? httpUnauthorized,
+    TResult Function(String? message)? httpForbidden,
+    TResult Function(String? message)? httpNotFound,
+    TResult Function(String? message)? httpUnprocessableEntity,
+    TResult Function(String? message)? httpInternalServerError,
+    TResult Function(String? message)? httpMethodNotAllowed,
+    TResult Function(String? message)? httpConflict,
+    TResult Function(String? message)? badKeyOfValue,
     required TResult orElse(),
   }) {
-    if (httpConflictError != null) {
-      return httpConflictError(message);
+    if (httpConflict != null) {
+      return httpConflict(message);
     }
     return orElse();
   }
@@ -2119,134 +2416,161 @@ class _$HttpConflictErrorFailureImpl implements HttpConflictErrorFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UndefinedFailure value) undefined,
-    required TResult Function(NoConnectionFailure value) noConnection,
-    required TResult Function(HttpBadRequestFailure value) httpBadRequest,
-    required TResult Function(HttpUnauthorizedFailure value) httpUnauthorized,
-    required TResult Function(HttpForbiddenFailure value) httpForbidden,
-    required TResult Function(HttpNotFoundFailure value) httpNotFound,
-    required TResult Function(HttpUnprocessableEntityFailure value)
+    required TResult Function(UndefinedFailure<ValidationModel> value)
+        undefined,
+    required TResult Function(NoConnectionFailure<ValidationModel> value)
+        noConnection,
+    required TResult Function(HttpBadRequestFailure<ValidationModel> value)
+        httpBadRequest,
+    required TResult Function(HttpUnauthorizedFailure<ValidationModel> value)
+        httpUnauthorized,
+    required TResult Function(HttpForbiddenFailure<ValidationModel> value)
+        httpForbidden,
+    required TResult Function(HttpNotFoundFailure<ValidationModel> value)
+        httpNotFound,
+    required TResult Function(
+            HttpUnprocessableEntityFailure<ValidationModel> value)
         httpUnprocessableEntity,
-    required TResult Function(HttpInternalServerErrorFailure value)
+    required TResult Function(
+            HttpInternalServerErrorFailure<ValidationModel> value)
         httpInternalServerError,
-    required TResult Function(HttpMethodNotAllowedErrorFailure value)
-        httpMethodNotAllowedError,
-    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
-    required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
+    required TResult Function(
+            HttpMethodNotAllowedFailure<ValidationModel> value)
+        httpMethodNotAllowed,
+    required TResult Function(HttpConflictErrorFailure<ValidationModel> value)
+        httpConflict,
+    required TResult Function(BadKeyOfValueFailure<ValidationModel> value)
+        badKeyOfValue,
   }) {
-    return httpConflictError(this);
+    return httpConflict(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(UndefinedFailure value)? undefined,
-    TResult? Function(NoConnectionFailure value)? noConnection,
-    TResult? Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult? Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult? Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult? Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult? Function(HttpUnprocessableEntityFailure value)?
+    TResult? Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult? Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult? Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult? Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult? Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult? Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult? Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult? Function(HttpInternalServerErrorFailure value)?
+    TResult? Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult? Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult? Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult? Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
   }) {
-    return httpConflictError?.call(this);
+    return httpConflict?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UndefinedFailure value)? undefined,
-    TResult Function(NoConnectionFailure value)? noConnection,
-    TResult Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult Function(HttpUnprocessableEntityFailure value)?
+    TResult Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult Function(HttpInternalServerErrorFailure value)?
+    TResult Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
     required TResult orElse(),
   }) {
-    if (httpConflictError != null) {
-      return httpConflictError(this);
+    if (httpConflict != null) {
+      return httpConflict(this);
     }
     return orElse();
   }
 }
 
-abstract class HttpConflictErrorFailure implements Failure {
-  const factory HttpConflictErrorFailure({required final String message}) =
-      _$HttpConflictErrorFailureImpl;
+abstract class HttpConflictErrorFailure<ValidationModel>
+    implements Failure<ValidationModel> {
+  const factory HttpConflictErrorFailure({final String? message}) =
+      _$HttpConflictErrorFailureImpl<ValidationModel>;
 
   @override
-  String get message;
+  String? get message;
   @override
   @JsonKey(ignore: true)
-  _$$HttpConflictErrorFailureImplCopyWith<_$HttpConflictErrorFailureImpl>
+  _$$HttpConflictErrorFailureImplCopyWith<ValidationModel,
+          _$HttpConflictErrorFailureImpl<ValidationModel>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$BadKeyOfValueFailureImplCopyWith<$Res>
-    implements $FailureCopyWith<$Res> {
-  factory _$$BadKeyOfValueFailureImplCopyWith(_$BadKeyOfValueFailureImpl value,
-          $Res Function(_$BadKeyOfValueFailureImpl) then) =
-      __$$BadKeyOfValueFailureImplCopyWithImpl<$Res>;
+abstract class _$$BadKeyOfValueFailureImplCopyWith<ValidationModel, $Res>
+    implements $FailureCopyWith<ValidationModel, $Res> {
+  factory _$$BadKeyOfValueFailureImplCopyWith(
+          _$BadKeyOfValueFailureImpl<ValidationModel> value,
+          $Res Function(_$BadKeyOfValueFailureImpl<ValidationModel>) then) =
+      __$$BadKeyOfValueFailureImplCopyWithImpl<ValidationModel, $Res>;
   @override
   @useResult
-  $Res call({String message});
+  $Res call({String? message});
 }
 
 /// @nodoc
-class __$$BadKeyOfValueFailureImplCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res, _$BadKeyOfValueFailureImpl>
-    implements _$$BadKeyOfValueFailureImplCopyWith<$Res> {
-  __$$BadKeyOfValueFailureImplCopyWithImpl(_$BadKeyOfValueFailureImpl _value,
-      $Res Function(_$BadKeyOfValueFailureImpl) _then)
+class __$$BadKeyOfValueFailureImplCopyWithImpl<ValidationModel, $Res>
+    extends _$FailureCopyWithImpl<ValidationModel, $Res,
+        _$BadKeyOfValueFailureImpl<ValidationModel>>
+    implements _$$BadKeyOfValueFailureImplCopyWith<ValidationModel, $Res> {
+  __$$BadKeyOfValueFailureImplCopyWithImpl(
+      _$BadKeyOfValueFailureImpl<ValidationModel> _value,
+      $Res Function(_$BadKeyOfValueFailureImpl<ValidationModel>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? message = freezed,
   }) {
-    return _then(_$BadKeyOfValueFailureImpl(
-      message: null == message
+    return _then(_$BadKeyOfValueFailureImpl<ValidationModel>(
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$BadKeyOfValueFailureImpl implements BadKeyOfValueFailure {
-  const _$BadKeyOfValueFailureImpl({required this.message});
+class _$BadKeyOfValueFailureImpl<ValidationModel>
+    implements BadKeyOfValueFailure<ValidationModel> {
+  const _$BadKeyOfValueFailureImpl({this.message});
 
   @override
-  final String message;
+  final String? message;
 
   @override
   String toString() {
-    return 'Failure.badKeyOfValue(message: $message)';
+    return 'Failure<$ValidationModel>.badKeyOfValue(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BadKeyOfValueFailureImpl &&
+            other is _$BadKeyOfValueFailureImpl<ValidationModel> &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -2256,25 +2580,26 @@ class _$BadKeyOfValueFailureImpl implements BadKeyOfValueFailure {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$BadKeyOfValueFailureImplCopyWith<_$BadKeyOfValueFailureImpl>
-      get copyWith =>
-          __$$BadKeyOfValueFailureImplCopyWithImpl<_$BadKeyOfValueFailureImpl>(
-              this, _$identity);
+  _$$BadKeyOfValueFailureImplCopyWith<ValidationModel,
+          _$BadKeyOfValueFailureImpl<ValidationModel>>
+      get copyWith => __$$BadKeyOfValueFailureImplCopyWithImpl<ValidationModel,
+          _$BadKeyOfValueFailureImpl<ValidationModel>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String message) undefined,
-    required TResult Function(String message) noConnection,
-    required TResult Function(String message) httpBadRequest,
-    required TResult Function(String message) httpUnauthorized,
-    required TResult Function(String message) httpForbidden,
-    required TResult Function(String message) httpNotFound,
-    required TResult Function(String message) httpUnprocessableEntity,
-    required TResult Function(String message) httpInternalServerError,
-    required TResult Function(String message) httpMethodNotAllowedError,
-    required TResult Function(String message) httpConflictError,
-    required TResult Function(String message) badKeyOfValue,
+    required TResult Function(String? message) undefined,
+    required TResult Function(String? message) noConnection,
+    required TResult Function(String? message, ValidationModel? data)
+        httpBadRequest,
+    required TResult Function(String? message) httpUnauthorized,
+    required TResult Function(String? message) httpForbidden,
+    required TResult Function(String? message) httpNotFound,
+    required TResult Function(String? message) httpUnprocessableEntity,
+    required TResult Function(String? message) httpInternalServerError,
+    required TResult Function(String? message) httpMethodNotAllowed,
+    required TResult Function(String? message) httpConflict,
+    required TResult Function(String? message) badKeyOfValue,
   }) {
     return badKeyOfValue(message);
   }
@@ -2282,17 +2607,17 @@ class _$BadKeyOfValueFailureImpl implements BadKeyOfValueFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message)? undefined,
-    TResult? Function(String message)? noConnection,
-    TResult? Function(String message)? httpBadRequest,
-    TResult? Function(String message)? httpUnauthorized,
-    TResult? Function(String message)? httpForbidden,
-    TResult? Function(String message)? httpNotFound,
-    TResult? Function(String message)? httpUnprocessableEntity,
-    TResult? Function(String message)? httpInternalServerError,
-    TResult? Function(String message)? httpMethodNotAllowedError,
-    TResult? Function(String message)? httpConflictError,
-    TResult? Function(String message)? badKeyOfValue,
+    TResult? Function(String? message)? undefined,
+    TResult? Function(String? message)? noConnection,
+    TResult? Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult? Function(String? message)? httpUnauthorized,
+    TResult? Function(String? message)? httpForbidden,
+    TResult? Function(String? message)? httpNotFound,
+    TResult? Function(String? message)? httpUnprocessableEntity,
+    TResult? Function(String? message)? httpInternalServerError,
+    TResult? Function(String? message)? httpMethodNotAllowed,
+    TResult? Function(String? message)? httpConflict,
+    TResult? Function(String? message)? badKeyOfValue,
   }) {
     return badKeyOfValue?.call(message);
   }
@@ -2300,17 +2625,17 @@ class _$BadKeyOfValueFailureImpl implements BadKeyOfValueFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? undefined,
-    TResult Function(String message)? noConnection,
-    TResult Function(String message)? httpBadRequest,
-    TResult Function(String message)? httpUnauthorized,
-    TResult Function(String message)? httpForbidden,
-    TResult Function(String message)? httpNotFound,
-    TResult Function(String message)? httpUnprocessableEntity,
-    TResult Function(String message)? httpInternalServerError,
-    TResult Function(String message)? httpMethodNotAllowedError,
-    TResult Function(String message)? httpConflictError,
-    TResult Function(String message)? badKeyOfValue,
+    TResult Function(String? message)? undefined,
+    TResult Function(String? message)? noConnection,
+    TResult Function(String? message, ValidationModel? data)? httpBadRequest,
+    TResult Function(String? message)? httpUnauthorized,
+    TResult Function(String? message)? httpForbidden,
+    TResult Function(String? message)? httpNotFound,
+    TResult Function(String? message)? httpUnprocessableEntity,
+    TResult Function(String? message)? httpInternalServerError,
+    TResult Function(String? message)? httpMethodNotAllowed,
+    TResult Function(String? message)? httpConflict,
+    TResult Function(String? message)? badKeyOfValue,
     required TResult orElse(),
   }) {
     if (badKeyOfValue != null) {
@@ -2322,20 +2647,31 @@ class _$BadKeyOfValueFailureImpl implements BadKeyOfValueFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(UndefinedFailure value) undefined,
-    required TResult Function(NoConnectionFailure value) noConnection,
-    required TResult Function(HttpBadRequestFailure value) httpBadRequest,
-    required TResult Function(HttpUnauthorizedFailure value) httpUnauthorized,
-    required TResult Function(HttpForbiddenFailure value) httpForbidden,
-    required TResult Function(HttpNotFoundFailure value) httpNotFound,
-    required TResult Function(HttpUnprocessableEntityFailure value)
+    required TResult Function(UndefinedFailure<ValidationModel> value)
+        undefined,
+    required TResult Function(NoConnectionFailure<ValidationModel> value)
+        noConnection,
+    required TResult Function(HttpBadRequestFailure<ValidationModel> value)
+        httpBadRequest,
+    required TResult Function(HttpUnauthorizedFailure<ValidationModel> value)
+        httpUnauthorized,
+    required TResult Function(HttpForbiddenFailure<ValidationModel> value)
+        httpForbidden,
+    required TResult Function(HttpNotFoundFailure<ValidationModel> value)
+        httpNotFound,
+    required TResult Function(
+            HttpUnprocessableEntityFailure<ValidationModel> value)
         httpUnprocessableEntity,
-    required TResult Function(HttpInternalServerErrorFailure value)
+    required TResult Function(
+            HttpInternalServerErrorFailure<ValidationModel> value)
         httpInternalServerError,
-    required TResult Function(HttpMethodNotAllowedErrorFailure value)
-        httpMethodNotAllowedError,
-    required TResult Function(HttpConflictErrorFailure value) httpConflictError,
-    required TResult Function(BadKeyOfValueFailure value) badKeyOfValue,
+    required TResult Function(
+            HttpMethodNotAllowedFailure<ValidationModel> value)
+        httpMethodNotAllowed,
+    required TResult Function(HttpConflictErrorFailure<ValidationModel> value)
+        httpConflict,
+    required TResult Function(BadKeyOfValueFailure<ValidationModel> value)
+        badKeyOfValue,
   }) {
     return badKeyOfValue(this);
   }
@@ -2343,20 +2679,25 @@ class _$BadKeyOfValueFailureImpl implements BadKeyOfValueFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(UndefinedFailure value)? undefined,
-    TResult? Function(NoConnectionFailure value)? noConnection,
-    TResult? Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult? Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult? Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult? Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult? Function(HttpUnprocessableEntityFailure value)?
+    TResult? Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult? Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult? Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult? Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult? Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult? Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult? Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult? Function(HttpInternalServerErrorFailure value)?
+    TResult? Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult? Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult? Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult? Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult? Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult? Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult? Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
   }) {
     return badKeyOfValue?.call(this);
   }
@@ -2364,20 +2705,25 @@ class _$BadKeyOfValueFailureImpl implements BadKeyOfValueFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(UndefinedFailure value)? undefined,
-    TResult Function(NoConnectionFailure value)? noConnection,
-    TResult Function(HttpBadRequestFailure value)? httpBadRequest,
-    TResult Function(HttpUnauthorizedFailure value)? httpUnauthorized,
-    TResult Function(HttpForbiddenFailure value)? httpForbidden,
-    TResult Function(HttpNotFoundFailure value)? httpNotFound,
-    TResult Function(HttpUnprocessableEntityFailure value)?
+    TResult Function(UndefinedFailure<ValidationModel> value)? undefined,
+    TResult Function(NoConnectionFailure<ValidationModel> value)? noConnection,
+    TResult Function(HttpBadRequestFailure<ValidationModel> value)?
+        httpBadRequest,
+    TResult Function(HttpUnauthorizedFailure<ValidationModel> value)?
+        httpUnauthorized,
+    TResult Function(HttpForbiddenFailure<ValidationModel> value)?
+        httpForbidden,
+    TResult Function(HttpNotFoundFailure<ValidationModel> value)? httpNotFound,
+    TResult Function(HttpUnprocessableEntityFailure<ValidationModel> value)?
         httpUnprocessableEntity,
-    TResult Function(HttpInternalServerErrorFailure value)?
+    TResult Function(HttpInternalServerErrorFailure<ValidationModel> value)?
         httpInternalServerError,
-    TResult Function(HttpMethodNotAllowedErrorFailure value)?
-        httpMethodNotAllowedError,
-    TResult Function(HttpConflictErrorFailure value)? httpConflictError,
-    TResult Function(BadKeyOfValueFailure value)? badKeyOfValue,
+    TResult Function(HttpMethodNotAllowedFailure<ValidationModel> value)?
+        httpMethodNotAllowed,
+    TResult Function(HttpConflictErrorFailure<ValidationModel> value)?
+        httpConflict,
+    TResult Function(BadKeyOfValueFailure<ValidationModel> value)?
+        badKeyOfValue,
     required TResult orElse(),
   }) {
     if (badKeyOfValue != null) {
@@ -2387,14 +2733,16 @@ class _$BadKeyOfValueFailureImpl implements BadKeyOfValueFailure {
   }
 }
 
-abstract class BadKeyOfValueFailure implements Failure {
-  const factory BadKeyOfValueFailure({required final String message}) =
-      _$BadKeyOfValueFailureImpl;
+abstract class BadKeyOfValueFailure<ValidationModel>
+    implements Failure<ValidationModel> {
+  const factory BadKeyOfValueFailure({final String? message}) =
+      _$BadKeyOfValueFailureImpl<ValidationModel>;
 
   @override
-  String get message;
+  String? get message;
   @override
   @JsonKey(ignore: true)
-  _$$BadKeyOfValueFailureImplCopyWith<_$BadKeyOfValueFailureImpl>
+  _$$BadKeyOfValueFailureImplCopyWith<ValidationModel,
+          _$BadKeyOfValueFailureImpl<ValidationModel>>
       get copyWith => throw _privateConstructorUsedError;
 }
