@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-import '../../app/utils/constant/failure_messages.dart';
-import '../error/failure.dart';
 import '../../app/asset/image_asset.dart';
-import '../../app/widget/dialog/custom_alert_dialog.dart';
+import '../../app/utils/constant/failure_messages.dart';
 import '../../app/utils/enum/snackbar_mode.dart';
 import '../../app/utils/helper/snack_bar.dart';
+import '../../app/widget/dialog/custom_alert_dialog.dart';
+import '../error/failure.dart';
 
 class ErrorHandler {
   static void handleNetworkFailure(
@@ -18,25 +17,26 @@ class ErrorHandler {
     VoidCallback? onSecondaryAction,
   }) {
     switch (failure) {
-      case HttpBadRequestFailure<dynamic>(message: final String message):
-      case HttpUnauthorizedFailure<dynamic>(message: final String message):
-      case HttpForbiddenFailure<dynamic>(message: final String message):
-      case HttpNotFoundFailure<dynamic>(message: final String message):
-      case HttpMethodNotAllowedFailure<dynamic>(message: final String message):
-      case HttpConflictErrorFailure<dynamic>(message: final String message):
+      case HttpBadRequestFailure<dynamic>(message: final String? message):
+      case HttpUnauthorizedFailure<dynamic>(message: final String? message):
+      case HttpForbiddenFailure<dynamic>(message: final String? message):
+      case HttpNotFoundFailure<dynamic>(message: final String? message):
+      case HttpMethodNotAllowedFailure<dynamic>(message: final String? message):
+      case HttpConflictErrorFailure<dynamic>(message: final String? message):
       case HttpUnprocessableEntityFailure<dynamic>(
-          message: final String message
+          message: final String? message
         ):
-      case BadKeyOfValueFailure<dynamic>(message: final String message):
-      case NoConnectionFailure<dynamic>(message: final String message):
-      case UndefinedFailure<dynamic>(message: final String message):
-        showErrorSnackBar(context, message: message);
+      case BadKeyOfValueFailure<dynamic>(message: final String? message):
+      case NoConnectionFailure<dynamic>(message: final String? message):
+        showErrorSnackBar(context, message: message ?? '');
+      case UndefinedFailure<dynamic>(message: final String? message):
+        showErrorSnackBar(context, message: message ?? FailureMessages.undefined);
       case HttpInternalServerErrorFailure<dynamic>(
-          message: final String message
+          message: final String? message
         ):
         showErrorDialog(
           context,
-          message: Text(message),
+          message: Text(message ?? ''),
           primaryActionText: primaryActionText,
           secondaryActionText: secondaryActionText,
           onPrimaryAction: onPrimaryAction,

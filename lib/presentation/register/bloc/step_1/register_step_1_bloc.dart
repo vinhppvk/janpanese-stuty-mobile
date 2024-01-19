@@ -3,13 +3,8 @@ import 'package:fpdart/fpdart.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../core/error/failure.dart';
-import '../../../../data/model/dto/base/empty_model.dart';
-import '../../../../data/model/dto/validation/register/register_user_validation_dto.dart';
 import '../../../../data/model/entity/request/register/register_user_params.dart';
 import '../../../../data/model/entity/validation/register/register_user_validation.dart';
-import '../../../../data/model/mapper/register/register_user_mapper.dart';
-import '../../../../data/repository/auth_repository.dart';
-import '../../../../data/validation/auth_validation.dart';
 import '../../../../domain/register/register_user_usecase.dart';
 
 part 'register_step_1_event.dart';

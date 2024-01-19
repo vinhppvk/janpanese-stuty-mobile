@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:logger/logger.dart';
 
-import '../../../data/model/dto/base/base_response.dart';
 import '../../error/exception.dart';
 
 class LoggerInterceptor extends Interceptor {
@@ -24,7 +23,7 @@ class LoggerInterceptor extends Interceptor {
     logger.d('Error: ${err.error}'); // Debug log
 
     if (error != null) {
-      _logInAppException(error);
+      _logHttpError(error);
     }
 
     return super.onError(err, handler);
@@ -51,15 +50,22 @@ class LoggerInterceptor extends Interceptor {
     try {
       return JsonEncoder.withIndent(' ' * 3).convert(json);
     } catch (e) {
-     logger.e(e.toString());
-     return null;
+      logger.e(e.toString());
+      return null;
     }
   }
 
-  void _logInAppException(InAppException exception) {
+  void _logHttpError(InAppException exception) {
     String? exceptionData;
     switch (exception) {
       case HttpBadRequestException(data: final Object? data):
+      case HttpUnauthorizedException(data: final Object? data):
+      case HttpForbiddenException(data: final Object? data):
+      case HttpNotFoundException(data: final Object? data):
+      case HttpMethodNotAllowedException(data: final Object? data):
+      case HttpConflictException(data: final Object? data):
+      case HttpUnprocessableEntityException(data: final Object? data):
+      case HttpInternalServerErrorException(data: final Object? data):
         exceptionData = _formatJson(data);
       default:
         break;

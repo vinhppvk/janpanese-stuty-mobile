@@ -11,7 +11,7 @@ RegisterUserParamsDto _$RegisterUserParamsDtoFromJson(
     RegisterUserParamsDto(
       email: json['email'] as String,
       nickName: json['nickname'] as String,
-      sex: json['sex'] as String?,
+      sex: $enumDecodeNullable(_$GenderDtoEnumMap, json['sex']),
       birthday: json['birthday'] as String?,
       phoneNumber: json['phone_number'] as String,
       nationality: json['nationality'] as String,
@@ -37,8 +37,14 @@ Map<String, dynamic> _$RegisterUserParamsDtoToJson(
     }
   }
 
-  writeNotNull('sex', instance.sex);
+  writeNotNull('sex', _$GenderDtoEnumMap[instance.sex]);
   writeNotNull('birthday', instance.birthday);
   writeNotNull('image_photo', instance.imagePhoto);
   return val;
 }
+
+const _$GenderDtoEnumMap = {
+  GenderDto.male: 1,
+  GenderDto.female: 2,
+  GenderDto.other: 3,
+};

@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../model/dto/base/base_response.dart';
-import '../../model/dto/base/empty_model.dart';
 import '../../model/dto/request/register/register_user_params_dto.dart';
 import '../../model/dto/request/register/resend_otp_params_dto.dart';
 import '../../model/dto/request/register/verify_otp_params_dto.dart';

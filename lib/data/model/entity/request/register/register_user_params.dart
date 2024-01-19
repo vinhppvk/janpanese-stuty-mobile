@@ -1,3 +1,5 @@
+import '../../enum/gender.dart';
+
 class RegisterUserParams {
   RegisterUserParams({
     required this.email,
@@ -23,7 +25,7 @@ class RegisterUserParams {
 
   final String confirmPassword;
 
-  final String? sex;
+  final Gender? sex;
 
   final DateTime? birthday;
 

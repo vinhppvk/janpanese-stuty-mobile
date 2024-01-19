@@ -4,7 +4,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../core/error/failure.dart';
 import '../../../core/usecase.dart';
-import '../../../data/model/dto/base/empty_model.dart';
 import '../../../data/model/entity/response/example/example_user.dart';
 import '../../../domain/example/example_usecase.dart';
 

@@ -1,4 +1,3 @@
-import '../../data/model/dto/base/base_response.dart';
 
 class InAppException implements Exception {
   InAppException({this.message});
@@ -30,50 +29,64 @@ class HttpBadRequestException implements InAppException {
 }
 
 class HttpUnauthorizedException implements InAppException {
-  HttpUnauthorizedException({this.message});
+  HttpUnauthorizedException({this.message, this.data});
 
   @override
   final String? message;
+
+  final Object? data;
 }
 
 class HttpForbiddenException implements InAppException {
-  HttpForbiddenException({this.message});
+  HttpForbiddenException({this.message, this.data});
 
   @override
   final String? message;
+
+  final Object? data;
 }
 
 class HttpNotFoundException implements InAppException {
-  HttpNotFoundException({this.message});
+  HttpNotFoundException({this.message, this.data});
 
   @override
   final String? message;
+
+  final Object? data;
 }
 
 class HttpUnprocessableEntityException implements InAppException {
-  HttpUnprocessableEntityException({this.message});
+  HttpUnprocessableEntityException({this.message, this.data});
 
   @override
   final String? message;
+
+  final Object? data;
 }
 
 class HttpInternalServerErrorException implements InAppException {
-  HttpInternalServerErrorException({this.message});
+  HttpInternalServerErrorException({this.message, this.data});
 
   @override
   final String? message;
+
+  final Object? data;
 }
 
 class HttpMethodNotAllowedException implements InAppException {
-  HttpMethodNotAllowedException({this.message});
+  HttpMethodNotAllowedException({this.message, this.data});
 
   @override
   final String? message;
+
+  final Object? data;
 }
 
 class HttpConflictException implements InAppException {
-  HttpConflictException({this.message});
+  HttpConflictException({this.message, this.data});
 
   @override
   final String? message;
+
+  final Object? data;
 }

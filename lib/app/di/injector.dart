@@ -7,8 +7,6 @@ import '../../data/remote/auth/auth_remote_data_source.dart';
 import '../../data/remote/example/example_remote_data_source.dart';
 import '../../data/repository/auth_repository.dart';
 import '../../data/repository/example_repository.dart';
-import '../../data/validation/auth_validation.dart';
-import '../../data/validation/auth_validation.dart';
 import '../../domain/example/example_usecase.dart';
 import '../../domain/register/register_user_usecase.dart';
 import '../../domain/register/resend_otp_usecase.dart';
@@ -53,10 +51,6 @@ Future<void> setupInjector() async {
   );
   injector.registerLazySingleton<AuthRepository>(
     () => AuthRepository(injector()),
-  );
-  // Data - Validation
-  injector.registerLazySingleton<AuthValidation>(
-    () => AuthValidation(injector()),
   );
   // Domain - Use Cases
   injector.registerLazySingleton<ExampleUseCase>(

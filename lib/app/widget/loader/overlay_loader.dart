@@ -29,7 +29,7 @@ class OverlayLoader {
 }
 
 class _OverlayCircularProgressIndicator extends StatelessWidget {
-  const _OverlayCircularProgressIndicator({super.key});
+  const _OverlayCircularProgressIndicator();
 
   @override
   Widget build(BuildContext context) {

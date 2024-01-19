@@ -1,8 +1,5 @@
-import 'dart:ffi';
-import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:fpdart/fpdart.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import '../error/exception.dart';
 import '../error/failure.dart';
@@ -57,7 +54,7 @@ mixin ErrorMapper {
   Failure<V> mapExceptionToFailure<V>(Exception exception) {
     switch (exception) {
       case BadKeyException _:
-        return Failure<V>.badKeyOfValue();
+        return Failure<V>.badKeyOfValue(message: exception.message);
       default:
         return Failure<V>.undefined();
     }

@@ -9,17 +9,20 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart' as _i1;
 
+import '../../dto/enum/gender_dto.dart' as _i7;
 import '../../dto/request/register/register_user_params_dto.dart' as _i3;
 import '../../dto/validation/register/register_user_validation_dto.dart' as _i4;
+import '../../entity/enum/gender.dart' as _i6;
 import '../../entity/request/register/register_user_params.dart' as _i2;
 import '../../entity/validation/register/register_user_validation.dart' as _i5;
-import '../utils/common_type_converter.dart' as _i7;
-import 'register_user_mapper.dart' as _i6;
+import '../utils/common_type_converter.dart' as _i9;
+import 'register_user_mapper.dart' as _i8;
 
 /// {@template package:japanese_study/data/model/mapper/register/register_user_mapper.dart}
 /// Available mappings:
 /// - `RegisterUserParams` → `RegisterUserParamsDto`.
 /// - `RegisterUserValidationDto` → `RegisterUserValidation`.
+/// - `Gender` → `GenderDto`.
 /// {@endtemplate}
 class $RegisterUserMappr implements _i1.AutoMapprInterface {
   const $RegisterUserMappr();
@@ -44,6 +47,12 @@ class $RegisterUserMappr implements _i1.AutoMapprInterface {
             sourceTypeOf == _typeOf<_i4.RegisterUserValidationDto?>()) &&
         (targetTypeOf == _typeOf<_i5.RegisterUserValidation>() ||
             targetTypeOf == _typeOf<_i5.RegisterUserValidation?>())) {
+      return true;
+    }
+    if ((sourceTypeOf == _typeOf<_i6.Gender>() ||
+            sourceTypeOf == _typeOf<_i6.Gender?>()) &&
+        (targetTypeOf == _typeOf<_i7.GenderDto>() ||
+            targetTypeOf == _typeOf<_i7.GenderDto?>())) {
       return true;
     }
     if (recursive) {
@@ -223,6 +232,16 @@ class $RegisterUserMappr implements _i1.AutoMapprInterface {
       return (_map__i4$RegisterUserValidationDto_To__i5$RegisterUserValidation(
           (model as _i4.RegisterUserValidationDto?)) as TARGET);
     }
+    if ((sourceTypeOf == _typeOf<_i6.Gender>() ||
+            sourceTypeOf == _typeOf<_i6.Gender?>()) &&
+        (targetTypeOf == _typeOf<_i7.GenderDto>() ||
+            targetTypeOf == _typeOf<_i7.GenderDto?>())) {
+      if (canReturnNull && model == null) {
+        return null;
+      }
+      return (_map__i6$Gender_To__i7$GenderDto((model as _i6.Gender?))
+          as TARGET);
+    }
     throw Exception('No ${model.runtimeType} -> $targetTypeOf mapping.');
   }
 
@@ -238,9 +257,9 @@ class $RegisterUserMappr implements _i1.AutoMapprInterface {
     return _i3.RegisterUserParamsDto(
       email: model.email,
       nickName: model.nickName,
-      sex: model.sex,
+      sex: _map__i6$Gender_To__i7$GenderDto_Nullable(model.sex),
       birthday:
-          (_i6.RegisterUserMappr.mapToServerDate(model.birthday) as String?),
+          (_i8.RegisterUserMappr.mapToServerDate(model.birthday) as String?),
       phoneNumber: model.phoneNumber,
       nationality: model.nationality,
       password: model.password,
@@ -259,23 +278,41 @@ class $RegisterUserMappr implements _i1.AutoMapprInterface {
           r'Consider setting the whenSourceIsNull parameter on the MapType<RegisterUserValidationDto, RegisterUserValidation> to handle null values during mapping.');
     }
     return _i5.RegisterUserValidation(
-      email: (_i7.CommonTypeConverter.firstErrorMsg(model.email) as String?),
+      email: (_i9.CommonTypeConverter.firstErrorMsg(model.email) as String?),
       nickName:
-          (_i7.CommonTypeConverter.firstErrorMsg(model.nickName) as String?),
-      sex: (_i7.CommonTypeConverter.firstErrorMsg(model.sex) as String?),
+          (_i9.CommonTypeConverter.firstErrorMsg(model.nickName) as String?),
+      sex: (_i9.CommonTypeConverter.firstErrorMsg(model.sex) as String?),
       birthday:
-          (_i7.CommonTypeConverter.firstErrorMsg(model.birthday) as String?),
+          (_i9.CommonTypeConverter.firstErrorMsg(model.birthday) as String?),
       phoneNumber:
-          (_i7.CommonTypeConverter.firstErrorMsg(model.phoneNumber) as String?),
+          (_i9.CommonTypeConverter.firstErrorMsg(model.phoneNumber) as String?),
       nationality:
-          (_i7.CommonTypeConverter.firstErrorMsg(model.nationality) as String?),
+          (_i9.CommonTypeConverter.firstErrorMsg(model.nationality) as String?),
       password:
-          (_i7.CommonTypeConverter.firstErrorMsg(model.password) as String?),
+          (_i9.CommonTypeConverter.firstErrorMsg(model.password) as String?),
       imagePhoto:
-          (_i7.CommonTypeConverter.firstErrorMsg(model.imagePhoto) as String?),
+          (_i9.CommonTypeConverter.firstErrorMsg(model.imagePhoto) as String?),
       confirmPassword:
-          (_i7.CommonTypeConverter.firstErrorMsg(model.confirmPassword)
+          (_i9.CommonTypeConverter.firstErrorMsg(model.confirmPassword)
               as String?),
     );
+  }
+
+  _i7.GenderDto _map__i6$Gender_To__i7$GenderDto(_i6.Gender? input) {
+    final model = input;
+    if (model == null) {
+      throw Exception(
+          r'Mapping Gender → GenderDto failed because Gender was null, and no default value was provided. '
+          r'Consider setting the whenSourceIsNull parameter on the MapType<Gender, GenderDto> to handle null values during mapping.');
+    }
+    return _i7.GenderDto.values.firstWhere((x) => x.name == model.name);
+  }
+
+  _i7.GenderDto? _map__i6$Gender_To__i7$GenderDto_Nullable(_i6.Gender? input) {
+    final model = input;
+    if (model == null) {
+      return null;
+    }
+    return _i7.GenderDto.values.firstWhere((x) => x.name == model.name);
   }
 }

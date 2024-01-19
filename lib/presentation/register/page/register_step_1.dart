@@ -8,7 +8,6 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../../app/asset/icon_asset.dart';
 import '../../../../../app/utils/constant/date_formats.dart';
-import '../../../../../app/utils/enum/gender.dart';
 import '../../../../../app/utils/enum/snackbar_mode.dart';
 import '../../../../../app/utils/validator/support_validator.dart';
 import '../../../../../app/utils/validator/validation_messages.dart';
@@ -31,6 +30,7 @@ import '../../../../app/widget/text_field/search_drop_down_text_field.dart';
 import '../../../../app/widget/text_field/text_field_container.dart';
 import '../../../../core/error/failure.dart';
 import '../../../core/error_handler/error_handler.dart';
+import '../../../data/model/entity/enum/gender.dart';
 import '../../../data/model/entity/request/register/register_user_params.dart';
 import '../../../data/model/entity/validation/register/register_user_validation.dart';
 import '../bloc/step_1/register_step_1_bloc.dart';
@@ -434,7 +434,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
       final RegisterUserParams params = RegisterUserParams(
         email: (_controllers[RegisterKey.email]?.text).toString(),
         nickName: (_controllers[RegisterKey.nickName]?.text).toString(),
-        sex: _selectedGender?.text,
+        sex: _selectedGender,
         birthday: _controllers[RegisterKey.birthday]
             ?.text
             .parseToDate(pattern: DateFormats.yyyyMMdd),

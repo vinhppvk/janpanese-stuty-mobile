@@ -1,14 +1,10 @@
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart';
 
-import '../../dto/response/register/resend_otp_result_dto.dart';
 import '../../dto/request/register/verify_otp_params_dto.dart';
 import '../../dto/response/register/verify_otp_result_dto.dart';
 import '../../dto/validation/register/verify_otp_validation_dto.dart';
-import '../../entity/request/register/resend_otp_params.dart';
 import '../../entity/request/register/verify_otp_params.dart';
-import '../../entity/response/register/resend_otp_result.dart';
 import '../../entity/response/register/verify_otp_result.dart';
-
 import '../../entity/validation/register/verify_otp_validation.dart';
 import '../utils/common_type_converter.dart';
 import 'verify_otp_mapper.auto_mappr.dart';

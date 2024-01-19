@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../enum/gender_dto.dart';
+
 part 'register_user_params_dto.g.dart';
 
 @JsonSerializable(includeIfNull: false)
@@ -37,7 +39,7 @@ class RegisterUserParamsDto {
   final String confirmPassword;
 
   @JsonKey(name: 'sex')
-  final String? sex;
+  final GenderDto? sex;
 
   @JsonKey(name: 'birthday')
   final String? birthday;

@@ -7,14 +7,12 @@ import '../../core/error/failure.dart';
 import '../../core/error_handler/error_helper.dart';
 import '../model/dto/base/base_response.dart';
 import '../model/dto/request/register/register_user_params_dto.dart';
+import '../model/dto/request/register/resend_otp_params_dto.dart';
 import '../model/dto/request/register/verify_otp_params_dto.dart';
 import '../model/dto/response/register/resend_otp_result_dto.dart';
 import '../model/dto/response/register/verify_otp_result_dto.dart';
 import '../model/dto/validation/register/register_user_validation_dto.dart';
 import '../model/dto/validation/register/verify_otp_validation_dto.dart';
-import '../model/entity/request/register/resend_otp_params.dart';
-import '../model/entity/response/register/resend_otp_result.dart';
-import '../model/mapper/register/resend_otp_mapper.dart';
 import '../remote/auth/auth_remote_data_source.dart';
 
 class AuthRepository with ErrorMapper {
@@ -40,22 +38,20 @@ class AuthRepository with ErrorMapper {
     }
   }
 
-  Future<Either<Failure<void>, ResendOtpResult>> resendOtpCode(
-      ResendOtpParams params) async {
+  Future<Either<Failure<void>, ResendOtpResultDto>> resendOtpCode(
+      ResendOtpParamsDto params) async {
     try {
-      final ResendOtpMappr mapper = ResendOtpMappr();
       final BaseResponse<ResendOtpResultDto> response =
-          await _authRemoteDataSource.resendOtpCode(mapper.convert(params));
-      return Either<Failure<void>, ResendOtpResult>.right(
-          mapper.convert(response.data));
+          await _authRemoteDataSource.resendOtpCode(params);
+      return Either<Failure<void>, ResendOtpResultDto>.right(response.data);
     } on DioException catch (e) {
-      return Either<Failure<void>, ResendOtpResult>.left(
+      return Either<Failure<void>, ResendOtpResultDto>.left(
           mapDioExceptionToFailure(e));
     } on InAppException catch (e) {
-      return Either<Failure<void>, ResendOtpResult>.left(
+      return Either<Failure<void>, ResendOtpResultDto>.left(
           mapInAppExceptionFailure(e));
     } on BadKeyException catch (e) {
-      return Either<Failure<void>, ResendOtpResult>.left(
+      return Either<Failure<void>, ResendOtpResultDto>.left(
           mapExceptionToFailure(e));
     }
   }

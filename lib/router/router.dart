@@ -8,7 +8,6 @@ import '../presentation/example/page/example_page.dart';
 import '../presentation/login/page/login_page.dart';
 import '../presentation/register/bloc/step_1/register_step_1_bloc.dart';
 import '../presentation/register/bloc/step_2/register_step_2_bloc.dart';
-import '../presentation/register/page/register_options_page.dart';
 import '../presentation/register/page/register_page.dart';
 
 import 'nav_page.dart';
