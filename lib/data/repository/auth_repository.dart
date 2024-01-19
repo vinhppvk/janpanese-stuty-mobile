@@ -5,73 +5,102 @@ import 'package:json_annotation/json_annotation.dart';
 import '../../core/error/exception.dart';
 import '../../core/error/failure.dart';
 import '../../core/error_handler/error_helper.dart';
-import '../model/dto/base/base_response.dart';
-import '../model/dto/request/register/register_user_params_dto.dart';
 import '../model/dto/request/register/resend_otp_params_dto.dart';
-import '../model/dto/request/register/verify_otp_params_dto.dart';
 import '../model/dto/response/register/resend_otp_result_dto.dart';
 import '../model/dto/response/register/verify_otp_result_dto.dart';
 import '../model/dto/validation/register/register_user_validation_dto.dart';
 import '../model/dto/validation/register/verify_otp_validation_dto.dart';
-import '../remote/auth/auth_remote_data_source.dart';
+import '../model/entity/request/register/register_user_params.dart';
+import '../model/entity/request/register/resend_otp_params.dart';
+import '../model/entity/request/register/verify_otp_params.dart';
+import '../model/entity/response/register/resend_otp_result.dart';
+import '../model/entity/response/register/verify_otp_result.dart';
+import '../model/entity/validation/register/register_user_validation.dart';
+import '../model/entity/validation/register/verify_otp_validation.dart';
+import '../model/mapper/register/register_user_mapper.dart';
+import '../model/mapper/register/resend_otp_mapper.dart';
+import '../model/mapper/register/verify_otp_mapper.dart';
+import '../remote/auth_remote_data_source.dart';
 
 class AuthRepository with ErrorMapper {
-  const AuthRepository(this._authRemoteDataSource);
+  const AuthRepository(this._remoteDataSource);
 
-  final AuthRemoteDataSource _authRemoteDataSource;
+  final AuthRemoteDataSource _remoteDataSource;
 
-  Future<Either<Failure<RegisterUserValidationDto>, void>> registerUser(
-      RegisterUserParamsDto params) async {
+  Future<Either<Failure<RegisterUserValidation>, void>> registerUser(
+      RegisterUserParams params) async {
     try {
-      await _authRemoteDataSource.registerUser(params);
-      return Either<Failure<RegisterUserValidationDto>, void>.right(null);
+      final RegisterUserMappr mappr = RegisterUserMappr();
+      final Either<Failure<RegisterUserValidationDto>, void> responseState =
+          await _remoteDataSource.registerUser(mappr.convert(params));
+      return responseState.mapLeft(
+        (Failure<RegisterUserValidationDto> failure) =>
+            mapFailure(failure, convertHttpBadRequest: mappr.tryConvert),
+      );
     } on DioException catch (e) {
-      return Either<Failure<RegisterUserValidationDto>, void>.left(
-          mapDioExceptionToFailure(e,
-              fromJson: RegisterUserValidationDto.fromJson));
+      return Either<Failure<RegisterUserValidation>, void>.left(
+        mapDioExceptionToFailure(e),
+      );
     } on InAppException catch (e) {
-      return Either<Failure<RegisterUserValidationDto>, void>.left(
-          mapInAppExceptionFailure(e));
+      return Either<Failure<RegisterUserValidation>, void>.left(
+        mapInAppExceptionFailure(e),
+      );
     } on BadKeyException catch (e) {
-      return Either<Failure<RegisterUserValidationDto>, void>.left(
-          mapExceptionToFailure(e));
+      return Either<Failure<RegisterUserValidation>, void>.left(
+        mapExceptionToFailure(e),
+      );
     }
   }
 
-  Future<Either<Failure<void>, ResendOtpResultDto>> resendOtpCode(
-      ResendOtpParamsDto params) async {
+  Future<Either<Failure<void>, ResendOtpResult>> resendOtpCode(
+      ResendOtpParams params) async {
     try {
-      final BaseResponse<ResendOtpResultDto> response =
-          await _authRemoteDataSource.resendOtpCode(params);
-      return Either<Failure<void>, ResendOtpResultDto>.right(response.data);
+      final ResendOtpMappr mappr = ResendOtpMappr();
+      final ResendOtpResultDto dtoData = await _remoteDataSource.resendOtpCode(
+        mappr.convert<ResendOtpParams, ResendOtpParamsDto>(params),
+      );
+      return Either<Failure<void>, ResendOtpResult>.right(
+        mappr.convert<ResendOtpResultDto, ResendOtpResult>(dtoData),
+      );
     } on DioException catch (e) {
-      return Either<Failure<void>, ResendOtpResultDto>.left(
+      return Either<Failure<void>, ResendOtpResult>.left(
+        mapDioExceptionToFailure(e),
+      );
+    } on InAppException catch (e) {
+      return Either<Failure<void>, ResendOtpResult>.left(
+        mapInAppExceptionFailure(e),
+      );
+    } on BadKeyException catch (e) {
+      return Either<Failure<void>, ResendOtpResult>.left(
+        mapExceptionToFailure(e),
+      );
+    }
+  }
+
+  Future<Either<Failure<VerifyOtpValidation>, VerifyOtpResult>> verifyOtpCode(
+      VerifyOtpParams params) async {
+    try {
+      final VerifyOtpMappr mappr = VerifyOtpMappr();
+      final Either<Failure<VerifyOtpValidationDto>, VerifyOtpResultDto>
+          responseState =
+          await _remoteDataSource.verifyOtpCode(mappr.convert(params));
+      return responseState
+          .map(mappr.convert<VerifyOtpResultDto, VerifyOtpResult>)
+          .mapLeft(
+            (Failure<VerifyOtpValidationDto> failure) => mapFailure(
+              failure,
+              convertHttpBadRequest:
+                  mappr.tryConvert<VerifyOtpValidationDto, VerifyOtpValidation>,
+            ),
+          );
+    } on DioException catch (e) {
+      return Either<Failure<VerifyOtpValidation>, VerifyOtpResult>.left(
           mapDioExceptionToFailure(e));
     } on InAppException catch (e) {
-      return Either<Failure<void>, ResendOtpResultDto>.left(
+      return Either<Failure<VerifyOtpValidation>, VerifyOtpResult>.left(
           mapInAppExceptionFailure(e));
     } on BadKeyException catch (e) {
-      return Either<Failure<void>, ResendOtpResultDto>.left(
-          mapExceptionToFailure(e));
-    }
-  }
-
-  Future<Either<Failure<VerifyOtpValidationDto>, VerifyOtpResultDto>>
-      verifyOtpCode(VerifyOtpParamsDto params) async {
-    try {
-      final BaseResponse<VerifyOtpResultDto> response =
-          await _authRemoteDataSource.verifyOtpCode(params);
-      return Either<Failure<VerifyOtpValidationDto>, VerifyOtpResultDto>.right(
-          response.data);
-    } on DioException catch (e) {
-      return Either<Failure<VerifyOtpValidationDto>, VerifyOtpResultDto>.left(
-          mapDioExceptionToFailure(e,
-              fromJson: VerifyOtpValidationDto.fromJson));
-    } on InAppException catch (e) {
-      return Either<Failure<VerifyOtpValidationDto>, VerifyOtpResultDto>.left(
-          mapInAppExceptionFailure(e));
-    } on BadKeyException catch (e) {
-      return Either<Failure<VerifyOtpValidationDto>, VerifyOtpResultDto>.left(
+      return Either<Failure<VerifyOtpValidation>, VerifyOtpResult>.left(
           mapExceptionToFailure(e));
     }
   }

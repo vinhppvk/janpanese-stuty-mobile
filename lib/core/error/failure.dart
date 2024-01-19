@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'failure.freezed.dart';
 
 @freezed
-class Failure<ValidationModel> with _$Failure<ValidationModel> {
+sealed class Failure<ValidationModel> with _$Failure<ValidationModel> {
   // Undefined Exception
   const factory Failure.undefined({String? message}) =
       UndefinedFailure<ValidationModel>;

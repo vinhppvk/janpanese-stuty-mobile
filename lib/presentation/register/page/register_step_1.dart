@@ -105,6 +105,8 @@ class _RegisterStep1State extends State<RegisterStep1> {
                   data: final RegisterUserValidation? validationModel
                 ):
                 _validationModel = validationModel;
+              default:
+                break;
             }
             ErrorHandler.handleNetworkFailure(context, failure);
           case RegisterStep1StateLoaded():

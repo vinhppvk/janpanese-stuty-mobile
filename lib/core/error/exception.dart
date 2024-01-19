@@ -1,5 +1,5 @@
 
-class InAppException implements Exception {
+sealed class InAppException implements Exception {
   InAppException({this.message});
 
   final String? message;

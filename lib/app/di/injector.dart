@@ -3,8 +3,10 @@ import 'package:get_it/get_it.dart';
 
 import '../../core/dio/interceptor/error_interceptor.dart';
 import '../../core/dio/interceptor/logger_interceptor.dart';
-import '../../data/remote/auth/auth_remote_data_source.dart';
-import '../../data/remote/example/example_remote_data_source.dart';
+import '../../data/api/auth/auth_api.dart';
+import '../../data/api/example/example_api.dart';
+import '../../data/remote/auth_remote_data_source.dart';
+import '../../data/remote/example_remote_data_source.dart';
 import '../../data/repository/auth_repository.dart';
 import '../../data/repository/example_repository.dart';
 import '../../domain/example/example_usecase.dart';
@@ -36,6 +38,13 @@ Future<void> setupInjector() async {
     );
 
   injector.registerLazySingleton<Dio>(() => apiClient);
+  // Data - Api
+  injector.registerLazySingleton<ExampleApi>(
+        () => ExampleApi(injector()),
+  );
+  injector.registerLazySingleton<AuthApi>(
+        () => AuthApi(injector()),
+  );
   // Data - Local Data Sources
   // Data - Remote Data Sources
   injector.registerLazySingleton<ExampleRemoteDataSource>(

@@ -76,6 +76,8 @@ class _RegisterStep2State extends State<RegisterStep2> {
                   data: final VerifyOtpValidation? data
                 ):
                 _validationModel = data;
+              default:
+                break;
             }
             ErrorHandler.handleNetworkFailure(context, failure);
             _pinController.clear();
