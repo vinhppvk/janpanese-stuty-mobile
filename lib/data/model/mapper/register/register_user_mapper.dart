@@ -30,5 +30,5 @@ import 'register_user_mapper.auto_mappr.dart';
 )
 class RegisterUserMappr extends $RegisterUserMappr {
   static String? mapToServerDate(DateTime? dateTime) =>
-      dateTime?.format(pattern: DateFormats.server);
+      dateTime?.format(pattern: DateFormats.serverDefaultFormat);
 }

@@ -167,24 +167,20 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _thirdParyButtons() {
-    return Column(
+    return Wrap(
+      spacing: 24.0,
       children: <Widget>[
-        Wrap(
-          spacing: 24.0,
-          children: <Widget>[
-            ThirdPartyIconButton(
-              assetName: IconAsset.facebookBig,
-              onPressed: () {},
-            ),
-            ThirdPartyIconButton(
-              assetName: IconAsset.googleBig,
-              onPressed: () {},
-            ),
-            ThirdPartyIconButton(
-              assetName: IconAsset.zaloBig,
-              onPressed: () {},
-            ),
-          ],
+        ThirdPartyIconButton(
+          assetName: IconAsset.facebookBig,
+          onPressed: () {},
+        ),
+        ThirdPartyIconButton(
+          assetName: IconAsset.googleBig,
+          onPressed: () {},
+        ),
+        ThirdPartyIconButton(
+          assetName: IconAsset.zaloBig,
+          onPressed: () {},
         ),
       ],
     );

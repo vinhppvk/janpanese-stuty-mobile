@@ -45,7 +45,6 @@ class NormalTextField extends StatelessWidget {
         labelText: labelText,
         hintText: hintText,
         errorText: errorText,
-        // contentPadding: EdgeInsets.all(16.0),
         prefixIconConstraints: const BoxConstraints(
           maxWidth: 72.0,
           maxHeight: 56.0,

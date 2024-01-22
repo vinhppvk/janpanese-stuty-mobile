@@ -105,8 +105,8 @@ class _RegisterStep2State extends State<RegisterStep2> {
                 _otpField(),
                 const SizedBox(height: 24.0),
                 PrimaryButton(
-                  child: const Text('Verify'),
                   onPressed: onContinuePressed,
+                  child: const Text('Verify'),
                 ),
                 const SizedBox(height: 16.0),
                 _footer(),
@@ -157,27 +157,23 @@ class _RegisterStep2State extends State<RegisterStep2> {
   }
 
   Widget _footer() {
-    return Column(
-      children: <Widget>[
-        Text.rich(
+    return Text.rich(
+      TextSpan(
+        text: 'Didn’t receive the code? ',
+        style: TTextStyle.getBodyMedium(),
+        children: <InlineSpan>[
           TextSpan(
-            text: 'Didn’t receive the code? ',
-            style: TTextStyle.getBodyMedium(),
-            children: <InlineSpan>[
-              TextSpan(
-                text: 'Resend',
-                style: TTextStyle.getBodyMedium(
-                  fontWeight: TFontWeight.bold,
-                  color: context.colorScheme.primary,
-                  decoration: TextDecoration.underline,
-                ),
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () => resendOtpCode(context),
-              )
-            ],
-          ),
-        ),
-      ],
+            text: 'Resend',
+            style: TTextStyle.getBodyMedium(
+              fontWeight: TFontWeight.bold,
+              color: context.colorScheme.primary,
+              decoration: TextDecoration.underline,
+            ),
+            recognizer: TapGestureRecognizer()
+              ..onTap = () => resendOtpCode(context),
+          )
+        ],
+      ),
     );
   }
 
