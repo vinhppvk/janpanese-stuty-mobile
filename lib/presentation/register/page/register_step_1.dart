@@ -136,8 +136,8 @@ class _RegisterStep1State extends State<RegisterStep1> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: PrimaryButton(
-                    child: const Text('Continue'),
                     onPressed: _onContinuePressed,
+                    child: const Text('Continue'),
                   ),
                 ),
                 const SizedBox(height: 16.0),

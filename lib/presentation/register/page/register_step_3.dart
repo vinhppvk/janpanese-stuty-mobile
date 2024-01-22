@@ -46,8 +46,8 @@ class _RegisterStep3State extends State<RegisterStep3> {
                 ),
                 const SizedBox(height: 32.0),
                 PrimaryButton(
-                  child: const Text('Sign In'),
                   onPressed: widget.onContinue,
+                  child: const Text('Sign In'),
                 ),
                 const SizedBox(height: 32.0),
               ],

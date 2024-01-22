@@ -53,30 +53,28 @@ class _ExamplePageState extends State<ExamplePage> {
           context.pop();
         },
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Wrap(
-            runSpacing: 24.0,
-            children: <Widget>[
-              PrimaryButton(
-                child: const Text('Show Loader'),
-                onPressed: _showOverlayLoader,
-              ),
-              PrimaryButton(
-                child: const Text('Show Error Dialog'),
-                onPressed: _showErrorDialog,
-              ),
-              PrimaryButton(
-                child: const Text('Show Error Snack-bar'),
-                onPressed: _showErrorSnackBar,
-              ),
-              PrimaryButton(
-                child: const Text('Call Json Placeholder Api'),
-                onPressed: () => _callExampleApi(),
-              ),
-            ],
-          ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(24.0),
+        child: Wrap(
+          runSpacing: 24.0,
+          children: <Widget>[
+            PrimaryButton(
+              onPressed: _showOverlayLoader,
+              child: const Text('Show Loader'),
+            ),
+            PrimaryButton(
+              onPressed: _showErrorDialog,
+              child: const Text('Show Error Dialog'),
+            ),
+            PrimaryButton(
+              onPressed: _showErrorSnackBar,
+              child: const Text('Show Error Snack-bar'),
+            ),
+            PrimaryButton(
+              child: const Text('Call Json Placeholder Api'),
+              onPressed: () => _callExampleApi(),
+            ),
+          ],
         ),
       ),
     );
