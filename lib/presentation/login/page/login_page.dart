@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: PrimaryButton(
-                  text: const Text('Sign In'),
+                  child: const Text('Sign In'),
                   onPressed: () => onSignInPressed(context),
                 ),
               ),

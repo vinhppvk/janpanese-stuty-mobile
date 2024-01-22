@@ -105,7 +105,7 @@ class _RegisterStep2State extends State<RegisterStep2> {
                 _otpField(),
                 const SizedBox(height: 24.0),
                 PrimaryButton(
-                  text: const Text('Verify'),
+                  child: const Text('Verify'),
                   onPressed: onContinuePressed,
                 ),
                 const SizedBox(height: 16.0),

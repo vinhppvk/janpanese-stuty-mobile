@@ -9,6 +9,7 @@ class TColor {
 
   // Secondary
   static const Color secondary1000 = Color(0xFF154281);
+  static const Color secondary750 = Color(0xFF5071A1);
 
   // Success
   static const Color success1000 = Color(0xFF28A745);

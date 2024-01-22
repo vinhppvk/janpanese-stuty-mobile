@@ -106,25 +106,25 @@ class CustomAlertDialog extends StatelessWidget {
 
   Widget _buildButtons(BuildContext context) {
     final Widget primaryButton = PrimaryButton(
-      text: Text(
+      onPressed: onPrimaryAction,
+      child: Text(
         primaryActionText,
         style: TTextStyle.getBodySmall(
           fontWeight: TFontWeight.bold,
           color: context.colorScheme.onPrimary,
         ),
       ),
-      onPressed: onPrimaryAction,
     );
 
     final Widget secondaryButton = SecondaryButton(
-      text: Text(
+      onPressed: onSecondaryAction,
+      child: Text(
         style: TTextStyle.getBodySmall(
           fontWeight: TFontWeight.bold,
           color: context.colorScheme.secondary,
         ),
         secondaryActionText,
       ),
-      onPressed: onSecondaryAction,
     );
 
     if (onSecondaryAction == null) {

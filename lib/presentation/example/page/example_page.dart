@@ -60,19 +60,19 @@ class _ExamplePageState extends State<ExamplePage> {
             runSpacing: 24.0,
             children: <Widget>[
               PrimaryButton(
-                text: const Text('Show Loader'),
+                child: const Text('Show Loader'),
                 onPressed: _showOverlayLoader,
               ),
               PrimaryButton(
-                text: const Text('Show Error Dialog'),
+                child: const Text('Show Error Dialog'),
                 onPressed: _showErrorDialog,
               ),
               PrimaryButton(
-                text: const Text('Show Error Snack-bar'),
+                child: const Text('Show Error Snack-bar'),
                 onPressed: _showErrorSnackBar,
               ),
               PrimaryButton(
-                text: const Text('Call Json Placeholder Api'),
+                child: const Text('Call Json Placeholder Api'),
                 onPressed: () => _callExampleApi(),
               ),
             ],

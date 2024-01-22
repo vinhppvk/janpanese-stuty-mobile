@@ -1,17 +1,36 @@
 import 'package:flutter/material.dart';
 
+import '../../theme/style/color.dart';
 import '../../theme/style/font_style.dart';
-import '../../utils/extension/build_context.dart';
 
 class SecondaryButton extends StatelessWidget {
   const SecondaryButton({
     super.key,
-    required this.text,
-    required this.onPressed,
     this.size,
+    required this.onPressed,
+    required this.child,
   });
 
-  final Widget text;
+  factory SecondaryButton.icon({
+    required Widget icon,
+    required Widget label,
+    required VoidCallback? onPressed,
+  }) =>
+      SecondaryButton(
+        onPressed: onPressed,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(right: 12.0),
+              child: icon,
+            ),
+            label
+          ],
+        ),
+      );
+
+  final Widget child;
   final VoidCallback? onPressed;
   final Size? size;
 
@@ -26,17 +45,17 @@ class SecondaryButton extends StatelessWidget {
           elevation: 0,
           shape: const StadiumBorder(),
           backgroundColor: Colors.transparent,
-          side: BorderSide(
-            color: context.colorScheme.secondary,
+          side: const BorderSide(
+            color: TColor.grey300,
             width: 1.5,
           ),
         ),
         child: DefaultTextStyle.merge(
           style: TTextStyle.getBodyLarge(
             fontWeight: TFontWeight.bold,
-            color: context.colorScheme.secondary,
+            color: TColor.secondary750,
           ),
-          child: text,
+          child: child,
         ),
       ),
     );

@@ -74,7 +74,7 @@ class _RegisterOptionsPageState extends State<RegisterOptionsPage> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),
           child: PrimaryButton(
-            text: const Text('Continue'),
+            child: const Text('Continue'),
             onPressed: () {
               context.pushNamed(RouterInfo.registerPage.name);
             },

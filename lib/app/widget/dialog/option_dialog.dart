@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../theme/style/font_style.dart';
 import '../../utils/extension/build_context.dart';
+import '../buttons/secondary_button.dart';
 
 class OptionDialog extends StatelessWidget {
   const OptionDialog({
@@ -25,31 +26,41 @@ class OptionDialog extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Text(
-              'Select Image From',
-              style: TTextStyle.getBodyXLarge(
-                fontWeight: TFontWeight.bold,
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Select Image From',
+                style: TTextStyle.getBodyXLarge(
+                  fontWeight: TFontWeight.bold,
+                ),
               ),
             ),
             const SizedBox(height: 24.0),
             Wrap(
               runSpacing: 16.0,
               children: actions
-                  .map((OptionAction action) => _OptionButton(
-                        text: action.text,
-                        icon: action.icon,
-                        onPressed: action.onPressed,
-                      ))
+                  .map(
+                    (OptionAction action) => SecondaryButton.icon(
+                      icon: action.icon,
+                      label: Expanded(
+                        child: Text(action.text),
+                      ),
+                      onPressed: action.onPressed,
+                    ),
+                  )
                   .toList(),
             ),
             const SizedBox(height: 24.0),
-            TextButton(
-              onPressed: () => context.pop(),
-              child: Text(
-                'Cancel',
-                style: TTextStyle.getBodyLarge(
-                  fontWeight: TFontWeight.bold,
-                  color: context.colorScheme.primary,
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: () => context.pop(),
+                child: Text(
+                  'Cancel',
+                  style: TTextStyle.getBodyLarge(
+                    fontWeight: TFontWeight.bold,
+                    color: context.colorScheme.primary,
+                  ),
                 ),
               ),
             )
@@ -69,51 +80,3 @@ class OptionAction {
   final VoidCallback? onPressed;
 }
 
-class _OptionButton extends StatelessWidget {
-  const _OptionButton({
-    required this.text,
-    required this.icon,
-    this.onPressed,
-  });
-
-  final String text;
-  final Widget icon;
-  final VoidCallback? onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: onPressed,
-      style: OutlinedButton.styleFrom(
-        minimumSize: const Size.fromHeight(56),
-        elevation: 0,
-        padding: const EdgeInsets.all(16.0),
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(12.0),
-          ),
-        ),
-        side: BorderSide(
-          color: context.colorScheme.outline,
-          width: 1.5,
-        ),
-        backgroundColor: context.colorScheme.background,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          icon,
-          const SizedBox(width: 8.0),
-          Expanded(
-            child: Text(
-              text,
-              style: TTextStyle.getBodyLarge(
-                fontWeight: TFontWeight.bold,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}

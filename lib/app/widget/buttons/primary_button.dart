@@ -6,26 +6,32 @@ import '../../utils/extension/build_context.dart';
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     super.key,
-    required this.text,
+    required this.child,
     required this.onPressed,
     this.size,
     this.backgroundColor,
   });
 
-  factory PrimaryButton.outline({
-    required Widget text,
+  factory PrimaryButton.icon({
+    required Widget icon,
+    required Widget label,
     required VoidCallback? onPressed,
-    Size? size,
-    Color? backgroundColor,
   }) =>
       PrimaryButton(
-        text: text,
         onPressed: onPressed,
-        size: size,
-        backgroundColor: backgroundColor,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(right: 12.0),
+              child: icon,
+            ),
+            label
+          ],
+        ),
       );
 
-  final Widget text;
+  final Widget child;
   final VoidCallback? onPressed;
   final Size? size;
   final Color? backgroundColor;
@@ -46,7 +52,7 @@ class PrimaryButton extends StatelessWidget {
             fontWeight: TFontWeight.bold,
             color: context.colorScheme.onPrimary
           ),
-          child: text,
+          child: child,
         ),
       ),
     );
