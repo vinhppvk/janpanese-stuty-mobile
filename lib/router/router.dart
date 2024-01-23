@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../features/example/presentation/page/example_page.dart';
-import '../features/login/presentation/pages/login_page.dart';
-import '../features/register/presentation/pages/register_options_page.dart';
-import '../features/register/presentation/pages/register_steps/register_page.dart';
-import '../navigation_page/nav_page.dart';
+import '../app/di/injector.dart';
+import '../presentation/example/bloc/example_bloc.dart';
+import '../presentation/example/page/example_page.dart';
+import '../presentation/login/page/login_page.dart';
+import '../presentation/register/bloc/step_1/register_step_1_bloc.dart';
+import '../presentation/register/bloc/step_2/register_step_2_bloc.dart';
+import '../presentation/register/page/register_page.dart';
+
+import 'nav_page.dart';
 import 'router_info.dart';
 
 class AppRouter {
@@ -23,7 +28,10 @@ class AppRouter {
             path: RouterInfo.examplePage.path,
             name: RouterInfo.examplePage.name,
             builder: (BuildContext context, GoRouterState state) {
-              return const ExamplePage();
+              return BlocProvider<ExampleBloc>(
+                create: (_) => injector<ExampleBloc>(),
+                child: const ExamplePage(),
+              );
             },
           ),
           GoRoute(
@@ -34,20 +42,21 @@ class AppRouter {
             },
             routes: <GoRoute>[
               GoRoute(
-                path: RouterInfo.registerOptionsPage.path,
-                name: RouterInfo.registerOptionsPage.name,
+                path: RouterInfo.registerPage.path,
+                name: RouterInfo.registerPage.name,
                 builder: (BuildContext context, GoRouterState state) {
-                  return const RegisterOptionsPage();
+                  return MultiBlocProvider(
+                    providers: <BlocProvider<Bloc<dynamic, dynamic>>>[
+                      BlocProvider<RegisterStep1Bloc>(
+                          create: (BuildContext context) =>
+                              injector<RegisterStep1Bloc>()),
+                      BlocProvider<RegisterStep2Bloc>(
+                          create: (BuildContext context) =>
+                              injector<RegisterStep2Bloc>()),
+                    ],
+                    child: const RegisterPage(),
+                  );
                 },
-                routes: <GoRoute>[
-                  GoRoute(
-                    path: RouterInfo.registerPage.path,
-                    name: RouterInfo.registerPage.name,
-                    builder: (BuildContext context, GoRouterState state) {
-                      return const RegisterPage();
-                    },
-                  ),
-                ],
               ),
             ],
           ),
