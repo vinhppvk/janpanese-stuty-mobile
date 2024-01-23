@@ -6,8 +6,6 @@ class TCheckbox {
   const TCheckbox._();
 
   static CheckboxThemeData lightTheme = CheckboxThemeData(
-    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-    visualDensity: VisualDensity.compact,
     shape: BeveledRectangleBorder(
       borderRadius: BorderRadius.circular(2.0),
     ),
