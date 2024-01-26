@@ -39,7 +39,6 @@ class CheckboxFormField extends FormField<bool> {
 
 class _Body extends StatelessWidget {
   const _Body({
-    super.key,
     required this.state,
     required this.title,
   });

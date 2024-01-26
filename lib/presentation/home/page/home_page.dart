@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.all(24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: <Widget>[
             Text(
               'Home',
               style: TTextStyle.getHeadingH3(),

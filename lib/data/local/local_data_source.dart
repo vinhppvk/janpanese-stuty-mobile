@@ -1,6 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../app/di/injector.dart';
 import '../../app/utils/enum/app_language.dart';
 import 'local_data_source_keys.dart';
 
