@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../core/dio/interceptor/authentication_interceptor.dart';
 import '../../core/dio/interceptor/error_interceptor.dart';
 import '../../core/dio/interceptor/logger_interceptor.dart';
 import '../../data/api/auth/auth_api.dart';
@@ -28,6 +29,11 @@ import '../utils/constant/app_url.dart';
 final GetIt injector = GetIt.instance;
 
 Future<void> setupInjector() async {
+  // Shared Preferences
+  final SharedPreferences sharedPreferences =
+      await SharedPreferences.getInstance();
+  injector.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
+
   // Api Client - Dio
   final Dio apiClient = Dio(
     BaseOptions(
@@ -39,15 +45,14 @@ Future<void> setupInjector() async {
     ),
   )..interceptors.addAll(
       <Interceptor>[
+        AuthenticationInterceptor(injector()),
         ErrorInterceptor(),
         LoggerInterceptor(),
       ],
     );
 
   injector.registerLazySingleton<Dio>(() => apiClient);
-  // Shared Preferences
-  final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-  injector.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
+
   // Data - Api
   injector.registerLazySingleton<ExampleApi>(
     () => ExampleApi(injector()),
@@ -55,10 +60,12 @@ Future<void> setupInjector() async {
   injector.registerLazySingleton<AuthApi>(
     () => AuthApi(injector()),
   );
+
   // Data - Local Data Sources
   injector.registerLazySingleton<LocalDataSource>(
     () => LocalDataSource(injector()),
   );
+
   // Data - Remote Data Sources
   injector.registerLazySingleton<ExampleRemoteDataSource>(
     () => ExampleRemoteDataSource(injector()),
@@ -66,6 +73,7 @@ Future<void> setupInjector() async {
   injector.registerLazySingleton<AuthRemoteDataSource>(
     () => AuthRemoteDataSource(injector()),
   );
+
   // Data - Repository
   injector.registerLazySingleton<ExampleRepository>(
     () => ExampleRepository(injector()),
@@ -73,6 +81,7 @@ Future<void> setupInjector() async {
   injector.registerLazySingleton<AuthRepository>(
     () => AuthRepository(injector(), injector()),
   );
+
   // Domain - Use Cases
   injector.registerLazySingleton<ExampleUseCase>(
     () => ExampleUseCase(injector()),
@@ -95,6 +104,7 @@ Future<void> setupInjector() async {
   injector.registerLazySingleton<SetAppLanguageUseCase>(
     () => SetAppLanguageUseCase(injector()),
   );
+
   // Presentation - Blocs
   injector.registerFactory<ExampleBloc>(
     () => ExampleBloc(injector()),
