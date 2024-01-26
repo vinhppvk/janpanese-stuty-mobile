@@ -6,10 +6,10 @@ import '../../utils/extension/build_context.dart';
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     super.key,
-    required this.child,
-    required this.onPressed,
     this.size,
     this.backgroundColor,
+    required this.onPressed,
+    required this.child,
   });
 
   factory PrimaryButton.icon({

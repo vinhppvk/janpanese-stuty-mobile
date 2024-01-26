@@ -8,7 +8,7 @@ import '../../data/model/entity/validation/register/verify_otp_validation.dart';
 import '../../data/repository/auth_repository.dart';
 
 class VerifyOtpUseCase
-    implements UseCase<VerifyOtpResult, VerifyOtpParams, VerifyOtpValidation> {
+    implements RemoteUseCase<VerifyOtpResult, VerifyOtpParams, VerifyOtpValidation> {
   VerifyOtpUseCase(this._repository);
 
   final AuthRepository _repository;

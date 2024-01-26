@@ -2,9 +2,11 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../model/dto/base/base_response.dart';
+import '../../model/dto/request/login/login_params_dto.dart';
 import '../../model/dto/request/register/register_user_params_dto.dart';
 import '../../model/dto/request/register/resend_otp_params_dto.dart';
 import '../../model/dto/request/register/verify_otp_params_dto.dart';
+import '../../model/dto/response/login/login_result_dto.dart';
 import '../../model/dto/response/register/resend_otp_result_dto.dart';
 import '../../model/dto/response/register/verify_otp_result_dto.dart';
 
@@ -24,4 +26,7 @@ abstract class AuthApi {
   @POST('/student/auth_confirm')
   Future<BaseResponse<VerifyOtpResultDto>> verifyOtpCode(
       @Body() VerifyOtpParamsDto params);
+
+  @POST('/student/login')
+  Future<BaseResponse<LoginResultDto>> login(@Body() LoginParamsDto params);
 }

@@ -25,7 +25,6 @@ import '../../../../app/widget/loader/overlay_loader.dart';
 import '../../../../app/widget/picker/avatar_picker.dart';
 import '../../../../app/widget/text_field/drop_down_text_field.dart';
 import '../../../../app/widget/text_field/normal_text_field.dart';
-import '../../../../app/widget/text_field/password_text_field.dart';
 import '../../../../app/widget/text_field/search_drop_down_text_field.dart';
 import '../../../../app/widget/text_field/text_field_container.dart';
 import '../../../../core/error/failure.dart';
@@ -193,12 +192,14 @@ class _RegisterStep1State extends State<RegisterStep1> {
   Widget _inputFields() {
     return Form(
       key: _formKey,
-      child: Wrap(
-        runSpacing: 24.0,
+      child: Column(
         children: <Widget>[
           _personalInfoFields(),
+          const SizedBox(height: 24.0),
           _countryFields(),
+          const SizedBox(height: 24.0),
           _passwordFields(),
+          const SizedBox(height: 24.0),
           _checkBoxFormField(),
         ],
       ),
@@ -206,14 +207,13 @@ class _RegisterStep1State extends State<RegisterStep1> {
   }
 
   Widget _personalInfoFields() {
-    return Wrap(
-      runSpacing: 24.0,
+    return Column(
       children: <Widget>[
         TextFieldContainer(
           title: const Text('Email'),
           child: NormalTextField(
             hintText: 'Required*',
-            icon: SvgPicture.asset(IconAsset.email),
+            prefixIcon: SvgPicture.asset(IconAsset.email),
             controller: _controllers[RegisterKey.email],
             keyboardType: TextInputType.emailAddress,
             errorText: _validationModel?.email,
@@ -227,6 +227,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
             ),
           ),
         ),
+        const SizedBox(height: 24.0),
         TextFieldContainer(
           title: const Text('Nick name'),
           child: NormalTextField(
@@ -242,14 +243,14 @@ class _RegisterStep1State extends State<RegisterStep1> {
             ),
           ),
         ),
+        const SizedBox(height: 24.0),
         _genderAndBirthdayField(),
       ],
     );
   }
 
   Widget _countryFields() {
-    return Wrap(
-      runSpacing: 24.0,
+    return Column(
       children: <Widget>[
         TextFieldContainer(
           title: const Text('Phone number'),
@@ -271,6 +272,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
             ),
           ),
         ),
+        const SizedBox(height: 24.0),
         TextFieldContainer(
           title: const Text('Nationality'),
           child: SearchDropDownTextField<Nationality>(
@@ -296,12 +298,11 @@ class _RegisterStep1State extends State<RegisterStep1> {
   }
 
   Widget _passwordFields() {
-    return Wrap(
-      runSpacing: 24.0,
+    return Column(
       children: <Widget>[
         TextFieldContainer(
           title: const Text('Password'),
-          child: PasswordTextField(
+          child: NormalTextField.password(
             hintText: 'Required*',
             obscureText: _obscureText,
             controller: _controllers[RegisterKey.password],
@@ -320,9 +321,10 @@ class _RegisterStep1State extends State<RegisterStep1> {
             ),
           ),
         ),
+        const SizedBox(height: 24.0),
         TextFieldContainer(
           title: const Text('Confirm Password'),
-          child: PasswordTextField(
+          child: NormalTextField.password(
             hintText: 'Required*',
             obscureText: _obscureText,
             showObscureButton: false,
@@ -371,7 +373,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
             title: const Text('Birthday'),
             child: NormalTextField(
               hintText: 'Optional',
-              icon: SvgPicture.asset(IconAsset.calendarBlank),
+              prefixIcon: SvgPicture.asset(IconAsset.calendarBlank),
               controller: _controllers[RegisterKey.birthday],
               // Disable user text input
               readOnly: true,
@@ -386,39 +388,37 @@ class _RegisterStep1State extends State<RegisterStep1> {
 
   Widget _checkBoxFormField() {
     return CheckboxFormField(
-      title: ExcludeSemantics(
-        child: Text.rich(
-          style: TTextStyle.getBodyMedium(),
-          TextSpan(
-            text: 'I agree to the ',
-            children: <InlineSpan>[
-              TextSpan(
-                text: 'Term of Use',
-                style: TTextStyle.getBodyMedium(
-                  fontWeight: TFontWeight.bold,
-                  color: context.colorScheme.secondary,
-                ),
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () async {
-                    await openWebview(AppUrl.termOfUse);
-                  },
+      title: Text.rich(
+        style: TTextStyle.getBodyMedium(),
+        TextSpan(
+          text: 'I agree to the ',
+          children: <InlineSpan>[
+            TextSpan(
+              text: 'Term of Use',
+              style: TTextStyle.getBodyMedium(
+                fontWeight: TFontWeight.bold,
+                color: context.colorScheme.secondary,
               ),
-              const TextSpan(
-                text: ' and ',
+              recognizer: TapGestureRecognizer()
+                ..onTap = () async {
+                  await openWebview(AppUrl.termOfUse);
+                },
+            ),
+            const TextSpan(
+              text: ' and ',
+            ),
+            TextSpan(
+              text: 'Privacy Policy',
+              style: TTextStyle.getBodyMedium(
+                fontWeight: TFontWeight.bold,
+                color: context.colorScheme.secondary,
               ),
-              TextSpan(
-                text: 'Privacy Policy',
-                style: TTextStyle.getBodyMedium(
-                  fontWeight: TFontWeight.bold,
-                  color: context.colorScheme.secondary,
-                ),
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () async {
-                    await openWebview(AppUrl.privacyPolicy);
-                  },
-              ),
-            ],
-          ),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () async {
+                  await openWebview(AppUrl.privacyPolicy);
+                },
+            ),
+          ],
         ),
       ),
       validator: SupportValidators.compose(

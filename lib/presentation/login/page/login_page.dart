@@ -1,25 +1,44 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../app/asset/icon_asset.dart';
+import '../../../app/asset/image_asset.dart';
 import '../../../app/theme/style/color.dart';
 import '../../../app/theme/style/font_style.dart';
-import '../../../app/utils/enum/snackbar_mode.dart';
-import '../../../app/utils/enum/supported_region.dart';
 import '../../../app/utils/extension/build_context.dart';
-import '../../../app/utils/helper/snack_bar.dart';
+import '../../../app/utils/extension/failure.dart';
 import '../../../app/utils/validator/support_validator.dart';
 import '../../../app/utils/validator/validation_messages.dart';
 import '../../../app/widget/buttons/primary_button.dart';
-import '../../../app/widget/text_field/drop_down_text_field.dart';
+import '../../../app/widget/checkbox/checkbox_form_field.dart';
+import '../../../app/widget/loader/overlay_loader.dart';
 import '../../../app/widget/text_field/normal_text_field.dart';
-import '../../../app/widget/text_field/password_text_field.dart';
 import '../../../app/widget/text_field/text_field_container.dart';
+import '../../../core/error/failure.dart';
+import '../../../core/error_handler/error_handler.dart';
+import '../../../data/model/entity/request/login/login_params.dart';
+import '../../../data/model/entity/validation/login/login_validation.dart';
 import '../../../router/router_info.dart';
 import '../../register/widget/label_divider.dart';
+import '../bloc/login_bloc.dart';
 import '../widget/third_pary_login_icon_button.dart';
+
+part '../widget/local_widget/footer.dart';
+
+part '../widget/local_widget/header.dart';
+
+part '../widget/local_widget/login_options.dart';
+
+part '../widget/local_widget/scaffold.dart';
+
+part '../widget/local_widget/text_fields.dart';
+
+part '../widget/local_widget/sub_footer.dart';
+
+part '../widget/local_widget/third_party_buttons.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -32,9 +51,10 @@ class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final OverlayLoader _overlayLoader = OverlayLoader();
 
-  bool _obscureText = true;
-  SupportedRegion? _selectedRegion = SupportedRegion.america;
+  bool _rememberMe = false;
+  LoginValidation? _validationModel;
 
   @override
   void dispose() {
@@ -45,229 +65,64 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          child: Column(
-            children: <Widget>[
-              const SizedBox(height: 32.0),
-              _header(),
-              const SizedBox(height: 16.0),
-              _textFields(),
-              const SizedBox(height: 32.0),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: PrimaryButton(
-                  child: const Text('Sign In'),
-                  onPressed: () => onSignInPressed(context),
-                ),
-              ),
-              const SizedBox(height: 24.0),
-              const LabelDivider(text: 'Or continue with'),
-              const SizedBox(height: 24.0),
-              _thirdParyButtons(),
-              const SizedBox(height: 40.0),
-              _languageDropDown(),
-              const SizedBox(height: 24.0),
-              _footer(),
-              const SizedBox(height: 24.0),
-            ],
+    return BlocConsumer<LoginBloc, LoginState>(
+      listener: (BuildContext context, LoginState state) {
+        _overlayLoader.hide();
+        _validationModel = null;
+        switch (state) {
+          case LoginStateInitial():
+            break;
+          case LoginStateLoading():
+            _overlayLoader.show(context);
+          case LoginStateLoaded():
+            context.replaceNamed(RouterInfo.homePage.name);
+          case LoginStateValidationLoginError(
+              failure: final Failure<LoginValidation> failure
+            ):
+            _validationModel = failure.getValidationModel();
+            ErrorHandler.handleNetworkFailure(context, failure);
+        }
+      },
+      builder: (BuildContext context, LoginState state) {
+        return _Scaffold(
+          header: const _Header(),
+          textFields: _TextFields(
+            formKey: _formKey,
+            emailController: _emailController,
+            passwordController: _passwordController,
+            validationModel: _validationModel,
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget _header() {
-    return Column(
-      children: <Widget>[
-        Container(
-          width: 120.0,
-          height: 120.0,
-          decoration: BoxDecoration(
-            color: TColor.primary500,
-            borderRadius: BorderRadius.circular(24.0),
+          loginOptions: _LoginOptions(
+            rememberMe: _rememberMe,
+            onRememberMeChanged: (bool? value) {
+              _rememberMe = value ?? false;
+            },
           ),
-          alignment: Alignment.center,
-          child: Text(
-            'APP LOGO',
-            style: TTextStyle.getBodyLarge(
-              fontWeight: TFontWeight.bold,
-              color: context.colorScheme.onPrimary,
-            ),
+          loginButton: PrimaryButton(
+            onPressed: _onSignInPressed,
+            child: const Text('Sign In'),
           ),
-        ),
-        const SizedBox(height: 24.0),
-        Text(
-          'Welcome',
-          style: TTextStyle.getHeadingH3(),
-        ),
-      ],
-    );
-  }
-
-  Widget _textFields() {
-    return Form(
-      key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: <Widget>[
-          TextFieldContainer(
-            title: const Text('Email'),
-            child: NormalTextField(
-              hintText: 'Enter email',
-              icon: SvgPicture.asset(IconAsset.email),
-              keyboardType: TextInputType.emailAddress,
-              controller: _emailController,
-              validator: SupportValidators.compose(
-                <FormFieldValidator<String>>[
-                  SupportValidators.required(fieldName: 'email'),
-                  SupportValidators.inRangeLength(3, 70, fieldName: 'email'),
-                  SupportValidators.email(),
-                ],
-              ),
-            ),
-          ),
-          const SizedBox(height: 24.0),
-          TextFieldContainer(
-            title: const Text('Password'),
-            child: PasswordTextField(
-              hintText: 'Enter password',
-              obscureText: _obscureText,
-              controller: _passwordController,
-              onObscureButtonPressed: (bool obscureText) {
-                setState(() {
-                  _obscureText = obscureText;
-                });
-              },
-              validator: SupportValidators.compose(
-                <FormFieldValidator>[
-                  SupportValidators.required(fieldName: 'password'),
-                  SupportValidators.inRangeLength(8, 16, fieldName: 'password'),
-                ],
-              ),
-            ),
-          ),
-          const SizedBox(height: 8.0),
-          Text.rich(
-            TextSpan(
-              text: 'Forgot password',
-              style: TTextStyle.getBodyMedium(
-                fontWeight: TFontWeight.bold,
-                color: context.colorScheme.primary,
-                decoration: TextDecoration.underline,
-              ),
-              recognizer: TapGestureRecognizer()..onTap = () {},
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _thirdParyButtons() {
-    return Wrap(
-      spacing: 24.0,
-      children: <Widget>[
-        ThirdPartyIconButton(
-          assetName: IconAsset.facebookBig,
-          onPressed: () {},
-        ),
-        ThirdPartyIconButton(
-          assetName: IconAsset.googleBig,
-          onPressed: () {},
-        ),
-        ThirdPartyIconButton(
-          assetName: IconAsset.zaloBig,
-          onPressed: () {},
-        ),
-      ],
-    );
-  }
-
-  Widget _languageDropDown() {
-    return DropDownTextField<SupportedRegion>(
-      width: 160.0,
-      height: 48.0,
-      items: SupportedRegion.values,
-      selectedValue: _selectedRegion,
-      menuItemBuilder: _buildSupportedLanguageMenuItem,
-      onChanged: (SupportedRegion? value) {
-        setState(() {
-          _selectedRegion = value;
-        });
+          buttonDivider: const LabelDivider(text: 'Or'),
+          thirdPartyButtons: const _ThirdPartyButtons(),
+          footer: const _Footer(),
+          subFooter: const _SubFooter(),
+        );
       },
     );
   }
 
-  Widget _buildSupportedLanguageMenuItem(
-      BuildContext context, SupportedRegion language) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: <Widget>[
-        Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                color: context.colorScheme.shadow,
-                blurRadius: 4,
-                offset: const Offset(0, 1),
-              ),
-            ],
-          ),
-          child: SvgPicture.asset(
-            language.flagAssetName,
-          ),
-        ),
-        const SizedBox(width: 8.0),
-        Expanded(
-          child: Text(
-            language.countryName,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: TTextStyle.getBodyMedium(fontWeight: TFontWeight.medium),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _footer() {
-    return Text.rich(
-      TextSpan(
-        text: 'Don’t have an account? ',
-        style: TTextStyle.getBodyMedium(),
-        children: <TextSpan>[
-          TextSpan(
-            text: 'Sign up',
-            style: TTextStyle.getBodyMedium(
-              fontWeight: TFontWeight.bold,
-              color: context.colorScheme.primary,
-              decoration: TextDecoration.underline,
-            ),
-            recognizer: TapGestureRecognizer()
-              ..onTap = () => context.pushNamed(RouterInfo.registerPage.name),
-          ),
-        ],
-      ),
-    );
-  }
-
-  void onSignInPressed(BuildContext context) {
+  void _onSignInPressed() {
     if (_formKey.currentState?.validate() ?? false) {
-      // Login
-      showCustomSnackBar(
-        context,
-        message: 'Login Success',
-        mode: SnackBarMode.success,
+      final LoginParams loginParams = LoginParams(
+        email: _emailController.text,
+        password: _passwordController.text,
+        rememberMe: _rememberMe,
       );
+      context.read<LoginBloc>().add(LoginEvent.started(params: loginParams));
     } else {
-      showCustomSnackBar(
+      ErrorHandler.showErrorSnackBar(
         context,
         message: ValidationMessages.cm002(),
-        mode: SnackBarMode.error,
       );
     }
   }

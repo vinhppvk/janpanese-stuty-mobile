@@ -7,7 +7,7 @@ import '../../data/model/entity/response/register/resend_otp_result.dart';
 import '../../data/repository/auth_repository.dart';
 
 class ResendOtpUseCase
-    implements UseCase<ResendOtpResult, ResendOtpParams, void> {
+    implements RemoteUseCase<ResendOtpResult, ResendOtpParams, void> {
   ResendOtpUseCase(this._repository);
 
   final AuthRepository _repository;

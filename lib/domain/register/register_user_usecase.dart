@@ -7,7 +7,7 @@ import '../../data/model/entity/validation/register/register_user_validation.dar
 import '../../data/repository/auth_repository.dart';
 
 class RegisterUserUseCase
-    implements UseCase<void, RegisterUserParams, RegisterUserValidation> {
+    implements RemoteUseCase<void, RegisterUserParams, RegisterUserValidation> {
   const RegisterUserUseCase(this._repository);
 
   final AuthRepository _repository;

@@ -6,11 +6,14 @@ import '../../core/error/failure.dart';
 import '../../core/error_handler/error_helper.dart';
 import '../api/auth/auth_api.dart';
 import '../model/dto/base/base_response.dart';
+import '../model/dto/request/login/login_params_dto.dart';
 import '../model/dto/request/register/register_user_params_dto.dart';
 import '../model/dto/request/register/resend_otp_params_dto.dart';
 import '../model/dto/request/register/verify_otp_params_dto.dart';
+import '../model/dto/response/login/login_result_dto.dart';
 import '../model/dto/response/register/resend_otp_result_dto.dart';
 import '../model/dto/response/register/verify_otp_result_dto.dart';
+import '../model/dto/validation/login/login_validation_dto.dart';
 import '../model/dto/validation/register/register_user_validation_dto.dart';
 import '../model/dto/validation/register/verify_otp_validation_dto.dart';
 
@@ -56,6 +59,25 @@ class AuthRemoteDataSource with ErrorMapper {
           mapValidationExceptionToFailure(
             e.error! as HttpBadRequestException,
             fromJson: VerifyOtpValidationDto.fromJson,
+          ),
+        );
+      }
+      rethrow;
+    }
+  }
+
+  Future<Either<Failure<LoginValidationDto>, LoginResultDto>> login(
+      LoginParamsDto params) async {
+    try {
+      final BaseResponse<LoginResultDto> response = await _api.login(params);
+      return Either<Failure<LoginValidationDto>, LoginResultDto>.right(
+          response.data);
+    } on DioException catch (e) {
+      if (e.error is HttpBadRequestException) {
+        return Either<Failure<LoginValidationDto>, LoginResultDto>.left(
+          mapValidationExceptionToFailure(
+            e.error! as HttpBadRequestException,
+            fromJson: LoginValidationDto.fromJson,
           ),
         );
       }

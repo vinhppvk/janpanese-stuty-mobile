@@ -5,7 +5,7 @@ import '../../core/usecase.dart';
 import '../../data/model/entity/response/example/example_user.dart';
 import '../../data/repository/example_repository.dart';
 
-class ExampleUseCase extends UseCase<List<ExampleUser>, NoParam, void> {
+class ExampleUseCase extends RemoteUseCase<List<ExampleUser>, NoParam, void> {
   ExampleUseCase(this._repository);
 
   final ExampleRepository _repository;

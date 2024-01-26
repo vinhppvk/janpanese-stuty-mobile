@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../app/di/injector.dart';
 import '../../../app/utils/enum/snackbar_mode.dart';
 import '../../../app/utils/helper/snack_bar.dart';
 import '../../../app/widget/app_bar/custom_app_bar.dart';
@@ -9,6 +10,7 @@ import '../../../app/widget/buttons/primary_button.dart';
 import '../../../app/widget/loader/overlay_loader.dart';
 import '../../../core/error/failure.dart';
 import '../../../core/error_handler/error_handler.dart';
+import '../../../data/local/local_data_source.dart';
 import '../bloc/example_bloc.dart';
 
 class ExamplePage extends StatefulWidget {
@@ -20,6 +22,7 @@ class ExamplePage extends StatefulWidget {
 
 class _ExamplePageState extends State<ExamplePage> {
   final OverlayLoader _overlayLoader = OverlayLoader();
+  final LocalDataSource _localDataSource = injector<LocalDataSource>();
 
   @override
   Widget build(BuildContext context) {
@@ -71,8 +74,12 @@ class _ExamplePageState extends State<ExamplePage> {
               child: const Text('Show Error Snack-bar'),
             ),
             PrimaryButton(
+              onPressed: _callExampleApi,
               child: const Text('Call Json Placeholder Api'),
-              onPressed: () => _callExampleApi(),
+            ),
+            PrimaryButton(
+              onPressed: _printLocalData,
+              child: const Text('Print Local Data'),
             ),
           ],
         ),
@@ -98,5 +105,15 @@ class _ExamplePageState extends State<ExamplePage> {
 
   Future<void> _callExampleApi() async {
     context.read<ExampleBloc>().add(const ExampleEvent.started());
+  }
+
+  void _printLocalData() {
+    final LocalDataSource localDataSource = injector<LocalDataSource>();
+    debugPrint(localDataSource.getAccessToken());
+    debugPrint(localDataSource.getRefreshToken());
+    debugPrint(localDataSource.getLanguage().toString());
+    debugPrint(localDataSource.getEmail());
+    debugPrint(localDataSource.getNickName());
+    debugPrint(localDataSource.getRememberMe().toString());
   }
 }

@@ -28,7 +28,7 @@ class CheckboxFormField extends FormField<bool> {
                   ),
                 ),
                 const SizedBox(width: 8.0),
-                Expanded(
+                Flexible(
                   child: _Body(title: title, state: state),
                 )
               ],
