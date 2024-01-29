@@ -157,6 +157,7 @@ class AuthRepository with ErrorMapper {
     _localDataSource.setRefreshToken(result.refreshToken ?? '');
     _localDataSource.setEmail(result.email ?? '');
     _localDataSource.setNickName(result.nickName ?? '');
+    _localDataSource.setImagePhoto(result.imagePhoto ?? '');
     _localDataSource.setRememberMe(rememberMe);
   }
 

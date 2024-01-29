@@ -9,6 +9,7 @@ class LoginResultDto {
     required this.refreshToken,
     required this.email,
     required this.nickName,
+    required this.imagePhoto,
   });
 
   factory LoginResultDto.fromJson(Map<String, dynamic> json) =>
@@ -25,6 +26,9 @@ class LoginResultDto {
 
   @JsonKey(name: 'nickname')
   final String? nickName;
+
+  @JsonKey(name: 'image_photo')
+  final String? imagePhoto;
 
   Map<String, dynamic> toJson() => _$LoginResultDtoToJson(this);
 }

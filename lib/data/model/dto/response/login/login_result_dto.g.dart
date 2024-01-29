@@ -12,6 +12,7 @@ LoginResultDto _$LoginResultDtoFromJson(Map<String, dynamic> json) =>
       refreshToken: json['refresh_token'] as String?,
       email: json['email'] as String?,
       nickName: json['nickname'] as String?,
+      imagePhoto: json['image_photo'] as String?,
     );
 
 Map<String, dynamic> _$LoginResultDtoToJson(LoginResultDto instance) =>
@@ -20,4 +21,5 @@ Map<String, dynamic> _$LoginResultDtoToJson(LoginResultDto instance) =>
       'refresh_token': instance.refreshToken,
       'email': instance.email,
       'nickname': instance.nickName,
+      'image_photo': instance.imagePhoto,
     };

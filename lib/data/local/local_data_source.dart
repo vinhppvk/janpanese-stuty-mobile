@@ -49,7 +49,7 @@ class LocalDataSource {
   }
 
   Future<bool> clear() {
-    // Temp save app preferences
+    // Temporary save app preferences
     final AppLanguage? appLanguage = getLanguage();
 
     final Future<bool> clearResult = _sharedPreferences.clear();
@@ -59,38 +59,6 @@ class LocalDataSource {
 
     return clearResult;
   }
-
-  // App Preferences
-  AppLanguage? getLanguage() =>
-      AppLanguage.fromCountryName(getValue(LocalDataSourceKeys.appLanguage));
-
-  Future<bool> setLanguage(AppLanguage appLanguage) =>
-      setValue(LocalDataSourceKeys.appLanguage, appLanguage.countryName);
-  // User Preferences
-  Future<bool> setAccessToken(String accessToken) =>
-      setValue(LocalDataSourceKeys.accessToken, accessToken);
-
-  Future<bool> setRefreshToken(String refreshToken) =>
-      setValue(LocalDataSourceKeys.refreshToken, refreshToken);
-
-  Future<bool> setNickName(String nickName) =>
-      setValue(LocalDataSourceKeys.nickName, nickName);
-
-  Future<bool> setRememberMe(bool rememberMe) =>
-      setValue(LocalDataSourceKeys.rememberMe, rememberMe);
-
-  Future<bool> setEmail(String email) =>
-      setValue(LocalDataSourceKeys.email, email);
-
-  String? getAccessToken() => getValue(LocalDataSourceKeys.accessToken);
-
-  String? getRefreshToken() => getValue(LocalDataSourceKeys.refreshToken);
-
-  String? getNickName() => getValue(LocalDataSourceKeys.nickName);
-
-  String? getEmail() => getValue(LocalDataSourceKeys.email);
-
-  bool? getRememberMe() => getValue(LocalDataSourceKeys.rememberMe);
 
   Future<bool> setUpAppPreferences() async {
     final AppLanguage? appLanguage = getLanguage();
@@ -111,4 +79,42 @@ class LocalDataSource {
 
     return Future<bool>.value(true);
   }
+
+  // App Preferences
+  AppLanguage? getLanguage() =>
+      AppLanguage.fromCountryName(getValue(LocalDataSourceKeys.appLanguage));
+
+  Future<bool> setLanguage(AppLanguage appLanguage) =>
+      setValue(LocalDataSourceKeys.appLanguage, appLanguage.countryName);
+
+  // User Preferences
+  Future<bool> setAccessToken(String accessToken) =>
+      setValue(LocalDataSourceKeys.accessToken, accessToken);
+
+  Future<bool> setRefreshToken(String refreshToken) =>
+      setValue(LocalDataSourceKeys.refreshToken, refreshToken);
+
+  Future<bool> setNickName(String nickName) =>
+      setValue(LocalDataSourceKeys.nickName, nickName);
+
+  Future<bool> setRememberMe(bool rememberMe) =>
+      setValue(LocalDataSourceKeys.rememberMe, rememberMe);
+
+  Future<bool> setEmail(String email) =>
+      setValue(LocalDataSourceKeys.email, email);
+
+  Future<bool> setImagePhoto(String imageUrl) =>
+      setValue(LocalDataSourceKeys.imagePhoto, imageUrl);
+
+  String? getAccessToken() => getValue(LocalDataSourceKeys.accessToken);
+
+  String? getRefreshToken() => getValue(LocalDataSourceKeys.refreshToken);
+
+  String? getNickName() => getValue(LocalDataSourceKeys.nickName);
+
+  String? getEmail() => getValue(LocalDataSourceKeys.email);
+
+  bool? getRememberMe() => getValue(LocalDataSourceKeys.rememberMe);
+
+  String? getImagePhoto() => getValue(LocalDataSourceKeys.imagePhoto);
 }

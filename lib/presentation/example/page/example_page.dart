@@ -109,11 +109,12 @@ class _ExamplePageState extends State<ExamplePage> {
 
   void _printLocalData() {
     final LocalDataSource localDataSource = injector<LocalDataSource>();
-    debugPrint(localDataSource.getAccessToken());
-    debugPrint(localDataSource.getRefreshToken());
-    debugPrint(localDataSource.getLanguage().toString());
-    debugPrint(localDataSource.getEmail());
-    debugPrint(localDataSource.getNickName());
-    debugPrint(localDataSource.getRememberMe().toString());
+    debugPrint('Access Token: ${localDataSource.getAccessToken()}');
+    debugPrint('Refresh Token: ${localDataSource.getRefreshToken()}');
+    debugPrint('App Language: ${localDataSource.getLanguage()}');
+    debugPrint('Email: ${localDataSource.getEmail()}');
+    debugPrint('Nick Name: ${localDataSource.getNickName()}');
+    debugPrint('Remember Me: ${localDataSource.getRememberMe()}');
+    debugPrint('Image Photo Url: ${localDataSource.getImagePhoto()}');
   }
 }

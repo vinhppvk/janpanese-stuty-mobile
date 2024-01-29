@@ -271,6 +271,7 @@ class $LoginMappr implements _i1.AutoMapprInterface {
       refreshToken: model.refreshToken,
       email: model.email,
       nickName: model.nickName,
+      imagePhoto: model.imagePhoto,
     );
   }
 
