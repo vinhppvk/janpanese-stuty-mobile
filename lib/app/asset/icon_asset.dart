@@ -26,4 +26,5 @@ class IconAsset {
   static const String americaFlag = '$_dir/america_flag.svg';
   static const String vietnamFlag = '$_dir/vietnam_flag.svg';
   static const String indonesiaFlag = '$_dir/indonesia_flag.svg';
+  static const String sealWarning = '$_dir/seal_warning.svg';
 }
