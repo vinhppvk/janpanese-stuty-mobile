@@ -90,11 +90,16 @@ mixin ErrorMapper {
   Failure<V> mapValidationExceptionToFailure<V>(
       HttpBadRequestException exception,
       {required V Function(Map<String, dynamic>) fromJson}) {
+    V? validationData;
+    final Object? jsonData = exception.data;
+
+    if (jsonData != null && jsonData is Map<String, dynamic>) {
+      validationData = fromJson(jsonData);
+    }
+
     return Failure<V>.httpBadRequest(
       message: exception.message,
-      data: exception.data != null
-          ? fromJson(exception.data! as Map<String, dynamic>)
-          : null,
+      data: validationData,
     );
   }
 }
