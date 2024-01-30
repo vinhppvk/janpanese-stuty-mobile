@@ -10,6 +10,7 @@ import '../presentation/register/bloc/step_1/register_step_1_bloc.dart';
 import '../presentation/register/bloc/step_2/register_step_2_bloc.dart';
 import '../presentation/register/page/register_page.dart';
 
+import '../presentation/teacher_detail/page/teacher_detail_page.dart';
 import 'nav_page.dart';
 import 'router_info.dart';
 
@@ -57,6 +58,9 @@ class AppRouter {
                     child: const RegisterPage(),
                   );
                 },
+                routes: <RouteBase>[
+                  ...loggedInRoutes,
+                ],
               ),
             ],
           ),
@@ -64,4 +68,14 @@ class AppRouter {
       ),
     ],
   );
+
+  static List<GoRoute> loggedInRoutes = <GoRoute>[
+    GoRoute(
+      path: RouterInfo.teacherDetailPage.path,
+      name: RouterInfo.teacherDetailPage.name,
+      builder: (BuildContext context, GoRouterState state) {
+        return const TeacherDetailPage();
+      },
+    ),
+  ];
 }

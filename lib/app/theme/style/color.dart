@@ -13,6 +13,10 @@ class TColor {
 
   // Success
   static const Color success1000 = Color(0xFF28A745);
+  static const Color success750 = Color(0xFF5EBD74);
+  static const Color success500 = Color(0xFF93D3A2);
+  static const Color success300 = Color(0xFFBEE5C7);
+  static const Color success100 = Color(0xFFE9F6EC);
 
   // Error
   static const Color error1000 = Color(0xFFDC3444);
