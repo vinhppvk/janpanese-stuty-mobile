@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 
 import '../app/di/injector.dart';
 import '../data/model/entity/response/notifications/notification_result.dart';
-import '../data/model/entity/response/notifications/system_notification_result.dart';
 import '../presentation/example/bloc/example_bloc.dart';
 import '../presentation/example/page/example_page.dart';
 import '../presentation/login/page/login_page.dart';
