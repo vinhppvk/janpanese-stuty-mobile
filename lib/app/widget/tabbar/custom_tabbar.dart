@@ -20,9 +20,6 @@ class CustomTabbar extends StatefulWidget {
 }
 
 class _CustomTabbarState extends State<CustomTabbar> {
-  bool hasRebuild = false;
-  double lastOffset = 0.0;
-
   @override
   void initState() {
     widget.controller.addListener(_onControllerChanged);
