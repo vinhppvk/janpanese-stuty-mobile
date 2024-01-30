@@ -1,4 +1,4 @@
-part of '../../page/system_notifications_view.dart';
+part of '../../page/sub_views/system_notifications_view.dart';
 
 class _SystemNotificationTile extends StatelessWidget {
   const _SystemNotificationTile({required this.data, this.onTap});

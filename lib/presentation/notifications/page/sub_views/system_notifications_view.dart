@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../app/theme/style/color.dart';
-import '../../../app/theme/style/font_style.dart';
-import '../../../app/utils/extension/build_context.dart';
-import '../../../data/model/entity/response/notifications/system_notification_result.dart';
-import '../../../router/router_info.dart';
-import '../widget/empty_view.dart';
-import '../widget/notification_card.dart';
+import '../../../../app/theme/style/color.dart';
+import '../../../../app/theme/style/font_style.dart';
+import '../../../../app/utils/extension/build_context.dart';
+import '../../../../data/model/entity/response/notifications/system_notification_result.dart';
+import '../../../../router/router_info.dart';
+import '../../widget/empty_view.dart';
+import '../../widget/notification_card.dart';
 
-part '../widget/system_notifications/system_notifications_tile.dart';
+part '../../widget/system_notifications/system_notifications_tile.dart';
 
 class SystemNotificationsView extends StatelessWidget {
   const SystemNotificationsView({

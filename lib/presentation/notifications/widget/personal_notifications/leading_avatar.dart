@@ -1,4 +1,4 @@
-part of '../../page/personal_notifications_view.dart';
+part of '../../page/sub_views/personal_notifications_view.dart';
 
 class _LeadingAvatar extends StatelessWidget {
   const _LeadingAvatar({

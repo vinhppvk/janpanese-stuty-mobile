@@ -7,8 +7,8 @@ import '../../../app/widget/app_bar/custom_app_bar.dart';
 import '../../../app/widget/tabbar/custom_tabbar.dart';
 import '../../../data/model/entity/response/notifications/personal_notification_result.dart';
 import '../../../data/model/entity/response/notifications/system_notification_result.dart';
-import 'personal_notifications_view.dart';
-import 'system_notifications_view.dart';
+import 'sub_views/personal_notifications_view.dart';
+import 'sub_views/system_notifications_view.dart';
 
 part '../widget/notifications/scaffold.dart';
 
