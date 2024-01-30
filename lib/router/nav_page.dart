@@ -26,7 +26,7 @@ class _NavigationPageState extends State<NavigationPage> {
         itemCount: navButtons.length,
         itemBuilder: (BuildContext context, int index) => navButtons[index],
         separatorBuilder: (BuildContext context, int index) =>
-            const SizedBox(height: 24),
+        const SizedBox(height: 24),
       ),
     );
   }
@@ -40,6 +40,10 @@ class _NavigationPageState extends State<NavigationPage> {
       PrimaryButton(
         child: Text(RouterInfo.registerPage.name),
         onPressed: () => context.pushNamed(RouterInfo.registerPage.name),
+      ),
+      PrimaryButton(
+        child: Text(RouterInfo.notificationListPage.name),
+        onPressed: () => context.pushNamed(RouterInfo.notificationListPage.name),
       ),
       PrimaryButton(
         child: Text(RouterInfo.examplePage.name),

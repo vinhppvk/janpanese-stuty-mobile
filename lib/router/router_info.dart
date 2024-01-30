@@ -2,6 +2,8 @@ enum RouterInfo {
   navigationPage,
   loginPage,
   registerPage,
+  notificationListPage,
+  notificationDetailPage,
   examplePage;
 }
 
@@ -12,6 +14,8 @@ extension RouterInfoX on RouterInfo {
       RouterInfo.loginPage => 'login',
       RouterInfo.registerPage => 'registerPage',
       RouterInfo.examplePage => 'examplePage',
+      RouterInfo.notificationListPage => 'notifications',
+      RouterInfo.notificationDetailPage => 'notificationDetail',
     };
   }
 
@@ -21,6 +25,8 @@ extension RouterInfoX on RouterInfo {
       RouterInfo.loginPage => 'Login Page',
       RouterInfo.registerPage => 'Register Page',
       RouterInfo.examplePage => 'Example Page',
+      RouterInfo.notificationListPage => 'Notifications Page',
+      RouterInfo.notificationDetailPage => 'Notification Detail Page',
     };
   }
 }

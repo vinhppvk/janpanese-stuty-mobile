@@ -6,10 +6,11 @@ class TColor {
   // Primary
   static const Color primary1000 = Color(0xFF017BFE);
   static const Color primary500 = Color(0x80017BFE);
+  static const Color primary100 = Color(0xFFE6F2FF);
 
   // Secondary
   static const Color secondary1000 = Color(0xFF154281);
-  static const Color secondary750 = Color(0xFF5071A1);
+  static const Color secondary750 = Color(0xFFE6F2FF);
 
   // Success
   static const Color success1000 = Color(0xFF28A745);
