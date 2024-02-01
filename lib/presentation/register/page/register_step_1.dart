@@ -470,6 +470,7 @@ class _RegisterStep1State extends State<RegisterStep1> {
     if (pickedDate != null) {
       _controllers[RegisterKey.birthday]?.text =
           pickedDate.format(pattern: DateFormats.yyyyMMdd);
+      _birthday = pickedDate;
     }
   }
 }
