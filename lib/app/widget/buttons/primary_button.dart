@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/style/font_style.dart';
-import '../../utils/extension/build_context.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
@@ -50,7 +49,6 @@ class PrimaryButton extends StatelessWidget {
         child: DefaultTextStyle.merge(
           style: TTextStyle.getBodyLarge(
             fontWeight: TFontWeight.bold,
-            color: context.colorScheme.onPrimary
           ),
           child: child,
         ),

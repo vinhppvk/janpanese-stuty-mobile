@@ -43,7 +43,7 @@ class TTextStyle {
   static TextStyle _getTextStyle(
     double fontSize,
     FontWeight fontWeight,
-    Color color,
+    Color? color,
     String fontFamily, {
     double? height,
     TextDecoration? decoration,
@@ -64,7 +64,7 @@ class TTextStyle {
 
   static TextStyle getBodyXSmall({
     FontWeight fontWeight = TFontWeight.regular,
-    Color color = TColor.grey900,
+    Color? color,
     TextDecoration? decoration,
     Color decorationColor = TColor.primary1000,
     double decorationThickness = 1.5,
@@ -82,7 +82,7 @@ class TTextStyle {
 
   static TextStyle getBodySmall({
     FontWeight fontWeight = TFontWeight.regular,
-    Color color = TColor.grey900,
+    Color? color,
     TextDecoration? decoration,
     Color decorationColor = TColor.primary1000,
     double decorationThickness = 1.5,
@@ -101,7 +101,7 @@ class TTextStyle {
 
   static TextStyle getBodyMedium({
     FontWeight fontWeight = TFontWeight.regular,
-    Color color = TColor.grey900,
+    Color? color,
     TextDecoration? decoration,
     Color decorationColor = TColor.primary1000,
     double decorationThickness = 1.5,
@@ -120,7 +120,7 @@ class TTextStyle {
 
   static TextStyle getBodyLarge({
     FontWeight fontWeight = TFontWeight.regular,
-    Color color = TColor.grey900,
+    Color? color,
   }) {
     return _getTextStyle(
       TFontSize.s16,
@@ -133,7 +133,7 @@ class TTextStyle {
 
   static TextStyle getBodyXLarge({
     FontWeight fontWeight = TFontWeight.regular,
-    Color color = TColor.grey900,
+    Color? color,
   }) {
     return _getTextStyle(
       TFontSize.s18,
@@ -145,7 +145,7 @@ class TTextStyle {
   }
 
   static TextStyle getHeadingH3({
-    Color color = TColor.grey900,
+    Color? color,
   }) {
     return _getTextStyle(
       TFontSize.s28,
@@ -157,7 +157,7 @@ class TTextStyle {
   }
 
   static TextStyle getHeadingH4({
-    Color color = TColor.grey900,
+    Color? color,
   }) {
     return _getTextStyle(
       TFontSize.s24,
@@ -169,7 +169,7 @@ class TTextStyle {
   }
 
   static TextStyle getHeadingH5({
-    Color color = TColor.grey900,
+    Color? color,
   }) {
     return _getTextStyle(
       TFontSize.s20,

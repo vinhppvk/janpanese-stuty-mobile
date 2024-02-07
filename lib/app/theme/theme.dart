@@ -5,6 +5,7 @@ import 'custom_themes/color_scheme.dart';
 import 'custom_themes/divider.dart';
 import 'custom_themes/drop_down_menu.dart';
 import 'custom_themes/elevated_button.dart';
+import 'custom_themes/filled_button.dart';
 import 'custom_themes/input_decoration.dart';
 import 'custom_themes/text_button.dart';
 import 'style/color.dart';
@@ -20,6 +21,7 @@ class TTheme {
     scaffoldBackgroundColor: TColor.white,
     colorScheme: TColorScheme.lightTheme,
     elevatedButtonTheme: TElevatedButtonTheme.lightTheme,
+    filledButtonTheme: TFilledButtonTheme.lightTheme,
     textButtonTheme: TTextButton.lightTheme,
     inputDecorationTheme: TInputDecoration.lightTheme,
     dividerTheme: TDivider.lightTheme,
