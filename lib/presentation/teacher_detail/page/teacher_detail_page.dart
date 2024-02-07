@@ -51,6 +51,7 @@ class _TeacherDetailPageState extends State<TeacherDetailPage>
     'Reviews',
   ];
 
+  int _tabIndex = 0;
   late TeacherDetailResult _result;
   late TabController _tabController;
   late YoutubePlayerController _youtubePlayerController;
@@ -106,21 +107,28 @@ class _TeacherDetailPageState extends State<TeacherDetailPage>
             tabs: _tabs,
             mainHeaderInformation: _result.headerInformation,
             subHeaderInformation: _result.subHeaderInformation,
+            onTabChanged: (int index) {
+              setState(() {
+                _tabIndex = index;
+              });
+            },
           ),
-          tabbarView: TabBarView(
-            controller: _tabController,
-            children: <Widget>[
-              TeacherDetailAboutMeView(dataList: _result.aboutMeList),
-              TeacherDetailCoursesView(dataList: _result.courseList),
-              TeacherDetailHistoryView(dataList: _result.historyList),
-              TeacherDetailReviewsView(data: _result.reviewData),
-            ],
-          ),
+          sliverTabView: _buildBody(context),
           bottomFooter:
               _buildFooter(context, TeacherDetailFooterState.allowBooking),
         );
       },
     );
+  }
+
+  Widget _buildBody(BuildContext context) {
+    return switch (_tabIndex) {
+      0 => TeacherDetailAboutMeView(dataList: _result.aboutMeList),
+      1 => TeacherDetailCoursesView(dataList: _result.courseList),
+      2 => TeacherDetailHistoryView(dataList: _result.historyList),
+      3 => TeacherDetailReviewsView(data: _result.reviewData),
+      _ => throw UnimplementedError(),
+    };
   }
 
   Widget _buildFooter(BuildContext context, TeacherDetailFooterState state) {

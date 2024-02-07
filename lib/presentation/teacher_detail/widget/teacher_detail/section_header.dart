@@ -6,10 +6,12 @@ class _SectionHeader extends StatelessWidget {
     required this.tabs,
     required this.mainHeaderInformation,
     required this.subHeaderInformation,
+    this.onTabChanged,
   }) : _tabController = tabController;
 
   final TabController _tabController;
   final List<String> tabs;
+  final Function(int)? onTabChanged;
   final TeacherDetailMainHeaderInformation mainHeaderInformation;
   final TeacherDetailSubHeaderInformation subHeaderInformation;
 
@@ -49,6 +51,7 @@ class _SectionHeader extends StatelessWidget {
           const SizedBox(height: 16.0),
           CustomTabbar(
             controller: _tabController,
+            onTap: onTabChanged,
             tabs: tabs
                 .map(
                   (String tab) => Tab(text: tab),

@@ -26,7 +26,7 @@ class TeacherDetailHistoryView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (dataList.isEmpty) {
-      return const SingleChildScrollView(
+      return const SliverToBoxAdapter(
         child: TeacherDetailEmptyView(
           assetImage: ImageAsset.favoriteIllustration,
           text: 'No lesson history with this teacher',
@@ -34,24 +34,21 @@ class TeacherDetailHistoryView extends StatelessWidget {
       );
     }
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0),
-      child: CustomScrollView(
+    return SliverPadding(
+      padding: const EdgeInsets.all(24.0),
+      sliver: SliverMainAxisGroup(
         slivers: <Widget>[
           SliverPadding(
-            padding: const EdgeInsets.only(top: 24.0, bottom: 16.0),
+            padding: const EdgeInsets.only(bottom: 16.0),
             sliver: SliverToBoxAdapter(
               child: _Header(historyCount: '${dataList.length}'),
             ),
           ),
-          SliverPadding(
-            padding: const EdgeInsets.only(bottom: 24.0),
-            sliver: SliverList.separated(
-              itemCount: dataList.length,
-              itemBuilder: (BuildContext context, int index) =>
-                  _ListTile(data: dataList[index]),
-              separatorBuilder: (_, __) => const SizedBox(height: 16.0),
-            ),
+          SliverList.separated(
+            itemCount: dataList.length,
+            itemBuilder: (BuildContext context, int index) =>
+                _ListTile(data: dataList[index]),
+            separatorBuilder: (_, __) => const SizedBox(height: 16.0),
           ),
         ],
       ),

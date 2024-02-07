@@ -16,7 +16,7 @@ class TeacherDetailCoursesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (dataList.isEmpty) {
-      return const SingleChildScrollView(
+      return const SliverToBoxAdapter(
         child: TeacherDetailEmptyView(
           assetImage: ImageAsset.notFoundIllustration,
           text: 'No results found',
@@ -24,12 +24,17 @@ class TeacherDetailCoursesView extends StatelessWidget {
       );
     }
 
-    return ListView.separated(
+    return SliverPadding(
       padding: const EdgeInsets.all(24.0),
-      itemCount: dataList.length,
-      itemBuilder: (BuildContext context, int index) =>
-          TeacherDetailCourseCard(data: dataList[index]),
-      separatorBuilder: (_, __) => const SizedBox(height: 24.0),
+      sliver: SliverList.separated(
+        itemCount: dataList.length,
+        itemBuilder: (BuildContext context, int index) =>
+            TeacherDetailCourseCard(
+          data: dataList[index],
+          onTap: () {},
+        ),
+        separatorBuilder: (_, __) => const SizedBox(height: 24.0),
+      ),
     );
   }
 }

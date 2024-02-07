@@ -16,14 +16,16 @@ class TeacherDetailAboutMeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
+    return SliverPadding(
       padding: const EdgeInsets.all(24.0),
-      itemCount: dataList.length,
-      itemBuilder: (_, int index) => _ListTile(
-        title: dataList[index].title,
-        message: dataList[index].message,
+      sliver: SliverList.separated(
+        itemCount: dataList.length,
+        itemBuilder: (_, int index) => _ListTile(
+          title: dataList[index].title,
+          message: dataList[index].message,
+        ),
+        separatorBuilder: (_, __) => const SizedBox(height: 16.0),
       ),
-      separatorBuilder: (_, __) => const SizedBox(height: 16.0),
     );
   }
 }

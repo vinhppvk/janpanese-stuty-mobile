@@ -40,22 +40,20 @@ class TeacherDetailReviewsView extends StatelessWidget {
       separatorBuilder: (_, __) => const Divider(),
     );
 
-    const SliverPadding emptyWidget = SliverPadding(
-      padding: EdgeInsets.only(bottom: 24.0),
-      sliver: SliverToBoxAdapter(
-        child: TeacherDetailEmptyView(
-          assetImage: ImageAsset.chatsIllustration,
-          text: 'No comments yet.',
-        ),
+    const Widget emptyWidget = SliverToBoxAdapter(
+      child: TeacherDetailEmptyView(
+        assetImage: ImageAsset.chatsIllustration,
+        text: 'No comments yet.',
+        padding: EdgeInsets.only(top: 24.0),
       ),
     );
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0),
-      child: CustomScrollView(
+    return SliverPadding(
+      padding: const EdgeInsets.all(24.0),
+      sliver: SliverMainAxisGroup(
         slivers: <Widget>[
           SliverPadding(
-            padding: const EdgeInsets.symmetric(vertical: 24.0),
+            padding: const EdgeInsets.only(bottom: 24.0),
             sliver: SliverToBoxAdapter(
               child: _RatingStatisticView(data: data),
             ),

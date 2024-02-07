@@ -5,14 +5,14 @@ class _Scaffold extends StatelessWidget {
     required this.appBar,
     required this.videoPlayer,
     required this.sectionHeader,
-    required this.tabbarView,
+    required this.sliverTabView,
     required this.bottomFooter,
   });
 
   final PreferredSizeWidget appBar;
   final Widget videoPlayer;
   final Widget sectionHeader;
-  final Widget tabbarView;
+  final Widget sliverTabView;
   final Widget bottomFooter;
 
   @override
@@ -23,18 +23,16 @@ class _Scaffold extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Expanded(
-              child: NestedScrollView(
-                headerSliverBuilder: (_, __) {
-                  return <Widget>[
-                    SliverToBoxAdapter(
-                      child: videoPlayer,
-                    ),
-                    SliverToBoxAdapter(
-                      child: sectionHeader,
-                    ),
-                  ];
-                },
-                body: tabbarView,
+              child: CustomScrollView(
+                slivers: <Widget>[
+                  SliverToBoxAdapter(
+                    child: videoPlayer,
+                  ),
+                  SliverToBoxAdapter(
+                    child: sectionHeader,
+                  ),
+                  sliverTabView,
+                ],
               ),
             ),
             bottomFooter,

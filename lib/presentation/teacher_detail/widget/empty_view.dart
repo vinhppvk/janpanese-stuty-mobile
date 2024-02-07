@@ -8,15 +8,17 @@ class TeacherDetailEmptyView extends StatelessWidget {
     super.key,
     required this.assetImage,
     required this.text,
+    this.padding = const EdgeInsets.all(24.0),
   });
 
   final String assetImage;
   final String text;
+  final EdgeInsets padding;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(24.0),
+      padding: padding,
       child: Column(
         children: <Widget>[
           Image.asset(assetImage),
