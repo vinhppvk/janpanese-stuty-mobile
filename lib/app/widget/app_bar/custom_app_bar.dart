@@ -11,7 +11,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.height = kToolbarHeight,
     this.automaticallyImplyLeading = true,
     this.primary = true,
-    this.padding = const EdgeInsets.all(8.0),
+    this.padding = EdgeInsets.zero,
     this.color,
     this.title,
     this.onBackPressed,
