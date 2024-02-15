@@ -19,7 +19,8 @@ class _NavigationPageState extends State<NavigationPage> {
     final List<Widget> navButtons = _buttonList(context);
     return Scaffold(
       appBar: const CustomAppBar(
-        title: Text('Schedule'),
+        title: Text('Navigation Page'),
+        automaticallyImplyLeading: false,
       ),
       body: ListView.separated(
         padding: const EdgeInsets.all(24),
