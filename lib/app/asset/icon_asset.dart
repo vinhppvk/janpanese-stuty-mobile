@@ -29,4 +29,8 @@ class IconAsset {
   static const String sealWarning = '$_dir/seal_warning.svg';
   static const String books = '$_dir/books.svg';
   static const String filledStar = '$_dir/filled_star.svg';
+  static const String funnelSimple = '$_dir/funnel_simple.svg';
+  static const String xSimple = '$_dir/x_simple.svg';
+  static const String clockClockwise = '$_dir/clock_clockwise.svg';
+  static const String clockCounterClockwise = '$_dir/clock_counter_clockwise.svg';
 }

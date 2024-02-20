@@ -15,6 +15,8 @@ class ValidationMessages {
   static String m006(String fieldName) =>
       'The $fieldName may only contain numbers.';
 
+  static String m013(String start, String end) => 'The $start must be less than or equal $end';
+
   static String m016() => 'Please check this box if you want to proceed.';
 
   static String m018(String fieldName, int maxLength) =>

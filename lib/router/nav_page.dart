@@ -47,6 +47,10 @@ class _NavigationPageState extends State<NavigationPage> {
         onPressed: () => context.pushNamed(RouterInfo.teacherDetailPage.name),
       ),
       PrimaryButton(
+        child: Text(RouterInfo.searchTeacherPage.name),
+        onPressed: () => context.pushNamed(RouterInfo.searchTeacherPage.name),
+      ),
+      PrimaryButton(
         child: Text(RouterInfo.examplePage.name),
         onPressed: () => context.pushNamed(RouterInfo.examplePage.name),
       ),

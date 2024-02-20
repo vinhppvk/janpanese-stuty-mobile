@@ -16,6 +16,9 @@ class NormalTextField extends StatelessWidget {
     this.keyboardType,
     this.onTapOutside,
     this.errorText,
+    this.errorStyle,
+    this.forceError = false,
+    this.showErrorText = true,
   });
 
   final TextEditingController? controller;
@@ -29,9 +32,18 @@ class NormalTextField extends StatelessWidget {
   final TextInputType? keyboardType;
   final void Function(PointerDownEvent)? onTapOutside;
   final String? errorText;
+  final TextStyle? errorStyle;
+  final bool forceError;
+  final bool showErrorText;
 
   @override
   Widget build(BuildContext context) {
+    final String? setErrorText = forceError ? '' : errorText;
+    TextStyle? setErrorStyle = errorStyle;
+    if (!showErrorText) {
+      setErrorStyle = const TextStyle(height: 0.01);
+    }
+
     return TextFormField(
       controller: controller,
       readOnly: readOnly,
@@ -44,7 +56,8 @@ class NormalTextField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: labelText,
         hintText: hintText,
-        errorText: errorText,
+        errorText: setErrorText,
+        errorStyle: setErrorStyle,
         prefixIconConstraints: const BoxConstraints(
           maxWidth: 72.0,
           maxHeight: 56.0,

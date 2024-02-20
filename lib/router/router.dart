@@ -10,6 +10,7 @@ import '../presentation/register/bloc/step_1/register_step_1_bloc.dart';
 import '../presentation/register/bloc/step_2/register_step_2_bloc.dart';
 import '../presentation/register/page/register_page.dart';
 
+import '../presentation/search_teacher/page/search_teacher_page.dart';
 import '../presentation/teacher_detail/page/teacher_detail_page.dart';
 import 'nav_page.dart';
 import 'router_info.dart';
@@ -75,6 +76,13 @@ class AppRouter {
       name: RouterInfo.teacherDetailPage.name,
       builder: (BuildContext context, GoRouterState state) {
         return const TeacherDetailPage();
+      },
+    ),
+    GoRoute(
+      path: RouterInfo.searchTeacherPage.path,
+      name: RouterInfo.searchTeacherPage.name,
+      builder: (BuildContext context, GoRouterState state) {
+        return const SearchTeacherPage();
       },
     ),
   ];

@@ -5,11 +5,14 @@ class TColor {
 
   // Primary
   static const Color primary1000 = Color(0xFF017BFE);
-  static const Color primary500 = Color(0x80017BFE);
+  static const Color primary500 = Color(0xFF80BDFF);
+  static const Color primary100 = Color(0xFFE6F2FF);
 
   // Secondary
   static const Color secondary1000 = Color(0xFF154281);
   static const Color secondary750 = Color(0xFF5071A1);
+  static const Color secondary500 = Color(0xFF8AA0C0);
+  static const Color secondary100 = Color(0xFFE8ECF2);
 
   // Success
   static const Color success1000 = Color(0xFF28A745);
@@ -20,6 +23,8 @@ class TColor {
 
   // Error
   static const Color error1000 = Color(0xFFDC3444);
+  static const Color error500 = Color(0xFFED99A1);
+  static const Color error100 = Color(0xFFFBEBEC);
 
   // Greyscale
   static const Color grey50 = Color(0xFFF9FAFB);
@@ -29,6 +34,8 @@ class TColor {
   static const Color grey400 = Color(0xFF9CA3AF);
   static const Color grey500 = Color(0xFF6B7280);
   static const Color grey600 = Color(0xFF4B5563);
+  static const Color grey700 = Color(0xFF374151);
+  static const Color grey800 = Color(0xFF1F2937);
   static const Color grey900 = Color(0xFF111827);
 
   // Other

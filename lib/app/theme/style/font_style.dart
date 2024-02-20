@@ -86,13 +86,14 @@ class TTextStyle {
     TextDecoration? decoration,
     Color decorationColor = TColor.primary1000,
     double decorationThickness = 1.5,
+    double? height = TFontHeight.h160,
   }) {
     return _getTextStyle(
       TFontSize.s12,
       fontWeight,
       color,
       FontAsset.satoshi,
-      height: TFontHeight.h160,
+      height: height,
       decoration: decoration,
       decorationColor: decorationColor,
       decorationThickness: decorationThickness,
@@ -105,13 +106,14 @@ class TTextStyle {
     TextDecoration? decoration,
     Color decorationColor = TColor.primary1000,
     double decorationThickness = 1.5,
+    double? height = TFontHeight.h160,
   }) {
     return _getTextStyle(
       TFontSize.s14,
       fontWeight,
       color,
       FontAsset.satoshi,
-      height: TFontHeight.h160,
+      height: height,
       decoration: decoration,
       decorationColor: decorationColor,
       decorationThickness: decorationThickness,
@@ -121,6 +123,7 @@ class TTextStyle {
   static TextStyle getBodyLarge({
     FontWeight fontWeight = TFontWeight.regular,
     Color? color,
+    double? height = TFontHeight.h145,
   }) {
     return _getTextStyle(
       TFontSize.s16,
@@ -134,6 +137,7 @@ class TTextStyle {
   static TextStyle getBodyXLarge({
     FontWeight fontWeight = TFontWeight.regular,
     Color? color,
+    double? height = TFontHeight.h130,
   }) {
     return _getTextStyle(
       TFontSize.s18,

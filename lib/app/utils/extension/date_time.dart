@@ -7,6 +7,10 @@ extension DateTimeFormatting on DateTime {
   String format({String pattern = DateFormats.standard}) {
     return DateFormat(pattern).format(this);
   }
+
+  bool get isSaturday => weekday == DateTime.saturday;
+
+  bool get isSunday => weekday == DateTime.sunday;
 }
 
 extension StringToDateTime on String {
@@ -36,5 +40,14 @@ extension SecondsToMinuteFormat on int {
     final String formattedSeconds = seconds.toString().padLeft(2, '0');
 
     return '$formattedMinutes:$formattedSeconds';
+  }
+}
+
+extension TimeOfDayX on TimeOfDay {
+  int compareTo(TimeOfDay other) {
+    final int hourComparison = hour.compareTo(other.hour);
+    return hourComparison == 0
+        ? minute.compareTo(other.minute)
+        : hourComparison;
   }
 }

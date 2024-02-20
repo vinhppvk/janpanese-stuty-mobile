@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../asset/font_asset.dart';
 import 'custom_themes/check_box.dart';
+import 'custom_themes/chip.dart';
 import 'custom_themes/color_scheme.dart';
 import 'custom_themes/divider.dart';
 import 'custom_themes/drop_down_menu.dart';
@@ -29,5 +30,6 @@ class TTheme {
     dropdownMenuTheme: TDropDownMenu.lightTheme,
     checkboxTheme: TCheckbox.lightTheme,
     shadowColor: TColor.grey300,
+    chipTheme: TChip.lightTheme,
   );
 }

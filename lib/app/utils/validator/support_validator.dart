@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+import '../extension/date_time.dart';
 import 'validation_messages.dart';
 import 'validators.dart';
 
@@ -284,6 +285,21 @@ class SupportValidators {
     return (bool? valueCandidate) {
       if (valueCandidate == null || !valueCandidate) {
         return message ?? ValidationMessages.undefined();
+      }
+      return null;
+    };
+  }
+
+  static FormFieldValidator<String> lessOrEqualTime({
+    required TimeOfDay? startTime,
+    required TimeOfDay? endTime,
+    String? message,
+  }) {
+    return (_) {
+      if (startTime != null && endTime != null) {
+        if (startTime.compareTo(endTime) == 1) {
+          return message ?? ValidationMessages.undefined();
+        }
       }
       return null;
     };
